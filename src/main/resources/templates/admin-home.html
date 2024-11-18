@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Admin Home - Spring Boot Security Tutorial</title>
+
+<link rel="stylesheet" type="text/css" th:href="@{/styles/welcome-login.css}" />
+
+<style>
+body {
+	background-color: rgb(152, 85, 85);
+}
+
+div.flex-container {
+	background-color: rgb(89, 54, 54);
+	box-shadow: 0 15px 25px rgb(1, 1, 1, 0.5);
+}
+
+.flex-container>div>a {
+	background-color: #3498db;
+}
+</style>
+</head>
+
+<body>
+		<div class="flex-container">
+				<div>
+						<h1>Welcome, Admin</h1>
+				</div>
+
+				<div>
+						<p>This is the admin home page. Explore and manage your admin functionalities.</p>
+				</div>
+
+				<div>
+						<a th:href="@{/user/home}">Go to User Home </a>
+				</div>
+
+				<div>
+						<a th:href="@{/admin/index}"> Go to Admin Index Page </a>
+				</div>
+
+				<div>
+						<a th:href="@{/admin/logout}"> Logout Admin </a>
+				</div>
+		</div>
+</body>
+</html>

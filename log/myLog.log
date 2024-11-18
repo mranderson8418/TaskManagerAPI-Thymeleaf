@@ -1,0 +1,496 @@
+2024-06-29T07:25:22.649-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88243 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:25:22.653-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:25:22.676-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:25:22.677-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:25:22.965-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:25:22.989-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:25:23.243-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:25:23.251-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:25:23.251-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:25:23.272-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:25:23.272-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 595 ms
+2024-06-29T07:25:23.351-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:25:23.376-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:25:23.389-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:25:23.501-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:25:23.512-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:25:23.728-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ba10ae0
+2024-06-29T07:25:23.729-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:25:24.085-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:25:24.126-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:25:24.258-04:00  WARN 88243 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:25:24.270-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:25:24.270-04:00  WARN 88243 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:25:24.444-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:25:24.457-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:25:24.462-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.997 seconds (process running for 2.426)
+2024-06-29T07:27:02.683-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88262 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:27:02.684-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:27:02.700-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:27:02.700-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:27:02.887-04:00  INFO 88243 --- [TaskManagerAPI] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-06-29T07:27:02.904-04:00  INFO 88243 --- [TaskManagerAPI] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:27:02.907-04:00  INFO 88243 --- [TaskManagerAPI] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:27:02.915-04:00  INFO 88243 --- [TaskManagerAPI] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:27:02.971-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88243 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:27:02.971-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:27:02.985-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:27:03.016-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:27:03.059-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:27:03.065-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:27:03.124-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:27:03.125-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:27:03.125-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:27:03.140-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:27:03.140-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 168 ms
+2024-06-29T07:27:03.155-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:27:03.156-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:27:03.161-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:27:03.161-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-06-29T07:27:03.172-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7372d457
+2024-06-29T07:27:03.173-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-06-29T07:27:03.200-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:27:03.210-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:27:03.249-04:00  WARN 88243 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:27:03.252-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:27:03.252-04:00  WARN 88243 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:27:03.293-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:27:03.294-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:27:03.297-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:27:03.299-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 0.341 seconds (process running for 101.264)
+2024-06-29T07:27:03.300-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:27:03.300-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:27:03.300-04:00  INFO 88243 --- [TaskManagerAPI] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-06-29T07:27:03.320-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:27:03.320-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 619 ms
+2024-06-29T07:27:03.394-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:27:03.416-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:27:03.429-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:27:03.531-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:27:03.541-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:27:03.659-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c36d3e2
+2024-06-29T07:27:03.660-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:27:03.968-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:27:03.988-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:27:04.110-04:00  WARN 88262 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:27:04.122-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:27:04.122-04:00  WARN 88262 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:27:04.292-04:00  WARN 88262 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-06-29T07:27:04.303-04:00  WARN 88262 --- [TaskManagerAPI] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-06-29T07:27:04.304-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:27:04.305-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:27:04.308-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:27:04.315-04:00  INFO 88262 --- [TaskManagerAPI] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-29T07:27:04.325-04:00 ERROR 88262 --- [TaskManagerAPI] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-06-29T07:27:09.886-04:00  INFO 88243 --- [TaskManagerAPI] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:27:09.887-04:00  INFO 88243 --- [TaskManagerAPI] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-06-29T07:27:09.890-04:00  INFO 88243 --- [TaskManagerAPI] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-06-29T07:27:11.739-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88263 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:27:11.740-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:27:11.755-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:27:11.755-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:27:11.995-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:27:12.015-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:27:12.216-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:27:12.221-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:27:12.221-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:27:12.240-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:27:12.240-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 485 ms
+2024-06-29T07:27:12.303-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:27:12.322-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:27:12.333-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:27:12.423-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:27:12.433-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:27:12.543-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e882ca7
+2024-06-29T07:27:12.544-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:27:12.845-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:27:12.869-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:27:12.993-04:00  WARN 88263 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:27:13.005-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:27:13.006-04:00  WARN 88263 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:27:13.175-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:27:13.189-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:27:13.193-04:00  INFO 88263 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.584 seconds (process running for 1.821)
+2024-06-29T07:27:23.964-04:00  INFO 88263 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-29T07:27:23.966-04:00  INFO 88263 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-29T07:27:23.967-04:00  INFO 88263 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-29T07:30:55.946-04:00  INFO 88263 --- [TaskManagerAPI] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-29T07:30:55.960-04:00  INFO 88263 --- [TaskManagerAPI] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:30:55.969-04:00  INFO 88263 --- [TaskManagerAPI] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:30:55.979-04:00  INFO 88263 --- [TaskManagerAPI] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:40:57.229-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88372 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:40:57.233-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:40:57.250-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:40:57.250-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:40:57.513-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:40:57.535-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:40:57.761-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:40:57.766-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:40:57.766-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:40:57.786-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:40:57.786-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 536 ms
+2024-06-29T07:40:57.853-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:40:57.879-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:40:57.893-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:40:58.002-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:40:58.013-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:40:58.199-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d133583
+2024-06-29T07:40:58.200-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:40:58.526-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:40:58.571-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:40:58.711-04:00  WARN 88372 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:40:58.719-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:40:58.719-04:00  WARN 88372 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:40:58.915-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:40:58.933-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:40:58.939-04:00  INFO 88372 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.869 seconds (process running for 2.268)
+2024-06-29T07:41:17.862-04:00  INFO 88372 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-29T07:41:17.877-04:00  INFO 88372 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:41:17.881-04:00  INFO 88372 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:41:17.893-04:00  INFO 88372 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:41:19.351-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88382 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:41:19.352-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:41:19.370-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:41:19.370-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:41:19.638-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:41:19.660-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:41:19.888-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:41:19.894-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:41:19.894-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:41:19.914-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:41:19.915-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 545 ms
+2024-06-29T07:41:19.980-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:41:20.001-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:41:20.013-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:41:20.114-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:41:20.124-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:41:20.247-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1317fbcf
+2024-06-29T07:41:20.249-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:41:20.579-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:41:20.600-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:41:20.739-04:00  WARN 88382 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:41:20.749-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:41:20.750-04:00  WARN 88382 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:41:20.971-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:41:20.986-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:41:20.991-04:00  INFO 88382 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.776 seconds (process running for 2.106)
+2024-06-29T07:41:22.837-04:00  INFO 88382 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-29T07:41:22.838-04:00  INFO 88382 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-29T07:41:22.839-04:00  INFO 88382 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-29T07:42:38.858-04:00  INFO 88382 --- [TaskManagerAPI] [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-29T07:42:38.878-04:00  INFO 88382 --- [TaskManagerAPI] [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:42:38.888-04:00  INFO 88382 --- [TaskManagerAPI] [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:42:38.907-04:00  INFO 88382 --- [TaskManagerAPI] [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:42:40.223-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88394 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:42:40.225-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:42:40.241-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:42:40.241-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:42:40.491-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:42:40.512-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:42:40.727-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:42:40.731-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:42:40.732-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:42:40.751-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:42:40.751-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 510 ms
+2024-06-29T07:42:40.825-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:42:40.846-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:42:40.858-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:42:40.968-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:42:40.978-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:42:41.092-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@162b6187
+2024-06-29T07:42:41.092-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:42:41.411-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:42:41.430-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:42:41.575-04:00  WARN 88394 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:42:41.583-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:42:41.584-04:00  WARN 88394 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:42:41.770-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:42:41.786-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:42:41.791-04:00  INFO 88394 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.707 seconds (process running for 1.968)
+2024-06-29T07:42:43.906-04:00  INFO 88394 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-29T07:42:43.907-04:00  INFO 88394 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-29T07:42:43.908-04:00  INFO 88394 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-29T07:44:09.679-04:00  INFO 88394 --- [TaskManagerAPI] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-29T07:44:09.710-04:00  INFO 88394 --- [TaskManagerAPI] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:09.714-04:00  INFO 88394 --- [TaskManagerAPI] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:44:09.721-04:00  INFO 88394 --- [TaskManagerAPI] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:44:11.107-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88407 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:44:11.108-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:44:11.124-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:44:11.124-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:44:11.370-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:44:11.391-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:44:11.602-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:44:11.607-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:44:11.607-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:44:11.627-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:44:11.627-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 502 ms
+2024-06-29T07:44:11.695-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:44:11.716-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:44:11.730-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:44:11.824-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:44:11.833-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:44:11.946-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@30adbcd0
+2024-06-29T07:44:11.946-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:44:12.253-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:44:12.277-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:12.380-04:00  WARN 88407 --- [TaskManagerAPI] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'taskController': Unsatisfied dependency expressed through field 'authenticationManager': No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-06-29T07:44:12.381-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:12.382-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:44:12.410-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:44:12.411-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-29T07:44:12.418-04:00  INFO 88407 --- [TaskManagerAPI] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-29T07:44:12.428-04:00 ERROR 88407 --- [TaskManagerAPI] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authenticationManager in com.taskmanager.controllers.TaskController required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+The injection poLong has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2024-06-29T07:44:24.060-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88418 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:44:24.061-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:44:24.076-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:44:24.076-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:44:24.337-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:44:24.359-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:44:24.574-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:44:24.579-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:44:24.579-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:44:24.597-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:44:24.598-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 522 ms
+2024-06-29T07:44:24.662-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:44:24.682-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:44:24.694-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:44:24.796-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:44:24.805-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:44:24.920-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cb208ee
+2024-06-29T07:44:24.921-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:44:25.231-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:44:25.252-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:25.362-04:00  WARN 88418 --- [TaskManagerAPI] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'taskController': Unsatisfied dependency expressed through field 'authenticationManager': No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-06-29T07:44:25.363-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:25.364-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:44:25.386-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:44:25.387-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-29T07:44:25.393-04:00  INFO 88418 --- [TaskManagerAPI] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-29T07:44:25.403-04:00 ERROR 88418 --- [TaskManagerAPI] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authenticationManager in com.taskmanager.controllers.TaskController required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+The injection poLong has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2024-06-29T07:44:30.169-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88419 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:44:30.170-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:44:30.185-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:44:30.185-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:44:30.430-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:44:30.450-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:44:30.656-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:44:30.661-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:44:30.661-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:44:30.681-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:44:30.681-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 496 ms
+2024-06-29T07:44:30.742-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:44:30.762-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:44:30.772-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:44:30.863-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:44:30.872-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:44:30.983-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@136eac2a
+2024-06-29T07:44:30.983-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:44:31.281-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:44:31.302-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:31.409-04:00  WARN 88419 --- [TaskManagerAPI] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'taskController': Unsatisfied dependency expressed through field 'authenticationManager': No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-06-29T07:44:31.409-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:31.411-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:44:31.452-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:44:31.453-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-29T07:44:31.459-04:00  INFO 88419 --- [TaskManagerAPI] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-29T07:44:31.469-04:00 ERROR 88419 --- [TaskManagerAPI] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authenticationManager in com.taskmanager.controllers.TaskController required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+The injection poLong has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2024-06-29T07:44:55.973-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88443 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:44:55.975-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:44:55.991-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:44:55.992-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:44:56.250-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:44:56.270-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:44:56.482-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:44:56.486-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:44:56.487-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:44:56.505-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:44:56.505-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 513 ms
+2024-06-29T07:44:56.571-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:44:56.592-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:44:56.604-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:44:56.699-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:44:56.710-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:44:56.823-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40ed1446
+2024-06-29T07:44:56.824-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:44:57.141-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:44:57.164-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:44:57.298-04:00  WARN 88443 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:44:57.305-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:44:57.306-04:00  WARN 88443 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:44:57.476-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:44:57.490-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:44:57.494-04:00  INFO 88443 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.669 seconds (process running for 1.935)
+2024-06-29T07:45:00.873-04:00  INFO 88443 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-29T07:45:00.874-04:00  INFO 88443 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-29T07:45:00.875-04:00  INFO 88443 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-29T07:49:35.641-04:00  INFO 88443 --- [TaskManagerAPI] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-29T07:49:35.662-04:00  INFO 88443 --- [TaskManagerAPI] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:49:35.669-04:00  INFO 88443 --- [TaskManagerAPI] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:49:35.680-04:00  INFO 88443 --- [TaskManagerAPI] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:49:37.160-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88533 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:49:37.163-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:49:37.181-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:49:37.181-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:49:37.460-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:49:37.480-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:49:37.696-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:49:37.701-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:49:37.702-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:49:37.722-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:49:37.722-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 541 ms
+2024-06-29T07:49:37.794-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:49:37.820-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:49:37.833-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:49:37.939-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:49:37.950-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:49:38.124-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37a65420
+2024-06-29T07:49:38.125-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:49:38.456-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:49:38.491-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:49:38.627-04:00  WARN 88533 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:49:38.634-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:49:38.634-04:00  WARN 88533 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:49:38.805-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:49:38.819-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:49:38.824-04:00  INFO 88533 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.813 seconds (process running for 2.177)
+2024-06-29T07:49:52.480-04:00  INFO 88533 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-29T07:49:52.497-04:00  INFO 88533 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:49:52.504-04:00  INFO 88533 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:49:52.515-04:00  INFO 88533 --- [TaskManagerAPI] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:53:20.824-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88617 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:53:20.826-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:53:20.851-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:53:20.851-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:53:21.124-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:53:21.150-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:53:21.385-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:53:21.391-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:53:21.391-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:53:21.410-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:53:21.410-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 558 ms
+2024-06-29T07:53:21.477-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:53:21.502-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:53:21.515-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:53:21.622-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:53:21.632-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:53:21.842-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5cd1d896
+2024-06-29T07:53:21.844-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:53:22.236-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:53:22.282-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:53:22.437-04:00  WARN 88617 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:53:22.444-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:53:22.445-04:00  WARN 88617 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:53:22.674-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:53:22.691-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:53:22.697-04:00  INFO 88617 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 2.06 seconds (process running for 2.324)
+2024-06-29T07:53:29.415-04:00  INFO 88617 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-29T07:53:29.415-04:00  INFO 88617 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-29T07:53:29.418-04:00  INFO 88617 --- [TaskManagerAPI] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-06-29T07:53:39.622-04:00  INFO 88617 --- [TaskManagerAPI] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:53:39.627-04:00  INFO 88617 --- [TaskManagerAPI] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:53:39.633-04:00  INFO 88617 --- [TaskManagerAPI] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-29T07:56:28.565-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 17.0.11 with PID 88707 (/Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI/target/classes started by nicoleanderson in /Users/nicoleanderson/Desktop/STS_WORKSPACE_DARK/TaskManagerAPI)
+2024-06-29T07:56:28.572-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-06-29T07:56:28.599-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-29T07:56:28.599-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-29T07:56:28.887-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-29T07:56:28.910-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository Longerfaces.
+2024-06-29T07:56:29.148-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-29T07:56:29.153-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-29T07:56:29.153-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-29T07:56:29.172-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-29T07:56:29.172-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
+2024-06-29T07:56:29.247-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.hibernate.jpa.Longernal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-29T07:56:29.275-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-29T07:56:29.288-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.h.c.Longernal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-29T07:56:29.397-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-29T07:56:29.407-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-29T07:56:29.554-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f6ae798
+2024-06-29T07:56:29.555-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-29T07:56:29.895-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform Longegration)
+2024-06-29T07:56:29.920-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:56:30.067-04:00  WARN 88707 --- [TaskManagerAPI] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-29T07:56:30.075-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-29T07:56:30.075-04:00  WARN 88707 --- [TaskManagerAPI] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-29T07:56:30.257-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-29T07:56:30.272-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-29T07:56:30.277-04:00  INFO 88707 --- [TaskManagerAPI] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 1.895 seconds (process running for 2.184)
+2024-06-29T07:56:41.937-04:00  INFO 88707 --- [TaskManagerAPI] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-29T07:56:41.938-04:00  INFO 88707 --- [TaskManagerAPI] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-29T07:56:41.940-04:00  INFO 88707 --- [TaskManagerAPI] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-29T07:58:18.429-04:00  INFO 88707 --- [TaskManagerAPI] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-29T07:58:18.435-04:00  INFO 88707 --- [TaskManagerAPI] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-29T07:58:18.442-04:00  INFO 88707 --- [TaskManagerAPI] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Index</title>
+		<link rel="stylesheet" href="registerStyle.css" />
+	</head>
+	<style>
+		/*Welcome User HTML Page*/
+
+		body {
+			display: block;
+			text-align: center;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: large;
+			font-style: bold;
+			color: #04aa6d;
+			font-size: 15px;
+		}
+		
+		form{
+			max-width:80%;
+		}
+
+		h2.scott-label {
+			color: red;
+		}
+
+		div.form-container {
+			background-color: white;
+			border: solid 5px green;
+			border-radius: 15px;
+			color: green;
+			padding: 20px 35px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 1.5rem;
+
+			margin: 20px;
+			box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+		
+			width: 100%;
+			height: auto;
+		}
+
+		div > button.scott-button {
+			background-color: white;
+			border: solid 5px green;
+			border-radius: 15px;
+			color: green;
+			padding: 20px 35px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 1.5rem;
+
+			margin: 20px;
+			box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+			max-width: 600px;
+			width: 100%;
+			height: auto;
+		}
+
+		span {
+			display: inline-block;
+		}
+
+		h2 {
+			display: inline-block;
+		}
+	</style>
+
+	<body>
+		<div class="form-container">
+			
+		
+			<h2 th:text="${username}">username</h2>
+			<h2>${myUser.getUsername}</h2>
+			<h2>Is Deleted</h2>
+			
+			
+			<form action="/" method="post">
+
+				<div>
+					<button class="scott-button" type="submit">Return to home page index</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	background-color: rgb(100, 195, 238);
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	width: auto;
+	height: auto;
+}
+
+div.container {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 3rem;
+	background-color: rgb(78, 176, 97);
+	border-radius: 15px;
+	width: auto;
+	height: auto;
+}
+
+div.buttons {
+	width: 100%;
+
+	display: block;
+	height: auto;
+}
+div.buttons p a {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+	display: block;
+	max-width: 100%;
+	height: auto;
+
+	margin: 20px;
+	padding: 20px 35px;
+	background-color: rgb(103, 206, 103);
+	border: none;
+	border-radius: 5px;
+	font-size: 2rem;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+h1 {
+	padding: 1rem;
+	font-size: 3rem;
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>List of Students</title>
+
+<!-- <link rel="stylesheet" href="../css/styleList.css">
+<link rel="stylesheet" href="../css/print.css" media="print"> -->
+
+<link rel="stylesheet" type="text/css" th:href="@{/styles/styleList.css}" />
+
+<style>
+</style>
+
+</head>
+
+<body>
+		<div class="container">
+
+
+
+				<div class="title">
+						<h1>List of Users</h1>
+				</div>
+
+
+				<div>
+						<table border="1">
+								<thead>
+										<tr>
+												<th>ID</th>
+												<th>UserName</th>
+												<th>Email</th>
+												<th>Password</th>
+												<th>Role</th>
+												<th>Gender</th>
+												<th>DOB</th>
+										</tr>
+								</thead>
+								<tbody>
+										<tr th:each="user : ${users}">
+												<td th:text="${user.id}"></td>
+												<td th:text="${user.username}"></td>
+												<td th:text="${user.email}"></td>
+												<td th:text="${user.password}"></td>
+												<td th:text="${user.role}"></td>
+												<td th:text="${user.gender}"></td>
+												<td th:text="${user.dob}"></td>
+										</tr>
+								</tbody>
+						</table>
+				</div>
+
+				<div class="scott-button">
+						<a th:href="@{/admin/index}">Return Home</a>
+				</div>
+
+		</div>
+
+</body>
+</html>

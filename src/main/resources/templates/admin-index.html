@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>index-admin</title>
+
+<link rel="stylesheet" type="text/css" th:href="@{/styles/user-admin-index.css}" />
+
+
+</head>
+
+<body>
+		<div class="container">
+				<div>
+						<h1>Task Manager API</h1>
+						<h2>ADMIN Index Menu</h2>
+						<h2>Admin Index</h2>
+				</div>
+
+
+
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/create/task}">Create New Task</a>
+						</p>
+				</div>
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/taskList}">View Task List</a>
+						</p>
+				</div>
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/update/task}">Update Task</a>
+						</p>
+				</div>
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/delete/task}">Delete Task</a>
+						</p>
+				</div>
+
+
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/register}">Create New User</a>
+						</p>
+				</div>
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/userList}">View User List</a>
+						</p>
+				</div>
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/delete/user}">Delete User</a>
+						</p>
+				</div>
+
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/logout}"> Logout</a>
+						</p>
+				</div>
+		</div>
+</body>
+</html>

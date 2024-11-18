@@ -1,0 +1,91 @@
+
+
+
+
+
+html {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body {
+	font-style:bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: sans-serif;
+	/* Use a generic sans-serif font for a clean look */
+	margin: 20px;
+	/* Add some margin around the page content */
+	color: black;
+	min-width: 100%;
+	height: 100vh;
+	/* border: solid 5px red; */
+	font-size: 15px;
+}
+
+div.container {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	border-radius: 2rem;;
+}
+
+div.container div.title h1 {
+	color: #04aa6d;
+	font-size: 5rem;
+	padding: auto;
+	margin: auto;
+}
+
+th, td, tbody {
+	padding: 10px;
+	/* Add padding to table cells for better readability */
+	border: 2px solid #365930;
+}
+
+th {
+	background-color: #04aa6d;
+	/* Set a light background color for table headers */
+	color: white;
+	/* Set header text color */
+}
+
+tbody tr td {
+	background-color: white;
+}
+
+div.scott-button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #04aa6d;
+	width: auto;
+	height: auto;
+	padding: 2rem;
+	font-size: 2rem;
+	color: white;
+	border-radius: 2rem;
+	text-decoration: none;
+	/* border: solid 5px red; */
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+div.scott-button  a {
+	text-decoration: none;
+	color:white;
+}
+
+div.container div {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	max-width: 100%;
+}

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Index</title>
+<link rel="stylesheet" type="text/css" th:href="@{/styles/welcome.css}" />
+
+
+<!-- <link rel="stylesheet" type="text/css" th:href="@{/styles/user-admin-index.css}" /> -->
+</head>
+
+
+<body>
+		<div class="form-container">
+				<h1>Welcome New User!! You are saved to our database</h1>
+				<form action="/login" method="get">
+						<div>
+								<span>
+										<h2 class="scott-label">Username:&nbsp</h2>
+										<h2 th:text="${username}">username</h2>
+								</span>
+						</div>
+
+						<div>
+								<span>
+										<h2 class="scott-label">DOB: &nbsp</h2>
+										<h2 th:text="${dob}">dob</h2>
+								</span>
+						</div>
+
+						<div>
+								<span>
+										<h2 class="scott-label">Password: &nbsp</h2>
+										<h2 th:text="${password}">asdfadsflasjdf;ojkasd;ofkjasdo;fj;aosdig;asjidfgo;jiasdf;gjndsf;g</h2>
+								</span>
+						</div>
+
+						<div>
+								<span>
+										<h2 class="scott-label">Gender: &nbsp</h2>
+										<h2 th:text="${gender}">male</h2>
+								</span>
+						</div>
+
+						<div>
+								<span>
+										<h2 class="scott-label">Email: &nbsp</h2>
+										<h2 th:text="${email}">asdfadsflasj</h2>
+								</span>
+						</div>
+						<div>
+								<span>
+										<h2 class="scott-label">Role: &nbsp</h2>
+										<h2 th:text="${role}">ADMIN</h2>
+								</span>
+						</div>
+
+						<div class="scott-button">
+								<button type="submit">Return to home page index</button>
+						</div>
+				</form>
+		</div>
+</body>
+</html>
