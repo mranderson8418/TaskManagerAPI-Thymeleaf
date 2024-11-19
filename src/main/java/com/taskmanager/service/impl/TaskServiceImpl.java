@@ -99,8 +99,8 @@ public class TaskServiceImpl implements TaskService {
 	public void deleteByTaskId(int id) {
 		logger.trace("Entered......deleteByTaskId() ");
 
-		MyTask task = taskRepository.findById(id).orElseThrow(() -> new MyUserNotFoundException(
-				"Task with id = " + id + " could not be deleted..."));
+		MyTask task = taskRepository.findById(id)
+				.orElseThrow(() -> new MyUserNotFoundException("Task with id = " + id + " could not be deleted..."));
 
 		if (taskRepository.findById(id).isPresent()) {
 			taskRepository.deleteById(id);
@@ -153,8 +153,8 @@ public class TaskServiceImpl implements TaskService {
 	public MyTaskDto getTaskById(int id) {
 		logger.trace("Entered.................getTaskById()");
 
-		MyTask task = taskRepository.findById(id).orElseThrow(
-				() -> new TaskNotFoundException("Print drawing could not be found :("));
+		MyTask task = taskRepository.findById(id)
+				.orElseThrow(() -> new TaskNotFoundException("Print drawing could not be found :("));
 		logger.trace("Exited...........................getTaskById()");
 		return mapToDto(task);
 	}
@@ -196,8 +196,7 @@ public class TaskServiceImpl implements TaskService {
 
 		try {
 			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(id)
-					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+			MyTask task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
 
 			// Create an updated Task entity
 			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);

@@ -1,5 +1,7 @@
 package com.taskmanager.controllers;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.taskmanager.dto.MyTaskDto;
@@ -138,7 +141,7 @@ public class TaskControllerDynamic {
 
 	}
 
-	// http://localhost:8080/admin/update/task
+	// http://localhost:8080/admin/update/task/{id}
 	@GetMapping("/admin/update/task")
 	public String updateTask(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
@@ -194,10 +197,9 @@ public class TaskControllerDynamic {
 		return "admin-create-task-update";
 	}
 
-	@PostMapping("/admin/update/task")
+	@PutMapping("/admin/update/task/{id}")
 	// @ModelAttribute - this will bind the annotated object with the model class
-	public String updateTask(@ModelAttribute MyTaskDto myTaskDtoUpdate, @RequestParam("taskID") Integer selectedTaskId,
-			Model model) {
+	public String updateTask(@RequestParam("taskID") Integer selectedTaskId, @ModelAttribute MyTaskDto myTaskDto) {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
@@ -205,7 +207,7 @@ public class TaskControllerDynamic {
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/updateTask\")------");
 
 		// task is inserted into the TaskRepository
-		MyTaskDto task_inserted = taskService.updateTask(myTaskDtoUpdate, selectedTaskId);
+		MyTaskDto task_inserted = taskService.updateTask(myTaskDto, selectedTaskId);
 
 		System.out.println("username" + task_inserted.getUsername());
 
@@ -218,7 +220,7 @@ public class TaskControllerDynamic {
 		model.addAttribute("content", task_inserted.getContent());
 		model.addAttribute("complete", task_inserted.isComplete());
 
-		System.out.println("Task # " + task_inserted.getId() + " is added to the database");
+		System.out.println("Task # " + task_inserted.getId() + " is updated in the database");
 
 		// List<MyTask> tasks = myTaskRepository.findAll();
 

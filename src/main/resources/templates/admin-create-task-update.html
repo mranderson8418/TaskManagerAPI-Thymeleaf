@@ -155,24 +155,25 @@
 
 		<div class="form-container-input">
 
-			<form action="/admin/update/task" th:object="${myTaskDto}" th:value="${selectedTaskId}" method="post">
+			<form th:action="@{/admin/update/task/{id}}" th:method="PUT">
+
+				<div>
+					<h1>Update Task Details</h1>
+				</div>
 				<div>
 					<label for="taskId">Task ID:</label>
 				</div>
 				<div>
-					<input type="text" id="taskId" name="taskId" th:value="${selectedTaskId}" />
+					<input type="text" id="taskId" name="taskId" th:field="*{selectedTaskId}" />
 				</div>
 
-				<div>
-					<h1>Enter Task Details</h1>
-				</div>
-				
+
 				<div class="task-input">
 					<div><label for="content">Message Content:</label><br /></div>
 
-					<div><textarea name="content" rows="4" cols="50"></textarea><br /></div>
+					<div><textarea type="text" th:field="*{content}" name="content" rows="4" cols="50"></textarea><br /></div>
 					<div class="task-complete">
-						<label for="complete">Task Complete Status: </label> <input type="checkbox" name="complete"
+						<label for="complete">Task Complete Status: </label> <input type="checkbox" th:field="*{complete}" name="complete"
 							id="complete" />
 					</div>
 				</div>
