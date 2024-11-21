@@ -29,7 +29,7 @@
 				height: auto;
 			}
 
-			div.scott-button button {
+			div.scott-button button, div.scott-button a {
 				background-color: rgb(103, 206, 103);
 				border-radius: 10px;
 				color: white;

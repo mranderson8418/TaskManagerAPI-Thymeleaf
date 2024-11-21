@@ -22,4 +22,6 @@ public interface MyUserService {
 
 	public MyUserDto mapToDto(MyUser myUser);
 
+	public int getActiveUserId(String username);
+
 }

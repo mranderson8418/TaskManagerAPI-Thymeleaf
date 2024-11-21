@@ -1,5 +1,7 @@
 package com.taskmanager.service;
 
+import java.util.List;
+
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.TaskResponse;
 import com.taskmanager.model.MyTask;
@@ -17,5 +19,7 @@ public interface TaskService {
 	public void deleteByTaskId(int id);
 
 	public MyTaskDto mapToDto(MyTask task);
+
+	public List<MyTaskDto> getAllTasksObjects();
 
 }

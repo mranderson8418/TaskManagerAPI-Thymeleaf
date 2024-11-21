@@ -13,6 +13,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+//Note that the user will login and then according to their grantedAuthority.getAuthority() to /admin/home or /user/home 
 public class AuthenticationAccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
 	Logger logger = LoggerFactory.getLogger(AuthenticationAccessHandler.class.getName());

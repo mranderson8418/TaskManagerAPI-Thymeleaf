@@ -67,6 +67,7 @@ public class RegistrationControllerDynamic {
 
 		Optional<MyUser> foundUser = myUserRepository.findByUsername(myUserDto.getUsername());
 
+		// The username already exist in the database
 		if (foundUser.isPresent()) {
 
 			model.addAttribute(myUserDto.getUsername());

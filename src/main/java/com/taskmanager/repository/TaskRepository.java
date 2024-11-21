@@ -1,6 +1,8 @@
 
 package com.taskmanager.repository;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,5 +22,8 @@ public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 	@Query("SELECT t FROM MyTask t WHERE t.username = :username")
 	Page<MyTask> findAllTasksByUsername(@Param("username") String username,
 			PageRequest pageRequest);
+
+	@Query("SELECT t FROM MyTask t WHERE t.username = :username")
+	List<MyTask> findAllTasksByUsernameObjects(@Param("username") String username);
 
 }

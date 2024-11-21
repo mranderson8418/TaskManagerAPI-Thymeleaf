@@ -5,16 +5,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "message")
 public class MyTask {
 
 	private boolean complete;
+
+	@NotBlank
 	private String content;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
+	@NotBlank
 	private String username;
 
 	public String getContent() {

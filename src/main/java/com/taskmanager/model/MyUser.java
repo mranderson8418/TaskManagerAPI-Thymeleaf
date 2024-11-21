@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "myusers")
@@ -18,21 +19,27 @@ public class MyUser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@NotBlank
 	@Column(name = "username")
 	private String username;
 
+	@NotBlank
 	@Column(name = "email")
 	private String email;
 
+	@NotBlank
 	@Column(name = "password")
 	private String password;
 
+	@NotBlank
 	@Column(name = "role")
 	private String role;
 
+	@NotBlank
 	@Column(name = "dob")
 	private String dob;
 
+	@NotBlank
 	@Column(name = "gender")
 	private String gender;
 
@@ -94,8 +101,8 @@ public class MyUser {
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" +
-				password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email +
+				", password=" + password + ", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

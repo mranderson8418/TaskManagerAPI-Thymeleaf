@@ -15,6 +15,12 @@ public class TaskResponse {
 	private int totalPages;
 
 	public TaskResponse() {
+		this.content = null;
+		this.last = false;
+		this.pageNo = 0;
+		this.pageSize = 0;
+		this.totalElements = 0L;
+		this.totalPages = 0;
 
 	}
 

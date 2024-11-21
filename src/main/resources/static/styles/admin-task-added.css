@@ -28,7 +28,7 @@ h2 {
     max-width: 80%;
     margin-top: 7rem;
     background-color: white;
-    border: solid 5px green; /* Removed redundant box-shadow */
+    border: solid 5px green; 
     border-radius: 15px;
     padding: 20px 35px;
 }
@@ -43,5 +43,10 @@ h2 {
     text-decoration: none;
     font-size: 1.5rem;
     margin: 20px 0;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 100%;  /* Removed unnecessary width rule */
+    max-width: 100%;  
+}
+
+div.scott-button a {
+	text-decoration:none;
+	color:white;'
 }

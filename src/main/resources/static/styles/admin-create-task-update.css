@@ -1,3 +1,4 @@
+
 html {
 	display: flex;
 	flex-direction: column;
@@ -9,32 +10,26 @@ body {
 	flex-direction: column;
 	align-items: center;
 	font-family: sans-serif;
-	/* Use a generic sans-serif font for a clean look */
 	margin: 20px;
-	/* Add some margin around the page content */
 	color: black;
 	background-color: #ffffff;
 	width: 90%;
 	height: 100vh;
-	/* border: solid 5px red; */
 	font-size: 15px;
 }
 
 th, td, tbody {
 	padding: 10px;
-	/* Add padding to table cells for better readability */
 	border: 2px solid #365930;
 }
 
 th {
 	background-color: #04aa6d;
-	/* Set a light background color for table headers */
 	color: white;
-	/* Set header text color */
 }
 
 button {
-	width: 1000px;
+	width: 500px;
 	height: auto;
 	background-color: transparent;
 	border: none;
@@ -44,7 +39,6 @@ div.scott-button, div.scott-button button {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 	background-color: #04aa6d;
 	width: 15rem;
 	height: 5rem;
@@ -55,12 +49,14 @@ div.scott-button, div.scott-button button {
 	margin: 1rem;
 }
 
+
 div.container form {
 	display: flex;
 	flex-direction: column;
 	min-width: 100%;
 	height: auto;
 	text-align: center;
+	color:green;
 }
 
 div.container {
@@ -82,8 +78,6 @@ div.form-container-input form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	 max-width:80%;
-	 height:auto;
 }
 
 div.form-container-input form input {
@@ -94,14 +88,23 @@ div.form-container-input form input {
 	text-align: center;
 }
 
-div.container form {
-	color: green;
-	font-size: 1.5rem;
-	padding: auto;
-	margin: auto;
+div.scott-button a {
+	color: white;
+	text-decoration: none;
+	display:block;
 }
 
-div.scott-button p a {
-	color: white;
-	text-decoration:none;
+div form textarea {
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	width: 100%;
+	height: auto;
 }
+
+form div h2{
+	color:green;
+}
+
+
+

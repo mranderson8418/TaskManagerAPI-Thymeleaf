@@ -1,6 +1,7 @@
 package com.taskmanager.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -66,7 +67,7 @@ public class UserServiceImpl implements MyUserService {
 		MyUserDto newMyUserDto = new MyUserDto();
 		newMyUserDto.setId(myUser.getId());
 		newMyUserDto.setEmail(myUser.getEmail());
-		newMyUserDto.setPassword(myUser.getPassword());
+		newMyUserDto.setPassword("(Encoded)");
 		newMyUserDto.setRole(myUser.getRole());
 		newMyUserDto.setGender(myUser.getGender());
 		newMyUserDto.setDob(myUser.getDob());
@@ -236,6 +237,19 @@ public class UserServiceImpl implements MyUserService {
 				.orElseThrow(() -> new MyUserNotFoundException("MyUser could not be found..."));
 
 		return mapToDto(myUser);
+	}
+
+	@Override
+	public int getActiveUserId(String username) {
+
+		int userIdValue = 0;
+		Optional<MyUser> myUser = myUserRepository.findByUsername(username);
+
+		if (myUser.isPresent()) {
+			userIdValue = myUser.get().getId();
+		}
+
+		return userIdValue;
 	}
 
 }
