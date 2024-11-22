@@ -4,18 +4,18 @@
 
 1. Using Spring Tools Suite (or your preferred IDE), open TaskManagerAPI.
 
-2. Run the TaskManagerAPI as a "Spring Boot App".
+2. Adjust the Application.properties file and insert your designated username and password for MySQL
+       spring.datasource.username=[your_username]
+        spring.datasource.password= [your_password}
 
-3. Use the Postman API Platform and import the following .json files into Postman. The files are located in the TaskManagerAPI directory.
+4. Run the TaskManagerAPI as a "Spring Boot App".
 
-4. TaskManagerAPI.postman_collection.json
-
-5. TaskManagerAPI-USERS.postman_collection.json
+5. Open Chrome Web Browser and go to `https://www.localhost:8080/login`
 
 ## Step #02
 
-1. Register your user at `http://localhost:8080/register/user`.
-2. Enter username, password, and role.
+1. Register your user at `http://localhost:8080/register/`.
+2. Enter username, password, role, dob, and gender.
 
 -   Note: the roles variable must be in the following format with no spaces:
     -   "USER,ADMIN"
@@ -40,6 +40,11 @@
 ### Note: For Users with "ADMIN" role
 
 -   Users with "ADMIN" role can access the following Endpoints
+    -   CREATE NEW TASK --> `http://localhost:8080/api/task/create`
+    -   UPDATE TASK BY ID --> `http://localhost:8080/api/task/update/{id}`
+    -   GET ALL TASKS --> `http://localhost:8080/api/getalltasks?pageNo=0&pageSize=10`
+    -   GET TASK BY ID --> `http://localhost:8080/api/task/{id}`
+    -   DELETE TASK BY ID --> `http://localhost:8080/api/task/delete/{id}`
     -   WHICH USER IS LOGGED IN --> `http://localhost:8080/admin/activeuser`
     -   GET ALL USERS --> `http://localhost:8080/admin/getallusers`
     -   GET USER BY ID --> `http://localhost:8080/admin/user/{id}`
