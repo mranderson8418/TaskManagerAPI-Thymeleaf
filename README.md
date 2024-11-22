@@ -5,8 +5,8 @@
 1. Using Spring Tools Suite (or your preferred IDE), open TaskManagerAPI.
 
 2. Adjust the Application.properties file and insert your designated username and password for MySQL
-       spring.datasource.username=[your_username]
-        spring.datasource.password= [your_password}
+     - spring.datasource.username= [your_username]
+     - spring.datasource.password= [your_password]
 
 4. Run the TaskManagerAPI as a "Spring Boot App".
 
