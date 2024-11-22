@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.taskmanager</groupId>
-	<artifactId>TaskManagerAPIScott</artifactId>
+	<artifactId>TaskManagerAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TaskManagerAPIScott</name>
+	<name>TaskManagerAPI</name>
 	<description>Task Manager API for persisting a task list with security</description>
 
 	<properties>
