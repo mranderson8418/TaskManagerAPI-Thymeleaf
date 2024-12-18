@@ -1,7 +1,16 @@
 # TaskManagerAPI - README
 
 ## Step #01
+1. Register your user at `http://localhost:8080/register/`.
+2. Enter username, password, role, dob, and gender.
 
+-   Note: the roles variable must be in the following format with no spaces:
+    -   "USER,ADMIN"
+    -   "ADMIN,USER"
+    -   "USER"
+    -   "ADMIN"
+
+## Step #02
 1. Using Spring Tools Suite (or your preferred IDE), open TaskManagerAPI.
 
 2. Adjust the Application.properties file and insert your designated username and password for MySQL
@@ -11,17 +20,6 @@
 4. Run the TaskManagerAPI as a "Spring Boot App".
 
 5. Open Chrome Web Browser and go to `https://www.localhost:8080/login`
-
-## Step #02
-
-1. Register your user at `http://localhost:8080/register/`.
-2. Enter username, password, role, dob, and gender.
-
--   Note: the roles variable must be in the following format with no spaces:
-    -   "USER,ADMIN"
-    -   "ADMIN,USER"
-    -   "USER"
-    -   "ADMIN"
 
 ## Step #03
 
