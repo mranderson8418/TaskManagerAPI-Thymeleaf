@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ADMIN Home</title>
+
+		<style>
+			/* General body styling */
+			body {
+				font-family: "Arial", sans-serif;
+				background-color: #b15454;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				color: #fff;
+			}
+
+			/* Centered container styling */
+			.flex-container {
+				background-color: #ce807c;
+				padding: 20px;
+				border-radius: 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+				text-align: center;
+				width: 90%;
+				max-width: 500px; /* Ensures a maximum width */
+				box-sizing: border-box;
+			}
+
+			/* Heading styling */
+			h1 {
+				color: #ffffff;
+				margin-bottom: 15px;
+			}
+
+			/* Paragraph styling */
+			p {
+				font-size: 18px;
+				margin-bottom: 20px;
+			}
+
+			/* Button links styling */
+			.flex-container a {
+				font-size: 1.2rem;
+				color: white;
+				text-decoration: none;
+				display: block;
+				padding: 15px;
+				margin: 10px 0;
+				background-color: #3498db;
+				border-radius: 8px;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+				transition: background-color 0.3s ease;
+			}
+
+			/* Hover effect for buttons */
+			.flex-container a:hover {
+				background-color: #1d6fa5;
+			}
+
+			/* Responsive design for smaller screens */
+			@media (max-width: 480px) {
+				p {
+					font-size: 16px;
+				}
+
+				.flex-container a {
+					font-size: 1rem;
+					padding: 12px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<h1>Welcome, Admin</h1>
+			<p>This is the admin home page. Explore and manage your admin functionalities.</p>
+			<a th:href="@{/user/home}">Go to User Home</a>
+			<a th:href="@{/admin/index}">Go to Admin Index Page</a>
+			<a th:href="@{/admin/logout}">Logout Admin</a>
+		</div>
+	</body>
+</html>

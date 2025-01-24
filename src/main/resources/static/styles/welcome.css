@@ -1,0 +1,102 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: large;
+	font-style: bold;
+	color: #04aa6d;
+	font-size: 15px;
+	
+}
+
+h2.scott-label {
+	color: red;
+}
+
+div.scott-button button {
+	background-color: white;
+	border: solid 5px green;
+	border-radius: 15px;
+	color: green;
+	padding: 20px 35px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.5rem;
+	margin: 20px;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+	max-width: 600px;
+	width: 100%;
+	height: auto;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width:70%;
+	max-width: 100%;
+	min-height: 1000px;
+	margin-top: 7rem;
+}
+
+div.form-container {
+	background-color: white;
+	border: solid 5px green;
+	border-radius: 15px;
+	color: green;
+	padding: 20px 35px;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+	align-items: left;
+	margin: 20px;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+	min-width: fit-content;
+	height: auto;
+}
+
+div.form-container div {
+	width: 100%;
+	height: auto;
+}
+
+form>div>span {
+	position: relative;
+}
+
+span h2:first-child {
+	flex-shrink: 1;
+	display: inline-block;
+	text-align: left;
+}
+
+h1 {
+	padding: 25px;
+}
+
+h2 {
+	display: inline-block;
+}
+
+div {
+	padding: 15px;
+	border-radius: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+li{
+	color:red;
+}

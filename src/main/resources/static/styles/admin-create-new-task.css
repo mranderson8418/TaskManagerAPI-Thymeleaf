@@ -1,0 +1,99 @@
+
+			body {
+				margin-top: 5rem; 
+				background-color: rgb(100, 195, 238);
+				display: block;
+				text-align: center;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				font-size: large;
+				font-style: bold;
+				color: #04aa6d;
+				font-size: 15px;
+			}
+
+			div.form-container {
+				background-color: rgb(78, 176, 97);
+				border-radius: 15px;
+				color: white;
+				padding: 20px 35px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 1.5rem;
+				margin: 20px;
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				max-width: 600px;
+				width: 100%;
+				height: auto;
+			}
+
+			div.scott-button button, div.scott-button a {
+				background-color: rgb(103, 206, 103);
+				border-radius: 10px;
+				color: white;
+				padding: 20px 35px;
+				text-align: center;
+				display: inline-block;
+				font-size: 1.5rem;
+				margin: 20px;
+				max-width: 400px;
+				width: 100%;
+				height: auto;
+				border: none;
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				text-decoration: none;
+			}
+
+			div form textarea {
+				border-radius: 0.5rem;
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				width: 100%;
+				height: auto;
+			}
+
+			div.scott-button > button > a {
+				text-decoration: none;
+				color: white;
+			}
+
+			div.form-container > form {
+				max-width: 90%;
+				margin-top: 5rem;
+				margin-bottom: 5rem;
+				padding: 20px;
+				color: green;
+				/* border: 0px solid #b92121; */
+				border: none;
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				border-radius: 10px;
+				display: block;
+				background-color: #f5f5f5;
+			}
+
+			div.task-input {
+				color: green;
+				background-color: white;
+				width: auto;
+				height: 15rem;
+				border-radius: 0.5rem;
+				padding: 0.5rem;
+			}
+
+			div.task-input div {
+				margin: 1rem;
+
+				max-width: 100%;
+			}
+
+			div.task-input div.task-complete {
+				margin-top: 2rem;
+			}
+
+			div textarea {
+				padding: 0.5rem;
+				min-width: 50%;
+				max-width: 535px;
+			}
+		

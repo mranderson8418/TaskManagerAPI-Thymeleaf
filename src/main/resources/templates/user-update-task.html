@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Create Task Update</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        body {
+            padding: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        h1, h2 {
+            margin-bottom: 1rem;
+            color: #04aa6d;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #04aa6d;
+            color: white;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea, input[type="checkbox"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .scott-button {
+            margin-top: 1rem;
+        }
+
+        .scott-button button, 
+        .scott-button a {
+            display: inline-block;
+            background-color: #04aa6d;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .scott-button a {
+            text-align: center;
+        }
+
+        .scott-button button:hover, 
+        .scott-button a:hover {
+            background-color: #028653;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+            }
+
+            .scott-button button, .scott-button a {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Task List</h1>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Content</th>
+                    <th>Complete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="task : ${tasks}">
+                    <td th:text="${task.id}"></td>
+                    <td th:text="${task.username}"></td>
+                    <td th:text="${task.content}"></td>
+                    <td th:text="${task.complete} ? 'true' : 'false'"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form th:action="@{/user/update/task}" th:object="${myTaskDto}" method="post">
+            <h2>Update Task Details</h2>
+
+            <label for="id">Task ID:</label>
+            <input type="text" th:field="*{id}" id="id" />
+
+            <label for="content">Updated Message Content:</label>
+            <textarea th:field="*{content}" id="content" rows="4"></textarea>
+
+            <label for="complete">Task Complete Status:</label>
+            <input type="checkbox" th:field="*{complete}" id="complete" />
+
+            <div class="scott-button">
+                <button type="submit">Update Task</button>
+            </div>
+        </form>
+
+        <div class="scott-button">
+            <a th:href="@{/user/index}">Go to user Index Page</a>
+        </div>
+    </div>
+</body>
+</html>

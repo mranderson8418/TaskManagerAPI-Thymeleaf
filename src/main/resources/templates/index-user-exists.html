@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Index</title>
+
+</head>
+<style>
+body {
+	background-color: rgb(43, 43, 142);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: large;
+	font-style: bold;
+	color: white;
+	font-size: 15px;
+}
+
+.buttons>p>a {
+	background-color: green;
+	/* Green */
+	border: none;
+	color: white;
+	padding: 20px 35px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.5rem;
+	border-radius: 5px;
+	margin: 20px;
+	width: 400px;
+	height: auto;
+}
+
+.pagination {
+	display: inline-block;
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+div.container {
+	margin-top: 10rem;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(85, 137, 95);
+	max-width: 600px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px
+		-2px 6px 0px inset;
+}
+
+div.container div p a {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px
+		15px 12px;
+}
+
+h1 {
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+	background-color: white;
+	color: red;
+}
+</style>
+
+<body>
+		<div class="container">
+				<h1>Print Drawing Search Web API</h1>
+
+
+
+				<h2>${myUserDto.getUsername} already exists. Please register again.....</h2>
+
+
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/login}">Login</a>
+						</p>
+				</div>
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/register}">Create New User</a>
+						</p>
+				</div>
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/admin/userList}">View User Database</a>
+						</p>
+				</div>
+
+
+				<div class="buttons">
+						<p>
+								<a th:href="@{/logout}">Logout</a>
+						</p>
+				</div>
+		</div>
+</body>
+</html>

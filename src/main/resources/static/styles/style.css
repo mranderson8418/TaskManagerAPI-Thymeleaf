@@ -1,0 +1,110 @@
+body {
+	display: block;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: large;
+	font-style: bold;
+	color: green;
+}
+
+div.container>div>form {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	color: green;
+	border: 5px solid #b92121;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	display: block;
+	background-color: #f5f5f5;
+}
+
+select {
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 5px solid #ccc;
+	border-radius: 3px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+	text-align: left;
+	width: 90%;
+	height: auto;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 5px solid #ccc;
+	border-radius: 3px;
+}
+
+input[type="date"] {
+	text-align: center;
+	width: 90%;
+	height: auto;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 5px solid #ccc;
+	border-radius: 3px;
+}
+
+button {
+	background-color: #007bff;
+	color: #fff;
+	padding: 120px 20px;
+	border: none;
+	cursor: pointer;
+	width: 90%;
+	height: auto;
+	padding: auto;
+	margin: auto;
+	border-radius: 10px;
+}
+
+button:hover {
+	background-color: #0069d9;
+}
+
+body {
+	background-color:purple;
+	display: block;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: large;
+	font-style: bold;
+	color: #04aa6d;
+	font-size: 15px;
+}
+
+.buttons>p>a {
+	background-color: #04aa6d;
+	border: none;
+	color: white;
+	padding: 20px 35px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.5rem;
+	border-radius: 5px;
+	margin: 20px;
+	width: 400px;
+	height: auto;
+}
+
+.pagination {
+	display: inline-block;
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}

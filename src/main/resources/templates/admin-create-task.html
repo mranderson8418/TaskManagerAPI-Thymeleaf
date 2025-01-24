@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create New Task</title>
+
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: rgb(100, 195, 238);
+	color: #04aa6d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	text-align: center;
+}
+
+.form-container {
+	background-color: rgb(78, 176, 97);
+	border-radius: 15px;
+	padding: 30px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	width: 90%;
+	color: white;
+}
+
+.form-container h1 {
+	margin-bottom: 20px;
+	font-size: 1.8rem;
+}
+
+.form-container form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: #f5f5f5;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.task-input label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #333;
+}
+
+.task-input textarea {
+	width: 90%;
+	height: 100px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	resize: none;
+	font-size: 1rem;
+}
+
+.task-input input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+.scott-button {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.scott-button button, .scott-button a {
+	background-color: rgb(103, 206, 103);
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	display: inline-block;
+	transition: background-color 0.3s;
+}
+
+.scott-button button:hover, .scott-button a:hover {
+	background-color: rgb(85, 180, 85);
+}
+</style>
+</head>
+
+<body>
+		<div class="form-container">
+				<h1>Enter Task Details</h1>
+				<form th:action="@{/admin/create/task}" th:object="${myTaskDto}" method="post">
+						<div class="task-input">
+								<label for="content">Message Content:</label>
+								<textarea name="content" id="content" rows="4" cols="50"></textarea>
+						</div>
+						<div class="task-input task-complete">
+								<label for="complete"> <input type="checkbox" name="complete" id="complete" /> Task Complete Status
+								</label>
+						</div>
+						<div class="scott-button">
+								<button type="submit">Submit New Task</button>
+						</div>
+				</form>
+				<div class="scott-button">
+						<a th:href="@{/admin/index}">Home Page</a>
+				</div>
+		</div>
+</body>
+
+</html>

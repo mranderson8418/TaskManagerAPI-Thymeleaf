@@ -1,0 +1,107 @@
+html {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: sans-serif;
+	/* Use a generic sans-serif font for a clean look */
+	margin: 20px;
+	/* Add some margin around the page content */
+	color: black;
+	background-color: #ffffff;
+	width: 90%;
+	height: 100vh;
+	/* border: solid 5px red; */
+	font-size: 15px;
+}
+
+th, td, tbody {
+	padding: 10px;
+	/* Add padding to table cells for better readability */
+	border: 2px solid #365930;
+}
+
+th {
+	background-color: #04aa6d;
+	/* Set a light background color for table headers */
+	color: white;
+	/* Set header text color */
+}
+
+button {
+	width: 1000px;
+	height: auto;
+	background-color: transparent;
+	border: none;
+}
+
+div.scott-button, div.scott-button button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #04aa6d;
+	width: 15rem;
+	height: 5rem;
+	font-size: 2rem;
+	color: white;
+	border-radius: 2rem;
+	text-decoration: none;
+	margin: 1rem;
+}
+
+div.container form {
+	display: flex;
+	flex-direction: column;
+	min-width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+div.container {
+	color: green;
+	font-size: 1.25rem;
+	padding: auto;
+	margin: auto;
+}
+
+div.form-container-input {
+	margin-top: 5rem;
+}
+
+div.form-container-input form {
+	margin-top: 5rem;
+	border: solid 5px green;
+	border-radius: 1rem;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	 max-width:80%;
+	 height:auto;
+}
+
+div.form-container-input form input {
+	color: green;
+	width: 50%;
+	border: solid 2px green;
+	font-size: 2rem;
+	text-align: center;
+}
+
+div.container form {
+	color: green;
+	font-size: 1.5rem;
+	padding: auto;
+	margin: auto;
+}
+
+div.scott-button p a {
+	color: white;
+	text-decoration:none;
+}

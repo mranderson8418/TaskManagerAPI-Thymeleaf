@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title> User Home</title>
+
+		<link rel="stylesheet" type="text/css" th:href="@{/styles/welcome-login.css}" />
+		<style>
+			body {
+				background-color: #266195;
+			}
+
+			div.flex-container {
+				background-color: #589bc2;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+			}
+
+			.flex-container > div > a {
+				background-color: #3498db;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<div>
+				<h1>Welcome, User!</h1>
+			</div>
+
+			<div>
+				<p>This is the user home page. Explore and manage your user functionalities.</p>
+			</div>
+
+			<div>
+				<a th:href="@{/admin/home}"> Go to Admin Home </a>
+			</div>
+
+			<div>
+				<a th:href="@{/user/index}"> Go to User Index Page </a>
+			</div>
+
+			<div>
+				<a th:href="@{/user/logout}"> Logout </a>
+			</div>
+		</div>
+	</body>
+</html>

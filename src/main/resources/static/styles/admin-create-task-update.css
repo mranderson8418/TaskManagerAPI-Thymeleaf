@@ -1,0 +1,110 @@
+
+html {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: sans-serif;
+	margin: 20px;
+	color: black;
+	background-color: #ffffff;
+	width: 90%;
+	height: 100vh;
+	font-size: 15px;
+}
+
+th, td, tbody {
+	padding: 10px;
+	border: 2px solid #365930;
+}
+
+th {
+	background-color: #04aa6d;
+	color: white;
+}
+
+button {
+	width: 500px;
+	height: auto;
+	background-color: transparent;
+	border: none;
+}
+
+div.scott-button, div.scott-button button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #04aa6d;
+	width: 15rem;
+	height: 5rem;
+	font-size: 2rem;
+	color: white;
+	border-radius: 2rem;
+	text-decoration: none;
+	margin: 1rem;
+}
+
+
+div.container form {
+	display: flex;
+	flex-direction: column;
+	min-width: 100%;
+	height: auto;
+	text-align: center;
+	color:green;
+}
+
+div.container {
+	color: green;
+	font-size: 1.25rem;
+	padding: auto;
+	margin: auto;
+}
+
+div.form-container-input {
+	margin-top: 5rem;
+}
+
+div.form-container-input form {
+	margin-top: 5rem;
+	border: solid 5px green;
+	border-radius: 1rem;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.form-container-input form input {
+	color: green;
+	width: 50%;
+	border: solid 2px green;
+	font-size: 2rem;
+	text-align: center;
+}
+
+div.scott-button a {
+	color: white;
+	text-decoration: none;
+	display:block;
+}
+
+div form textarea {
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	width: 100%;
+	height: auto;
+}
+
+form div h2{
+	color:green;
+}
+
+
+

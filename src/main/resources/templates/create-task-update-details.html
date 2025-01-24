@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Admin Create Task Update</title>
+
+
+</head>
+
+<body>
+	<div class="form-container">
+		<div>
+			<form action="/user/create/task" th:object="${myTaskDto}" method="post">
+				<div>
+					<h1>Enter Task Details</h1>
+				</div>
+				<div class="task-input">
+					<div><label for="content">Message Content:</label><br /></div>
+
+					<div><textarea name="content" rows="4" cols="50"></textarea><br /></div>
+					<div class="task-complete">
+						<label for="complete">Task Complete Status: </label> <input type="checkbox" name="complete"
+							id="complete" />
+					</div>
+				</div>
+
+				<div class="scott-button">
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+
+
+		</div>
+		<div class="scott-button">
+
+			<a th:href="@{/admin/index}">Admin Index</a>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

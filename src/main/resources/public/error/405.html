@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .error-container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: rgb(255, 0, 0);
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>405 Not Found</h1>
+        	<pre>A 405 Method Not Allowed error occurs when a client browser attempts to access a web page using a method (like GET, POST, PUT, DELETE) 
+        			
+        			that the server doesn't support for that specific resource.
+
+					In simpler terms: You're trying to do something to a webpage (like view it, edit it, or delete it) in a way that the website doesn't allow.
+
+					Common reasons for this error:
+	
+					Incorrect HTTP method: You might be using a method that's not intended for that page. For example, trying to edit a page using a GET request (typically used for viewing).
+					
+					Server configuration: The server might be configured to restrict certain methods for specific resources.
+				
+					Browser issue: Sometimes, a bug in the browser can cause it to send an incorrect method.</p>
+				
+        	</pre>
+        	<p>Return to <a href="/admin/index">Return Home</a></p>
+    </div>
+</body>
+</html>
