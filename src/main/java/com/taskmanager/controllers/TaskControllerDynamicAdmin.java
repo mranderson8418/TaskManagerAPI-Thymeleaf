@@ -136,10 +136,8 @@ public class TaskControllerDynamicAdmin {
 		// task is inserted into the TaskRepository
 		MyTaskDto task_inserted = taskService.createTask(myTaskDto, myUserDto);
 
-		System.out.println("task_inserted.getUserId() ======================== " + task_inserted.getUserId());
-
 		model.addAttribute("id", task_inserted.getId());
-		model.addAttribute("userId", task_inserted.getUserId());
+		model.addAttribute("userId", task_inserted.getTaskNumber());
 		model.addAttribute("username", task_inserted.getUsername());
 		model.addAttribute("content", task_inserted.getContent());
 		model.addAttribute("complete", task_inserted.isComplete());

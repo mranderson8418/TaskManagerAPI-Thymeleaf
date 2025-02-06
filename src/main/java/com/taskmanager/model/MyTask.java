@@ -22,7 +22,7 @@ public class MyTask {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private int userId;
+	private int taskNumber;
 
 	@NotBlank
 	private String username;
@@ -33,10 +33,6 @@ public class MyTask {
 
 	public int getId() {
 		return id;
-	}
-
-	public int getUserId() {
-		return userId;
 	}
 
 	public String getUsername() {
@@ -57,10 +53,6 @@ public class MyTask {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 
 	public void setUsername(String username) {

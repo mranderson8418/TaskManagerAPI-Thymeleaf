@@ -20,14 +20,6 @@ public class MyTaskDto {
 
 	private int taskNumber;
 
-	public int getTaskNumber() {
-		return taskNumber;
-	}
-
-	public void setTaskNumber(int taskNumber) {
-		this.taskNumber = taskNumber;
-	}
-
 	@NotBlank
 	private String username;
 
@@ -37,6 +29,10 @@ public class MyTaskDto {
 
 	public int getId() {
 		return id;
+	}
+
+	public int getTaskNumber() {
+		return taskNumber;
 	}
 
 	public String getUsername() {
@@ -58,6 +54,10 @@ public class MyTaskDto {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public void setTaskNumber(int taskNumber) {
+		this.taskNumber = taskNumber;
 	}
 
 	public void setUsername(String username) {

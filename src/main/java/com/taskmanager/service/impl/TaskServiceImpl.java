@@ -269,7 +269,7 @@ public class TaskServiceImpl implements TaskService {
 		MyTask task = new MyTask();
 
 		task.setId(myTaskDto.getId());
-		task.setUserId(myTaskDto.getUserId());
+		task.setUserId(myTaskDto.getTaskNumber());
 		task.setComplete(myTaskDto.isComplete());
 		task.setContent(myTaskDto.getContent());
 		task.setUsername(myTaskDto.getUsername());
@@ -284,7 +284,7 @@ public class TaskServiceImpl implements TaskService {
 		MyTaskDto taskDto = new MyTaskDto();
 
 		taskDto.setId(task.getId());
-		taskDto.setUserId(task.getUserId());
+		taskDto.setTaskNumber(task.getTaskNumber());
 		taskDto.setComplete(task.isComplete());
 		taskDto.setContent(task.getContent());
 		taskDto.setUsername(task.getUsername());
