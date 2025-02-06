@@ -2,111 +2,115 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8" />
-<title>Index</title>
+	<meta charset="UTF-8" />
+	<title>Index</title>
 
-<style>
-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-size: large;
-	color: #04aa6d;
-	margin: 0;
-}
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: large;
+			color: #04aa6d;
+			margin: 0;
+		}
 
-h1 {
-	padding: 0px;
-	margin:0px;
-	font-size:3rem;
-}
+		h1 {
+			padding: 0px;
+			margin: 0px;
+			font-size: 3rem;
+		}
 
-h2 {
-	display: inline-block;
-}
+		h2 {
+			display: inline-block;
+		}
 
-.container {
-	text-align: center;
-	padding: 15px;
-	border-radius: 5px;
-	margin: 10px auto;
-}
+		.container {
+			text-align: center;
+			padding: 15px;
+			border-radius: 5px;
+			margin: 10px auto;
+		}
 
-.details {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	max-width: 80%;
-	margin-top: 7rem;
-	background-color: white;
-	border: solid 5px green;
-	border-radius: 15px;
-	padding: 20px 35px;
-}
+		.details {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			max-width: 80%;
+			margin-top: 7rem;
+			background-color: white;
+			border: solid 5px green;
+			border-radius: 15px;
+			padding: 20px 35px;
+		}
 
-.details div.scott-button {
-	background-color: #04aa6d;
-	color: white;
-	text-decoration: none;
-	border-radius: 15px;
-	padding: 20px 35px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 1.5rem;
-	margin: 20px 0;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-	max-width: 100%;
-}
+		.details div.scott-button {
+			background-color: #04aa6d;
+			color: white;
+			text-decoration: none;
+			border-radius: 15px;
+			padding: 20px 35px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 1.5rem;
+			margin: 20px 0;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			max-width: 100%;
+		}
 
-div.scott-button a {
-	text-decoration: none;
-	color: white;
-}
+		div.scott-button a {
+			text-decoration: none;
+			color: white;
+		}
 
-form div h2 span {
-	color: red;
-}
-</style>
+		form div h2 span {
+			color: red;
+		}
+	</style>
 </head>
 
 <body>
-		<div class="container">
-				<h1>New Task created and saved to our database</h1>
+	<div class="container">
+		<h1>New Task created and saved to our database</h1>
 
-				<div class="details">
-						<form action="/admin/index" method="get">
-								<div>
-										<h2>
-												ID: <span th:text="${id}">ID</span>
-										</h2>
-								</div>
-								<div>
-										<h2>
-												Username: <span th:text="${username}">username</span>
-										</h2>
-								</div>
-								<div>
-										<h2>
-												Content: <span th:text="${content}">Content</span>
-										</h2>
-								</div>
-								<div>
-										<h2>
-												Complete: <span th:text="${complete} ? 'true' : 'false'">Complete</span>
-										</h2>
-								</div>
-
-						</form>
-
-						<div class="scott-button">
-								<a th:href="@{/admin/index}"> Go to Admin Index Page </a>
-						</div>
-
+		<div class="details">
+			<form action="/admin/index" method="get">
+				<div>
+					<h2>
+						ID: <span th:text="${id}">ID</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						User Id: <span th:text="${userId}">UserId</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Username: <span th:text="${username}">username</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Content: <span th:text="${content}">Content</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Complete: <span th:text="${complete} ? 'true' : 'false'">Complete</span>
+					</h2>
 				</div>
 
+			</form>
+
+			<div class="scott-button">
+				<a th:href="@{/admin/index}"> Go to Admin Index Page </a>
+			</div>
+
 		</div>
+
+	</div>
 </body>
 
 </html>

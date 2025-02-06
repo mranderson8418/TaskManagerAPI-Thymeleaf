@@ -1,5 +1,8 @@
 package com.taskmanager.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import jakarta.persistence.Column;
@@ -42,6 +45,27 @@ public class MyUser {
 	@NotBlank
 	@Column(name = "gender")
 	private String gender;
+
+	public MyUser() {
+		this.id = 0;
+		this.username = "";
+		this.email = "";
+		this.password = "";
+		this.role = "";
+		this.dob = "";
+		this.gender = "";
+		this.taskList = null;
+	}
+
+	public List<Integer> getTaskList() {
+		return taskList;
+	}
+
+	public void setTaskList(List<Integer> taskList) {
+		this.taskList = taskList;
+	}
+
+	private List<Integer> taskList = new LinkedList<>();
 
 	public String getRole() {
 		return role;
@@ -101,8 +125,8 @@ public class MyUser {
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email +
-				", password=" + password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" + password +
+				", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

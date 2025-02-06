@@ -49,8 +49,7 @@ public class UserServiceImpl implements MyUserService {
 		newUser.setRole(myUserDto.getRole());
 
 		myUserRepository.save(newUser);
-		System.out.println("ENTERED...................................createUser(" +
-				myUserDto.getUsername() + ")");
+		System.out.println("ENTERED...................................createUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………registerNewUser()");
 
 		MyUserDto newMyUserDto = mapToDto(newUser);
@@ -60,11 +59,11 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	public MyUserDto mapToDto(MyUser myUser) {
-		System.out.println(
-				"ENTERED...................................mapToDto(" + myUser.getUsername() + ")");
+		System.out.println("ENTERED...................................mapToDto(" + myUser.getUsername() + ")");
 		logger.trace("Entered...........................mapToDto()");
 
 		MyUserDto newMyUserDto = new MyUserDto();
+
 		newMyUserDto.setId(myUser.getId());
 		newMyUserDto.setEmail(myUser.getEmail());
 		newMyUserDto.setPassword("(Encoded)");
@@ -72,15 +71,14 @@ public class UserServiceImpl implements MyUserService {
 		newMyUserDto.setGender(myUser.getGender());
 		newMyUserDto.setDob(myUser.getDob());
 		newMyUserDto.setUsername(myUser.getUsername());
-		System.out.println(
-				"EXITED...................................mapToDto(" + myUser.getUsername() + ")");
+
+		System.out.println("EXITED...................................mapToDto(" + myUser.getUsername() + ")");
 		logger.trace("Exited...........................mapToDto()");
 		return newMyUserDto;
 	}
 
 	public MyUser convertMyUserDtoToMyUser(MyUserDto myUserDto) {
-		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" +
-				myUserDto.getUsername() + ")");
+		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("ENTERED……………………………………convertMyUserDtoToMyUser()");
 
 		MyUser myUser = new MyUser();
@@ -93,8 +91,8 @@ public class UserServiceImpl implements MyUserService {
 		myUser.setEmail(myUserDto.getEmail());
 		myUser.setDob(myUserDto.getDob());
 		myUser.setGender(myUserDto.getGender());
-		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" +
-				myUserDto.getUsername() + ")");
+
+		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………convertMyUserDtoToMyUser()");
 
 		return myUser;
@@ -119,6 +117,7 @@ public class UserServiceImpl implements MyUserService {
 
 		List<MyUser> myUserList = myUserRepository.findAll();
 		logger.trace("Exited......findAllProducts() ");
+
 		return myUserList.stream().map(this::mapToDto).collect(Collectors.toList());
 	}
 
@@ -134,8 +133,7 @@ public class UserServiceImpl implements MyUserService {
 
 		List<MyUser> myUserDtoList = myUser.getContent();
 
-		List<MyUserDto> content = myUserDtoList.stream().map(this::mapToDto)
-				.collect(Collectors.toList());
+		List<MyUserDto> content = myUserDtoList.stream().map(this::mapToDto).collect(Collectors.toList());
 
 		MyUserResponse myUserDtoResponse = new MyUserResponse();
 
@@ -161,8 +159,7 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	@Override
-	public MyUserDto updateMyUserDetail(MyUserDto myUserDtoUpdate, int id)
-			throws MyUserNotFoundException {
+	public MyUserDto updateMyUserDetail(MyUserDto myUserDtoUpdate, int id) throws MyUserNotFoundException {
 		logger.trace("Entered...........................updateMyUser()");
 
 		MyUser myUserUpdate = convertMyUserDtoToMyUser(myUserDtoUpdate);

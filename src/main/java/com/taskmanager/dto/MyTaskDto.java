@@ -4,11 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "message")
 public class MyTaskDto {
 
 	private boolean complete;
@@ -19,6 +17,16 @@ public class MyTaskDto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
+	private int taskNumber;
+
+	public int getTaskNumber() {
+		return taskNumber;
+	}
+
+	public void setTaskNumber(int taskNumber) {
+		this.taskNumber = taskNumber;
+	}
 
 	@NotBlank
 	private String username;
@@ -58,8 +66,7 @@ public class MyTaskDto {
 
 	@Override
 	public String toString() {
-		return "MyTaskDto [complete=" + complete + ", content=" + content + ", id=" + id +
-				", username=" + username + "]";
+		return "MyTaskDto [complete=" + complete + ", content=" + content + ", id=" + id + ", username=" + username + "]";
 	}
 
 }

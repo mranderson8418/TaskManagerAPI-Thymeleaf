@@ -1,7 +1,9 @@
 package com.taskmanager.service.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,8 @@ import jakarta.servlet.http.HttpServletRequest;
 @Service
 public class TaskServiceImpl implements TaskService {
 
+	private Map<String, Integer> userTaskCounter = new HashMap<>();
+
 	@Autowired
 	MyUserService myUserService;
 
@@ -43,38 +47,29 @@ public class TaskServiceImpl implements TaskService {
 	private MyTaskDto convertToDto(MyTask task) {
 
 		logger.trace("ENTERED……………………………………convertToDto()");
-
 		MyTaskDto taskDto = new MyTaskDto();
-
 		// ... map properties from task to dto
-
 		taskDto.setId(task.getId());
+		taskDto.setUserId(task.getUserId());
 		taskDto.setUsername(task.getUsername());
-
 		taskDto.setContent(task.getContent());
 		taskDto.setComplete(task.isComplete());
-		logger.trace("EXITED……………………………………convertToDto()");
+		// logger.trace("EXITED……………………………………convertToDto()");
 
 		return taskDto;
 	}
 
 	@Override
-	public MyTaskDto createTask(MyTaskDto myTaskDto) {
+	public MyTaskDto createTask(MyTaskDto myTaskDto, MyUserDto myUserDto) {
 		logger.trace("Entered......createTask() ");
 
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
-
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
-		String username = userDetails.getUsername();
-
-		System.out.println("username =================" + username);
+		myUserDto.getTaskList().add(myUserDto.getTaskList().size() + 1);
 
 		MyTask task = new MyTask();
 
-		task.setUsername(username);
+		task.setId(myTaskDto.getId());
+		task.setTaskNumber(myUserDto.getTaskList().size());
+		task.setUsername(myUserDto.getUsername());
 		task.setContent(myTaskDto.getContent());
 		task.setComplete(myTaskDto.isComplete());
 
@@ -93,8 +88,7 @@ public class TaskServiceImpl implements TaskService {
 
 		try {
 			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(id)
-					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+			MyTask task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
 
 			// Create an updated Task entity
 			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
@@ -122,7 +116,8 @@ public class TaskServiceImpl implements TaskService {
 
 		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
 
-		// UserDetails is used to store user information into encapsulated Authentication objects
+		// UserDetails is used to store user information into encapsulated
+		// Authentication objects
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
 		// Get the user name from the userDetails
@@ -274,6 +269,7 @@ public class TaskServiceImpl implements TaskService {
 		MyTask task = new MyTask();
 
 		task.setId(myTaskDto.getId());
+		task.setUserId(myTaskDto.getUserId());
 		task.setComplete(myTaskDto.isComplete());
 		task.setContent(myTaskDto.getContent());
 		task.setUsername(myTaskDto.getUsername());
@@ -288,6 +284,7 @@ public class TaskServiceImpl implements TaskService {
 		MyTaskDto taskDto = new MyTaskDto();
 
 		taskDto.setId(task.getId());
+		taskDto.setUserId(task.getUserId());
 		taskDto.setComplete(task.isComplete());
 		taskDto.setContent(task.getContent());
 		taskDto.setUsername(task.getUsername());

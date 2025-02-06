@@ -84,8 +84,7 @@ public class TaskControllerDynamicAdmin {
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
 
-		System.out.println(
-				"ENTERED...................................	@GetMapping(\"/admin/create/task\")");
+		System.out.println("ENTERED...................................	@GetMapping(\"/admin/create/task\")");
 		logger.trace("ENTERED……………………………………		@GetMapping(\"/admin/create/task\")------");
 
 		model.addAttribute("myTaskDto", new MyTaskDto());
@@ -118,15 +117,29 @@ public class TaskControllerDynamicAdmin {
 	// @ModelAttribute - this will bind the annotated object with the model class
 	public String createTaskNewPost(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
+
+		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
+		String username = userDetails.getUsername();
+
+		MyUserDto myUserDto = myUserService.currentUser();
+
 		LastWord lastWord = new LastWord(getClass().getName());
+
 		System.out.println("Class = " + lastWord.getLastWord());
 
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/create/task\")------");
 
 		// task is inserted into the TaskRepository
-		MyTaskDto task_inserted = taskService.createTask(myTaskDto);
+		MyTaskDto task_inserted = taskService.createTask(myTaskDto, myUserDto);
+
+		System.out.println("task_inserted.getUserId() ======================== " + task_inserted.getUserId());
 
 		model.addAttribute("id", task_inserted.getId());
+		model.addAttribute("userId", task_inserted.getUserId());
 		model.addAttribute("username", task_inserted.getUsername());
 		model.addAttribute("content", task_inserted.getContent());
 		model.addAttribute("complete", task_inserted.isComplete());
@@ -151,8 +164,7 @@ public class TaskControllerDynamicAdmin {
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
 
-		System.out.println(
-				"ENTERED...................................		@GetMapping(\"/admin/updateTask\")");
+		System.out.println("ENTERED...................................		@GetMapping(\"/admin/updateTask\")");
 		logger.trace("ENTERED……………………………………			@GetMapping(\"/admin/updateTask\")------");
 
 		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
@@ -180,8 +192,7 @@ public class TaskControllerDynamicAdmin {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println(
-				"ENTERED...................................		@PostMapping(\"/admin/updateTask\")");
+		System.out.println("ENTERED...................................		@PostMapping(\"/admin/updateTask\")");
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/updateTask\")------");
 
 		try {
@@ -240,8 +251,7 @@ public class TaskControllerDynamicAdmin {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println(
-				"ENTERED...................................@PostMapping('/admin/delete/task')");
+		System.out.println("ENTERED...................................@PostMapping('/admin/delete/task')");
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/admin/delete/task\")------");
 
 		Optional<MyTask> foundTask = myTaskRepository.findById(selectedTaskId);

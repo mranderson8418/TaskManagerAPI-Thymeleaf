@@ -1,5 +1,7 @@
 package com.taskmanager.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +11,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "message")
+@JsonPropertyOrder({ "id", "userId", "username", "content", "complete" })
 public class MyTask {
 
 	private boolean complete;
@@ -18,6 +21,8 @@ public class MyTask {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
+	private int userId;
 
 	@NotBlank
 	private String username;
@@ -30,12 +35,16 @@ public class MyTask {
 		return id;
 	}
 
-	public boolean isComplete() {
-		return complete;
+	public int getUserId() {
+		return userId;
 	}
 
 	public String getUsername() {
 		return username;
+	}
+
+	public boolean isComplete() {
+		return complete;
 	}
 
 	public void setComplete(boolean complete) {
@@ -48,6 +57,10 @@ public class MyTask {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public void setUsername(String username) {

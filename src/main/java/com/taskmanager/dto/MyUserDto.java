@@ -1,6 +1,7 @@
 package com.taskmanager.dto;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.util.LinkedList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@JsonPropertyOrder({ "id", "username", "email", "password", "role", "dob", "gender" })
 public class MyUserDto {
 
 	@Id
@@ -40,6 +40,16 @@ public class MyUserDto {
 	@NotBlank
 	@Column(name = "gender")
 	private String gender;
+
+	public List<Integer> getTaskList() {
+		return taskList;
+	}
+
+	public void setTaskList(List<Integer> taskList) {
+		this.taskList = taskList;
+	}
+
+	private List<Integer> taskList = new LinkedList<>();
 
 	public String getRole() {
 		return role;
@@ -99,8 +109,8 @@ public class MyUserDto {
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email +
-				", password=" + password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" + password +
+				", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

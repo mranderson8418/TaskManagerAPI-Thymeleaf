@@ -17,11 +17,10 @@ public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 
 	void save(String string);
 
-	public void deleteById(int id);
+	public void deleteById(int taskNumber);
 
 	@Query("SELECT t FROM MyTask t WHERE t.username = :username")
-	Page<MyTask> findAllTasksByUsername(@Param("username") String username,
-			PageRequest pageRequest);
+	Page<MyTask> findAllTasksByUsername(@Param("username") String username, PageRequest pageRequest);
 
 	@Query("SELECT t FROM MyTask t WHERE t.username = :username")
 	List<MyTask> findAllTasksByUsernameObjects(@Param("username") String username);

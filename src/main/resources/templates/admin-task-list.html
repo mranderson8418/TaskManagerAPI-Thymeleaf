@@ -85,6 +85,7 @@
 				<tbody>
 					<tr th:each="task : ${tasks}">
 						<td th:text="${task.id}"></td>
+						<td th:text="${task.userId}"></td>		
 						<td th:text="${task.username}"></td>
 						<td th:text="${task.content}"></td>
 						<td th:text="${task.complete ? 'true' : 'false'}"></td>
