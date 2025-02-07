@@ -29,7 +29,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @Service
 public class TaskServiceImpl implements TaskService {
 
-	private Map<String, Integer> userTaskCounter = new HashMap<>();
+	private Map<String, List<MyTask>> userTaskConnection = new HashMap<>();
 
 	@Autowired
 	MyUserService myUserService;
@@ -50,7 +50,7 @@ public class TaskServiceImpl implements TaskService {
 		MyTaskDto taskDto = new MyTaskDto();
 		// ... map properties from task to dto
 		taskDto.setId(task.getId());
-		taskDto.setUserId(task.getUserId());
+		taskDto.setTaskNumber(task.getTaskNumber());
 		taskDto.setUsername(task.getUsername());
 		taskDto.setContent(task.getContent());
 		taskDto.setComplete(task.isComplete());
@@ -63,7 +63,16 @@ public class TaskServiceImpl implements TaskService {
 	public MyTaskDto createTask(MyTaskDto myTaskDto, MyUserDto myUserDto) {
 		logger.trace("Entered......createTask() ");
 
-		myUserDto.getTaskList().add(myUserDto.getTaskList().size() + 1);
+		// increment myUserDto taskCount by +1
+		myUserDto.setTaskCount(myUserDto.getTaskCount() + 1);
+
+		// set hashMap for current user
+		userTaskConnection.put(myUserDto.getUsername(), myUserDto.getTaskList().add(myTaskDto));
+
+		System.out.println("myUserDto.getTaskCount() = " + myUserDto.getTaskCount());
+		myTaskDto.setTaskNumber(myUserDto.getTaskCount());
+
+		System.out.println("myTaskDto.getTaskNumber() = " + myTaskDto.getTaskNumber());
 
 		MyTask task = new MyTask();
 
@@ -88,7 +97,8 @@ public class TaskServiceImpl implements TaskService {
 
 		try {
 			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+			MyTask task = taskRepository.findById(id)
+					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
 
 			// Create an updated Task entity
 			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
@@ -269,7 +279,7 @@ public class TaskServiceImpl implements TaskService {
 		MyTask task = new MyTask();
 
 		task.setId(myTaskDto.getId());
-		task.setUserId(myTaskDto.getTaskNumber());
+		task.setTaskNumber(myTaskDto.getTaskNumber());
 		task.setComplete(myTaskDto.isComplete());
 		task.setContent(myTaskDto.getContent());
 		task.setUsername(myTaskDto.getUsername());

@@ -35,6 +35,10 @@ public class MyTask {
 		return id;
 	}
 
+	public int getTaskNumber() {
+		return taskNumber;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -53,6 +57,10 @@ public class MyTask {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public void setTaskNumber(int taskNumber) {
+		this.taskNumber = taskNumber;
 	}
 
 	public void setUsername(String username) {
