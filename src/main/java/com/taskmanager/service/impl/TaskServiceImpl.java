@@ -1,9 +1,8 @@
 package com.taskmanager.service.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +17,11 @@ import org.springframework.stereotype.Service;
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.dto.TaskResponse;
+import com.taskmanager.exceptions.MyUserNotFoundException;
 import com.taskmanager.exceptions.TaskNotFoundException;
 import com.taskmanager.model.MyTask;
+import com.taskmanager.model.MyUser;
+import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.repository.TaskRepository;
 import com.taskmanager.service.MyUserService;
 import com.taskmanager.service.TaskService;
@@ -28,8 +30,6 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Service
 public class TaskServiceImpl implements TaskService {
-
-	private Map<String, List<MyTask>> userTaskConnection = new HashMap<>();
 
 	@Autowired
 	MyUserService myUserService;
@@ -40,44 +40,50 @@ public class TaskServiceImpl implements TaskService {
 
 	private TaskRepository taskRepository;
 
+	private MyUserRepository myUserRepository;
+
 	public TaskServiceImpl(TaskRepository taskRepository) {
 		this.taskRepository = taskRepository;
 	}
 
 	private MyTaskDto convertToDto(MyTask task) {
 
-		logger.trace("ENTERED……………………………………convertToDto()");
-		MyTaskDto taskDto = new MyTaskDto();
-		// ... map properties from task to dto
-		taskDto.setId(task.getId());
-		taskDto.setTaskNumber(task.getTaskNumber());
-		taskDto.setUsername(task.getUsername());
-		taskDto.setContent(task.getContent());
-		taskDto.setComplete(task.isComplete());
-		// logger.trace("EXITED……………………………………convertToDto()");
+		try {
 
-		return taskDto;
+			logger.trace("ENTERED……………………………………convertToDto()");
+			MyTaskDto taskDto = new MyTaskDto();
+			// ... map properties from task to dto
+			taskDto.setId(task.getId());
+
+			taskDto.setTaskNumber(task.getTaskNumber());
+			taskDto.setUsername(task.getUsername());
+			taskDto.setContent(task.getContent());
+			taskDto.setComplete(task.isComplete());
+			// logger.trace("EXITED……………………………………convertToDto()");
+
+			return taskDto;
+
+		} catch (MyUserNotFoundException unfe) {
+			throw new MyUserNotFoundException("User not found exception");
+		}
 	}
 
 	@Override
 	public MyTaskDto createTask(MyTaskDto myTaskDto, MyUserDto myUserDto) {
+
 		logger.trace("Entered......createTask() ");
+		// Get list of all task the User has in the database
+		List<MyTask> currentUserTaskList = taskRepository
+				.findAllTasksByUsernameObjects(myUserDto.getUsername());
 
-		// increment myUserDto taskCount by +1
-		myUserDto.setTaskCount(myUserDto.getTaskCount() + 1);
-
-		// set hashMap for current user
-		userTaskConnection.put(myUserDto.getUsername(), myUserDto.getTaskList().add(myTaskDto));
-
-		System.out.println("myUserDto.getTaskCount() = " + myUserDto.getTaskCount());
-		myTaskDto.setTaskNumber(myUserDto.getTaskCount());
+		myTaskDto.setTaskNumber(currentUserTaskList.size() + 1);
 
 		System.out.println("myTaskDto.getTaskNumber() = " + myTaskDto.getTaskNumber());
 
 		MyTask task = new MyTask();
 
 		task.setId(myTaskDto.getId());
-		task.setTaskNumber(myUserDto.getTaskList().size());
+		task.setTaskNumber(myTaskDto.getTaskNumber());
 		task.setUsername(myUserDto.getUsername());
 		task.setContent(myTaskDto.getContent());
 		task.setComplete(myTaskDto.isComplete());
@@ -245,30 +251,38 @@ public class TaskServiceImpl implements TaskService {
 		// Will search the taskRepository for all task according to username
 		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjects(username);
 
-		MyTaskDto myTaskDto = new MyTaskDto();
+		try {
+			Optional<MyUser> myUser = myUserRepository.findByUsername(username);
+			MyTaskDto myTaskDto = new MyTaskDto();
 
-		List<MyTaskDto> myTaskDtoList = new ArrayList<>();
+			List<MyTaskDto> myTaskDtoList = new ArrayList<>();
 
-		for (int i = 0; i < taskList.size(); i++) {
+			for (int i = 0; i < taskList.size(); i++) {
 
-			myTaskDto = convertToDto(taskList.get(i));
+				myTaskDto = convertToDto(taskList.get(i));
 
-			System.out.println("myTaskDto.getId() = " + myTaskDto.getId());
+				System.out.println("myTaskDto.getId() = " + myTaskDto.getId());
 
-			myTaskDtoList.add(myTaskDto);
+				myTaskDtoList.add(myTaskDto);
 
+			}
+
+			logger.trace("Exiting...........................getAllTasks()");
+
+			return myTaskDtoList;
+
+		} catch (MyUserNotFoundException unfe) {
+			throw new MyUserNotFoundException("My user not found Exception");
 		}
 
-		logger.trace("Exiting...........................getAllTasks()");
-		return myTaskDtoList;
 	}
 
 	@Override
 	public MyTaskDto getTaskById(int id) {
 		logger.trace("Entered.................getTaskById()");
 
-		MyTask task = taskRepository.findById(id)
-				.orElseThrow(() -> new TaskNotFoundException("Print drawing could not be found :("));
+		MyTask task = taskRepository.findById(id).orElseThrow(
+				() -> new TaskNotFoundException("Print drawing could not be found :("));
 		logger.trace("Exited...........................getTaskById()");
 		return mapToDto(task);
 	}

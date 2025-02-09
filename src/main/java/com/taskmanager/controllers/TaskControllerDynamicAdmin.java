@@ -76,15 +76,21 @@ public class TaskControllerDynamicAdmin {
 
 	}
 
+	private String nameClass() {
+
+		LastWord lastWord = new LastWord(getClass().getName());
+
+		return "Class = " + lastWord.getLastWord();
+	}
+
 	@GetMapping({ "/user/create/task", "/admin/create/task" })
 	public String createTask(Model model) {
 
 		model.addAttribute("myUserDto", new MyUserDto());
 
-		LastWord lastWord = new LastWord(getClass().getName());
-		System.out.println("Class = " + lastWord.getLastWord());
+		System.out.println(nameClass());
 
-		System.out.println("ENTERED...................................	@GetMapping(\"/admin/create/task\")");
+		System.out.println("ENTERED................	@GetMapping(\"/admin/create/task\")");
 		logger.trace("ENTERED……………………………………		@GetMapping(\"/admin/create/task\")------");
 
 		model.addAttribute("myTaskDto", new MyTaskDto());
@@ -162,7 +168,8 @@ public class TaskControllerDynamicAdmin {
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
 
-		System.out.println("ENTERED...................................		@GetMapping(\"/admin/updateTask\")");
+		System.out.println(
+				"ENTERED...................................		@GetMapping(\"/admin/updateTask\")");
 		logger.trace("ENTERED……………………………………			@GetMapping(\"/admin/updateTask\")------");
 
 		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
@@ -190,7 +197,8 @@ public class TaskControllerDynamicAdmin {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println("ENTERED...................................		@PostMapping(\"/admin/updateTask\")");
+		System.out.println(
+				"ENTERED...................................		@PostMapping(\"/admin/updateTask\")");
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/updateTask\")------");
 
 		try {
@@ -249,7 +257,8 @@ public class TaskControllerDynamicAdmin {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println("ENTERED...................................@PostMapping('/admin/delete/task')");
+		System.out.println(
+				"ENTERED...................................@PostMapping('/admin/delete/task')");
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/admin/delete/task\")------");
 
 		Optional<MyTask> foundTask = myTaskRepository.findById(selectedTaskId);

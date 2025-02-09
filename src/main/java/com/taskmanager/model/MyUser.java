@@ -1,7 +1,5 @@
 package com.taskmanager.model;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import jakarta.persistence.Column;
@@ -14,7 +12,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "myusers")
-@JsonPropertyOrder({ "id", "username", "email", "password", "role", "dob", "gender", "taskCount" })
+@JsonPropertyOrder({ "id", "username", "email", "password", "role", "dob", "gender", "taskcount" })
 public class MyUser {
 
 	@NotBlank
@@ -41,26 +39,9 @@ public class MyUser {
 	@Column(name = "role")
 	private String role;
 
-	@Column(name = "taskCount")
-	private int taskCount;
-
-	private List<MyTask> taskList;
-
 	@NotBlank
 	@Column(name = "username")
 	private String username;
-
-	public MyUser() {
-		this.id = 0;
-		this.username = "";
-		this.email = "";
-		this.password = "";
-		this.role = "";
-		this.dob = "";
-		this.gender = "";
-		this.taskCount = 0;
-		this.taskList = null;
-	}
 
 	public String getDob() {
 		return dob;
@@ -84,14 +65,6 @@ public class MyUser {
 
 	public String getRole() {
 		return role;
-	}
-
-	public int getTaskCount() {
-		return taskCount;
-	}
-
-	public List<MyTask> getTaskList() {
-		return taskList;
 	}
 
 	public String getUsername() {
@@ -122,22 +95,14 @@ public class MyUser {
 		this.role = role;
 	}
 
-	public void setTaskCount(int taskCount) {
-		this.taskCount = taskCount;
-	}
-
-	public void setTaskList(List<MyTask> taskList) {
-		this.taskList = taskList;
-	}
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password="
-				+ password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email +
+				", password=" + password + ", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

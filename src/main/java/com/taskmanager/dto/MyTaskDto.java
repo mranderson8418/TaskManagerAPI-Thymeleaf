@@ -20,7 +20,6 @@ public class MyTaskDto {
 
 	private int taskNumber;
 
-	@NotBlank
 	private String username;
 
 	public String getContent() {
@@ -66,7 +65,8 @@ public class MyTaskDto {
 
 	@Override
 	public String toString() {
-		return "MyTaskDto [complete=" + complete + ", content=" + content + ", id=" + id + ", username=" + username + "]";
+		return "MyTaskDto [complete=" + complete + ", content=" + content + ", id=" + id +
+				", username=" + username + "]";
 	}
 
 }
