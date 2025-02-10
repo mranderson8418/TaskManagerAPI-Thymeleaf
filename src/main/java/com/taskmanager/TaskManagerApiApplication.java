@@ -18,6 +18,7 @@ public class TaskManagerApiApplication {
 			// FIXME Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		SpringApplication.run(TaskManagerApiApplication.class, args);
 
 	}

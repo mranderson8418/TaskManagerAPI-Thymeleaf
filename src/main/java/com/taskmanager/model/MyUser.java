@@ -12,7 +12,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "myusers")
-@JsonPropertyOrder({ "id", "username", "email", "password", "role", "dob", "gender", "taskcount" })
+@JsonPropertyOrder({ "id", "username", "email", "password", "role", "dob", "gender" })
 public class MyUser {
 
 	@NotBlank

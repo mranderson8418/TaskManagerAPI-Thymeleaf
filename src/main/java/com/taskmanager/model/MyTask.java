@@ -12,10 +12,9 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "mytasks")
-@JsonPropertyOrder({ "id", "username", "content", "complete", "tasknumber" })
+@JsonPropertyOrder({ "id", "username", "content", "tasknumber", "complete" })
 public class MyTask {
 
-	@NotBlank
 	@Column(name = "complete")
 	private boolean complete;
 
@@ -26,13 +25,21 @@ public class MyTask {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@NotBlank
 	@Column(name = "tasknumber")
 	private int taskNumber;
 
 	@NotBlank
 	@Column(name = "username")
 	private String username;
+
+	public MyTask() {
+
+		this.complete = false;
+		this.content = "";
+		this.taskNumber = 0;
+		this.username = "";
+
+	}
 
 	public String getContent() {
 		return content;

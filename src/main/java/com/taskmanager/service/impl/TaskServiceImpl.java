@@ -54,7 +54,6 @@ public class TaskServiceImpl implements TaskService {
 			MyTaskDto taskDto = new MyTaskDto();
 			// ... map properties from task to dto
 			taskDto.setId(task.getId());
-
 			taskDto.setTaskNumber(task.getTaskNumber());
 			taskDto.setUsername(task.getUsername());
 			taskDto.setContent(task.getContent());
@@ -73,12 +72,13 @@ public class TaskServiceImpl implements TaskService {
 
 		logger.trace("Entered......createTask() ");
 		// Get list of all task the User has in the database
-		List<MyTask> currentUserTaskList = taskRepository
-				.findAllTasksByUsernameObjects(myUserDto.getUsername());
+		List<MyTask> currentUserTaskList = taskRepository.findAllTasksByUsernameObjects(myUserDto.getUsername());
 
 		myTaskDto.setTaskNumber(currentUserTaskList.size() + 1);
 
-		System.out.println("myTaskDto.getTaskNumber() = " + myTaskDto.getTaskNumber());
+		System.out.println("myUserDto.getUsername() ========================= " + myUserDto.getUsername());
+
+		System.out.println("myTaskDto.getTaskNumber() ==================== " + myTaskDto.getTaskNumber());
 
 		MyTask task = new MyTask();
 
@@ -281,8 +281,8 @@ public class TaskServiceImpl implements TaskService {
 	public MyTaskDto getTaskById(int id) {
 		logger.trace("Entered.................getTaskById()");
 
-		MyTask task = taskRepository.findById(id).orElseThrow(
-				() -> new TaskNotFoundException("Print drawing could not be found :("));
+		MyTask task = taskRepository.findById(id)
+				.orElseThrow(() -> new TaskNotFoundException("Print drawing could not be found :("));
 		logger.trace("Exited...........................getTaskById()");
 		return mapToDto(task);
 	}

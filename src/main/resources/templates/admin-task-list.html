@@ -76,7 +76,7 @@ h1 {
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Task Number</th>
+					<th>taskNumber</th>
 					<th>Username</th>
 					<th>Content</th>
 					<th>Complete</th>
@@ -84,11 +84,11 @@ h1 {
 			</thead>
 			<tbody>
 				<tr th:each="task : ${tasks}">
-					<td th:text="${task.id}"></td>
-					<td th:text="${task.taskNumber}"></td>
-					<td th:text="${task.username}"></td>
-					<td th:text="${task.content}"></td>
-					<td th:text="${task.complete ? 'true' : 'false'}"></td>
+					<td th:text="${task.id}">taskId</td>
+					<td th:text="${task.taskNumber}">taskNumber</td>
+					<td th:text="${task.username}">username</td>
+					<td th:text="${task.content}">content</td>
+					<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
 				</tr>
 			</tbody>
 		</table>

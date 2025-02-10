@@ -98,25 +98,27 @@ body {
 </head>
 
 <body>
-		<div class="form-container">
-				<h1>Enter Task Details</h1>
-				<form th:action="@{/admin/create/task}" th:object="${myTaskDto}" method="post">
-						<div class="task-input">
-								<label for="content">Message Content:</label>
-								<textarea name="content" id="content" rows="4" cols="50"></textarea>
-						</div>
-						<div class="task-input task-complete">
-								<label for="complete"> <input type="checkbox" name="complete" id="complete" /> Task Complete Status
-								</label>
-						</div>
-						<div class="scott-button">
-								<button type="submit">Submit New Task</button>
-						</div>
-				</form>
-				<div class="scott-button">
-						<a th:href="@{/admin/index}">Home Page</a>
-				</div>
+	<div class="form-container">
+		<h1>Enter Task Details</h1>
+		<form th:action="@{/admin/create/task}" th:object="${myTaskDto}"
+			method="post">
+			<div class="task-input">
+				<label for="content">Message Content:</label>
+				<textarea name="content" id="content" rows="4" cols="50"></textarea>
+			</div>
+			<div class="task-input task-complete">
+				<label for="complete"> <input type="checkbox"
+					name="complete" id="complete" /> Task Complete Status
+				</label>
+			</div>
+			<div class="scott-button">
+				<button type="submit">Submit New Task</button>
+			</div>
+		</form>
+		<div class="scott-button">
+			<a th:href="@{/admin/index}">Home Page</a>
 		</div>
+	</div>
 </body>
 
 </html>

@@ -1,8 +1,5 @@
 package com.taskmanager.dto;
 
-import jakarta.persistence.Entity;
-
-@Entity
 public class MyUserDto {
 
 	private String dob;
@@ -77,8 +74,8 @@ public class MyUserDto {
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email +
-				", password=" + password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" +
+				password + ", gender=" + gender + ", role=" + role + "]";
 	}
 
 }
