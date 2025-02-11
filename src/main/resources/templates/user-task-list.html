@@ -80,7 +80,7 @@ h1 {
 		<table border="1">
 			<thead>
 				<tr>
-					<th>Task ID</th>
+				
 					<th>Task Number</th>
 					<th>Username</th>
 					<th>Content</th>
@@ -89,7 +89,7 @@ h1 {
 			</thead>
 			<tbody>
 				<tr th:each="task : ${tasks}">
-					<td th:text="${task.id}"></td>
+			
 					<td th:text="${task.taskNumber}"></td>
 					<td th:text="${task.username}"></td>
 					<td th:text="${task.content}"></td>

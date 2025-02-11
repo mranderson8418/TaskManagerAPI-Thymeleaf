@@ -15,6 +15,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.taskmanager.controllers.LastWord;
+import com.taskmanager.controllers.PressEnter;
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.dto.TaskResponse;
@@ -47,6 +49,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	private MyTaskDto convertToDto(MyTask task) {
+		System.out.println(nameClass());
 
 		try {
 
@@ -69,6 +72,7 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public MyTaskDto createTask(MyTaskDto myTaskDto) {
+		System.out.println(nameClass());
 
 		String usernameActive = verifyLoggedInUser();
 		logger.trace("Entered......createTask() ");
@@ -101,6 +105,7 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public MyTaskDto updateTask(MyTaskDto taskDtoUpdate, int id) throws TaskNotFoundException {
+		System.out.println(nameClass());
 		logger.trace("Entered...........................updateTask()");
 
 		MyTask myTaskUpdate = convertToTask(taskDtoUpdate);
@@ -128,22 +133,22 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	public String verifyLoggedInUser() {
-		// verifies the authenticity of the user making the change to the task
+		System.out.println(nameClass());
+		// Get Authentication from the security context
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
-
-		// UserDetails is used to store user information into encapsulated
-		// Authentication objects
+		// from the UserDetails get the "principal" or user currently logged in
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
-		// Get the user name from the userDetails
+		// Get user name from the userDetails
 		String username = userDetails.getUsername();
 
 		return username;
 	}
 
 	public MyTask createTaskUpdate(MyTask task, MyTask taskUpdate) {
+
+		System.out.println(nameClass());
 		logger.trace("Entered......createTaskUpdate() ");
 
 		// verifies the authenticity of the user making the change to the task
@@ -185,84 +190,119 @@ public class TaskServiceImpl implements TaskService {
 
 	}
 
+	// @Override
+	// public void deleteByTaskId(int id) throws TaskNotFoundException {
+	// logger.trace("Entered......deleteByTaskId() ");
+	// Authentication authentication =
+	// SecurityContextHolder.getContext().getAuthentication();
+	//
+	// System.out.println("authentication.getPrincipal() = " +
+	// authentication.getPrincipal());
+	//
+	// UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+	// String username = userDetails.getUsername();
+	//
+	// System.out.println("username = " + username);
+	//
+	// List<MyTaskDto> myTaskDtoList = getAllTasksObjects();
+	//
+	// try {
+	// for (int i = 0; i < myTaskDtoList.size(); i++) {
+	//
+	// if (myTaskDtoList.get(i).getId() == id) {
+	//
+	// taskRepository.deleteById(id);
+	// }
+	// }
+	//
+	// } catch (TaskNotFoundException tnfe) {
+	// throw new TaskNotFoundException("Task with id = " + id + " could not be
+	// deleted...");
+	// }
+	//
+	// logger.trace("Exited......deleteByTaskId() ");
+	//
+	// getAllTasksObjects();
+	//
+	// }
+
 	@Override
-	public void deleteByTaskId(int id) throws TaskNotFoundException {
+	public void deleteByTaskId(int taskNumber) throws TaskNotFoundException {
+		System.out.println(nameClass());
 		logger.trace("Entered......deleteByTaskId() ");
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
+		String usernameActive = verifyLoggedInUser();
 
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-		String username = userDetails.getUsername();
-
-		System.out.println("username = " + username);
-
-		List<MyTaskDto> myTaskDtoList = getAllTasksObjects();
+		Map<Integer, Integer> taskIdAndNumber = getHashMap();
 
 		try {
-			for (int i = 0; i < myTaskDtoList.size(); i++) {
 
-				if (myTaskDtoList.get(i).getId() == id) {
+			taskRepository.deleteById(taskIdAndNumber.get(taskNumber));
 
-					taskRepository.deleteById(id);
-				}
-			}
+			logger.trace("Exited......deleteByTaskId() ");
 
 		} catch (TaskNotFoundException tnfe) {
-			throw new TaskNotFoundException("Task with id = " + id + " could not be deleted...");
+			throw new TaskNotFoundException("Task not found with taskNumber = " + taskNumber);
 		}
-
-		logger.trace("Exited......deleteByTaskId() ");
-
-		getAllTasksObjects();
 
 	}
 
-	@Override
-	public void deleteAllTasks(Map<Integer, Integer> taskIdAndNumber) throws TaskNotFoundException {
-		logger.trace("Entered......deleteAllTasks() ");
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	private String nameClass() {
 
-		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
+		LastWord lastWord = new LastWord(getClass().getName());
 
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+		return "Class = " + lastWord.getLastWord();
+	}
 
-		String username = userDetails.getUsername();
+	public Map<Integer, Integer> getHashMap() {
 
-		System.out.println("username = " + username);
+		System.out.println(nameClass());
+		logger.trace("Entered...........................getHashMap()");
 
-		List<MyTaskDto> myTaskDtoList = getAllTasksObjects();
+		String usernameActive = verifyLoggedInUser();
 
-		for (int i = 0; i < myTaskDtoList.size(); i++) {
+		// Will search the taskRepository for all task according to username
+		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
 
-			taskRepository.deleteById(i);
+		List<MyTask> tempTaskList = new ArrayList<>();
+
+		Map<Integer, Integer> taskIdAndNumber = new HashMap<Integer, Integer>();
+
+		// Re-number the task list
+		// Create new "tempTaskList" copy of "taskList"
+		for (int k = 0; k < taskList.size(); k++) {
+
+			if (taskList.get(k) != null) {
+
+				taskList.get(k).setTaskNumber(k + 1);
+
+				tempTaskList.add(taskList.get(k));
+
+				taskIdAndNumber.put(taskList.get(k).getId(), taskList.get(k).getTaskNumber());
+			}
 
 		}
 
-		logger.trace("Exited......deleteAllTasks() ");
+		logger.trace("Exited...........................getHashMap()");
+
+		return taskIdAndNumber;
 
 	}
 
 	@Override
 	public TaskResponse getAllTasks(int pageNo, int pageSize) {
-
-		// Get Authentication from the security context
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-		// from the UserDetails get the "principal" or user currently logged in
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
-		// Get user name from the userDetails
-		String username = userDetails.getUsername();
+		System.out.println(nameClass());
 
 		logger.trace("Entered...........................getAllTasks()");
+
+		String usernameActive = verifyLoggedInUser();
 
 		// Insert parameters for pageNo and PageSize into PageRequest Object
 		PageRequest pageRequest = PageRequest.of(pageNo, pageSize);
 
 		// Will search the taskRepository for all task according to username &
 		// pageRequest
-		Page<MyTask> task = taskRepository.findAllTasksByUsername(username, pageRequest);
+		Page<MyTask> task = taskRepository.findAllTasksByUsername(usernameActive, pageRequest);
 
 		// this "task.getContent()" will get everything in the page
 		List<MyTask> myTaskList = task.getContent();
@@ -288,20 +328,16 @@ public class TaskServiceImpl implements TaskService {
 	@SuppressWarnings("null")
 	@Override
 	public List<MyTaskDto> getAllTasksObjects() {
-
-		// Get Authentication from the security context
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-		// from the UserDetails get the "principal" or user currently logged in
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
-		// Get user name from the userDetails
-		String username = userDetails.getUsername();
+		System.out.println(nameClass());
 
 		logger.trace("Entered...........................getAllTasksObjects()");
 
+		String usernameActive = verifyLoggedInUser();
+
 		// Will search the taskRepository for all task according to username
-		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(username);
+		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
+		PressEnter.pressEnter();
+		System.out.println(taskList.get(0).getId());
 
 		List<MyTask> tempTaskList = new ArrayList<>();
 
@@ -320,7 +356,7 @@ public class TaskServiceImpl implements TaskService {
 
 		}
 
-		for (int j = 1; j < taskList.size(); j++) {
+		for (int j = 0; j < taskList.size(); j++) {
 
 			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
 
@@ -375,6 +411,7 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public MyTaskDto getTaskById(int id) {
+		System.out.println(nameClass());
 		logger.trace("Entered.................getTaskById()");
 
 		MyTask task = taskRepository.findById(id)
@@ -384,7 +421,8 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	private MyTask convertToTask(MyTaskDto myTaskDto) {
-		logger.trace("Entered...........................mapToDto()");
+		System.out.println(nameClass());
+		logger.trace("Entered...........................convertToTask()");
 
 		MyTask task = new MyTask();
 
@@ -394,11 +432,12 @@ public class TaskServiceImpl implements TaskService {
 		task.setContent(myTaskDto.getContent());
 		task.setUsername(myTaskDto.getUsername());
 
-		logger.trace("Exited...........................mapToDto()");
+		logger.trace("Exited...........................convertToTask()");
 		return task;
 	}
 
 	public MyTaskDto mapToDto(MyTask task) {
+		System.out.println(nameClass());
 		logger.trace("Entered...........................mapToDto()");
 
 		MyTaskDto taskDto = new MyTaskDto();
@@ -412,12 +451,6 @@ public class TaskServiceImpl implements TaskService {
 		System.out.println("task.getTaskNumber() ----------------------------------- " + task.getTaskNumber());
 		logger.trace("Exited...........................mapToDto()");
 		return taskDto;
-
-	}
-
-	@Override
-	public void deleteAllTasks() throws TaskNotFoundException {
-		// FIXME Auto-generated method stub
 
 	}
 

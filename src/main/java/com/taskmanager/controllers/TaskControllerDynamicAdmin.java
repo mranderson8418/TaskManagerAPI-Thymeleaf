@@ -2,7 +2,6 @@ package com.taskmanager.controllers;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.exceptions.TaskNotFoundException;
-import com.taskmanager.model.MyTask;
 import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.repository.TaskRepository;
 import com.taskmanager.security.MyUserDetailService;
@@ -108,6 +106,8 @@ public class TaskControllerDynamicAdmin {
 	}
 
 	public Collection<? extends GrantedAuthority> getAuthorityOfUser() {
+
+		System.out.println(nameClass());
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -183,6 +183,7 @@ public class TaskControllerDynamicAdmin {
 
 			return "admin-update-task";
 		}
+
 		return "user-update-task";
 
 	}
@@ -235,6 +236,7 @@ public class TaskControllerDynamicAdmin {
 		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
 
 		model.addAttribute("tasks", myTaskDtoList);
+
 		MyUserDto myUserDto = myUserService.currentUser();
 
 		System.out.println("ROLE ===== " + myUserDto.getRole());
@@ -248,19 +250,19 @@ public class TaskControllerDynamicAdmin {
 	}
 
 	@PostMapping({ "/user/delete/task", "/admin/delete/task" })
-	public String deleteTaskId(@RequestParam("taskId") Integer selectedTaskId, Model model) {
+	public String deleteTaskId(@RequestParam("taskId") int taskNumber, Model model) {
 
 		System.out.println(nameClass());
 
 		System.out.println("ENTERED...................................@PostMapping('/admin/delete/task')");
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/admin/delete/task\")------");
 
-		Optional<MyTask> foundTask = myTaskRepository.findById(selectedTaskId);
+		// Optional<MyTask> foundTask = myTaskRepository.findById(selectedTaskId);
 
 		try {
 
 			// delete the task with the id value = taskID
-			taskService.deleteByTaskId(selectedTaskId);
+			taskService.deleteByTaskId(taskNumber);
 
 		} catch (TaskNotFoundException tnfe) {
 			throw new TaskNotFoundException("Task not found with id for the active user");

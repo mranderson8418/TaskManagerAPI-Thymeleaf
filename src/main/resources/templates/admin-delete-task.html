@@ -110,6 +110,7 @@
 		<table>
 			<thead>
 				<tr>
+			
 					<th>Task Number</th>
 					<th>Username</th>
 					<th>Content</th>
@@ -130,8 +131,8 @@
 
 
 		<form th:action="@{/admin/delete/task}" th:method="POST">
-			<label for="taskId">Task ID:</label> <input type="text" id="taskId" name="taskId"
-				th:value="${selectedTaskId}" />
+			<label for="taskNumber">Task Number:</label> <input type="text" id="taskNumber" name="taskNumber"
+				th:value="${selectedTaskNumber}" />
 
 			<button type="submit">Delete</button>
 		</form>
