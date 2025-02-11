@@ -1,16 +1,16 @@
 package com.taskmanager.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.taskmanager.dto.MyTaskDto;
-import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.dto.TaskResponse;
 import com.taskmanager.exceptions.TaskNotFoundException;
 import com.taskmanager.model.MyTask;
 
 public interface TaskService {
 
-	public MyTaskDto createTask(MyTaskDto taskDto, MyUserDto myUserDto);
+	public MyTaskDto createTask(MyTaskDto taskDto);
 
 	public TaskResponse getAllTasks(int pageNo, int pageSize);
 
@@ -24,10 +24,14 @@ public interface TaskService {
 
 	public List<MyTaskDto> getAllTasksObjects();
 
+	public String verifyLoggedInUser();
+
 	/**
 	 * @param id
 	 * @throws TaskNotFoundException
 	 */
 	void deleteAllTasks() throws TaskNotFoundException;
+
+	void deleteAllTasks(Map<Integer, Integer> taskIdAndNumber) throws TaskNotFoundException;
 
 }

@@ -138,7 +138,7 @@ public class TaskControllerDynamicAdmin {
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/create/task\")------");
 
 		// task is inserted into the TaskRepository
-		MyTaskDto task_inserted = taskService.createTask(myTaskDto, myUserDto);
+		MyTaskDto task_inserted = taskService.createTask(myTaskDto);
 
 		model.addAttribute("id", task_inserted.getId());
 		model.addAttribute("taskNumber", task_inserted.getTaskNumber());
@@ -301,6 +301,7 @@ public class TaskControllerDynamicAdmin {
 		}
 
 		model.addAttribute("tasks", myTaskDtoList);
+
 		MyUserDto myUserDto = myUserService.currentUser();
 
 		System.out.println("ROLE ===== " + myUserDto.getRole());

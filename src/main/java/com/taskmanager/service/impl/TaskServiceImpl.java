@@ -1,8 +1,9 @@
 package com.taskmanager.service.impl;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,15 +68,19 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public MyTaskDto createTask(MyTaskDto myTaskDto, MyUserDto myUserDto) {
+	public MyTaskDto createTask(MyTaskDto myTaskDto) {
 
+		String usernameActive = verifyLoggedInUser();
 		logger.trace("Entered......createTask() ");
 		// Get list of all task the User has in the database
-		List<MyTask> currentUserTaskList = taskRepository.findAllTasksByUsernameObjectList(myUserDto.getUsername());
+		List<MyTask> currentUserTaskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
+		// PressEnter.pressEnter();
 
 		myTaskDto.setTaskNumber(currentUserTaskList.size() + 1);
 
-		System.out.println("myUserDto.getUsername() ========================= " + myUserDto.getUsername());
+		System.out.println("myTaskDto.getTaskNumber() = " + myTaskDto.getTaskNumber());
+
+		// PressEnter.pressEnter();
 
 		System.out.println("myTaskDto.getTaskNumber() ==================== " + myTaskDto.getTaskNumber());
 
@@ -83,7 +88,7 @@ public class TaskServiceImpl implements TaskService {
 
 		task.setId(myTaskDto.getId());
 		task.setTaskNumber(myTaskDto.getTaskNumber());
-		task.setUsername(myUserDto.getUsername());
+		task.setUsername(usernameActive);
 		task.setContent(myTaskDto.getContent());
 		task.setComplete(myTaskDto.isComplete());
 
@@ -102,8 +107,7 @@ public class TaskServiceImpl implements TaskService {
 
 		try {
 			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(id)
-					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+			MyTask task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
 
 			// Create an updated Task entity
 			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
@@ -121,6 +125,22 @@ public class TaskServiceImpl implements TaskService {
 			// Re-throw TaskNotFoundException with a more specific message
 			throw new TaskNotFoundException("Task  could not be updated--OOp");
 		}
+	}
+
+	public String verifyLoggedInUser() {
+		// verifies the authenticity of the user making the change to the task
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
+
+		// UserDetails is used to store user information into encapsulated
+		// Authentication objects
+		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
+		// Get the user name from the userDetails
+		String username = userDetails.getUsername();
+
+		return username;
 	}
 
 	public MyTask createTaskUpdate(MyTask task, MyTask taskUpdate) {
@@ -199,7 +219,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public void deleteAllTasks() throws TaskNotFoundException {
+	public void deleteAllTasks(Map<Integer, Integer> taskIdAndNumber) throws TaskNotFoundException {
 		logger.trace("Entered......deleteAllTasks() ");
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -220,8 +240,6 @@ public class TaskServiceImpl implements TaskService {
 		}
 
 		logger.trace("Exited......deleteAllTasks() ");
-
-		getAllTasksObjects();
 
 	}
 
@@ -260,8 +278,11 @@ public class TaskServiceImpl implements TaskService {
 		taskResponse.setTotalElements(task.getTotalElements());
 		taskResponse.setTotalPages(task.getTotalPages());
 		taskResponse.setLast(task.isLast());
+
 		logger.trace("Exited...........................getAllTasks()");
+
 		return taskResponse;
+
 	}
 
 	@SuppressWarnings("null")
@@ -282,48 +303,73 @@ public class TaskServiceImpl implements TaskService {
 		// Will search the taskRepository for all task according to username
 		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(username);
 
-		List<MyTask> tempTaskList = new LinkedList<MyTask>();
-		// Renumber the task list
+		List<MyTask> tempTaskList = new ArrayList<>();
+
+		Map<Integer, Integer> taskIdAndNumber = new HashMap<Integer, Integer>();
+
+		// Re-number the task list
+		// Create new "tempTaskList" copy of "taskList"
 		for (int k = 0; k < taskList.size(); k++) {
 
-			taskList.get(k).setTaskNumber(k);
+			if (taskList.get(k) != null) {
 
-			tempTaskList.add(taskList.get(k));
+				taskList.get(k).setTaskNumber(k + 1);
+
+				tempTaskList.add(taskList.get(k));
+			}
 
 		}
 
-		deleteAllTasks();
+		for (int j = 1; j < taskList.size(); j++) {
+
+			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
+
+			System.out.println("taskList.get(j).getId() = " + taskList.get(j).getId());
+			System.out.println("taskList.get(j).getTaskNumber() " + taskList.get(j).getTaskNumber());
+
+			System.out.println("taskIdAndNumber = (" + taskList.get(j).getId() + ", " + taskList.get(j).getTaskNumber() + ")");
+		}
+
+		// delete all of the active user's tasks
+		// for (int m = 1; m < taskList.size(); m++) {
+		//
+		// taskRepository.deleteById(taskIdAndNumber.get(m));
+		//
+		// }
 
 		// save the renumbered task list back into the taskRepository
-		for (int j = 0; j < taskList.size(); j++) {
 
-			taskRepository.save(tempTaskList.get(j));
-		}
-
-		// try {
-		// Optional<MyUser> myUser = myUserRepository.findByUsername(username);
-
-		MyTaskDto myTaskDto = new MyTaskDto();
-
-		List<MyTaskDto> myTaskDtoList = new ArrayList<>();
-
-		for (int i = 0; i < taskList.size(); i++) {
-
-			myTaskDto = convertToDto(taskList.get(i));
-
-			System.out.println("myTaskDto.getId() = " + myTaskDto.getId());
-
-			myTaskDtoList.add(myTaskDto);
-
-		}
-
-		logger.trace("Exiting...........................getAllTasks()");
-
-		return myTaskDtoList;
-
-		// } catch (MyUserNotFoundException unfe) {
-		// throw new MyUserNotFoundException("My user not found Exception");
+		// for (int j = 0; j < taskList.size(); j++) {
+		//
+		// taskRepository.save(tempTaskList.get(j));
 		// }
+
+		try {
+			// Optional<MyUser> myUser = myUserRepository.findByUsername(username);
+
+			MyTaskDto myTaskDto = new MyTaskDto();
+
+			List<MyTaskDto> myTaskDtoList = new ArrayList<>();
+
+			for (int i = 0; i < taskList.size(); i++) {
+
+				myTaskDto = convertToDto(taskList.get(i));
+
+				System.out.println("myTaskDto.getId() = " + myTaskDto.getId());
+
+				myTaskDtoList.add(myTaskDto);
+
+			}
+
+			logger.trace("Exiting...........................getAllTasks()");
+
+			return myTaskDtoList;
+
+		} catch (
+
+		MyUserNotFoundException unfe) {
+			throw new MyUserNotFoundException("My user not found Exception");
+		}
 
 	}
 
@@ -366,6 +412,12 @@ public class TaskServiceImpl implements TaskService {
 		System.out.println("task.getTaskNumber() ----------------------------------- " + task.getTaskNumber());
 		logger.trace("Exited...........................mapToDto()");
 		return taskDto;
+
+	}
+
+	@Override
+	public void deleteAllTasks() throws TaskNotFoundException {
+		// FIXME Auto-generated method stub
 
 	}
 

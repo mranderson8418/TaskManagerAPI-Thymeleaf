@@ -12,7 +12,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "mytasks")
-@JsonPropertyOrder({ "id", "username", "content", "tasknumber", "complete" })
+@JsonPropertyOrder({ "id", "tasknumber", "username", "content", "complete" })
 public class MyTask {
 
 	@Column(name = "complete")
