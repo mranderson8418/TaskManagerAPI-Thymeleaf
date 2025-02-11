@@ -23,6 +23,6 @@ public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 	Page<MyTask> findAllTasksByUsername(@Param("username") String username, PageRequest pageRequest);
 
 	@Query("SELECT t FROM MyTask t WHERE t.username = :username")
-	List<MyTask> findAllTasksByUsernameObjects(@Param("username") String username);
+	List<MyTask> findAllTasksByUsernameObjectList(@Param("username") String username);
 
 }

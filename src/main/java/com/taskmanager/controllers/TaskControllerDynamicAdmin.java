@@ -141,7 +141,7 @@ public class TaskControllerDynamicAdmin {
 		MyTaskDto task_inserted = taskService.createTask(myTaskDto, myUserDto);
 
 		model.addAttribute("id", task_inserted.getId());
-		model.addAttribute("t", task_inserted.getTaskNumber());
+		model.addAttribute("taskNumber", task_inserted.getTaskNumber());
 		model.addAttribute("username", task_inserted.getUsername());
 		model.addAttribute("content", task_inserted.getContent());
 		model.addAttribute("complete", task_inserted.isComplete());
@@ -286,8 +286,9 @@ public class TaskControllerDynamicAdmin {
 	public String getTaskListObjects(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 		// Validate object data if necessary
 		// Save object to database
-		LastWord lastWord = new LastWord(getClass().getName());
-		System.out.println("Class = " + lastWord.getLastWord());
+
+		System.out.println(nameClass());
+
 		logger.trace("ENTERED……………………………………	@GetMapping(\"/admin/taskList\")");
 		logger.trace("EXITED……………………………………	@GetMapping(\"/admin/taskList\")");
 

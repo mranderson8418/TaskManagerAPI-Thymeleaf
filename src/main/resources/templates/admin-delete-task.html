@@ -1,143 +1,147 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Task List Delete Admin</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Task List Delete Admin</title>
 
-<style>
-/* General Styles */
-body {
-	margin: 0;
-	font-family: Arial, sans-serif;
-	color: black;
-	background-color: #ffffff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-}
+	<style>
+		/* General Styles */
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			color: black;
+			background-color: #ffffff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
 
-.container {
-	text-align: center;
-	width: 90%;
-	max-width: 800px;
-	padding: 20px;
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+		.container {
+			text-align: center;
+			width: 90%;
+			max-width: 800px;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
 
-/* Table Styles */
-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 20px;
-}
+		/* Table Styles */
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
 
-th, td {
-	padding: 10px;
-	border: 2px solid #365930;
-	text-align: center;
-}
+		th,
+		td {
+			padding: 10px;
+			border: 2px solid #365930;
+			text-align: center;
+		}
 
-th {
-	background-color: #04aa6d;
-	color: white;
-}
+		th {
+			background-color: #04aa6d;
+			color: white;
+		}
 
-td {
-	color: #333;
-}
+		td {
+			color: #333;
+		}
 
-/* Form Styles */
-form {
-	margin-top: 30px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	align-items: center;
-}
+		/* Form Styles */
+		form {
+			margin-top: 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			align-items: center;
+		}
 
-form label {
-	font-size: 1rem;
-	margin-bottom: 5px;
-}
+		form label {
+			font-size: 1rem;
+			margin-bottom: 5px;
+		}
 
-form input {
-	width: 100%;
-	max-width: 300px;
-	padding: 10px;
-	font-size: 1rem;
-	border: 2px solid #365930;
-	border-radius: 5px;
-	text-align: center;
-}
+		form input {
+			width: 100%;
+			max-width: 300px;
+			padding: 10px;
+			font-size: 1rem;
+			border: 2px solid #365930;
+			border-radius: 5px;
+			text-align: center;
+		}
 
-button {
-	width: 100%;
-	max-width: 300px;
-	padding: 10px 20px;
-	font-size: 1.25rem;
-	color: white;
-	background-color: #04aa6d;
-	border: none;
-	border-radius: 5px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
+		button {
+			width: 100%;
+			max-width: 300px;
+			padding: 10px 20px;
+			font-size: 1.25rem;
+			color: white;
+			background-color: #04aa6d;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
 
-button:hover {
-	background-color: #028a5a;
-}
+		button:hover {
+			background-color: #028a5a;
+		}
 
-/* Headline */
-h1 {
-	font-size: 2.5rem;
-	color: #333;
-	margin-bottom: 20px;
-}
-</style>
+		/* Headline */
+		h1 {
+			font-size: 2.5rem;
+			color: #333;
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 
 <body>
-		<div class="container">
-				<h1>Task List</h1>
+	<div class="container">
+		<h1>Task List</h1>
 
-				<table>
-						<thead>
-								<tr>
-										<th>ID</th>
-										<th>Username</th>
-										<th>Content</th>
-										<th>Complete</th>
-								</tr>
-						</thead>
-						<tbody>
-								<tr th:each="task : ${tasks}">
-										<td th:text="${task.id}"></td>
-										<td th:text="${task.username}"></td>
-										<td th:text="${task.content}"></td>
-										<td th:text="${task.complete} ? 'true' : 'false'"></td>
-								</tr>
-						</tbody>
-				</table>
-
-
-	
-
-				<form th:action="@{/admin/delete/task}" th:method="POST">
-						<label for="taskId">Task ID:</label> <input type="text" id="taskId" name="taskId" th:value="${selectedTaskId}" />
-
-						<button type="submit">Delete</button>
-				</form>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Username</th>
+					<th>Content</th>
+					<th>Complete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="task : ${tasks}">
+					<td th:text="${task.id}"></td>
+					<td th:text="${task.username}"></td>
+					<td th:text="${task.content}"></td>
+					<td th:text="${task.complete} ? 'true' : 'false'"></td>
+				</tr>
+			</tbody>
+		</table>
 
 
 
-				<form th:action="@{/admin/index}" method="GET">
-						<button type="submit">Return to Index</button>
-				</form>
-		</div>
+
+		<form th:action="@{/admin/delete/task}" th:method="POST">
+			<label for="taskId">Task ID:</label> <input type="text" id="taskId" name="taskId"
+				th:value="${selectedTaskId}" />
+
+			<button type="submit">Delete</button>
+		</form>
+
+
+
+		<form th:action="@{/admin/index}" method="GET">
+			<button type="submit">Return to Index</button>
+		</form>
+	</div>
 </body>
+
 </html>
