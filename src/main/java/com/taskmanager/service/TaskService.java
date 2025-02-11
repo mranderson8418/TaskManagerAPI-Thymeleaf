@@ -5,6 +5,7 @@ import java.util.List;
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.dto.TaskResponse;
+import com.taskmanager.exceptions.TaskNotFoundException;
 import com.taskmanager.model.MyTask;
 
 public interface TaskService {
@@ -22,5 +23,11 @@ public interface TaskService {
 	public MyTaskDto mapToDto(MyTask task);
 
 	public List<MyTaskDto> getAllTasksObjects();
+
+	/**
+	 * @param id
+	 * @throws TaskNotFoundException
+	 */
+	void deleteAllTasks() throws TaskNotFoundException;
 
 }

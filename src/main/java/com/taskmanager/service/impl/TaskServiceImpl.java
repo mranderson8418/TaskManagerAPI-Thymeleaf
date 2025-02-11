@@ -1,6 +1,7 @@
 package com.taskmanager.service.impl;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -101,7 +102,8 @@ public class TaskServiceImpl implements TaskService {
 
 		try {
 			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+			MyTask task = taskRepository.findById(id)
+					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
 
 			// Create an updated Task entity
 			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
@@ -197,6 +199,33 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
+	public void deleteAllTasks() throws TaskNotFoundException {
+		logger.trace("Entered......deleteAllTasks() ");
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
+
+		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
+		String username = userDetails.getUsername();
+
+		System.out.println("username = " + username);
+
+		List<MyTaskDto> myTaskDtoList = getAllTasksObjects();
+
+		for (int i = 0; i < myTaskDtoList.size(); i++) {
+
+			taskRepository.deleteById(i);
+
+		}
+
+		logger.trace("Exited......deleteAllTasks() ");
+
+		getAllTasksObjects();
+
+	}
+
+	@Override
 	public TaskResponse getAllTasks(int pageNo, int pageSize) {
 
 		// Get Authentication from the security context
@@ -253,11 +282,22 @@ public class TaskServiceImpl implements TaskService {
 		// Will search the taskRepository for all task according to username
 		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(username);
 
+		List<MyTask> tempTaskList = new LinkedList<MyTask>();
+		// Renumber the task list
 		for (int k = 0; k < taskList.size(); k++) {
 
-			System.out.println(
-					"taskList.get(k).getTaskNumber() =-------------------------->>>>>>>" + taskList.get(k).getTaskNumber());
+			taskList.get(k).setTaskNumber(k);
 
+			tempTaskList.add(taskList.get(k));
+
+		}
+
+		deleteAllTasks();
+
+		// save the renumbered task list back into the taskRepository
+		for (int j = 0; j < taskList.size(); j++) {
+
+			taskRepository.save(tempTaskList.get(j));
 		}
 
 		// try {
