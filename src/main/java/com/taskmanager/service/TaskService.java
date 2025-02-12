@@ -26,4 +26,6 @@ public interface TaskService {
 
 	List<MyTaskDto> afterDeleteGetAllTasks();
 
+	public MyTask createTaskUpdateAfterDelete();
+
 }

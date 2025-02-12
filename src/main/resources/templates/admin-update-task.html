@@ -150,7 +150,7 @@
 				<tr th:each="task : ${tasks}">
 					<td th:text="${task.id}"></td>
 
-					<td th:text="${task.userId}"></td>
+					<td th:text="${task.taskNumber}"></td>
 					<td th:text="${task.username}"></td>
 					<td th:text="${task.content}"></td>
 					<td th:text="${task.complete} ? 'true' : 'false'"></td>
@@ -161,8 +161,8 @@
 		<form th:action="@{/admin/update/task}" th:object="${myTaskDto}" method="post">
 			<h2>Update Task Details</h2>
 
-			<label for="id">Task ID:</label>
-			<input type="text" th:field="*{id}" id="id" />
+			<label for="taskNumber">Task ID:</label>
+			<input type="text" th:field="*{taskNumber}" id="taskNumber" />
 
 			<label for="content">Updated Message Content:</label>
 			<textarea th:field="*{content}" id="content" rows="4"></textarea>

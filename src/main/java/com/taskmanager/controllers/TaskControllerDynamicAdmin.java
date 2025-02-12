@@ -17,7 +17,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.MyUserDto;
@@ -175,6 +174,7 @@ public class TaskControllerDynamicAdmin {
 		model.addAttribute("myTaskDto", new MyTaskDto());
 
 		model.addAttribute("tasks", myTaskDtoList);
+
 		MyUserDto myUserDto = myUserService.currentUser();
 
 		System.out.println("ROLE ===== " + myUserDto.getRole());
@@ -193,28 +193,31 @@ public class TaskControllerDynamicAdmin {
 	public String updateTaskNew(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
 		System.out.println(nameClass());
+		System.out.println("ENTERED..........................................updateTaskNew()");
 
-		System.out.println("ENTERED...................................		@PostMapping(\"/admin/updateTask\")");
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/updateTask\")------");
 
 		try {
 			// task is inserted into the TaskRepository
-			MyTaskDto task_inserted = taskService.updateTask(myTaskDto, myTaskDto.getId());
+			MyTaskDto task_inserted = taskService.updateTask(myTaskDto, myTaskDto.getTaskNumber());
 
 			model.addAttribute("id", task_inserted.getId());
+			model.addAttribute("taskNumber", task_inserted.getTaskNumber());
 			model.addAttribute("username", task_inserted.getUsername());
 			model.addAttribute("content", task_inserted.getContent());
 			model.addAttribute("complete", task_inserted.isComplete());
 
-			System.out.println("Task # " + task_inserted.getId() + " is updated in the database");
+			System.out.println("Task # " + task_inserted.getTaskNumber() + " is updated in the database");
+
 			MyUserDto myUserDto = myUserService.currentUser();
 
 			System.out.println("ROLE ===== " + myUserDto.getRole());
 
 			if (myUserDto.getRole().contains("ADMIN")) {
-
+				System.out.println("EXITED..........................................updateTaskNew()");
 				return "redirect:/admin/taskList";
 			}
+			System.out.println("EXITED..........................................updateTaskNew()");
 			return "redirect:/user/taskList";
 
 		} catch (TaskNotFoundException tnfe) {
@@ -229,10 +232,14 @@ public class TaskControllerDynamicAdmin {
 		// Validate object data if necessary
 		// Save object to database
 		System.out.println(nameClass());
+		System.out.println("ENTERED..........................................@GetMapping----> getDeleteTask()");
 
-		logger.trace("ENTERED……………………………………	getDeleteTask()");
+		;
+		logger.trace("ENTERED..........................................@GetMapping----> getDeleteTask()");
 
 		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
+
+		model.addAttribute("myTaskDto", new MyTaskDto());
 
 		model.addAttribute("tasks", myTaskDtoList);
 
@@ -242,29 +249,31 @@ public class TaskControllerDynamicAdmin {
 
 		if (myUserDto.getRole().contains("ADMIN")) {
 
-			logger.trace("EXITED……………………………………	getDeleteTask()");
+			logger.trace("EXITED……………………………………	@GetMapping----> getDeleteTask()");
 
 			// PressEnter.pressEnter();
 
 			return "admin-delete-task";
 		}
-		logger.trace("EXITED……………………………………	getDeleteTask()");
+		System.out.println("EXITED..........................................@GetMapping----> getDeleteTask()");
+		logger.trace("EXITED..........................................@GetMapping----> getDeleteTask()");
 		return "user-delete-task";
 
 	}
 
 	@PostMapping({ "/user/delete/task", "/admin/delete/task" })
-	public String deleteTaskId(@RequestParam("taskNumber") int taskNumber, Model model) {
+	public String deleteTaskId(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
 		System.out.println(nameClass());
 
-		System.out.println("ENTERED...................................@PostMapping('/admin/delete/task')");
-		logger.trace("ENTERED……………………………………	@PostMapping(\"/admin/delete/task\")------");
+		System.out.println("ENTERED..........................................deleteTaskId()");
+
+		logger.trace("ENTERED……………………………………	@PostMapping()------> deleteTaskId()");
 
 		try {
 
-			// delete the task with the id value = taskID
-			taskService.deleteByTaskId(taskNumber);
+			// delete the task with the id value = taskNumber
+			taskService.deleteByTaskId(myTaskDto.getTaskNumber());
 
 		} catch (TaskNotFoundException tnfe) {
 
@@ -281,9 +290,10 @@ public class TaskControllerDynamicAdmin {
 		System.out.println("ROLE ===== " + myUserDto.getRole());
 
 		if (myUserDto.getRole().contains("ADMIN")) {
-
+			System.out.println("EXITED..........................................deleteTaskId()");
 			return "admin-delete-task";
 		}
+		System.out.println("EXITED..........................................deleteTaskId()");
 		return "user-delete-task";
 
 	}

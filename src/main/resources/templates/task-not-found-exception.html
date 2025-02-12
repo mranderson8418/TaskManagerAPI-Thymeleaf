@@ -18,7 +18,7 @@ body {
 }
 
 h1 {
-color:red;
+	color: red;
 	padding: 25px;
 }
 
@@ -63,47 +63,46 @@ h2 {
 div.scott-button a {
 	text-decoration: none;
 	color: white;
-	
 }
 
-div h2 span{
-color:red;
+div h2 span {
+	color: red;
 }
 </style>
 </head>
 
 <body>
-		<div class="container">
-				<h1>Unable to find task in the database.....</h1>
+	<div class="container">
+		<h1>Unable to find task in the database.....</h1>
 
-				<div class="details">
-						<form action="/admin/index" method="get">
+		<div class="details">
+			<form action="/admin/index" method="get">
 
-								<div>
-										<h2>
-												Message: <span th:text="${message}">Message</span>
-										</h2>
-								</div>
-								<div>
-										<h2>
-												Status Code: <span th:text="${statusCode}">Status Code</span>
-										</h2>
-								</div>
-								<div>
-										<h2>
-												Timestamp: <span th:text="${timeStamp}">Timestamp</span>
-										</h2>
-								</div>
-
-						</form>
-
-						<div class="scott-button">
-								<a th:href="@{/admin/index}"> Go to Admin Index Page </a>
-						</div>
-
+				<div>
+					<h2>
+						Message: <span th:text="${message}">Message</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Status Code: <span th:text="${statusCode}">Status Code</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Timestamp: <span th:text="${timeStamp}">Timestamp</span>
+					</h2>
 				</div>
 
+			</form>
+
+			<div class="scott-button">
+				<a th:href="@{/admin/index}"> Go to Admin Index Page </a>
+			</div>
+
 		</div>
+
+	</div>
 </body>
 
 </html>
