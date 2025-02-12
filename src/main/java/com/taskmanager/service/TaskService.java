@@ -24,4 +24,6 @@ public interface TaskService {
 
 	public String verifyLoggedInUser();
 
+	List<MyTaskDto> afterDeleteGetAllTasks();
+
 }

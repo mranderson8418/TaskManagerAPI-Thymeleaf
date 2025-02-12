@@ -1,5 +1,9 @@
 package com.taskmanager.dto;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 public class MyUserDto {
 
 	private String dob;
@@ -7,7 +11,8 @@ public class MyUserDto {
 	private String email;
 
 	private String gender;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String password;
@@ -74,8 +79,8 @@ public class MyUserDto {
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" +
-				password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" + password +
+				", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

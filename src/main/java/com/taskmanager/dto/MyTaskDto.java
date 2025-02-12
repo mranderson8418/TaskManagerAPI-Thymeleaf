@@ -1,5 +1,8 @@
 package com.taskmanager.dto;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
 public class MyTaskDto {
@@ -8,7 +11,8 @@ public class MyTaskDto {
 
 	@NotBlank
 	private String content;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private int taskNumber;
@@ -68,8 +72,8 @@ public class MyTaskDto {
 
 	@Override
 	public String toString() {
-		return "MyTaskDto [complete=" + complete + ", content=" + content + ", id=" + id + ", username=" + username +
-				"]";
+		return "MyTaskDto \n[complete=" + complete + "\n content=" + content + "\n id=" + id + "\n taskNumber=" + taskNumber +
+				"\n username=" + username + "]";
 	}
 
 }

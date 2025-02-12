@@ -17,6 +17,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.thymeleaf.spring6.SpringTemplateEngine;
+import org.thymeleaf.spring6.view.ThymeleafViewResolver;
+import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.taskmanager.auth.AuthenticationAccessHandler;
 import com.taskmanager.controllers.LastWord;
@@ -76,8 +81,7 @@ public class SecurityConfiguration {
 		return httpSecurity.csrf(AbstractHttpConfigurer::disable)
 
 				.authorizeHttpRequests(registry -> {
-					registry.requestMatchers("/home", "/register/**", "/logout/**", "/login/**")
-							.permitAll();
+					registry.requestMatchers("/home", "/register/**", "/logout/**", "/login/**").permitAll();
 					registry.requestMatchers("/admin/**").hasRole("ADMIN");
 					registry.requestMatchers("/user/**").hasRole("USER");
 
@@ -85,8 +89,8 @@ public class SecurityConfiguration {
 
 					// when we add httpSecurity we need to add the default formLogin page
 				}).formLogin(httpSecurityFormLoginConfigurer -> {
-					httpSecurityFormLoginConfigurer.loginPage("/login")
-							.successHandler(new AuthenticationAccessHandler()).permitAll();
+					httpSecurityFormLoginConfigurer.loginPage("/login").successHandler(new AuthenticationAccessHandler())
+							.permitAll();
 				}).build(); // build the HTTP Security
 
 	}
@@ -106,6 +110,32 @@ public class SecurityConfiguration {
 	public UserDetailsService userDetailsService() {
 
 		return userDetailService;
+	}
+
+	@Bean
+	public SpringTemplateEngine templateEngine() {
+		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+		templateEngine.setTemplateResolver(templateResolver()); // Crucial!
+		// ... other Thymeleaf configuration if needed
+		return templateEngine;
+	}
+
+	@Bean
+	public ITemplateResolver templateResolver() {
+		ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
+		resolver.setPrefix("templates/"); // <-- Important: Prefix for Thymeleaf templates
+		resolver.setSuffix(".html"); // <-- Important: Suffix for Thymeleaf templates
+		resolver.setTemplateMode(TemplateMode.HTML); // Or TemplateMode.XML, etc.
+		resolver.setCacheable(false); // For development, set to false to avoid caching issues
+		return resolver;
+	}
+
+	@Bean
+	public ThymeleafViewResolver viewResolver() {
+		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
+		resolver.setTemplateEngine(templateEngine());
+		resolver.setCharacterEncoding("UTF-8"); // Important for character encoding
+		return resolver;
 	}
 
 }

@@ -21,10 +21,10 @@ public class MyTask {
 	@NotBlank
 	@Column(name = "content")
 	private String content;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
 	@Column(name = "tasknumber")
 	private int taskNumber;
 
@@ -85,6 +85,12 @@ public class MyTask {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	@Override
+	public String toString() {
+		return "MyTask \n[complete=" + complete + "\n, content=" + content + "\n, id=" + id + "\n, taskNumber=" + taskNumber +
+				"\n, username=" + username + "]";
 	}
 
 }

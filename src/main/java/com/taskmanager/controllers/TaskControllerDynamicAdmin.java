@@ -230,8 +230,7 @@ public class TaskControllerDynamicAdmin {
 		// Save object to database
 		System.out.println(nameClass());
 
-		logger.trace("ENTERED……………………………………	@GetMapping(\"/admin/deleteTask\")");
-		logger.trace("EXITED……………………………………	@GetMapping(\"/admin/deleteTask\")");
+		logger.trace("ENTERED……………………………………	getDeleteTask()");
 
 		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
 
@@ -243,21 +242,24 @@ public class TaskControllerDynamicAdmin {
 
 		if (myUserDto.getRole().contains("ADMIN")) {
 
+			logger.trace("EXITED……………………………………	getDeleteTask()");
+
+			// PressEnter.pressEnter();
+
 			return "admin-delete-task";
 		}
+		logger.trace("EXITED……………………………………	getDeleteTask()");
 		return "user-delete-task";
 
 	}
 
 	@PostMapping({ "/user/delete/task", "/admin/delete/task" })
-	public String deleteTaskId(@RequestParam("taskId") int taskNumber, Model model) {
+	public String deleteTaskId(@RequestParam("taskNumber") int taskNumber, Model model) {
 
 		System.out.println(nameClass());
 
 		System.out.println("ENTERED...................................@PostMapping('/admin/delete/task')");
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/admin/delete/task\")------");
-
-		// Optional<MyTask> foundTask = myTaskRepository.findById(selectedTaskId);
 
 		try {
 
@@ -265,10 +267,12 @@ public class TaskControllerDynamicAdmin {
 			taskService.deleteByTaskId(taskNumber);
 
 		} catch (TaskNotFoundException tnfe) {
+
 			throw new TaskNotFoundException("Task not found with id for the active user");
+
 		}
 
-		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
+		List<MyTaskDto> myTaskDtoList = taskService.afterDeleteGetAllTasks();
 
 		model.addAttribute("tasks", myTaskDtoList);
 
