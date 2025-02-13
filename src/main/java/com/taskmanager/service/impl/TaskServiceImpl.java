@@ -190,42 +190,6 @@ public class TaskServiceImpl implements TaskService {
 
 	}
 
-	// @Override
-	// public void deleteByTaskId(int id) throws TaskNotFoundException {
-	// logger.trace("Entered......deleteByTaskId() ");
-	// Authentication authentication =
-	// SecurityContextHolder.getContext().getAuthentication();
-	//
-	// System.out.println("authentication.getPrincipal() = " +
-	// authentication.getPrincipal());
-	//
-	// UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-	// String username = userDetails.getUsername();
-	//
-	// System.out.println("username = " + username);
-	//
-	// List<MyTaskDto> myTaskDtoList = getAllTasksObjects();
-	//
-	// try {
-	// for (int i = 0; i < myTaskDtoList.size(); i++) {
-	//
-	// if (myTaskDtoList.get(i).getId() == id) {
-	//
-	// taskRepository.deleteById(id);
-	// }
-	// }
-	//
-	// } catch (TaskNotFoundException tnfe) {
-	// throw new TaskNotFoundException("Task with id = " + id + " could not be
-	// deleted...");
-	// }
-	//
-	// logger.trace("Exited......deleteByTaskId() ");
-	//
-	// getAllTasksObjects();
-	//
-	// }
-
 	@Override
 	public void deleteByTaskId(int taskNumber) throws TaskNotFoundException {
 

@@ -35,6 +35,9 @@
 			border-collapse: collapse;
 			margin-top: 20px;
 		}
+		.completed-row {
+				          background-color: rgb(98, 160, 234); /* Or any color you prefer */
+				      }
 
 		th,
 		td {
@@ -110,7 +113,7 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Task ID</th>
+					
 					<th>Task Number</th>
 					<th>Username</th>
 					<th>Content</th>
@@ -118,8 +121,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="task : ${tasks}">
-					<td th:text="${task.id}"></td>
+				<tr th:each="task : ${tasks}"
+				th:class="${task.complete ? 'completed-row' : 'false'}">
 					<td th:text="${task.taskNumber}"></td>
 					<td th:text="${task.username}"></td>
 					<td th:text="${task.content}"></td>

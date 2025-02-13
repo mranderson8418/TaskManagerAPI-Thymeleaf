@@ -101,6 +101,9 @@
 			font-size: 1rem;
 			cursor: pointer;
 		}
+		.completed-row {
+			          background-color: rgb(98, 160, 234); /* Or any color you prefer */
+			      }
 
 		.scott-button a {
 			text-align: center;
@@ -147,9 +150,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="task : ${tasks}">
-					<td th:text="${task.id}"></td>
-
+				<tr th:each="task : ${tasks}"
+				th:class="${task.complete ? 'completed-row' : 'false'}">
 					<td th:text="${task.taskNumber}"></td>
 					<td th:text="${task.username}"></td>
 					<td th:text="${task.content}"></td>
