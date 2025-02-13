@@ -115,7 +115,7 @@
 		<table>
 			<thead>
 				<tr>
-					<th>ID</th>
+
 					<th>Task Number</th>
 					<th>Username</th>
 					<th>Content</th>
@@ -124,7 +124,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : 'false'}">
-					<td th:text="${task.id}"></td>
+
 					<td th:text="${task.taskNumber}"></td>
 					<td th:text="${task.username}"></td>
 					<td th:text="${task.content}"></td>

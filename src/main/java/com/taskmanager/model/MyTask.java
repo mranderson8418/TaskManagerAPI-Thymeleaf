@@ -25,21 +25,13 @@ public class MyTask {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	@Column(name = "tasknumber")
 	private int taskNumber;
 
 	@NotBlank
 	@Column(name = "username")
 	private String username;
-
-	public MyTask() {
-
-		this.complete = false;
-		this.content = "";
-		this.taskNumber = 0;
-		this.username = "";
-
-	}
 
 	public String getContent() {
 		return content;
@@ -49,9 +41,6 @@ public class MyTask {
 		return id;
 	}
 
-	/**
-	 * @return the taskNumber
-	 */
 	public int getTaskNumber() {
 		return taskNumber;
 	}

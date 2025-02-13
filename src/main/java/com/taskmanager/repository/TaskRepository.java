@@ -17,7 +17,7 @@ public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 
 	void save(String string);
 
-	public void saveById(int id);
+	// public void saveById(int id);
 
 	public void deleteById(int taskNumber);
 
@@ -26,5 +26,8 @@ public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 
 	@Query("SELECT t FROM MyTask t WHERE t.username = :username")
 	List<MyTask> findAllTasksByUsernameObjectList(@Param("username") String username);
+
+	// @Query("SELECT t FROM MyTask t WHERE t.id = :id")
+	// <Optional> MyTask saveTaskById(@Param("id") Integer id);
 
 }
