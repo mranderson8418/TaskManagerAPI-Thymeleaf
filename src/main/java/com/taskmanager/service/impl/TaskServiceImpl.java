@@ -79,15 +79,13 @@ public class TaskServiceImpl implements TaskService {
 
 		String usernameActive = verifyLoggedInUser();
 		logger.trace("Entered......createTask() ");
+
 		// Get list of all task the User has in the database
 		List<MyTask> currentUserTaskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
-		// PressEnter.pressEnter();
 
 		myTaskDto.setTaskNumber(currentUserTaskList.size() + 1);
 
 		System.out.println("myTaskDto.getTaskNumber() = " + myTaskDto.getTaskNumber());
-
-		// PressEnter.pressEnter();
 
 		System.out.println("myTaskDto.getTaskNumber() ==================== " + myTaskDto.getTaskNumber());
 
@@ -376,8 +374,6 @@ public class TaskServiceImpl implements TaskService {
 		// Will search the taskRepository for all task according to username
 		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
 
-		System.out.println("taskList.size() =============== " + taskList.size());
-
 		List<MyTask> tempTaskList = new ArrayList<>();
 
 		Map<Integer, Integer> taskIdAndNumber = new HashMap<Integer, Integer>();
@@ -388,8 +384,6 @@ public class TaskServiceImpl implements TaskService {
 
 			// if the task is not null
 			if (taskList.get(k) != null) {
-
-				System.out.println("taskList.get(k).getTaskNumber() = " + taskList.get(k).getTaskNumber());
 
 				tempTaskList.add(taskList.get(k));
 
@@ -403,20 +397,12 @@ public class TaskServiceImpl implements TaskService {
 
 			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
 
-			System.out.println(
-					"taskIdAndNumber = (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
-		}
-
-		// save the renumbered task list back into the taskRepository
-		for (int k = 1; k < tempTaskList.size(); k++) {
-
-			taskRepository.save(tempTaskList.get(taskIdAndNumber.get(k)));
+			System.out.println("taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
 		}
 
 		try
 
 		{
-			// Optional<MyUser> myUser = myUserRepository.findByUsername(usernameActive);
 
 			MyTaskDto myTaskDto = new MyTaskDto();
 
@@ -426,7 +412,7 @@ public class TaskServiceImpl implements TaskService {
 
 				myTaskDto = convertToDto(taskList.get(i));
 
-				System.out.println("myTaskDto.getId() = " + myTaskDto.getId());
+				System.out.println("myTaskDto.getId() =============> " + myTaskDto.getId());
 
 				myTaskDtoList.add(myTaskDto);
 

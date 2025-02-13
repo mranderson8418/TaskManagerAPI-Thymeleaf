@@ -104,20 +104,6 @@ public class TaskControllerDynamicAdmin {
 
 	}
 
-	public Collection<? extends GrantedAuthority> getAuthorityOfUser() {
-
-		System.out.println(nameClass());
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
-		// this is called a bounded generic
-		// it is a list of something that extends the GrantedAuthority class
-		Collection<? extends GrantedAuthority> role = userDetails.getAuthorities();
-
-		return role;
-	}
-
 	@PostMapping({ "/user/create/task", "/admin/create/task" })
 	// @ModelAttribute - this will bind the annotated object with the model class
 	public String createTaskNewPost(@ModelAttribute MyTaskDto myTaskDto, Model model) {
@@ -137,15 +123,15 @@ public class TaskControllerDynamicAdmin {
 		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/create/task\")------");
 
 		// task is inserted into the TaskRepository
-		MyTaskDto task_inserted = taskService.createTask(myTaskDto);
+		myTaskDto = taskService.createTask(myTaskDto);
 
-		model.addAttribute("id", task_inserted.getId());
-		model.addAttribute("taskNumber", task_inserted.getTaskNumber());
-		model.addAttribute("username", task_inserted.getUsername());
-		model.addAttribute("content", task_inserted.getContent());
-		model.addAttribute("complete", task_inserted.isComplete());
+		model.addAttribute("id", myTaskDto.getId());
+		model.addAttribute("taskNumber", myTaskDto.getTaskNumber());
+		model.addAttribute("username", myTaskDto.getUsername());
+		model.addAttribute("content", myTaskDto.getContent());
+		model.addAttribute("complete", myTaskDto.isComplete());
 
-		System.out.println("Task # " + task_inserted.getId() + " is added to the database");
+		System.out.println("Task # " + myTaskDto.getId() + " is added to the database");
 
 		Collection<? extends GrantedAuthority> role = getAuthorityOfUser();
 
@@ -251,8 +237,6 @@ public class TaskControllerDynamicAdmin {
 
 			logger.trace("EXITED……………………………………	@GetMapping----> getDeleteTask()");
 
-			// PressEnter.pressEnter();
-
 			return "admin-delete-task";
 		}
 		System.out.println("EXITED..........................................@GetMapping----> getDeleteTask()");
@@ -328,6 +312,20 @@ public class TaskControllerDynamicAdmin {
 		}
 		return "user-task-list";
 
+	}
+
+	public Collection<? extends GrantedAuthority> getAuthorityOfUser() {
+
+		System.out.println(nameClass());
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
+		// this is called a bounded generic
+		// it is a list of something that extends the GrantedAuthority class
+		Collection<? extends GrantedAuthority> role = userDetails.getAuthorities();
+
+		return role;
 	}
 
 }
