@@ -17,7 +17,7 @@ public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 
 	void save(String string);
 
-	// public void saveById(int id);
+	public void saveById(int id);
 
 	public void deleteById(int taskNumber);
 

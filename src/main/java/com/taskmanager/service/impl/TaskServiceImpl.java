@@ -49,6 +49,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	private MyTaskDto convertToDto(MyTask task) {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		System.out.println("Entered...........................convertToDto()");
 
@@ -64,6 +65,7 @@ public class TaskServiceImpl implements TaskService {
 			taskDto.setComplete(task.isComplete());
 			logger.trace("EXITED……………………………………convertToDto()");
 			System.out.println("Exited...........................convertToDto()");
+			System.out.println("\n\n");
 			return taskDto;
 
 		} catch (MyUserNotFoundException unfe) {
@@ -73,8 +75,8 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public MyTaskDto createTask(MyTaskDto myTaskDto) {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
-
 		System.out.println("Entered...........................createTask()");
 
 		String usernameActive = verifyLoggedInUser();
@@ -100,12 +102,15 @@ public class TaskServiceImpl implements TaskService {
 		MyTask newTask = taskRepository.save(task);
 
 		logger.trace("Exited......createTask() ");
+
 		System.out.println("Exited...........................createTask()");
+		System.out.println("\n\n");
 		return mapToDto(newTask);
 	}
 
 	@Override
 	public MyTaskDto updateTask(MyTaskDto taskDtoUpdate, int taskNumber) throws TaskNotFoundException {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		logger.trace("Entered...........................updateTask()");
 
@@ -126,6 +131,7 @@ public class TaskServiceImpl implements TaskService {
 
 			// Map the updated Task entity to DTO and return it
 			logger.trace("Exited...........................updateTask()");
+			System.out.println("\n\n");
 
 			return mapToDto(newTask);
 
@@ -137,6 +143,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	public String verifyLoggedInUser() {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 
 		System.out.println("Entered...........................verifyLoggedInUser()");
@@ -150,11 +157,12 @@ public class TaskServiceImpl implements TaskService {
 		// Get user name from the userDetails
 		String username = userDetails.getUsername();
 		System.out.println("Exited...........................verifyLoggedInUser()");
+		System.out.println("\n\n");
 		return username;
 	}
 
 	public MyTask createTaskUpdate(MyTask task, MyTask taskUpdate) {
-
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		System.out.println("Entered...........................createTaskUpdate()");
 
@@ -183,6 +191,7 @@ public class TaskServiceImpl implements TaskService {
 
 			logger.trace("Exited......createTaskUpdate() ");
 			System.out.println("Exited...........................createTaskUpdate()");
+			System.out.println("\n\n");
 			return task;
 		} else {
 			throw new TaskNotFoundException("Task id not found");
@@ -192,7 +201,7 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public void deleteByTaskId(int taskNumber) throws TaskNotFoundException {
-
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 
 		System.out.println("Entered...........................deleteByTaskId()");
@@ -208,6 +217,7 @@ public class TaskServiceImpl implements TaskService {
 
 			taskRepository.deleteById(taskIdAndNumber.get(taskNumber));
 			System.out.println("Exited...........................deleteByTaskId()");
+			System.out.println("\n\n");
 			logger.trace("Exited......deleteByTaskId() ");
 
 		} catch (TaskNotFoundException tnfe) {
@@ -217,8 +227,11 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	public Map<Integer, Integer> getHashMap() {
-		System.out.println("Entered...........................getHashMap()");
+
+		System.out.println("\n\n");
 		System.out.println(nameClass());
+		System.out.println("Entered...........................getHashMap()");
+
 		logger.trace("Entered...........................getHashMap()");
 
 		String usernameActive = verifyLoggedInUser();
@@ -239,6 +252,7 @@ public class TaskServiceImpl implements TaskService {
 		}
 
 		System.out.println("Exited...........................getHashMap()");
+		System.out.println("\n\n");
 		logger.trace("Exited...........................getHashMap()");
 
 		return taskIdAndNumber;
@@ -247,6 +261,7 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public TaskResponse getAllTasks(int pageNo, int pageSize) {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		System.out.println("Entered...........................getAllTasks()");
 		logger.trace("Entered...........................getAllTasks()");
@@ -276,6 +291,7 @@ public class TaskServiceImpl implements TaskService {
 		taskResponse.setLast(task.isLast());
 
 		System.out.println("Exited...........................getAllTasks()");
+		System.out.println("\n\n");
 		logger.trace("Exited...........................getAllTasks()");
 
 		return taskResponse;
@@ -285,7 +301,9 @@ public class TaskServiceImpl implements TaskService {
 	@SuppressWarnings("null")
 	@Override
 	public List<MyTaskDto> getAllTasksObjects() {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
+
 		System.out.println("Entered...........................getAllTasksObjects()");
 		logger.trace("Entered...........................getAllTasksObjects()");
 
@@ -313,6 +331,7 @@ public class TaskServiceImpl implements TaskService {
 
 			}
 			System.out.println("Exited...........................getAllTasksObjects()");
+			System.out.println("\n\n");
 			logger.trace("Exiting...........................getAllTasks()");
 
 			return myTaskDtoList;
@@ -328,6 +347,7 @@ public class TaskServiceImpl implements TaskService {
 	@SuppressWarnings("null")
 	@Override
 	public List<MyTaskDto> afterDeleteGetAllTasks() throws TaskNotFoundException {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 
 		System.out.println("Entered...........................afterDeleteGetAllTasks()");
@@ -353,6 +373,8 @@ public class TaskServiceImpl implements TaskService {
 
 				tempTaskList.get(k).setTaskNumber(k + 1);
 
+				taskRepository.saveById(tempTaskList.get(k).getId());
+
 			}
 
 		}
@@ -361,12 +383,17 @@ public class TaskServiceImpl implements TaskService {
 
 			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
 
-			System.out.println("taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
+			System.out.println(
+					"taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
 		}
 
-		try
+		for (int j = 1; j < taskList.size(); j++) {
 
-		{
+			taskRepository.deleteById(taskIdAndNumber.get(j));
+
+		}
+
+		try {
 
 			MyTaskDto myTaskDto = new MyTaskDto();
 
@@ -384,6 +411,7 @@ public class TaskServiceImpl implements TaskService {
 
 			logger.trace("Exiting...........................afterDeleteGetAllTasks()");
 			System.out.println("Exited...........................afterDeleteGetAllTasks()");
+			System.out.println("\n\n");
 			return myTaskDtoList;
 
 		} catch (MyUserNotFoundException unfe) {
@@ -393,7 +421,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	public MyTask createTaskUpdateAfterDelete(MyTask task, MyTask taskUpdate) {
-
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		System.out.println("Entered...........................createTaskUpdate()");
 
@@ -432,6 +460,7 @@ public class TaskServiceImpl implements TaskService {
 			task.setComplete(taskUpdate.isComplete());
 			logger.trace("Exited......createTaskUpdate() ");
 			System.out.println("Exited...........................createTaskUpdate()");
+			System.out.println("\n\n");
 			return task;
 		} else {
 			throw new TaskNotFoundException("Task id not found");
@@ -441,16 +470,19 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public MyTaskDto getTaskById(int id) {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		logger.trace("Entered.................getTaskById()");
 
 		MyTask task = taskRepository.findById(id)
 				.orElseThrow(() -> new TaskNotFoundException("Print drawing could not be found :("));
 		logger.trace("Exited...........................getTaskById()");
+		System.out.println("\n\n");
 		return mapToDto(task);
 	}
 
 	private MyTask convertToTask(MyTaskDto myTaskDto) {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		logger.trace("Entered...........................convertToTask()");
 
@@ -463,10 +495,12 @@ public class TaskServiceImpl implements TaskService {
 		task.setUsername(myTaskDto.getUsername());
 
 		logger.trace("Exited...........................convertToTask()");
+		System.out.println("\n\n");
 		return task;
 	}
 
 	public MyTaskDto mapToDto(MyTask task) {
+		System.out.println("\n\n");
 		System.out.println(nameClass());
 		logger.trace("Entered...........................mapToDto()");
 
@@ -480,6 +514,7 @@ public class TaskServiceImpl implements TaskService {
 
 		System.out.println("task.getTaskNumber() ----------------------------------- " + task.getTaskNumber());
 		logger.trace("Exited...........................mapToDto()");
+		System.out.println("\n\n");
 		return taskDto;
 
 	}
