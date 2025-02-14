@@ -108,6 +108,72 @@ public class TaskServiceImpl implements TaskService {
 		return mapToDto(newTask);
 	}
 
+	@Override
+	public MyTaskDto updateTask(MyTaskDto taskDtoUpdate, int taskNumber) throws TaskNotFoundException {
+
+		logger.trace("Entered...........................updateTask()");
+
+		Map<Integer, Integer> taskIdAndNumber = getHashMap();
+
+		MyTask myTaskUpdate = convertToTask(taskDtoUpdate);
+
+		try {
+			// Find the Task entity by ID or throw an exception if not found
+			MyTask task = taskRepository.findById(taskIdAndNumber.get(taskNumber))
+					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+
+			// Create an updated Task entity
+			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
+
+			// Save the updated Task entity
+			MyTask newTask = taskRepository.save(updatedTask);
+
+			// Map the updated Task entity to DTO and return it
+
+			logger.trace("Exited...........................updateTask()");
+
+			return mapToDto(newTask);
+
+		} catch (TaskNotFoundException pde) {
+			logger.trace("Exited...........................updateTask()");
+			// Re-throw TaskNotFoundException with a more specific message
+			throw new TaskNotFoundException("Task  could not be updated--OOp");
+		}
+	}
+
+	public MyTask createTaskUpdate(MyTask task, MyTask taskUpdate) {
+
+		logger.trace("Entered......createTaskUpdate() ");
+
+		String username = verifyLoggedInUser();
+
+		System.out.println("username = " + username);
+
+		// Get the currrent users information
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		// if the task.username = currentUser.username then continue
+		if (task.getUsername().equals(myUserDto.getUsername())) {
+
+			task.setUsername(username);
+
+			if (!taskUpdate.getContent().isBlank()) {
+
+				task.setContent(taskUpdate.getContent());
+
+			}
+
+			task.setComplete(taskUpdate.isComplete());
+
+			logger.trace("Exited......createTaskUpdate() ");
+
+			return task;
+		} else {
+			throw new TaskNotFoundException("Task id not found");
+		}
+
+	}
+
 	public String verifyLoggedInUser() {
 		System.out.println("\n\n");
 		System.out.println(nameClass());
@@ -202,10 +268,7 @@ public class TaskServiceImpl implements TaskService {
 	@SuppressWarnings("null")
 	@Override
 	public List<MyTaskDto> getAllTasksObjects() {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
 
-		System.out.println("Entered...........................getAllTasksObjects()");
 		logger.trace("Entered...........................getAllTasksObjects()");
 
 		String username = verifyLoggedInUser();
@@ -247,10 +310,6 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public void deleteByTaskId(int taskNumber) throws TaskNotFoundException {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
-
-		System.out.println("Entered...........................deleteByTaskId()");
 
 		logger.trace("Entered......deleteByTaskId() ");
 
@@ -273,86 +332,8 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public MyTaskDto updateTask(MyTaskDto taskDtoUpdate, int taskNumber) throws TaskNotFoundException {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
-		System.out.println("Entered...........................updateTask()");
-
-		logger.trace("Entered...........................updateTask()");
-
-		Map<Integer, Integer> taskIdAndNumber = getHashMap();
-
-		MyTask myTaskUpdate = convertToTask(taskDtoUpdate);
-
-		try {
-			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(taskIdAndNumber.get(taskNumber))
-					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
-
-			// Create an updated Task entity
-			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
-
-			// Save the updated Task entity
-			MyTask newTask = taskRepository.save(updatedTask);
-
-			// Map the updated Task entity to DTO and return it
-			System.out.println("EXITED...........................updateTask()");
-			logger.trace("Exited...........................updateTask()");
-			System.out.println("\n\n");
-
-			return mapToDto(newTask);
-
-		} catch (TaskNotFoundException pde) {
-			logger.trace("Exited...........................updateTask()");
-			// Re-throw TaskNotFoundException with a more specific message
-			throw new TaskNotFoundException("Task  could not be updated--OOp");
-		}
-	}
-
-	public MyTask createTaskUpdate(MyTask task, MyTask taskUpdate) {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
-		System.out.println("Entered...........................createTaskUpdate()");
-
-		logger.trace("Entered......createTaskUpdate() ");
-
-		String username = verifyLoggedInUser();
-		System.out.println("username = " + username);
-
-		// Get the currrent users information
-		MyUserDto myUserDto = myUserService.currentUser();
-		System.out.println("task.getContent() ======  " + task.getContent());
-		System.out.println("taskUpdate.getContent()========= " + taskUpdate.getContent());
-
-		// if the task.username = currentUser.username then continue
-		if (task.getUsername().equals(myUserDto.getUsername())) {
-
-			task.setUsername(username);
-
-			if (!taskUpdate.getContent().isBlank()) {
-
-				task.setContent(taskUpdate.getContent());
-
-			}
-
-			task.setComplete(taskUpdate.isComplete());
-
-			logger.trace("Exited......createTaskUpdate() ");
-			System.out.println("Exited...........................createTaskUpdate()");
-			System.out.println("\n\n");
-			return task;
-		} else {
-			throw new TaskNotFoundException("Task id not found");
-		}
-
-	}
-
-	@Override
 	public List<MyTaskDto> afterDeleteGetAllTasks() throws TaskNotFoundException {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
 
-		System.out.println("Entered...........................afterDeleteGetAllTasks()");
 		logger.trace("Entered...........................afterDeleteGetAllTasks()");
 
 		String usernameActive = verifyLoggedInUser();
@@ -360,26 +341,29 @@ public class TaskServiceImpl implements TaskService {
 		// Will search the taskRepository for all task according to username
 		List<MyTask> taskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
 
-		List<MyTaskDto> tempTaskListDto = new ArrayList<>();
+		// Create temperary storage for taskList from taskRepository
+		List<MyTask> tempTaskList = new ArrayList<>();
 
+		// Map < taskNumber , id >
 		Map<Integer, Integer> taskIdAndNumber = new HashMap<Integer, Integer>();
 
 		for (int j = 0; j < taskList.size(); j++) {
 
 			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
 
-			System.out.println("taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
+			System.out.println(
+					"taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
 		}
 
 		// Re-number the task list
 		// Create new "tempTaskList" copy of "taskList"
 		for (int k = 0; k < taskList.size(); k++) {
 
-			tempTaskListDto.add(convertToDto(taskList.get(k)));
+			tempTaskList.add(taskList.get(k));
 
-			tempTaskListDto.get(k).setTaskNumber(k + 1);
+			tempTaskList.get(k).setTaskNumber(k + 1);
 
-			updateTask(tempTaskListDto.get(k), tempTaskListDto.get(k).getId());
+			updateTaskNumber(tempTaskList.get(k), tempTaskList.get(k).getTaskNumber());
 
 		}
 
@@ -400,8 +384,7 @@ public class TaskServiceImpl implements TaskService {
 			}
 
 			logger.trace("Exiting...........................afterDeleteGetAllTasks()");
-			System.out.println("Exited...........................afterDeleteGetAllTasks()");
-			System.out.println("\n\n");
+
 			return myTaskDtoList;
 
 		} catch (MyUserNotFoundException unfe) {
@@ -410,47 +393,54 @@ public class TaskServiceImpl implements TaskService {
 
 	}
 
-	public MyTask createTaskUpdateAfterDelete(MyTask task, MyTask taskUpdate) {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
-		System.out.println("Entered...........................createTaskUpdateAfterDelete()");
+	public void updateTaskNumber(MyTask myTaskUpdate, int taskNumber) throws TaskNotFoundException {
+
+		logger.trace("Entered...........................updateTask()");
+
+		Map<Integer, Integer> taskIdAndNumber = getHashMap();
+
+		try {
+			// Find the Task entity by ID or throw an exception if not found
+			MyTask task = taskRepository.findById(taskIdAndNumber.get(taskNumber))
+					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+
+			// Create an updated Task entity
+			MyTask updatedTask = createTaskUpdateTaskNumber(task, myTaskUpdate);
+
+			// Save the updated Task entity
+			MyTask newTask = taskRepository.save(updatedTask);
+
+			// Map the updated Task entity to DTO and return it
+
+			logger.trace("Exited...........................updateTask()");
+
+		} catch (TaskNotFoundException pde) {
+			logger.trace("Exited...........................updateTask()");
+			// Re-throw TaskNotFoundException with a more specific message
+			throw new TaskNotFoundException("Task  could not be updated--OOp");
+		}
+	}
+
+	public MyTask createTaskUpdateTaskNumber(MyTask task, MyTask taskUpdate) {
 
 		logger.trace("Entered......createTaskUpdate() ");
 
-		// verifies the authenticity of the user making the change to the task
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-		System.out.println("authentication.getPrincipal() = " + authentication.getPrincipal());
-
-		// UserDetails is used to store user information into encapsulated
-		// Authentication objects
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
-		// Get the user name from the userDetails
-		String username = userDetails.getUsername();
-
-		System.out.println("username = " + username);
+		String username = verifyLoggedInUser();
 
 		// Get the currrent users information
 		MyUserDto myUserDto = myUserService.currentUser();
-		System.out.println("task.getContent() ======  " + task.getContent());
-		System.out.println("taskUpdate.getContent()========= " + taskUpdate.getContent());
-		// if the task.username = currentUser.username then continue
 
+		// if the task.username = currentUser.username then continue
 		if (task.getUsername().equals(myUserDto.getUsername())) {
 
+			task.setId(taskUpdate.getId());
+			task.setTaskNumber(taskUpdate.getTaskNumber());
 			task.setUsername(username);
-
-			if (!taskUpdate.getContent().isBlank()) {
-
-				task.setContent(taskUpdate.getContent());
-
-			}
-
+			task.setContent(taskUpdate.getContent());
 			task.setComplete(taskUpdate.isComplete());
+
 			logger.trace("Exited......createTaskUpdate() ");
-			System.out.println("Exited...........................createTaskUpdateAfterDelete()");
-			System.out.println("\n\n");
+
 			return task;
 		} else {
 			throw new TaskNotFoundException("Task id not found");
