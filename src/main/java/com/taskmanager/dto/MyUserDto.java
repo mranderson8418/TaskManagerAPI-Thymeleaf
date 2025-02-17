@@ -15,6 +15,8 @@ public class MyUserDto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	private String myUsernumber;
+
 	private String password;
 
 	private String role;
@@ -35,6 +37,10 @@ public class MyUserDto {
 
 	public int getId() {
 		return id;
+	}
+
+	public String getMyUserNumber() {
+		return myUsernumber;
 	}
 
 	public String getPassword() {
@@ -63,6 +69,10 @@ public class MyUserDto {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public void setMyUserNumber(String myUserNumber) {
+		this.myUsernumber = myUserNumber;
 	}
 
 	public void setPassword(String password) {

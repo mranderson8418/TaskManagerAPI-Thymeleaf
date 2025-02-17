@@ -1,145 +1,159 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Register Form</title>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Register Form</title>
-
-	<style>
-		/* General styles */
-		body {
-			background-color: rgb(100, 195, 238);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			height: 100vh;
-			margin: 0;
-			font-family: Arial, sans-serif;
-			color: #04aa6d;
-		}
-
-		.form-container {
-			background-color: rgb(78, 176, 97);
-			border-radius: 15px;
-			color: green;
-			padding: 20px;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-			width: 90%;
-			max-width: 600px;
-			text-align: center;
-		}
-
-		.form-container h1 {
-			margin-bottom: 20px;
-			color: white;
-		}
-
-		form {
-			background-color: #f5f5f5;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-		}
-
-		form label {
-			display: block;
-			font-size: 1rem;
-			margin-bottom: 5px;
-		}
-
-		form input[type="text"],
-		form input[type="password"],
-		form input[type="date"],
-		form select {
-			text-align: center;
-			width: 90%;
-			padding: 10px;
-			margin-bottom: 15px;
-			border: 2px solid #ccc;
-			border-radius: 5px;
-			font-size: 1rem;
-		}
-
-		form input[type="date"],
-		form input[type="role"],
-		form input[type="gender"] {
-			text-align: center;
-		}
-
-		.scott-button button {
-			background-color: rgb(103, 206, 103);
-			color: white;
-			padding: 10px 20px;
-			font-size: 1rem;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			margin-top: 10px;
-		}
-
-		.scott-button button:hover {
-			background-color: rgb(82, 164, 82);
-		}
-
-		.scott-button button a {
-			text-decoration: none;
-			color: white;
-		}
-
-		/* Ensure form-container is centered and responsive */
-		@media (max-width: 600px) {
-			.form-container {
-				padding: 15px;
+		<style>
+			/* General styles */
+			body {
+				background-color: rgb(100, 195, 238);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				height: 100vh;
+				margin: 0;
+				font-family: Arial, sans-serif;
+				color: #04aa6d;
 			}
 
+			.form-container {
+				background-color: rgb(78, 176, 97);
+				border-radius: 15px;
+				color: green;
+				padding: 20px;
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+				width: 90%;
+				max-width: 600px;
+				text-align: center;
+			}
+
+			.form-container h1 {
+				margin-bottom: 20px;
+				color: white;
+			}
+
+			form {
+				background-color: #f5f5f5;
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+			}
+
+			form label {
+				display: block;
+				font-size: 1rem;
+				margin-bottom: 5px;
+			}
+
+			form input[type="email"],
 			form input[type="text"],
 			form input[type="password"],
 			form input[type="date"],
 			form select {
-				font-size: 0.9rem;
+				text-align: center;
+				width: 90%;
+				padding: 10px;
+				margin-bottom: 15px;
+				border: 2px solid #ccc;
+				border-radius: 5px;
+				font-size: 1rem;
+			}
+
+			form input[type="email"],
+			form input[type="date"],
+			form input[type="role"],
+			form input[type="gender"] {
+				text-align: center;
 			}
 
 			.scott-button button {
-				font-size: 0.9rem;
+				background-color: rgb(103, 206, 103);
+				color: white;
+				padding: 10px 20px;
+				font-size: 1rem;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+				margin-top: 10px;
 			}
-		}
-	</style>
-</head>
 
-<body>
-	<div class="form-container">
-		<h1>Enter User Credentials</h1>
-		<form action="/register" th:object="${myUser}" method="post">
-			<label for="email">Email:</label> <input type="text" id="email" name="email" /> <label
-				for="password">Password:</label>
-			<input type="password" id="password" name="password" /> <label for="role">Role:</label>
-			<select id="role" name="role">
-				<option value="">Select Role</option>
-				<option value="ADMIN">ADMIN</option>
-				<option value="USER">USER</option>
-				<option value="ADMIN,USER">ADMIN, USER</option>
-			</select>
-			<label for="dob">DOB:</label> <input type="date" id="dob" name="dob" /> <label for="gender">Gender:</label>
-			<select id="gender" name="gender">
-				<option value="">Select Gender</option>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-			</select>
+			.scott-button button:hover {
+				background-color: rgb(82, 164, 82);
+			}
+
+			.scott-button button a {
+				text-decoration: none;
+				color: white;
+			}
+
+			/* Ensure form-container is centered and responsive */
+			@media (max-width: 600px) {
+				.form-container {
+					padding: 15px;
+				}
+
+				form input[type="email"],
+				form input[type="text"],
+				form input[type="password"],
+				form input[type="date"],
+				form select {
+					font-size: 0.9rem;
+				}
+
+				.scott-button button {
+					font-size: 0.9rem;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="form-container">
+			<h1>Enter User Credentials</h1>
+			<form action="/register" th:object="${myUser}" method="post">
+				<label for="email">Email:</label> <input type="email" id="email" name="email" />
+				<label for="password">Password</label>
+				<input
+					type="password"
+					id="password"
+					name="password"
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					required
+				/>
+
+				<label for="role">Role:</label>
+				<select id="role" name="role">
+					<option value="">Select Role</option>
+					<option value="ADMIN">ADMIN</option>
+					<option value="USER">USER</option>
+					<option value="ADMIN,USER">ADMIN, USER</option>
+				</select>
+
+				<label for="dob">Select a Date of Birth:</label>
+				<input type="date" id="dob" name="dob" required />
+
+				<label for="gender">Gender:</label>
+				<select id="gender" name="gender">
+					<option value="">Select Gender</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select>
+
+				<div class="scott-button">
+					<button type="submit">Submit</button>
+				</div>
+			</form>
 
 			<div class="scott-button">
-				<button type="submit">Submit</button>
+				<button>
+					<a th:href="@{/user/home}">Home Page</a>
+				</button>
 			</div>
-		</form>
-
-		<div class="scott-button">
-			<button>
-				<a th:href="@{/user/home}">Home Page</a>
-			</button>
 		</div>
-	</div>
-</body>
-
+	</body>
 </html>

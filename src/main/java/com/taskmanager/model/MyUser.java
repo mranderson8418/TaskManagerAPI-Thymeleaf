@@ -30,7 +30,6 @@ public class MyUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
 	@NotBlank
 	@Column(name = "password")
 	private String password;
@@ -42,6 +41,9 @@ public class MyUser {
 	@NotBlank
 	@Column(name = "username")
 	private String username;
+
+	@Column(name = "usernumber")
+	private int usernumber;
 
 	public String getDob() {
 		return dob;
@@ -69,6 +71,10 @@ public class MyUser {
 
 	public String getUsername() {
 		return this.getEmail();
+	}
+
+	public int getUsernumber() {
+		return usernumber;
 	}
 
 	public void setDob(String dob) {
@@ -99,10 +105,14 @@ public class MyUser {
 		this.username = username;
 	}
 
+	public void setUsernumber(int usernumber) {
+		this.usernumber = usernumber;
+	}
+
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email +
-				", password=" + password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" + password +
+				", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

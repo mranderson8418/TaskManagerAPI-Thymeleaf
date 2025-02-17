@@ -20,6 +20,7 @@ import com.taskmanager.controllers.LastWord;
 import com.taskmanager.dto.MyTaskDto;
 import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.dto.TaskResponse;
+import com.taskmanager.exceptions.EmailNotMaskedAppropriately;
 import com.taskmanager.exceptions.MyUserNotFoundException;
 import com.taskmanager.exceptions.TaskNotFoundException;
 import com.taskmanager.model.MyTask;
@@ -74,25 +75,33 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	public String maskEmail(String email) {
+
 		if (email == null || !email.contains("@")) {
 			throw new IllegalArgumentException("Invalid email format");
 		}
 
-		String[] parts = email.split("@");
-		String username = parts[0];
-		String domain = parts[1];
+		String[] myArray = email.split("@");
 
-		// Show first 5 characters of the username, then mask the rest
-		String maskedUsername = username.substring(0, Math.min(5, username.length())) + "***";
+		String str2[] = new String[2];
+		int i = 0;
+		for (String x : myArray) {
+			str2[i] = x;
+			i++;
 
-		return maskedUsername + "@" + domain;
+		}
+
+		System.out.println(str2[1]);
+
+		String str1 = email.substring(0, 3);
+
+		String str3 = "***";
+		System.out.println("str1 + str3 + str2[1].substring(5, 9);");
+		// PressEnter.pressEnter();
+		return str1 + str3 + str2[1].substring(5, 9);
 	}
 
 	@Override
 	public MyTaskDto createTask(MyTaskDto myTaskDto) {
-		System.out.println("\n\n");
-		System.out.println(nameClass());
-		System.out.println("Entered...........................createTask()");
 
 		String usernameActive = verifyLoggedInUser();
 		logger.trace("Entered......createTask() ");
@@ -101,10 +110,6 @@ public class TaskServiceImpl implements TaskService {
 		List<MyTask> currentUserTaskList = taskRepository.findAllTasksByUsernameObjectList(usernameActive);
 
 		myTaskDto.setTaskNumber(currentUserTaskList.size() + 1);
-
-		System.out.println("myTaskDto.getTaskNumber() = " + myTaskDto.getTaskNumber());
-
-		System.out.println("myTaskDto.getTaskNumber() ==================== " + myTaskDto.getTaskNumber());
 
 		MyTask task = new MyTask();
 
@@ -118,8 +123,6 @@ public class TaskServiceImpl implements TaskService {
 
 		logger.trace("Exited......createTask() ");
 
-		System.out.println("Exited...........................createTask()");
-		System.out.println("\n\n");
 		return mapToDto(newTask);
 	}
 
@@ -133,27 +136,31 @@ public class TaskServiceImpl implements TaskService {
 		MyTask myTaskUpdate = convertToTask(taskDtoUpdate);
 
 		try {
-			// Find the Task entity by ID or throw an exception if not found
-			MyTask task = taskRepository.findById(taskIdAndNumber.get(taskNumber))
-					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
-
-			// Create an updated Task entity
-			MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
-
-			// Save the updated Task entity
-			MyTask newTask = taskRepository.save(updatedTask);
-
-			// Map the updated Task entity to DTO and return it
-
-			logger.trace("Exited...........................updateTask()");
-
-			return mapToDto(newTask);
-
+			int taskId = taskIdAndNumber.get(taskNumber);
 		} catch (TaskNotFoundException pde) {
 			logger.trace("Exited...........................updateTask()");
 			// Re-throw TaskNotFoundException with a more specific message
-			throw new TaskNotFoundException("Task  could not be updated--OOp");
+			throw new TaskNotFoundException("Task  could not be found");
+		} catch (NullPointerException npe) {
+			throw new NullPointerException("Task does not exists");
 		}
+
+		int taskId = taskIdAndNumber.get(taskNumber);
+		// Find the Task entity by ID or throw an exception if not found
+		MyTask task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+
+		// Create an updated Task entity
+		MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
+
+		// Save the updated Task entity
+		MyTask newTask = taskRepository.save(updatedTask);
+
+		// Map the updated Task entity to DTO and return it
+
+		logger.trace("Exited...........................updateTask()");
+
+		return mapToDto(newTask);
+
 	}
 
 	public MyTask createTaskUpdate(MyTask task, MyTask taskUpdate) {
@@ -223,21 +230,24 @@ public class TaskServiceImpl implements TaskService {
 
 		Map<Integer, Integer> taskIdAndNumber = new HashMap<Integer, Integer>();
 
-		// Re-number the task list
-		// Create new "tempTaskList" copy of "taskList"
-		for (int k = 0; k < taskList.size(); k++) {
+		try {
+			// Re-number the task list
+			// Create new "tempTaskList" copy of "taskList"
+			for (int k = 0; k < taskList.size(); k++) {
 
-			taskList.get(k).setTaskNumber(k + 1);
+				taskList.get(k).setTaskNumber(k + 1);
 
-			taskIdAndNumber.put(taskList.get(k).getTaskNumber(), taskList.get(k).getId());
+				taskIdAndNumber.put(taskList.get(k).getTaskNumber(), taskList.get(k).getId());
 
+			}
+
+			logger.trace("Exited...........................getHashMap()");
+
+			return taskIdAndNumber;
+
+		} catch (TaskNotFoundException tnfe) {
+			throw new TaskNotFoundException("Task Could not be found");
 		}
-
-		System.out.println("Exited...........................getHashMap()");
-		System.out.println("\n\n");
-		logger.trace("Exited...........................getHashMap()");
-
-		return taskIdAndNumber;
 
 	}
 
@@ -298,22 +308,25 @@ public class TaskServiceImpl implements TaskService {
 
 			List<MyTaskDto> myTaskDtoList = new ArrayList<>();
 
-			System.out.println("Exited...........................getAllTasksObjects()");
-			System.out.println("\n\n");
 			logger.trace("Exiting...........................getAllTasks()");
 
-			for (int i = 0; i < taskList.size(); i++) {
+			try {
+				for (int i = 0; i < taskList.size(); i++) {
 
-				String newUsername = maskEmail(taskList.get(i).getUsername());
+					String newUsername = maskEmail(taskList.get(i).getUsername());
 
-				taskList.get(i).setUsername(newUsername);
-				myTaskDto = convertToDto(taskList.get(i));
+					taskList.get(i).setUsername(newUsername);
+					myTaskDto = convertToDto(taskList.get(i));
 
-				myTaskDtoList.add(myTaskDto);
+					myTaskDtoList.add(myTaskDto);
 
+				}
+
+				return myTaskDtoList;
+
+			} catch (EmailNotMaskedAppropriately cnme) {
+				throw new EmailNotMaskedAppropriately("Email was not masked properly");
 			}
-
-			return myTaskDtoList;
 
 		} catch (
 
@@ -331,6 +344,18 @@ public class TaskServiceImpl implements TaskService {
 		String username = verifyLoggedInUser();
 
 		Map<Integer, Integer> taskIdAndNumber = getHashMap();
+
+		try {
+			int taskId = taskIdAndNumber.get(taskNumber);
+		} catch (TaskNotFoundException pde) {
+			logger.trace("Exited...........................updateTask()");
+			// Re-throw TaskNotFoundException with a more specific message
+			throw new TaskNotFoundException("Task  could not be found");
+		} catch (NullPointerException npe) {
+			throw new NullPointerException("Task does not exists");
+		}
+
+		int taskId = taskIdAndNumber.get(taskNumber);
 
 		try {
 			Optional<MyTask> foundTask = taskRepository.findById(taskIdAndNumber.get(taskNumber));
@@ -366,8 +391,7 @@ public class TaskServiceImpl implements TaskService {
 
 			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
 
-			System.out.println(
-					"taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
+			System.out.println("taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
 		}
 
 		// Re-number the task list

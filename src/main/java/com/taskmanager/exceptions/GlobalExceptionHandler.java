@@ -25,8 +25,7 @@ public class GlobalExceptionHandler {
 	// }
 
 	@ExceptionHandler(TaskNotFoundException.class)
-	public String handleTaskNotFoundException(TaskNotFoundException ex, WebRequest request,
-			Model model) {
+	public String handleTaskNotFoundException(TaskNotFoundException ex, WebRequest request, Model model) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
@@ -40,9 +39,38 @@ public class GlobalExceptionHandler {
 		return "task-not-found-exception";
 	}
 
+	@ExceptionHandler(EmailNotMaskedAppropriately.class)
+	public String handleTaskNotFoundException(EmailNotMaskedAppropriately ex, WebRequest request, Model model) {
+
+		ErrorObject errorObject = new ErrorObject();
+		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
+		errorObject.setMessage(ex.getMessage());
+		errorObject.setTimestamp(new Date());
+
+		model.addAttribute("message", errorObject.getMessage());
+		model.addAttribute("statusCode", errorObject.getStatusCode());
+		model.addAttribute("timeStamp", errorObject.getTimestamp());
+
+		return "email-not-masked-appropriately";
+	}
+
+	@ExceptionHandler(NullPointerException.class)
+	public String handleNullPointerException(NullPointerException ex, WebRequest request, Model model) {
+
+		ErrorObject errorObject = new ErrorObject();
+		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
+		errorObject.setMessage(ex.getMessage());
+		errorObject.setTimestamp(new Date());
+
+		model.addAttribute("message", errorObject.getMessage());
+		model.addAttribute("statusCode", errorObject.getStatusCode());
+		model.addAttribute("timeStamp", errorObject.getTimestamp());
+
+		return "null-pointer-exception";
+	}
+
 	@ExceptionHandler(MyUserNotFoundException.class)
-	public ResponseEntity<ErrorObject> handleUserNotFoundException(MyUserNotFoundException ex,
-			WebRequest request) {
+	public ResponseEntity<ErrorObject> handleUserNotFoundException(MyUserNotFoundException ex, WebRequest request) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
@@ -53,8 +81,8 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(ActiveUserCannotBeDeletedException.class)
-	public ResponseEntity<ErrorObject> handleActiveUserCannotBeDeleted(
-			ActiveUserCannotBeDeletedException ex, WebRequest request) {
+	public ResponseEntity<ErrorObject> handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex,
+			WebRequest request) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
