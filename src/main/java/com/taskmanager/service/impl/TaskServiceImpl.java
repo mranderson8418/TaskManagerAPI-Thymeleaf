@@ -73,6 +73,21 @@ public class TaskServiceImpl implements TaskService {
 		}
 	}
 
+	public String maskEmail(String email) {
+		if (email == null || !email.contains("@")) {
+			throw new IllegalArgumentException("Invalid email format");
+		}
+
+		String[] parts = email.split("@");
+		String username = parts[0];
+		String domain = parts[1];
+
+		// Show first 5 characters of the username, then mask the rest
+		String maskedUsername = username.substring(0, Math.min(5, username.length())) + "***";
+
+		return maskedUsername + "@" + domain;
+	}
+
 	@Override
 	public MyTaskDto createTask(MyTaskDto myTaskDto) {
 		System.out.println("\n\n");
@@ -283,20 +298,20 @@ public class TaskServiceImpl implements TaskService {
 
 			List<MyTaskDto> myTaskDtoList = new ArrayList<>();
 
+			System.out.println("Exited...........................getAllTasksObjects()");
+			System.out.println("\n\n");
+			logger.trace("Exiting...........................getAllTasks()");
+
 			for (int i = 0; i < taskList.size(); i++) {
 
+				String newUsername = maskEmail(taskList.get(i).getUsername());
+
+				taskList.get(i).setUsername(newUsername);
 				myTaskDto = convertToDto(taskList.get(i));
-				System.out.println("\n\n");
-				System.out.println("myTaskDto.getId() = " + myTaskDto.getId());
-				System.out.println(myTaskDto.toString());
-				System.out.println("\n\n");
 
 				myTaskDtoList.add(myTaskDto);
 
 			}
-			System.out.println("Exited...........................getAllTasksObjects()");
-			System.out.println("\n\n");
-			logger.trace("Exiting...........................getAllTasks()");
 
 			return myTaskDtoList;
 

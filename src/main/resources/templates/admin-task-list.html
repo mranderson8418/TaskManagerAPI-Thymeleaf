@@ -1,110 +1,164 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Task List</title>
+		<style>
+			/* General styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Task List</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
+			html,
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				font-family: sans-serif;
+				background-color: #ffffff;
+				width: 100%;
+				padding: 20px;
+				color: black;
+			}
 
-		html {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-			/* Ensure it takes full height */
-		}
+			.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				width: 90%;
+			}
 
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			font-family: sans-serif;
-			padding: 20px;
-			/* Replace margin for consistent centering */
-			color: black;
-			background-color: #ffffff;
-			width: 90%;
-			min-height: 100vh;
-			/* Ensure it doesn't break centering */
-			font-size: 15px;
-		}
-		.completed-row {
-		          background-color: rgb(98, 160, 234); /* Or any color you prefer */
-		      }
-		th,
-		td {
-			padding: 10px;
-			border: 2px solid #365930;
-		}
+			.container div h1 {
+				text-align: center;
+			color: #037d54;
+				font-size: 3rem;
+			}
 
-		th {
-			background-color: #04aa6d;
-			color: white;
-		}
+			/* Table styles */
+			.container div table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 20px;
+			}
 
-		a>button {
-			background-color: #04aa6d;
-			min-width: 5rem;
-			max-width: 15rem;
-			min-height: 4rem;
-			font-size: 1.5rem;
-			color: white;
-			border-radius: 1rem;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-			border: none;
-			cursor: pointer;
-			padding: 1rem;
-			margin-top: 5rem;
-		}
+			th,
+			td {
+				padding: 10px;
+				border: 2px solid #037d54;
+				text-align: center;
+			}
 
-		div.container {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			text-align: center;
-		}
+			th {
+				background-color: #037d54;
+				color: white;
+			}
 
-		h1 {
-			color: green;
-			font-size: 5rem;
-		}
-	</style>
-</head>
+			.completed-row {
+				background-color: rgb(98, 160, 234);
+			}
 
-<body>
-	<div class="container">
-		<h1>Task List</h1>
-		<table border="1">
-			<thead>
-				<tr>
+			/* Button styles */
+			a > button {
+				background-color: #04aa6d;
+				color: white;
+				border: none;
+				border-radius: 1rem;
+				padding: 1rem;
+				font-size: 1.2rem;
+				cursor: pointer;
+				margin-top: 20px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			}
 
-					<th>Task Number</th>
-					<th>Username</th>
-					<th>Content</th>
-					<th>Complete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="task : ${tasks}"
-					th:class="${task.complete ? 'completed-row' : false}">
-					<td th:text="${task.taskNumber}">taskNumber</td>
-					<td th:text="${task.username}">username</td>
-					<td th:text="${task.content}">content</td>
-					<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
-				</tr>
-			</tbody>
-		</table>
+			a > button:hover {
+				background-color: #037d54;
+			}
 
-		<a th:href="@{/admin/index}">
-			<button>Return to Index</button>
-		</a>
-	</div>
-</body>
+			/* Responsive styles */
+			@media (max-width: 768px) {
+				th {
+					background-color: #037d54;
+					color: white;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2.5rem;
+				}
+				table {
+					font-size: 0.9rem;
+				}
+				th,
+				td {
+					padding: 8px;
+				}
+				a > button {
+					font-size: 1rem;
+					padding: 0.8rem;
+				}
+			}
 
+			@media (max-width: 480px) {
+				th {
+					background-color: #037d54;
+					color: white;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2rem;
+				}
+				table {
+					font-size: 0.8rem;
+				}
+				th,
+				td {
+					padding: 6px;
+				}
+				.container div a button {
+					font-size: 0.9rem;
+					padding: 0.6rem;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div>
+				<h1>Task List</h1>
+			</div>
+			<div>
+				<table border="1">
+					<thead>
+						<tr>
+							<th>Task Number</th>
+							<th>Username</th>
+							<th>Content</th>
+							<th>Complete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : false}">
+							<td th:text="${task.taskNumber}">taskNumber</td>
+							<td th:text="${task.username}">username</td>
+							<td th:text="${task.content}">content</td>
+							<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<a th:href="@{/admin/index}">
+					<button>Return to Index</button>
+				</a>
+			</div>
+		</div>
+	</body>
 </html>
