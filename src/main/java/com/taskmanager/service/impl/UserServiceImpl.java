@@ -1,8 +1,6 @@
 package com.taskmanager.service.impl;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -21,7 +19,6 @@ import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.dto.MyUserResponse;
 import com.taskmanager.exceptions.ActiveUserCannotBeDeletedException;
 import com.taskmanager.exceptions.MyUserNotFoundException;
-import com.taskmanager.exceptions.TaskNotFoundException;
 import com.taskmanager.model.MyUser;
 import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.service.MyUserService;
@@ -78,37 +75,38 @@ public class UserServiceImpl implements MyUserService {
 
 	}
 
-	public Map<Integer, Integer> getHashMap() {
-
-		logger.trace("Entered...........................getHashMap()");
-
-		String usernameActive = verifyLoggedInUser();
-
-		// Will search the myUserRepository for username
-		List<MyUser> myUserList = myUserRepository.findAll();
-
-		Map<Integer, Integer> UserIdAndNumber = new HashMap<Integer, Integer>();
-
-		try {
-			// Re-number the user List
-			// Create new "tempTaskList" copy of "taskList"
-			for (int k = 0; k < myUserList.size(); k++) {
-
-				myUserList.get(k).setUsernumber(k + 1);
-
-				UserIdAndNumber.put(myUserList.get(k).getUsernumber(), myUserList.get(k).getId());
-
-			}
-
-			logger.trace("Exited...........................getHashMap()");
-
-			return UserIdAndNumber;
-
-		} catch (TaskNotFoundException tnfe) {
-			throw new TaskNotFoundException("Task Could not be found");
-		}
-
-	}
+	// public Map<Integer, Integer> getHashMap() {
+	//
+	// logger.trace("Entered...........................getHashMap()");
+	//
+	// String usernameActive = verifyLoggedInUser();
+	//
+	// // Will search the myUserRepository for username
+	// List<MyUser> myUserList = myUserRepository.findAll();
+	//
+	// Map<Integer, Integer> UserIdAndNumber = new HashMap<Integer, Integer>();
+	//
+	// try {
+	// // Re-number the user List
+	// // Create new "tempTaskList" copy of "taskList"
+	// for (int k = 0; k < myUserList.size(); k++) {
+	//
+	// myUserList.get(k).setUsernumber(k + 1);
+	//
+	// UserIdAndNumber.put(myUserList.get(k).getUsernumber(),
+	// myUserList.get(k).getId());
+	//
+	// }
+	//
+	// logger.trace("Exited...........................getHashMap()");
+	//
+	// return UserIdAndNumber;
+	//
+	// } catch (TaskNotFoundException tnfe) {
+	// throw new TaskNotFoundException("Task Could not be found");
+	// }
+	//
+	// }
 
 	public MyUserDto mapToDto(MyUser myUser) {
 		System.out.println("ENTERED...................................mapToDto(" + myUser.getUsername() + ")");
@@ -120,7 +118,7 @@ public class UserServiceImpl implements MyUserService {
 		newMyUserDto.setEmail(myUser.getEmail());
 		newMyUserDto.setPassword("(Encoded)");
 		newMyUserDto.setRole(myUser.getRole());
-		newMyUserDto.setMyUsernumber(myUser.getMyUsernumber());
+		// newMyUserDto.setMyUsernumber(myUser.getMyUsernumber());
 		newMyUserDto.setGender(myUser.getGender());
 		newMyUserDto.setDob(myUser.getDob());
 		newMyUserDto.setUsername(myUser.getUsername());
@@ -131,13 +129,14 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	public MyUser convertMyUserDtoToMyUser(MyUserDto myUserDto) {
-		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println(
+				"ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("ENTERED……………………………………convertMyUserDtoToMyUser()");
 
 		MyUser myUser = new MyUser();
 
 		// ... map properties from myUser to myUserDto
-		myUser.setMyUsernumber(myUserDto.getMyUsernumber());
+		// myUser.setMyUsernumber(myUserDto.getMyUsernumber());
 		myUser.setUsername(myUserDto.getUsername());
 		myUser.setPassword(myUserDto.getPassword());
 		myUser.setRole(myUserDto.getRole());
@@ -145,7 +144,8 @@ public class UserServiceImpl implements MyUserService {
 		myUser.setDob(myUserDto.getDob());
 		myUser.setGender(myUserDto.getGender());
 
-		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println(
+				"EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………convertMyUserDtoToMyUser()");
 
 		return myUser;

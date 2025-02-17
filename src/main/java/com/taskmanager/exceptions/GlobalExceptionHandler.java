@@ -2,12 +2,16 @@ package com.taskmanager.exceptions;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+
+import com.taskmanager.dto.MyUserDto;
+import com.taskmanager.service.MyUserService;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -23,6 +27,9 @@ public class GlobalExceptionHandler {
 	//
 	// return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
 	// }
+
+	@Autowired
+	private MyUserService myUserService;
 
 	@ExceptionHandler(TaskNotFoundException.class)
 	public String handleTaskNotFoundException(TaskNotFoundException ex, WebRequest request, Model model) {
@@ -66,7 +73,16 @@ public class GlobalExceptionHandler {
 		model.addAttribute("statusCode", errorObject.getStatusCode());
 		model.addAttribute("timeStamp", errorObject.getTimestamp());
 
-		return "null-pointer-exception";
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		System.out.println("ROLE ===== " + myUserDto.getRole());
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+
+			return "admin-null-pointer-exception";
+		}
+		return "user-null-pointer-exception";
+
 	}
 
 	@ExceptionHandler(MyUserNotFoundException.class)

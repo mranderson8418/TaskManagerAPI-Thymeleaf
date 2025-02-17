@@ -42,8 +42,8 @@ public class MyUser {
 	@Column(name = "username")
 	private String username;
 
-	@Column(name = "usernumber")
-	private int usernumber;
+	// @Column(name = "usernumber")
+	// private int usernumber;
 
 	public String getDob() {
 		return dob;
@@ -73,9 +73,9 @@ public class MyUser {
 		return this.getEmail();
 	}
 
-	public int getUsernumber() {
-		return usernumber;
-	}
+	// public int getUsernumber() {
+	// return usernumber;
+	// }
 
 	public void setDob(String dob) {
 		this.dob = dob;
@@ -105,14 +105,14 @@ public class MyUser {
 		this.username = username;
 	}
 
-	public void setUsernumber(int usernumber) {
-		this.usernumber = usernumber;
-	}
+	// public void setUsernumber(int usernumber) {
+	// this.usernumber = usernumber;
+	// }
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" + password +
-				", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" +
+				password + ", gender=" + gender + ", role=" + role + "]";
 	}
 
 }
