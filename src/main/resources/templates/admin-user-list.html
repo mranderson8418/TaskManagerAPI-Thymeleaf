@@ -117,6 +117,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                               <th>UserNumber</th>
                         <th>UserName</th>
                         <th>Email</th>
                         <th>Password</th>
@@ -128,6 +129,7 @@
                 <tbody>
                     <tr th:each="user : ${users}">
                         <td th:text="${user.id}"></td>
+                         <td th:text="${userNumber.id}"></td>
                         <td th:text="${user.username}"></td>
                         <td th:text="${user.email}"></td>
                         <td th:text="${user.password}"></td>

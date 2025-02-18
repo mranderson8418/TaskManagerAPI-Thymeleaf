@@ -81,19 +81,14 @@ public class UserControllerDynamic {
 	}
 
 	@PostMapping("/admin/delete/user")
-	public String deleteUserId(@RequestParam("selectedUserId") Integer selectedUserId,
-			Model model) {
+	public String deleteUserId(@RequestParam("selectedUserId") int selectedUserId, Model model) {
 
-		LastWord lastWord = new LastWord(getClass().getName());
-		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println(
-				"ENTERED...................................@PostMapping('/user/delete/task')");
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/user/delete/task\")------");
 
 		Optional<MyUser> foundUser = myUserRepository.findById(selectedUserId);
 
 		try {
-			// delete the task with the id value = taskID
+			// delete the user with the userNumber value
 			userService.deleteMyUserById(selectedUserId);
 
 			if (foundUser.isPresent()) {
@@ -121,8 +116,7 @@ public class UserControllerDynamic {
 
 			}
 		} catch (UsernameNotFoundException unfe) {
-			throw new UsernameNotFoundException(
-					"User with ID # " + selectedUserId + "not found in the user database");
+			throw new UsernameNotFoundException("User with ID # " + selectedUserId + "not found in the user database");
 		}
 		return null;
 
@@ -201,8 +195,7 @@ public class UserControllerDynamic {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println(
-				"ENTERED...................................	@GetMapping(\"/user/index\")");
+		System.out.println("ENTERED...................................	@GetMapping(\"/user/index\")");
 		logger.trace("ENTERED……………………………………		@GetMapping(\"/user/index\")------");
 
 		return "user-index";
@@ -224,8 +217,7 @@ public class UserControllerDynamic {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
-		System.out.println(
-				"ENTERED...................................	@GetMapping(\"/admin/index\")");
+		System.out.println("ENTERED...................................	@GetMapping(\"/admin/index\")");
 		logger.trace("ENTERED……………………………………		@GetMapping(\"/admin/index\")------");
 
 		return "admin-index";

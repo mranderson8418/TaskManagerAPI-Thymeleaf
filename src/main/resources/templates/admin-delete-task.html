@@ -2,108 +2,108 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Task List Delete Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task List Delete Admin</title>
 
-	<style>
-		/* General Styles */
-		body {
-			margin: 0;
-			font-family: Arial, sans-serif;
-			color: black;
-			background-color: #ffffff;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-height: 100vh;
-		}
+<style>
+/* General Styles */
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	color: black;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
 
-		.container {
-			text-align: center;
-			width: 90%;
-			max-width: 800px;
-			padding: 20px;
-			border: 1px solid #ddd;
-			border-radius: 10px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
+.container {
+	text-align: center;
+	width: 90%;
+	max-width: 800px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-		/* Table Styles */
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 20px;
-		}
-		.completed-row {
-				          background-color: rgb(98, 160, 234); /* Or any color you prefer */
-				      }
+/* Table Styles */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
 
-		th,
-		td {
-			padding: 10px;
-			border: 2px solid #365930;
-			text-align: center;
-		}
+.completed-row {
+	background-color: rgb(98, 160, 234); /* Or any color you prefer */
+}
 
-		th {
-			background-color: #04aa6d;
-			color: white;
-		}
+th, td {
+	padding: 10px;
+	border: 2px solid #365930;
+	text-align: center;
+}
 
-		td {
-			color: #333;
-		}
+th {
+	background-color: #04aa6d;
+	color: white;
+}
 
-		/* Form Styles */
-		form {
-			margin-top: 30px;
-			display: flex;
-			flex-direction: column;
-			gap: 15px;
-			align-items: center;
-		}
+td {
+	color: #333;
+}
 
-		form label {
-			font-size: 1rem;
-			margin-bottom: 5px;
-		}
+/* Form Styles */
+form {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+}
 
-		form input {
-			width: 100%;
-			max-width: 300px;
-			padding: 10px;
-			font-size: 1rem;
-			border: 2px solid #365930;
-			border-radius: 5px;
-			text-align: center;
-		}
+form label {
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
 
-		button {
-			width: 100%;
-			max-width: 300px;
-			padding: 10px 20px;
-			font-size: 1.25rem;
-			color: white;
-			background-color: #04aa6d;
-			border: none;
-			border-radius: 5px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
+form input {
+	width: 100%;
+	max-width: 300px;
+	padding: 10px;
+	font-size: 1rem;
+	border: 2px solid #365930;
+	border-radius: 5px;
+	text-align: center;
+}
 
-		button:hover {
-			background-color: #028a5a;
-		}
+button {
+	width: 100%;
+	max-width: 300px;
+	padding: 10px 20px;
+	font-size: 1.25rem;
+	color: white;
+	background-color: #04aa6d;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
 
-		/* Headline */
-		h1 {
-			font-size: 2.5rem;
-			color: #333;
-			margin-bottom: 20px;
-		}
-	</style>
+button:hover {
+	background-color: #028a5a;
+}
+
+/* Headline */
+h1 {
+	font-size: 2.5rem;
+	color: #333;
+	margin-bottom: 20px;
+}
+</style>
 </head>
 
 <body>
@@ -113,7 +113,7 @@
 		<table>
 			<thead>
 				<tr>
-					
+
 					<th>Task Number</th>
 					<th>Username</th>
 					<th>Content</th>
@@ -122,7 +122,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="task : ${tasks}"
-				th:class="${task.complete ? 'completed-row' : 'false'}">
+					th:class="${task.complete ? 'completed-row' : 'false'}">
 					<td th:text="${task.taskNumber}"></td>
 					<td th:text="${task.username}"></td>
 					<td th:text="${task.content}"></td>
@@ -136,8 +136,8 @@
 
 		<form th:action="@{/admin/delete/task}" th:method="POST">
 
-			<label for="taskNumber">Task Number:</label>
-			<input type="number" id="taskNumber" name="taskNumber" required /> <br /> <br />
+			<label for="taskNumber">Task Number:</label> <input type="number"
+				id="taskNumber" name="taskNumber" required /> <br /> <br />
 
 			<button type="submit">Delete</button>
 		</form>
