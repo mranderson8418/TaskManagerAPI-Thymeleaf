@@ -93,96 +93,24 @@ public class RegistrationControllerDynamic {
 			myUserDto.setRole("ADMIN, USER");
 		}
 
-		System.out.println("Username: " + myUserDto.getUsername());
-
-		System.out.println("DOB: " + myUserDto.getDob());
-		System.out.println("Email: " + myUserDto.getEmail());
-		System.out.println("Password: " + passwordEncoder.encode(myUserDto.getPassword()));
-		System.out.println("Role: " + myUserDto.getRole());
-		System.out.println("Gender: " + myUserDto.getGender());
-
-		MyUserDto user_inserted = new MyUserDto();
-
-		user_inserted.setDob(myUserDto.getDob());
-
-		user_inserted.setUsername(myUserDto.getEmail());
-
-		user_inserted.setEmail(myUserDto.getEmail().toUpperCase());
-
-		user_inserted.setRole(myUserDto.getRole().toUpperCase());
-
-		user_inserted.setGender(myUserDto.getGender().toUpperCase());
-
-		user_inserted.setPassword(passwordEncoder.encode(myUserDto.getPassword()));
-
-		MyUser myUser = myUserService.convertMyUserDtoToMyUser(user_inserted);
-
-		myUserRepository.save(myUser);
+		// sends the new user credentials and saves them in the MyUserRepository
+		myUserDto = myUserService.createUser(myUserDto);
 
 		model.addAttribute("username", myUserDto.getUsername());
-
+		model.addAttribute("usernumber", myUserDto.getUserNumber());
 		model.addAttribute("gender", myUserDto.getGender());
 		model.addAttribute("dob", myUserDto.getDob());
 		model.addAttribute("email", myUserDto.getEmail());
 		model.addAttribute("password", passwordEncoder.encode(myUserDto.getPassword()));
 		model.addAttribute("role", myUserDto.getRole());
 
-		System.out.println("User = " + user_inserted.getUsername() + " is added to the database");
+		System.out.println("User = " + myUserDto.getUsername() + " is added to the database");
 
 		List<MyUser> users = myUserRepository.findAll();
 
-		model.addAttribute("users", users);
+		// model.addAttribute("users", users);
 
 		return "welcome";
 
 	}
 }
-// logger.trace("ENTERED…………………………………… @PostMapping(\"/register\")------");
-//
-// // MyUser myUser = myUserService.convertMyUserDtoToMyUser(myUserDto);
-//
-// Optional<MyUser> foundUser =
-// myUserRepository.findByUsername(myUserDto.getUsername());
-//
-// if (foundUser.isPresent()) {
-//
-// // model.addAttribute(myUser.getUsername());
-//
-// System.out.println("User exists-------------------" +
-// myUserDto.getUsername());
-//
-// model.addAttribute("myUserDto", myUserDto);
-//
-// return "index_user_exists";
-//
-// }
-//
-// if (myUserDto.getRole().equals("")) {
-// myUserDto.setRole("USER");
-//
-// }
-//
-// if (myUserDto.getRole().equals("ADMIN")) {
-// myUserDto.setRole("ADMIN,USER");
-//
-// }
-//
-// MyUserDto newMyUserDto = myUserService.createUser(myUserDto);
-//
-// System.out.println("Username: " + myUserDto.getUsername());
-//
-// System.out.println("Password: " + myUserDto.getPassword());
-// System.out.println("Role: " + myUserDto.getRole());
-//
-// model.addAttribute("username", myUserDto.getUsername());
-//
-// model.addAttribute("password", myUserDto.getPassword());
-// model.addAttribute("role", myUserDto.getRole());
-//
-// System.out.println("User = " + myUserDto.getUsername() + " is added to the
-// database");
-//
-// return "welcome";
-// }
-
-// }

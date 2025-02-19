@@ -105,14 +105,14 @@ public class MyUser {
 		this.username = username;
 	}
 
-	public void setUsernumber(int usernumber) {
-		this.userNumber = usernumber;
+	public void setUserNumber(int userNumber) {
+		this.userNumber = userNumber;
 	}
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" +
-				password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" + password +
+				", gender=" + gender + ", role=" + role + "]";
 	}
 
 }

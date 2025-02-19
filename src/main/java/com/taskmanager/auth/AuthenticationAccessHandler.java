@@ -21,8 +21,8 @@ public class AuthenticationAccessHandler extends SavedRequestAwareAuthentication
 	// when the login is a success then grant "ROLE_ADMIN" and land on the
 	// /admin/home or /user/home page
 	@Override
-	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-			Authentication authentication) throws ServletException, IOException {
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+			throws ServletException, IOException {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());

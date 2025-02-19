@@ -15,7 +15,7 @@ public class MyUserDto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private int myUserDtoNumber;
+	private int userNumber;
 
 	private String password;
 
@@ -37,10 +37,6 @@ public class MyUserDto {
 
 	public int getId() {
 		return id;
-	}
-
-	public int getUserDtoNumber() {
-		return myUserDtoNumber;
 	}
 
 	public String getPassword() {
@@ -71,8 +67,12 @@ public class MyUserDto {
 		this.id = id;
 	}
 
-	public void setUserDtoNumber(int myUserDtoNumber) {
-		this.myUserDtoNumber = myUserDtoNumber;
+	public int getUserNumber() {
+		return userNumber;
+	}
+
+	public void setUserNumber(int userNumber) {
+		this.userNumber = userNumber;
 	}
 
 	public void setPassword(String password) {
@@ -89,8 +89,9 @@ public class MyUserDto {
 
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", username=" + username + ", dob=" + dob + ", email=" + email + ", password=" +
-				password + ", gender=" + gender + ", role=" + role + "]";
+		return "MyUserDto [" + "dob=" + dob + ", email='" + email + '\'' + ", gender='" + gender + '\'' + ", id=" + id +
+				", myUserDtoNumber='" + userNumber + '\'' + ", password='" + password + '\'' + ", role='" + role + '\'' +
+				", username='" + username + '\'' + ']';
 	}
 
 }

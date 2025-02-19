@@ -1,7 +1,8 @@
 package com.taskmanager.service;
 
+import java.util.List;
+
 import com.taskmanager.dto.MyUserDto;
-import com.taskmanager.dto.MyUserResponse;
 import com.taskmanager.model.MyUser;
 
 public interface MyUserService {
@@ -10,7 +11,7 @@ public interface MyUserService {
 
 	public void deleteMyUserById(int id);
 
-	public MyUserResponse getAllMyUsers(int pageNo, int pageSize);
+	public List<MyUserDto> getAllMyUsersNow();
 
 	public MyUserDto getMyUserById(int id);
 

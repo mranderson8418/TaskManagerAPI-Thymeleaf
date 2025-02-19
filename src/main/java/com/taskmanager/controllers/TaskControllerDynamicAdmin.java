@@ -288,9 +288,6 @@ public class TaskControllerDynamicAdmin {
 		// Validate object data if necessary
 		// Save object to database
 
-		System.out.println(nameClass());
-
-		logger.trace("ENTERED……………………………………	@GetMapping(\"/admin/taskList\")");
 		logger.trace("EXITED……………………………………	@GetMapping(\"/admin/taskList\")");
 
 		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();

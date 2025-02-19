@@ -1,5 +1,6 @@
 package com.taskmanager.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,8 +10,6 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.taskmanager.dto.MyUserDto;
-import com.taskmanager.dto.MyUserResponse;
 import com.taskmanager.exceptions.ActiveUserCannotBeDeletedException;
 import com.taskmanager.exceptions.MyUserNotFoundException;
 import com.taskmanager.exceptions.TaskNotFoundException;
@@ -60,20 +58,18 @@ public class UserServiceImpl implements MyUserService {
 	@Override
 	public MyUserDto createUser(MyUserDto myUserDto) {
 
+		// Get list of all task the User has in the database
+		List<MyUser> currentUserList = myUserRepository.findAll();
+
+		myUserDto.setUserNumber(currentUserList.size() + 1);
+
 		MyUser newUser = convertMyUserDtoToMyUser(myUserDto);
 
-		newUser.setPassword(passwordEncoder.encode(myUserDto.getPassword()));
+		MyUser userSaved = myUserRepository.save(newUser);
 
-		newUser.setUsername(myUserDto.getUsername());
+		MyUserDto newMyUserDto = mapToDto(userSaved);
 
-		newUser.setRole(myUserDto.getRole());
-
-		myUserRepository.save(newUser);
-		System.out.println("ENTERED...................................createUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………registerNewUser()");
-
-		MyUserDto newMyUserDto = mapToDto(newUser);
-
 		return newMyUserDto;
 
 	}
@@ -94,7 +90,7 @@ public class UserServiceImpl implements MyUserService {
 			// Create new "tempTaskList" copy of "taskList"
 			for (int k = 0; k < myUserList.size(); k++) {
 
-				myUserList.get(k).setUsernumber(k + 1);
+				myUserList.get(k).setUserNumber(k + 1);
 
 				userIdAndNumber.put(myUserList.get(k).getUserNumber(), myUserList.get(k).getId());
 
@@ -115,24 +111,25 @@ public class UserServiceImpl implements MyUserService {
 		logger.trace("Entered...........................mapToDto()");
 
 		MyUserDto newMyUserDto = new MyUserDto();
+		newMyUserDto.setEmail(myUser.getUsername());
 
 		newMyUserDto.setId(myUser.getId());
 		newMyUserDto.setEmail(myUser.getEmail());
 		newMyUserDto.setPassword("(Encoded)");
 		newMyUserDto.setRole(myUser.getRole());
-		newMyUserDto.setUserDtoNumber(myUser.getUserNumber());
+		newMyUserDto.setUserNumber(myUser.getUserNumber());
 		newMyUserDto.setGender(myUser.getGender());
 		newMyUserDto.setDob(myUser.getDob());
 		newMyUserDto.setUsername(myUser.getUsername());
 
+		newMyUserDto.setUserNumber(myUser.getUserNumber());
 		System.out.println("EXITED...................................mapToDto(" + myUser.getUsername() + ")");
 		logger.trace("Exited...........................mapToDto()");
 		return newMyUserDto;
 	}
 
 	public MyUser convertMyUserDtoToMyUser(MyUserDto myUserDto) {
-		System.out.println(
-				"ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("ENTERED……………………………………convertMyUserDtoToMyUser()");
 
 		MyUser myUser = new MyUser();
@@ -140,15 +137,14 @@ public class UserServiceImpl implements MyUserService {
 		// ... map properties from myUser to myUserDto
 		// myUser.setMyUsernumber(myUserDto.getMyUsernumber());
 		myUser.setUsername(myUserDto.getUsername());
-		myUser.setPassword(myUserDto.getPassword());
-		myUser.setUsernumber(myUserDto.getUserDtoNumber());
+		myUser.setPassword(passwordEncoder.encode(myUserDto.getPassword()));
+		myUser.setUserNumber(myUserDto.getUserNumber());
 		myUser.setRole(myUserDto.getRole());
 		myUser.setEmail(myUserDto.getEmail());
 		myUser.setDob(myUserDto.getDob());
 		myUser.setGender(myUserDto.getGender());
 
-		System.out.println(
-				"EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………convertMyUserDtoToMyUser()");
 
 		return myUser;
@@ -177,33 +173,6 @@ public class UserServiceImpl implements MyUserService {
 		logger.trace("Exited......findAllProducts() ");
 
 		return myUserList.stream().map(this::mapToDto).collect(Collectors.toList());
-	}
-
-	@Override
-
-	public MyUserResponse getAllMyUsers(int pageNo, int pageSize) {
-
-		logger.trace("Entered...........................getAllMyUsers()");
-
-		PageRequest pageable = PageRequest.of(pageNo, pageSize);
-
-		Page<MyUser> myUser = myUserRepository.findAll(pageable);
-
-		List<MyUser> myUserDtoList = myUser.getContent();
-
-		List<MyUserDto> content = myUserDtoList.stream().map(this::mapToDto).collect(Collectors.toList());
-
-		MyUserResponse myUserDtoResponse = new MyUserResponse();
-
-		myUserDtoResponse.setUsername(content);
-		myUserDtoResponse.setPageNo(myUser.getNumber());
-		myUserDtoResponse.setPageSize(myUser.getSize());
-		myUserDtoResponse.setTotalElements(myUser.getTotalElements());
-		myUserDtoResponse.setTotalPages(myUser.getTotalPages());
-		myUserDtoResponse.setLast(myUser.isLast());
-		logger.trace("Exited...........................getAllMyUsers()");
-		return myUserDtoResponse;
-
 	}
 
 	@Override
@@ -259,7 +228,7 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	@Override
-	public void deleteMyUserById(int id) {
+	public void deleteMyUserById(int userNumber) {
 		logger.trace("Entered......deleteMyUserById() ");
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -272,7 +241,7 @@ public class UserServiceImpl implements MyUserService {
 
 		logger.trace("Entered...........................getMyUserById()");
 
-		int userId = userIdAndNumber.get(id);
+		int userId = userIdAndNumber.get(userNumber);
 
 		MyUser myUser = myUserRepository.findById(userId)
 				.orElseThrow(() -> new MyUserNotFoundException("MyUser could not be deleted..."));
@@ -320,6 +289,20 @@ public class UserServiceImpl implements MyUserService {
 		}
 
 		return userIdValue;
+	}
+
+	@Override
+	public List<MyUserDto> getAllMyUsersNow() {
+
+		List<MyUser> myUserList = myUserRepository.findAll();
+		List<MyUserDto> myUserDtoList = new ArrayList<>();
+
+		for (int i = 0; i < myUserList.size(); i++) {
+
+			myUserDtoList.add(mapToDto(myUserList.get(i)));
+		}
+
+		return myUserDtoList;
 	}
 
 }
