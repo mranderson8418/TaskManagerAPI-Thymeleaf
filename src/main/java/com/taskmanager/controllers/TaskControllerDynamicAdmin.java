@@ -247,7 +247,7 @@ public class TaskControllerDynamicAdmin {
 	}
 
 	@PostMapping({ "/user/delete/task", "/admin/delete/task" })
-	public String deleteTaskId(@ModelAttribute MyTaskDto myTaskDto, Model model) {
+	public String deleteTaskId(@ModelAttribute MyTaskDto myTaskDto, Model model) throws TaskNotFoundException {
 
 		System.out.println(nameClass());
 

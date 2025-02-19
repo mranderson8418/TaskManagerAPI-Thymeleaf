@@ -147,7 +147,8 @@ public class TaskServiceImpl implements TaskService {
 
 		int taskId = taskIdAndNumber.get(taskNumber);
 		// Find the Task entity by ID or throw an exception if not found
-		MyTask task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+		MyTask task = taskRepository.findById(taskId)
+				.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
 
 		// Create an updated Task entity
 		MyTask updatedTask = createTaskUpdate(task, myTaskUpdate);
@@ -347,26 +348,19 @@ public class TaskServiceImpl implements TaskService {
 
 		try {
 			int taskId = taskIdAndNumber.get(taskNumber);
-		} catch (TaskNotFoundException pde) {
-			logger.trace("Exited...........................updateTask()");
-			// Re-throw TaskNotFoundException with a more specific message
-			throw new TaskNotFoundException("Task  could not be found");
-		} catch (NullPointerException npe) {
-			throw new NullPointerException("Task does not exists");
-		}
 
-		int taskId = taskIdAndNumber.get(taskNumber);
-
-		try {
 			Optional<MyTask> foundTask = taskRepository.findById(taskIdAndNumber.get(taskNumber));
 
 			taskRepository.deleteById(taskIdAndNumber.get(taskNumber));
 			System.out.println("Exited...........................deleteByTaskId()");
 			System.out.println("\n\n");
 			logger.trace("Exited......deleteByTaskId() ");
-
-		} catch (TaskNotFoundException tnfe) {
-			throw new TaskNotFoundException("Task not found with taskNumber = " + taskNumber);
+		} catch (TaskNotFoundException pde) {
+			logger.trace("Exited...........................updateTask()");
+			// Re-throw TaskNotFoundException with a more specific message
+			throw new TaskNotFoundException("Task could not be found");
+		} catch (NullPointerException npe) {
+			throw new NullPointerException("Task does not exists with taskNumber = " + taskNumber);
 		}
 
 	}
@@ -391,7 +385,8 @@ public class TaskServiceImpl implements TaskService {
 
 			taskIdAndNumber.put(taskList.get(j).getTaskNumber(), taskList.get(j).getId());
 
-			System.out.println("taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
+			System.out.println(
+					"taskIdAndNumber ==> (" + taskList.get(j).getTaskNumber() + ", " + taskList.get(j).getId() + ")");
 		}
 
 		// Re-number the task list
