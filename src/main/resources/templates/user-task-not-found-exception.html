@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Index</title>
+
+
+<style>
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: large;
+	color: #04aa6d;
+	margin: 0;
+}
+
+h1 {
+	color: red;
+	padding: 25px;
+}
+
+h2 {
+	display: inline-block;
+}
+
+.container {
+	text-align: center;
+	padding: 15px;
+	border-radius: 5px;
+	margin: 15px auto;
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 80%;
+	margin-top: 7rem;
+	background-color: white;
+	border: solid 5px green;
+	border-radius: 15px;
+	padding: 20px 35px;
+}
+
+.details div.scott-button {
+	background-color: #04aa6d;
+	color: white;
+	text-decoration: none;
+	border-radius: 15px;
+	padding: 20px 35px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.5rem;
+	margin: 20px 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	max-width: 100%;
+}
+
+div.scott-button a {
+	text-decoration: none;
+	color: white;
+}
+
+div h2 span {
+	color: red;
+}
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Unable to find task in the database.....</h1>
+
+		<div class="details">
+			<form action="/user/index" method="get">
+
+				<div>
+					<h2>
+						Message: <span th:text="${message}">Message</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Status Code: <span th:text="${statusCode}">Status Code</span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Timestamp: <span th:text="${timeStamp}">Timestamp</span>
+					</h2>
+				</div>
+
+			</form>
+
+			<div class="scott-button">
+				<a th:href="@{/user/index}"> Go to Admin Index Page </a>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+
+</html>

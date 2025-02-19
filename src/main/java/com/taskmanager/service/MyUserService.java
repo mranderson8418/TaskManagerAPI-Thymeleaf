@@ -25,4 +25,6 @@ public interface MyUserService {
 
 	public int getActiveUserId(String username);
 
+	public MyUserDto findByUsername(String username);
+
 }

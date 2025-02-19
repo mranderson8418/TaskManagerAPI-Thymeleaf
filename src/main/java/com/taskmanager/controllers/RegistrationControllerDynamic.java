@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.taskmanager.auth.AuthenticationAccessHandler;
 import com.taskmanager.dto.MyUserDto;
+import com.taskmanager.exceptions.UserExistsException;
 import com.taskmanager.model.MyUser;
 import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.service.MyUserService;
@@ -56,7 +57,7 @@ public class RegistrationControllerDynamic {
 	/* NEED TO USE INTERFACE USERSERVICEIMPL.JAVA TO REGISTER USERS */
 	@PostMapping("/register")
 	// @ModelAttribute - this will bind the annotated object with the model class
-	public String userRegistration(@ModelAttribute MyUserDto myUserDto, Model model) {
+	public String userRegistration(@ModelAttribute MyUserDto myUserDto, Model model) throws UserExistsException {
 
 		LastWord lastWord = new LastWord(getClass().getName());
 		System.out.println("Class = " + lastWord.getLastWord());
@@ -69,12 +70,7 @@ public class RegistrationControllerDynamic {
 
 		// The username already exist in the database
 		if (foundUser.isPresent()) {
-
-			model.addAttribute(myUserDto.getUsername());
-
-			System.out.println("User exists-------------------" + myUserDto.getUsername());
-
-			return "index-user-exists";
+			throw new UserExistsException("The User already Exists.");
 
 		}
 

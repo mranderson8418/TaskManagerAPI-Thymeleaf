@@ -129,7 +129,8 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	public MyUser convertMyUserDtoToMyUser(MyUserDto myUserDto) {
-		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println(
+				"ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("ENTERED……………………………………convertMyUserDtoToMyUser()");
 
 		MyUser myUser = new MyUser();
@@ -144,7 +145,8 @@ public class UserServiceImpl implements MyUserService {
 		myUser.setDob(myUserDto.getDob());
 		myUser.setGender(myUserDto.getGender());
 
-		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println(
+				"EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………convertMyUserDtoToMyUser()");
 
 		return myUser;
@@ -303,6 +305,15 @@ public class UserServiceImpl implements MyUserService {
 		}
 
 		return myUserDtoList;
+	}
+
+	@Override
+	public MyUserDto findByUsername(String username) {
+
+		MyUser myUser = myUserRepository.findByUsername(username)
+				.orElseThrow(() -> new MyUserNotFoundException("User could not be found..."));
+
+		return mapToDto(myUser);
 	}
 
 }

@@ -73,23 +73,6 @@ public class UserControllerDynamic {
 		return "admin-user-list";
 	}
 
-	@PostMapping("/admin/delete/user")
-	public String deleteUserId(@ModelAttribute MyUserDto myUserDto, Model model) {
-
-		logger.trace("ENTERED……………………………………	@PostMapping(\"/user/delete/task\")------");
-
-		myUserService.deleteMyUserById(myUserDto.getUserNumber());
-
-		List<MyUser> myUserList = myUserRepository.findAll();
-
-		List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
-
-		model.addAttribute("users", myUserDtoList);
-
-		return "admin-delete-user";
-
-	}
-
 	@GetMapping("/admin/delete/user")
 	public String getDeleteUser(@ModelAttribute MyUserDto myUserDto, Model model) {
 		// Validate object data if necessary
@@ -115,6 +98,23 @@ public class UserControllerDynamic {
 		logger.trace("EXITED……………………………………	@GetMapping(\"/user/delete/user\")");
 
 		return "admin-delete-user";
+	}
+
+	@PostMapping("/admin/delete/user")
+	public String deleteUserId(@ModelAttribute MyUserDto myUserDto, Model model) {
+
+		logger.trace("ENTERED……………………………………	@PostMapping(\"/user/delete/task\")------");
+
+		myUserService.deleteMyUserById(myUserDto.getUserNumber());
+
+		List<MyUser> myUserList = myUserRepository.findAll();
+
+		List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
+
+		model.addAttribute("users", myUserDtoList);
+
+		return "admin-delete-user";
+
 	}
 
 	@GetMapping("/login")
