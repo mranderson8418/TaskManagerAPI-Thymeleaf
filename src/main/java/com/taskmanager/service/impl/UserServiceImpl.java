@@ -106,6 +106,50 @@ public class UserServiceImpl implements MyUserService {
 
 	}
 
+	@Override
+	public List<MyUserDto> afterDeleteGetAllUsers() throws TaskNotFoundException {
+
+		logger.trace("Entered...........................afterDeleteGetAllTasks()");
+
+		String usernameActive = verifyLoggedInUser();
+
+		// Will search the taskRepository for all task according to username
+		List<MyUser> userList = myUserRepository.findAllUsers(usernameActive);
+
+		// Create temperary storage for taskList from taskRepository
+		List<MyUser> tempUserList = new ArrayList<>();
+
+		// Map < taskNumber , id >
+		Map<Integer, Integer> userIdAndNumber = new HashMap<Integer, Integer>();
+
+		userIdAndNumber = getHashMap();
+
+		try {
+
+			MyUserDto myUserDto = new MyUserDto();
+
+			List<MyUserDto> myUserDtoList = new ArrayList<>();
+
+			for (int i = 0; i < userList.size(); i++) {
+
+				myUserDto = mapToDto(userList.get(i));
+
+				System.out.println("myTaskDto.getId() =============> " + myUserDto.getId());
+
+				myUserDtoList.add(myUserDto);
+
+			}
+
+			logger.trace("Exiting...........................afterDeleteGetAllTasks()");
+
+			return myUserDtoList;
+
+		} catch (MyUserNotFoundException unfe) {
+			throw new MyUserNotFoundException("My user not found Exception");
+		}
+
+	}
+
 	public MyUserDto mapToDto(MyUser myUser) {
 		System.out.println("ENTERED...................................mapToDto(" + myUser.getUsername() + ")");
 		logger.trace("Entered...........................mapToDto()");
@@ -233,13 +277,14 @@ public class UserServiceImpl implements MyUserService {
 	public void deleteMyUserById(int userNumber) {
 		logger.trace("Entered......deleteMyUserById() ");
 
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String username = verifyLoggedInUser();
 
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+		// Will search the myUserRepository for username
+		List<MyUser> myUserList = myUserRepository.findAll();
 
-		String activeUsername = userDetails.getUsername();
+		Map<Integer, Integer> userIdAndNumber = new HashMap<Integer, Integer>();
 
-		Map<Integer, Integer> userIdAndNumber = getHashMap();
+		userIdAndNumber = getHashMap();
 
 		logger.trace("Entered...........................getMyUserById()");
 
@@ -250,11 +295,13 @@ public class UserServiceImpl implements MyUserService {
 
 		if (myUserRepository.findById(userId).isPresent()) {
 
-			if (myUser.getUsername().equals(activeUsername)) {
+			if (myUser.getUsername().equals(username)) {
+
 				throw new ActiveUserCannotBeDeletedException("Active user cannot be deleted...");
 			} else {
 
 				myUserRepository.deleteById(userId);
+
 			}
 		}
 

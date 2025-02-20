@@ -27,4 +27,6 @@ public interface MyUserService {
 
 	public MyUserDto findByUsername(String username);
 
+	public List<MyUserDto> afterDeleteGetAllUsers();
+
 }

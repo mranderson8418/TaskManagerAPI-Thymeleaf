@@ -107,9 +107,8 @@ public class UserControllerDynamic {
 
 		myUserService.deleteMyUserById(myUserDto.getUserNumber());
 
-		List<MyUser> myUserList = myUserRepository.findAll();
-
-		List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
+		List<MyUserDto> myUserDtoList = myUserService.afterDeleteGetAllUsers();
+		// List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
 
 		model.addAttribute("users", myUserDtoList);
 
