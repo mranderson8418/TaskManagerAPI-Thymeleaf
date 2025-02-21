@@ -92,8 +92,9 @@ public class RegistrationControllerDynamic {
 		// sends the new user credentials and saves them in the MyUserRepository
 		myUserDto = myUserService.createUser(myUserDto);
 
+		model.addAttribute("id", myUserDto.getId());
 		model.addAttribute("username", myUserDto.getUsername());
-		model.addAttribute("usernumber", myUserDto.getUserNumber());
+		model.addAttribute("userNumber", myUserDto.getUserNumber());
 		model.addAttribute("gender", myUserDto.getGender());
 		model.addAttribute("dob", myUserDto.getDob());
 		model.addAttribute("email", myUserDto.getEmail());

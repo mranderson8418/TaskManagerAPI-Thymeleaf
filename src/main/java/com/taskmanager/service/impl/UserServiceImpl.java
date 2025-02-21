@@ -20,6 +20,7 @@ import com.taskmanager.dto.MyUserDto;
 import com.taskmanager.exceptions.ActiveUserCannotBeDeletedException;
 import com.taskmanager.exceptions.MyUserNotFoundException;
 import com.taskmanager.exceptions.TaskNotFoundException;
+import com.taskmanager.model.MyTask;
 import com.taskmanager.model.MyUser;
 import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.service.MyUserService;
@@ -60,6 +61,7 @@ public class UserServiceImpl implements MyUserService {
 
 		// Get list of all task the User has in the database
 		List<MyUser> currentUserList = myUserRepository.findAll();
+		myUserDto.setUsername(myUserDto.getUsername());
 
 		myUserDto.setUserNumber(currentUserList.size() + 1);
 
@@ -70,11 +72,12 @@ public class UserServiceImpl implements MyUserService {
 		MyUserDto newMyUserDto = mapToDto(userSaved);
 
 		logger.trace("EXITED……………………………………registerNewUser()");
+
 		return newMyUserDto;
 
 	}
 
-	public Map<Integer, Integer> getHashMap() {
+	public Map<Integer, Integer> getHashMap() throws MyUserNotFoundException {
 
 		logger.trace("Entered...........................getHashMap()");
 
@@ -100,9 +103,148 @@ public class UserServiceImpl implements MyUserService {
 
 			return userIdAndNumber;
 
-		} catch (TaskNotFoundException tnfe) {
-			throw new TaskNotFoundException("Task Could not be found");
+		} catch (MyUserNotFoundException tnfe) {
+			throw new MyUserNotFoundException("User not found....");
 		}
+	}
+
+	@Override
+	public List<MyUserDto> deleteMyUserById(int userNumber) throws TaskNotFoundException, ActiveUserCannotBeDeletedException {
+		logger.trace("Entered......deleteMyUserById() ");
+
+		String username = verifyLoggedInUser();
+
+		// Will search the myUserRepository for username
+		List<MyUser> myUserList = myUserRepository.findAll();
+
+		Map<Integer, Integer> userIdAndNumber = new HashMap<Integer, Integer>();
+
+		userIdAndNumber = getHashMap();
+
+		logger.trace("Entered...........................getMyUserById()");
+
+		int userId = userIdAndNumber.get(userNumber);
+
+		MyUser myUser = myUserRepository.findById(userId)
+				.orElseThrow(() -> new MyUserNotFoundException("MyUser could not be deleted..."));
+
+		if (myUserRepository.findById(userId).isPresent()) {
+
+			if (myUser.getUsername().equals(username)) {
+
+				throw new ActiveUserCannotBeDeletedException("Active user cannot be deleted...");
+			} else {
+
+				myUserRepository.deleteById(userId);
+
+			}
+
+		}
+
+		List<MyUserDto> myUserDtoList = afterDeleteGetAllUsers();
+
+		logger.trace("Exited......deleteMyUserById() ");
+
+		return myUserDtoList;
+	}
+
+	public List<MyUserDto> afterDeleteGetAllUsers() throws MyUserNotFoundException {
+
+		logger.trace("Entered...........................afterDeleteGetAllTasks()");
+
+		// Will search the userRepository for all task according to username
+		List<MyUser> userList = myUserRepository.findAll();
+
+		// Create temperary storage for taskList from taskRepository
+		List<MyUser> tempUserList = new ArrayList<>();
+
+		// Re-number the user list
+		// Create new "userTempList" copy of "userList"
+		for (int k = 0; k < userList.size(); k++) {
+
+			tempUserList.add(userList.get(k));
+
+			tempUserList.get(k).setUserNumber(k + 1);
+
+			updateUserNumber(tempUserList.get(k), tempUserList.get(k).getUserNumber());
+
+		}
+
+		try {
+
+			MyUserDto myUserDto = new MyUserDto();
+
+			List<MyUserDto> myUserDtoList = new ArrayList<>();
+
+			for (int i = 0; i < userList.size(); i++) {
+
+				myUserDto = mapToDto(userList.get(i));
+
+				System.out.println("myTaskDto.getId() =============> " + myUserDto.getId());
+
+				myUserDtoList.add(myUserDto);
+
+			}
+
+			logger.trace("Exiting...........................afterDeleteGetAllTasks()");
+
+			return myUserDtoList;
+
+		} catch (MyUserNotFoundException unfe) {
+			throw new MyUserNotFoundException("My user not found Exception");
+		}
+
+	}
+
+	public void updateUserNumber(MyUser myUserUpdate, int userNumber) throws MyUserNotFoundException {
+
+		logger.trace("Entered...........................updateTask()");
+
+		Map<Integer, Integer> userIdAndNumber = getHashMap();
+
+		try {
+			// Find the Task entity by ID or throw an exception if not found
+			MyUser myUser = myUserRepository.findById(userIdAndNumber.get(userNumber))
+					.orElseThrow(() -> new TaskNotFoundException("Task could not be updated"));
+
+			// Create an updated Task entity
+			MyUser updatedUser = createUserUpdateUserNumber(myUser, myUserUpdate);
+
+			// Save the updated Task entity
+			MyUser newUser = myUserRepository.save(updatedUser);
+
+			// Map the updated Task entity to DTO and return it
+
+			logger.trace("Exited...........................updateTask()");
+
+		} catch (MyUserNotFoundException pde) {
+			logger.trace("Exited...........................updateTask()");
+			// Re-throw TaskNotFoundException with a more specific message
+			throw new MyUserNotFoundException("User not found....");
+		}
+	}
+
+	private MyUser createUserUpdateUserNumber(MyUser myUser, MyUser myUserUpdate) throws MyUserNotFoundException {
+
+		logger.trace("Entered......createTaskUpdate() ");
+
+		String username = verifyLoggedInUser();
+
+		// Get the currrent users information
+		MyUserDto myUserDto = currentUser();
+
+		myUser.setId(myUserUpdate.getId());
+		myUser.setUserNumber(myUserUpdate.getUserNumber());
+		myUser.setPassword(myUserUpdate.getPassword());
+		myUser.setGender(myUserUpdate.getGender());
+		myUser.setRole(myUserUpdate.getRole());
+		myUser.setDob(myUserUpdate.getDob());
+		myUser.setEmail(myUserUpdate.getEmail());
+		myUser.setUsername(myUserUpdate.getEmail());
+
+		logger.trace("Exited......createTaskUpdate() ");
+
+		return myUser;
 
 	}
 
@@ -129,24 +271,26 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	public MyUser convertMyUserDtoToMyUser(MyUserDto myUserDto) {
-		System.out.println(
-				"ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("ENTERED……………………………………convertMyUserDtoToMyUser()");
 
 		MyUser myUser = new MyUser();
 
 		// ... map properties from myUser to myUserDto
 		// myUser.setMyUsernumber(myUserDto.getMyUsernumber());
+
 		myUser.setUsername(myUserDto.getUsername());
 		myUser.setPassword(passwordEncoder.encode(myUserDto.getPassword()));
 		myUser.setUserNumber(myUserDto.getUserNumber());
+		myUser.setId(myUserDto.getId());
 		myUser.setRole(myUserDto.getRole());
 		myUser.setEmail(myUserDto.getEmail());
 		myUser.setDob(myUserDto.getDob());
 		myUser.setGender(myUserDto.getGender());
 
-		System.out.println(
-				"EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println("myUser.toString() = " + myUser.toString());
+
+		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………convertMyUserDtoToMyUser()");
 
 		return myUser;
@@ -230,38 +374,6 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	@Override
-	public void deleteMyUserById(int userNumber) {
-		logger.trace("Entered......deleteMyUserById() ");
-
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
-		String activeUsername = userDetails.getUsername();
-
-		Map<Integer, Integer> userIdAndNumber = getHashMap();
-
-		logger.trace("Entered...........................getMyUserById()");
-
-		int userId = userIdAndNumber.get(userNumber);
-
-		MyUser myUser = myUserRepository.findById(userId)
-				.orElseThrow(() -> new MyUserNotFoundException("MyUser could not be deleted..."));
-
-		if (myUserRepository.findById(userId).isPresent()) {
-
-			if (myUser.getUsername().equals(activeUsername)) {
-				throw new ActiveUserCannotBeDeletedException("Active user cannot be deleted...");
-			} else {
-
-				myUserRepository.deleteById(userId);
-			}
-		}
-
-		logger.trace("Exited......deleteMyUserById() ");
-	}
-
-	@Override
 	public MyUserDto currentUser() {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -314,6 +426,12 @@ public class UserServiceImpl implements MyUserService {
 				.orElseThrow(() -> new MyUserNotFoundException("User could not be found..."));
 
 		return mapToDto(myUser);
+	}
+
+	@Override
+	public void updateUserNumber(MyTask myTaskUpdate, int taskNumber) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

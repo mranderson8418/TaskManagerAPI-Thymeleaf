@@ -91,21 +91,91 @@
 		}
 
 		/* Responsive Design */
-		@media (max-width: 768px) {
-			.title h1 {
-				font-size: 2rem;
+		@media (max-width: 480px) {
+
+			/* Base Styling */
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
 			}
 
-			table th,
-			table td {
-				font-size: 0.9rem;
-				padding: 8px;
+			html,
+			body {
+				font-family: sans-serif;
+				font-size: 15px;
+				color: #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #f9f9f9;
+				min-height: 100vh;
+				padding: 20px;
+			}
+
+			/* Container */
+			.container {
+				background-color: #fff;
+				width: 100%;
+				max-width: 1200px;
+				border-radius: 15px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				padding: 20px;
+				text-align: center;
+			}
+
+			/* Title */
+			.title h1 {
+				color: #04aa6d;
+				font-size: 2.5rem;
+				margin-bottom: 20px;
+			}
+
+			/* Table Styling */
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 20px 0;
+			}
+
+			th,
+			td {
+				padding: 12px;
+				border: 1px solid #365930;
+				text-align: left;
+			}
+
+			th {
+				background-color: #04aa6d;
+				color: #fff;
+			}
+
+			tr:nth-child(even) {
+				background-color: #f2f2f2;
+			}
+
+			/* Button Styling */
+			.scott-button {
+				margin-top: 20px;
 			}
 
 			.scott-button a {
-				font-size: 1rem;
-				padding: 8px 16px;
+				display: inline-block;
+				background-color: #04aa6d;
+				color: #fff;
+				text-decoration: none;
+				padding: 10px 20px;
+				font-size: 1.2rem;
+				border-radius: 5px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: background-color 0.3s ease;
 			}
+
+			.scott-button a:hover {
+				background-color: #037a4d;
+			}
+
 		}
 	</style>
 </head>
@@ -120,7 +190,7 @@
 			<table>
 				<thead>
 					<tr>
-						
+						<th>ID</th>
 						<th>UserNumber</th>
 						<th>Username</th>
 						<th>Email</th>
@@ -132,7 +202,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="user : ${users}">
-						
+						<td th:text="${user.id}"></td>
 						<td th:text="${user.userNumber}"></td>
 						<td th:text="${user.username}"></td>
 						<td th:text="${user.email}"></td>

@@ -1,157 +1,157 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Admin User List Delete</title>
-		<style>
-			/* General Styles */
-			body {
-				margin: 0;
-				font-family: Arial, sans-serif;
-				color: black;
-				background-color: #ffffff;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				min-height: 100vh;
-			}
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin User List Delete</title>
+<style>
+/* General Styles */
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	color: black;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
 
-			.container {
-				text-align: center;
-				width: 90%;
-				max-width: 800px;
-				padding: 20px;
-				border: 1px solid #ddd;
-				border-radius: 10px;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			}
+.container {
+	text-align: center;
+	width: 90%;
+	max-width: 800px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-			/* Table Styles */
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				margin-top: 20px;
-			}
+/* Table Styles */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
 
-			.completed-row {
-				background-color: rgb(98, 160, 234); /* Or any color you prefer */
-			}
+.completed-row {
+	background-color: rgb(98, 160, 234); /* Or any color you prefer */
+}
 
-			th,
-			td {
-				padding: 10px;
-				border: 2px solid #365930;
-				text-align: center;
-			}
+th, td {
+	padding: 10px;
+	border: 2px solid #365930;
+	text-align: center;
+}
 
-			th {
-				background-color: #04aa6d;
-				color: white;
-			}
+th {
+	background-color: #04aa6d;
+	color: white;
+}
 
-			td {
-				color: #333;
-			}
+td {
+	color: #333;
+}
 
-			/* Form Styles */
-			form {
-				margin-top: 30px;
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-				align-items: center;
-			}
+/* Form Styles */
+form {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+}
 
-			form label {
-				font-size: 1rem;
-				margin-bottom: 5px;
-			}
+form label {
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
 
-			form input {
-				width: 100%;
-				max-width: 300px;
-				padding: 10px;
-				font-size: 1rem;
-				border: 2px solid #365930;
-				border-radius: 5px;
-				text-align: center;
-			}
+form input {
+	width: 100%;
+	max-width: 300px;
+	padding: 10px;
+	font-size: 1rem;
+	border: 2px solid #365930;
+	border-radius: 5px;
+	text-align: center;
+}
 
-			button {
-				width: 100%;
-				max-width: 300px;
-				padding: 10px 20px;
-				font-size: 1.25rem;
-				color: white;
-				background-color: #04aa6d;
-				border: none;
-				border-radius: 5px;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				cursor: pointer;
-				transition: background-color 0.3s ease;
-			}
+button {
+	width: 100%;
+	max-width: 300px;
+	padding: 10px 20px;
+	font-size: 1.25rem;
+	color: white;
+	background-color: #04aa6d;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
 
-			button:hover {
-				background-color: #028a5a;
-			}
+button:hover {
+	background-color: #028a5a;
+}
 
-			/* Headline */
-			h1 {
-				font-size: 2.5rem;
-				color: #333;
-				margin-bottom: 20px;
-			}
-		</style>
-	</head>
+/* Headline */
+h1 {
+	font-size: 2.5rem;
+	color: #333;
+	margin-bottom: 20px;
+}
+</style>
+</head>
 
-	<body>
-		<div class="container">
-			<div class="title">
-				<h1>Admin User List Delete</h1>
-			</div>
-
-			<div>
-				<table>
-					<thead>
-						<tr>
-					
-							<th>UserNumber</th>
-							<th>Username</th>
-							<th>Email</th>
-							<th>Password</th>
-							<th>Role</th>
-							<th>Gender</th>
-							<th>DOB</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="user : ${users}">
-				
-							<td th:text="${user.userNumber}"></td>
-							<td th:text="${user.username}"></td>
-							<td th:text="${user.email}"></td>
-							<td th:text="${user.password}"></td>
-							<td th:text="${user.role}"></td>
-							<td th:text="${user.gender}"></td>
-							<td th:text="${user.dob}"></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<div class="form-container-input">
-				<form th:action="@{/admin/delete/user}" th:method="POST">
-					<label for="userNumber">Delete User Number:</label> <input type="number" id="userNumber" name="userNumber" required /> <br />
-					<br />
-
-					<button type="submit">Delete</button>
-				</form>
-
-				<form th:action="@{/admin/index}" method="GET">
-					<button type="submit">Return to Index</button>
-				</form>
-			</div>
+<body>
+	<div class="container">
+		<div class="title">
+			<h1>Admin User List Delete</h1>
 		</div>
-	</body>
+
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>UserNumber</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Password</th>
+						<th>Role</th>
+						<th>Gender</th>
+						<th>DOB</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user : ${users}">
+						<td th:text="${user.id}"></td>
+						<td th:text="${user.userNumber}"></td>
+						<td th:text="${user.username}"></td>
+						<td th:text="${user.email}"></td>
+						<td th:text="${user.password}"></td>
+						<td th:text="${user.role}"></td>
+						<td th:text="${user.gender}"></td>
+						<td th:text="${user.dob}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="form-container-input">
+			<form th:action="@{/admin/delete/user}" th:method="POST">
+				<label for="userNumber">Delete User Number:</label> <input
+					type="number" id="userNumber" name="userNumber" required /> <br />
+				<br />
+
+				<button type="submit">Delete</button>
+			</form>
+
+			<form th:action="@{/admin/index}" method="GET">
+				<button type="submit">Return to Index</button>
+			</form>
+		</div>
+	</div>
+</body>
 </html>

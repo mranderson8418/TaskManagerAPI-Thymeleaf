@@ -3,13 +3,14 @@ package com.taskmanager.service;
 import java.util.List;
 
 import com.taskmanager.dto.MyUserDto;
+import com.taskmanager.model.MyTask;
 import com.taskmanager.model.MyUser;
 
 public interface MyUserService {
 
 	public MyUserDto createUser(MyUserDto myUserDto);
 
-	public void deleteMyUserById(int id);
+	public List<MyUserDto> deleteMyUserById(int id);
 
 	public List<MyUserDto> getAllMyUsersNow();
 
@@ -25,6 +26,10 @@ public interface MyUserService {
 
 	public int getActiveUserId(String username);
 
+	public List<MyUserDto> afterDeleteGetAllUsers();
+
 	public MyUserDto findByUsername(String username);
+
+	public void updateUserNumber(MyTask myTaskUpdate, int taskNumber);
 
 }
