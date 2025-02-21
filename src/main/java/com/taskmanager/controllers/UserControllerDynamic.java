@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.taskmanager.dto.MyUserDto;
-import com.taskmanager.model.MyUser;
 import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.security.MyUserDetailService;
 import com.taskmanager.service.MyUserService;
@@ -80,18 +79,7 @@ public class UserControllerDynamic {
 
 		logger.trace("ENTERED……………………………………	@GetMapping(\"/user/delete/user\")");
 
-		List<MyUser> myUserList = myUserRepository.findAll();
-
-		List<MyUserDto> myUserDtoList = new ArrayList<>();
-
-		// converts the MyUser list into MyUserDto list to add a layer of security
-		for (int i = 0; i < myUserList.size(); i++) {
-
-			myUserDto = userService.mapToDto(myUserList.get(i));
-
-			myUserDtoList.add(myUserDto);
-
-		}
+		List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
 
 		model.addAttribute("users", myUserDtoList);
 
@@ -105,10 +93,7 @@ public class UserControllerDynamic {
 
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/user/delete/task\")------");
 
-		myUserService.deleteMyUserById(myUserDto.getUserNumber());
-
-		List<MyUserDto> myUserDtoList = myUserService.afterDeleteGetAllUsers();
-		// List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
+		List<MyUserDto> myUserDtoList = myUserService.deleteMyUserById(myUserDto.getUserNumber());
 
 		model.addAttribute("users", myUserDtoList);
 
