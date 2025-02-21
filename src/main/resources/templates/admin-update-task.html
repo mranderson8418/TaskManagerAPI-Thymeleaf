@@ -29,6 +29,10 @@
 		}
 
 		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 			width: 100%;
 			max-width: 800px;
 			margin: auto;
@@ -39,16 +43,27 @@
 			padding: 2rem;
 		}
 
+		/* Typography */
 		h1,
 		h2 {
 			margin-bottom: 1rem;
 			color: #04aa6d;
 		}
 
+		/* Table */
+		.table-container {
+			width: 100%;
+			overflow-x: auto;
+			/* Enable horizontal scroll */
+		}
+
 		table {
 			width: 100%;
 			border-collapse: collapse;
 			margin-bottom: 2rem;
+			display: block;
+			overflow-x: auto;
+			white-space: nowrap;
 		}
 
 		th,
@@ -63,6 +78,7 @@
 			color: white;
 		}
 
+		/* Forms */
 		form {
 			display: grid;
 			gap: 1rem;
@@ -101,9 +117,11 @@
 			font-size: 1rem;
 			cursor: pointer;
 		}
+
 		.completed-row {
-			          background-color: rgb(98, 160, 234); /* Or any color you prefer */
-			      }
+			background-color: rgb(98, 160, 234);
+			/* Or any color you prefer */
+		}
 
 		.scott-button a {
 			text-align: center;
@@ -114,9 +132,26 @@
 			background-color: #028653;
 		}
 
+		/* Responsive Styles */
+		@media (max-width: 768px) {
+			.container {
+				padding: 1.5rem;
+			}
+
+			.scott-button button,
+			.scott-button a {
+				font-size: 0.95rem;
+				padding: 0.6rem 1.2rem;
+			}
+		}
+
 		@media (max-width: 600px) {
 			.container {
 				padding: 1rem;
+			}
+
+			.table-container {
+				overflow-x: auto;
 			}
 
 			table,
@@ -136,47 +171,52 @@
 
 <body>
 	<div class="container">
+		
 		<div class="title">
 			<h1>Task List</h1>
 		</div>
+		
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>Task #</th>
+						<th>Username</th>
+						<th>Content</th>
+						<th>Complete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : 'false'}">
+						<td th:text="${task.taskNumber}"></td>
+						<td th:text="${task.username}"></td>
+						<td th:text="${task.content}"></td>
+						<td th:text="${task.complete} ? 'true' : 'false'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div>
 
-		<table>
-			<thead>
-				<tr>
-					<th>Task Number</th>
-					<th>Username</th>
-					<th>Content</th>
-					<th>Complete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="task : ${tasks}"
-				th:class="${task.complete ? 'completed-row' : 'false'}">
-					<td th:text="${task.taskNumber}"></td>
-					<td th:text="${task.username}"></td>
-					<td th:text="${task.content}"></td>
-					<td th:text="${task.complete} ? 'true' : 'false'"></td>
-				</tr>
-			</tbody>
-		</table>
+			<form th:action="@{/admin/update/task}" th:object="${myTaskDto}" method="post">
+				<h2>Update Task Details</h2>
 
-		<form th:action="@{/admin/update/task}" th:object="${myTaskDto}" method="post">
-			<h2>Update Task Details</h2>
+				<label for="taskNumber">Task ID:</label>
+				<input type="text" th:field="*{taskNumber}" id="taskNumber" />
 
-			<label for="taskNumber">Task ID:</label>
-			<input type="text" th:field="*{taskNumber}" id="taskNumber" />
+				<label for="content">Updated Message Content:</label>
+				<textarea th:field="*{content}" id="content" rows="4"></textarea>
 
-			<label for="content">Updated Message Content:</label>
-			<textarea th:field="*{content}" id="content" rows="4"></textarea>
+				<label for="complete">Task Complete Status:</label>
+				<input type="checkbox" th:field="*{complete}" id="complete" />
 
-			<label for="complete">Task Complete Status:</label>
-			<input type="checkbox" th:field="*{complete}" id="complete" />
-
-			<div class="scott-button">
-				<button type="submit">Update Task</button>
-			</div>
-		</form>
-
+				<div class="scott-button">
+					<button type="submit">Update Task</button>
+				</div>
+			</form>
+		</div>
+		
 		<div class="scott-button">
 			<a th:href="@{/admin/index}">Go to Admin Index Page</a>
 		</div>

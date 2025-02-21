@@ -19,6 +19,8 @@ public interface MyUserRepository extends JpaRepository<MyUser, Integer> {
 
 	public void deleteById(int id);
 
+	public List<MyUser> findAll();
+
 	@Query("SELECT t FROM MyUser t WHERE t.username = :username")
 	List<MyUser> findAllUsers(@Param("username") String username);
 }

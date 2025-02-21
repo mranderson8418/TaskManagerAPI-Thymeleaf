@@ -2,151 +2,247 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Task List Delete Admin</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Task List Delete Admin</title>
 
-<style>
-/* General Styles */
-body {
-	margin: 0;
-	font-family: Arial, sans-serif;
-	color: black;
-	background-color: #ffffff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-}
+	<style>
+		/* General styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-.container {
-	text-align: center;
-	width: 90%;
-	max-width: 800px;
-	padding: 20px;
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+		html,
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			font-family: sans-serif;
+			background-color: #ffffff;
+			width: 100%;
+			padding: 20px;
+			color: black;
+		}
+		div form input#taskNumber{
+			border: solid 2px  #037d54;
+			min-height:2rem;
+			min-width: 2rem;
+			color:#037d54;
+			text-align: center;
+			font-size: 1.5rem;
+		}
 
-/* Table Styles */
-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 20px;
-}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			width: 90%;
+		}
 
-.completed-row {
-	background-color: rgb(98, 160, 234); /* Or any color you prefer */
-}
+		.container div h1 {
+			text-align: center;
+			color: #037d54;
+			font-size: 3rem;
+		}
+		.container div form{
+					margin-top:4rem;
+				}
 
-th, td {
-	padding: 10px;
-	border: 2px solid #365930;
-	text-align: center;
-}
 
-th {
-	background-color: #04aa6d;
-	color: white;
-}
+		.container div form label {
 
-td {
-	color: #333;
-}
+			font-style: bold;
+			text-align: center;
+			color: #037d54;
+			font-size: 2rem;
+		}
 
-/* Form Styles */
-form {
-	margin-top: 30px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	align-items: center;
-}
+		/* Table styles */
+		.container div table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
 
-form label {
-	font-size: 1rem;
-	margin-bottom: 5px;
-}
+		th,
+		td {
+			padding: 10px;
+			border: 2px solid #037d54;
+			text-align: center;
+		}
 
-form input {
-	width: 100%;
-	max-width: 300px;
-	padding: 10px;
-	font-size: 1rem;
-	border: 2px solid #365930;
-	border-radius: 5px;
-	text-align: center;
-}
+		th {
+			background-color: #037d54;
+			color: white;
+		}
 
-button {
-	width: 100%;
-	max-width: 300px;
-	padding: 10px 20px;
-	font-size: 1.25rem;
-	color: white;
-	background-color: #04aa6d;
-	border: none;
-	border-radius: 5px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
+		.completed-row {
+			background-color: rgb(98, 160, 234);
+		}
 
-button:hover {
-	background-color: #028a5a;
-}
+		/* Button styles */
+		div form button {
+			background-color: #04aa6d;
+			color: white;
+			border: none;
+			border-radius: 1rem;
+			padding: 1rem;
+			font-size: 1.2rem;
+			cursor: pointer;
+			margin-top: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
 
-/* Headline */
-h1 {
-	font-size: 2.5rem;
-	color: #333;
-	margin-bottom: 20px;
-}
-</style>
+		div form button:hover {
+			background-color: #037d54;
+		}
+
+		/* Responsive styles */
+		@media (max-width: 768px) {
+			th {
+				background-color: #037d54;
+				color: white;
+			}
+			div form input#taskNumber{
+				border: solid 2px  #037d54;
+				min-height:2rem;
+				min-width: 2rem;
+				color:#037d54;
+				text-align: center;
+				font-size: 1.5rem;
+			}
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
+
+			.container div form{
+						margin-top:4rem;
+					}
+			.container div form label {
+					
+				font-style: bold;
+				text-align: center;
+				color: #037d54;
+				font-size: 2rem;
+			}
+
+			table {
+				font-size: 0.9rem;
+			}
+
+			th,
+			td {
+				padding: 8px;
+			}
+
+			div form button {
+				font-size: 1rem;
+				padding: 0.8rem;
+			}
+		}
+
+		@media (max-width: 480px) {
+			th {
+				background-color: #037d54;
+				color: white;
+			}
+			div form input#taskNumber{
+				border: solid 2px  #037d54;
+				min-height:2rem;
+				min-width: 2rem;
+				color:#037d54;
+				text-align: center;
+				font-size: 1.5rem;
+			}
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2rem;
+			}
+
+			.container div form{
+				margin-top:4rem;
+			}
+			.container div form label {
+		
+				font-style: bold;
+				text-align: center;
+				color: #037d54;
+				font-size: 1.5rem;
+			}
+
+			table {
+				font-size: 0.8rem;
+			}
+
+			th,
+			td {
+				padding: 6px;
+				text-wrap: break-word;
+			}
+
+			div form button {
+				font-size: 0.9rem;
+				padding: 0.6rem;
+			}
+		}
+	</style>
+
 </head>
 
 <body>
 	<div class="container">
-		<h1>Task List</h1>
+		<div>
+			<h1>Task List</h1>
+		</div>
 
-		<table>
-			<thead>
-				<tr>
+		<div>
+			<table>
+				<thead>
+					<tr>
 
-					<th>Task Number</th>
-					<th>Username</th>
-					<th>Content</th>
-					<th>Complete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="task : ${tasks}"
-					th:class="${task.complete ? 'completed-row' : 'false'}">
-					<td th:text="${task.taskNumber}"></td>
-					<td th:text="${task.username}"></td>
-					<td th:text="${task.content}"></td>
-					<td th:text="${task.complete} ? 'true' : 'false'"></td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
-
-		<form th:action="@{/admin/delete/task}" th:method="POST">
-
-			<label for="taskNumber">Task Number:</label> <input type="number"
-				id="taskNumber" name="taskNumber" required /> <br /> <br />
-
-			<button type="submit">Delete</button>
-		</form>
+						<th>Task #</th>
+						<th>Username</th>
+						<th>Content</th>
+						<th>Complete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : 'false'}">
+						<td th:text="${task.taskNumber}"></td>
+						<td th:text="${task.username}"></td>
+						<td th:text="${task.content}"></td>
+						<td th:text="${task.complete} ? 'true' : 'false'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 
 
-		<form th:action="@{/admin/index}" method="GET">
-			<button type="submit">Return to Index</button>
-		</form>
+		<div>
+			<form th:action="@{/admin/delete/task}" th:method="POST">
+
+				<label for="taskNumber">Task Number:</label> <input type="number" id="taskNumber" name="taskNumber"
+					required /> <br /> <br />
+
+				<button type="submit">Delete</button>
+			</form>
+		</div>
+
+		<div>
+
+			<form th:action="@{/admin/index}" method="GET">
+				<button type="submit">Return to Index</button>
+			</form>
+		</div>
 	</div>
 </body>
 

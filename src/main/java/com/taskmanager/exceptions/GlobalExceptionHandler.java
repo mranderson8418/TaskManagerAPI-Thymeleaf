@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,9 +38,9 @@ public class GlobalExceptionHandler {
 		model.addAttribute("timeStamp", errorObject.getTimestamp());
 
 		if (myUserDto.getRole().contains("ADMIN")) {
-			return "admin-task-not-found-exception";
+			return "admin-exception-task-not-found";
 		} else {
-			return "user-task-not-found-exception";
+			return "user-exception-task-not-found";
 		}
 	}
 
@@ -62,30 +61,6 @@ public class GlobalExceptionHandler {
 		return username;
 	}
 
-	// @ExceptionHandler(TaskNotFoundException.class)
-	// public String handleUserExists(TaskNotFoundException ex, WebRequest request,
-	// Model model) {
-	//
-	// String username = verifyLoggedInUser();
-	//
-	// MyUserDto myUserDto = myUserService.findByUsername(username);
-	//
-	// ErrorObject errorObject = new ErrorObject();
-	// errorObject.setStatusCode(HttpStatus.BAD_REQUEST.value());
-	// errorObject.setMessage(ex.getMessage());
-	// errorObject.setTimestamp(new Date());
-	//
-	// model.addAttribute("message", errorObject.getMessage());
-	// model.addAttribute("statusCode", errorObject.getStatusCode());
-	// model.addAttribute("timeStamp", errorObject.getTimestamp());
-	//
-	// if (myUserDto.getRole().contains("ADMIN")) {
-	// return "admin-user-exists-exception";
-	// } else {
-	// return "user-user-exists-exception";
-	// }
-	// }
-
 	@ExceptionHandler(EmailNotMaskedAppropriately.class)
 	public String handleTaskNotFoundException(EmailNotMaskedAppropriately ex, WebRequest request, Model model) {
 
@@ -103,9 +78,32 @@ public class GlobalExceptionHandler {
 		model.addAttribute("timeStamp", errorObject.getTimestamp());
 
 		if (myUserDto.getRole().contains("ADMIN")) {
-			return "admin-email-not-masked";
+			return "admin-exception-email-not-masked";
 		} else {
-			return "user-email-not-masked";
+			return "user-exception-email-not-masked";
+		}
+	}
+
+	@ExceptionHandler(UserExistsException.class)
+	public String handleTaskNotFoundException(UserExistsException ex, WebRequest request, Model model) {
+
+		String username = verifyLoggedInUser();
+
+		MyUserDto myUserDto = myUserService.findByUsername(username);
+
+		ErrorObject errorObject = new ErrorObject();
+		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
+		errorObject.setMessage(ex.getMessage());
+		errorObject.setTimestamp(new Date());
+
+		model.addAttribute("message", errorObject.getMessage());
+		model.addAttribute("statusCode", errorObject.getStatusCode());
+		model.addAttribute("timeStamp", errorObject.getTimestamp());
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+			return "admin-exception-user-exists";
+		} else {
+			return "user-exception-user-exists";
 		}
 	}
 
@@ -127,34 +125,55 @@ public class GlobalExceptionHandler {
 
 		if (myUserDto.getRole().contains("ADMIN")) {
 
-			return "admin-null-pointer-exception";
+			return "admin-exception-null-pointer";
 		}
-		return "user-null-pointer-exception";
+		return "user-exception-null-pointer";
 
 	}
 
 	// this will bring in the data that is being received
 	@ExceptionHandler(MyUserNotFoundException.class)
-	public ResponseEntity<ErrorObject> handleUserNotFoundException(MyUserNotFoundException ex, WebRequest request) {
+	public String handleUserNotFoundException(MyUserNotFoundException ex, WebRequest request, Model model) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
 		errorObject.setMessage(ex.getMessage());
 		errorObject.setTimestamp(new Date());
 
-		return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+		model.addAttribute("message", errorObject.getMessage());
+		model.addAttribute("statusCode", errorObject.getStatusCode());
+		model.addAttribute("timeStamp", errorObject.getTimestamp());
+
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+
+			return "admin-exception-user-not-found";
+		}
+		return "user-exception-user-not-found";
+
 	}
 
 	@ExceptionHandler(ActiveUserCannotBeDeletedException.class)
-	public ResponseEntity<ErrorObject> handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex,
-			WebRequest request) {
+	public String handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex, WebRequest request, Model model) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
 		errorObject.setMessage(ex.getMessage());
 		errorObject.setTimestamp(new Date());
 
-		return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+		model.addAttribute("message", errorObject.getMessage());
+		model.addAttribute("statusCode", errorObject.getStatusCode());
+		model.addAttribute("timeStamp", errorObject.getTimestamp());
+
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+
+			return "admin-exception-cannot-delete-active-user";
+		}
+		return "user-exception-cannot-delete-active-user";
+
 	}
 
 }

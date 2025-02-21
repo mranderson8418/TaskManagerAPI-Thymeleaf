@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.taskmanager.dto.MyUserDto;
+import com.taskmanager.exceptions.ActiveUserCannotBeDeletedException;
+import com.taskmanager.exceptions.MyUserNotFoundException;
 import com.taskmanager.repository.MyUserRepository;
 import com.taskmanager.security.MyUserDetailService;
 import com.taskmanager.service.MyUserService;
@@ -89,7 +91,8 @@ public class UserControllerDynamic {
 	}
 
 	@PostMapping("/admin/delete/user")
-	public String deleteUserId(@ModelAttribute MyUserDto myUserDto, Model model) {
+	public String deleteUserId(@ModelAttribute MyUserDto myUserDto, Model model)
+			throws MyUserNotFoundException, ActiveUserCannotBeDeletedException {
 
 		logger.trace("ENTERED……………………………………	@PostMapping(\"/user/delete/task\")------");
 
@@ -111,6 +114,20 @@ public class UserControllerDynamic {
 
 	@GetMapping("/user/logout")
 	public String handleLogOutuser(@ModelAttribute MyUserDto myUserDto, Model model) {
+
+		myUserDto = myUserService.currentUser();
+
+		model.addAttribute("username", myUserDto.getUsername());
+
+		SecurityContextHolder.clearContext();
+
+		logger.trace("EXITED……………………………………	@GetMapping(\"/user/logout\"---------");
+
+		return "logout";
+	}
+
+	@GetMapping("/admin/logout")
+	public String handleLogOutAdmin(@ModelAttribute MyUserDto myUserDto, Model model) {
 
 		myUserDto = myUserService.currentUser();
 

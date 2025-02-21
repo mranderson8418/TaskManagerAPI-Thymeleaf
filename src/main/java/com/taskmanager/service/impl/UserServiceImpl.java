@@ -61,6 +61,7 @@ public class UserServiceImpl implements MyUserService {
 
 		// Get list of all task the User has in the database
 		List<MyUser> currentUserList = myUserRepository.findAll();
+		myUserDto.setUsername(myUserDto.getUsername());
 
 		myUserDto.setUserNumber(currentUserList.size() + 1);
 
@@ -71,6 +72,7 @@ public class UserServiceImpl implements MyUserService {
 		MyUserDto newMyUserDto = mapToDto(userSaved);
 
 		logger.trace("EXITED……………………………………registerNewUser()");
+
 		return newMyUserDto;
 
 	}
@@ -107,7 +109,7 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	@Override
-	public List<MyUserDto> deleteMyUserById(int userNumber) throws TaskNotFoundException {
+	public List<MyUserDto> deleteMyUserById(int userNumber) throws TaskNotFoundException, ActiveUserCannotBeDeletedException {
 		logger.trace("Entered......deleteMyUserById() ");
 
 		String username = verifyLoggedInUser();
@@ -146,22 +148,15 @@ public class UserServiceImpl implements MyUserService {
 		return myUserDtoList;
 	}
 
-	public List<MyUserDto> afterDeleteGetAllUsers() throws TaskNotFoundException {
+	public List<MyUserDto> afterDeleteGetAllUsers() throws MyUserNotFoundException {
 
 		logger.trace("Entered...........................afterDeleteGetAllTasks()");
 
-		String usernameActive = verifyLoggedInUser();
-
-		// Will search the taskRepository for all task according to username
-		List<MyUser> userList = myUserRepository.findAllUsers(usernameActive);
+		// Will search the userRepository for all task according to username
+		List<MyUser> userList = myUserRepository.findAll();
 
 		// Create temperary storage for taskList from taskRepository
 		List<MyUser> tempUserList = new ArrayList<>();
-
-		// Map < taskNumber , id >
-		Map<Integer, Integer> userIdAndNumber = new HashMap<Integer, Integer>();
-
-		userIdAndNumber = getHashMap();
 
 		// Re-number the user list
 		// Create new "userTempList" copy of "userList"
@@ -238,24 +233,18 @@ public class UserServiceImpl implements MyUserService {
 		// Get the currrent users information
 		MyUserDto myUserDto = currentUser();
 
-		// if the task.username = currentUser.username then continue
-		if (myUser.getUsername().equals(myUserDto.getUsername())) {
+		myUser.setId(myUserUpdate.getId());
+		myUser.setUserNumber(myUserUpdate.getUserNumber());
+		myUser.setPassword(myUserUpdate.getPassword());
+		myUser.setGender(myUserUpdate.getGender());
+		myUser.setRole(myUserUpdate.getRole());
+		myUser.setDob(myUserUpdate.getDob());
+		myUser.setEmail(myUserUpdate.getEmail());
+		myUser.setUsername(myUserUpdate.getEmail());
 
-			myUser.setId(myUserUpdate.getId());
-			myUser.setUserNumber(myUserUpdate.getUserNumber());
-			myUser.setPassword(myUserUpdate.getPassword());
-			myUser.setGender(myUserUpdate.getGender());
-			myUser.setRole(myUserUpdate.getRole());
-			myUser.setDob(myUserUpdate.getDob());
-			myUser.setEmail(myUserUpdate.getEmail());
-			myUser.setUsername(myUserUpdate.getEmail());
+		logger.trace("Exited......createTaskUpdate() ");
 
-			logger.trace("Exited......createTaskUpdate() ");
-
-			return myUser;
-		} else {
-			throw new MyUserNotFoundException("Task id not found");
-		}
+		return myUser;
 
 	}
 
@@ -282,24 +271,26 @@ public class UserServiceImpl implements MyUserService {
 	}
 
 	public MyUser convertMyUserDtoToMyUser(MyUserDto myUserDto) {
-		System.out.println(
-				"ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println("ENTERED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("ENTERED……………………………………convertMyUserDtoToMyUser()");
 
 		MyUser myUser = new MyUser();
 
 		// ... map properties from myUser to myUserDto
 		// myUser.setMyUsernumber(myUserDto.getMyUsernumber());
+
 		myUser.setUsername(myUserDto.getUsername());
 		myUser.setPassword(passwordEncoder.encode(myUserDto.getPassword()));
 		myUser.setUserNumber(myUserDto.getUserNumber());
+		myUser.setId(myUserDto.getId());
 		myUser.setRole(myUserDto.getRole());
 		myUser.setEmail(myUserDto.getEmail());
 		myUser.setDob(myUserDto.getDob());
 		myUser.setGender(myUserDto.getGender());
 
-		System.out.println(
-				"EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
+		System.out.println("myUser.toString() = " + myUser.toString());
+
+		System.out.println("EXITED...................................convertMyUserDtoToMyUser(" + myUserDto.getUsername() + ")");
 		logger.trace("EXITED……………………………………convertMyUserDtoToMyUser()");
 
 		return myUser;
