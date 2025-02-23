@@ -2,221 +2,167 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>List of Students</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>List of Students</title>
 
-	<style>
-		/* Base Styling */
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
+<style>
+/* General styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-		html,
-		body {
-			font-family: sans-serif;
-			font-size: 15px;
-			color: #000;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #f9f9f9;
-			min-height: 100vh;
-			padding: 20px;
-		}
+html, body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-family: sans-serif;
+	background-color: #ffffff;
+	width: 100%;
+	padding: 20px;
+	color: black;
+}
 
-		/* Container */
-		.container {
-			background-color: #fff;
-			width: 100%;
-			max-width: 1200px;
-			border-radius: 15px;
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-			overflow: hidden;
-			padding: 20px;
-			text-align: center;
-		}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+	padding: 2rem;
+	border-radius: 2rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-		/* Title */
-		.title h1 {
-			color: #04aa6d;
-			font-size: 2.5rem;
-			margin-bottom: 20px;
-		}
+.container h1 {
+	text-align: center;
+	color: #037d54;
+	font-size: 3rem;
+}
 
-		/* Table Styling */
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin: 20px 0;
-		}
+/* Table styles */
+.container table {
+	border: 0.5rem solid rgb(57, 82, 60);
+	border-radius: 0.5rem;
+	width: 100%;
+	margin-top: 3rem;
+	border-collapse: collapse;
+}
 
-		th,
-		td {
-			padding: 12px;
-			border: 1px solid #365930;
-			text-align: left;
-		}
+th, td {
+	padding: 1rem;
+	border: 1px solid black;
+	padding: .1rem;
+}
 
-		th {
-			background-color: #04aa6d;
-			color: #fff;
-		}
+th {
+	background-color: #037d54;
+	color: white;
+	padding: .1rem;
+}
 
-		tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
+.completed-row {
+	background-color: rgb(98, 160, 234);
+}
 
-		/* Button Styling */
-		.scott-button {
-			margin-top: 20px;
-		}
+/* Button styles */
+.scott-button button {
+	background-color: #04aa6d;
+	color: white;
+	border: none;
+	border-radius: 1rem;
+	padding: 1rem;
+	font-size: 1.2rem;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-		.scott-button a {
-			display: inline-block;
-			background-color: #04aa6d;
-			color: #fff;
-			text-decoration: none;
-			padding: 10px 20px;
-			font-size: 1.2rem;
-			border-radius: 5px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			transition: background-color 0.3s ease;
-		}
+.scott-button button:hover {
+	background-color: #037d54;
+}
 
-		.scott-button a:hover {
-			background-color: #037a4d;
-		}
+/* Responsive styles */
+@media ( max-width : 768px) {
+	.container h1 {
+		font-size: 3rem;
+	}
+	.container table {
+		margin-top: 2rem;
+		font-size: 0.5rem;
+	}
+	th, td {
+		padding: 1rem;
+		border: 1px solid black;
+		padding: .1rem;
+	}
+	th {
+		background-color: #037d54;
+		color: white;
+		padding: .1rem;
+	}
+}
 
-		/* Responsive Design */
-		@media (max-width: 480px) {
-
-			/* Base Styling */
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
-
-			html,
-			body {
-				font-family: sans-serif;
-				font-size: 15px;
-				color: #000;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-color: #f9f9f9;
-				min-height: 100vh;
-				padding: 20px;
-			}
-
-			/* Container */
-			.container {
-				background-color: #fff;
-				width: 100%;
-				max-width: 1200px;
-				border-radius: 15px;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-				overflow: hidden;
-				padding: 20px;
-				text-align: center;
-			}
-
-			/* Title */
-			.title h1 {
-				color: #04aa6d;
-				font-size: 2.5rem;
-				margin-bottom: 20px;
-			}
-
-			/* Table Styling */
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				margin: 20px 0;
-			}
-
-			th,
-			td {
-				padding: 12px;
-				border: 1px solid #365930;
-				text-align: left;
-			}
-
-			th {
-				background-color: #04aa6d;
-				color: #fff;
-			}
-
-			tr:nth-child(even) {
-				background-color: #f2f2f2;
-			}
-
-			/* Button Styling */
-			.scott-button {
-				margin-top: 20px;
-			}
-
-			.scott-button a {
-				display: inline-block;
-				background-color: #04aa6d;
-				color: #fff;
-				text-decoration: none;
-				padding: 10px 20px;
-				font-size: 1.2rem;
-				border-radius: 5px;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				transition: background-color 0.3s ease;
-			}
-
-			.scott-button a:hover {
-				background-color: #037a4d;
-			}
-
-		}
-	</style>
+@media ( max-width : 480px) {
+	.container h1 {
+		font-size: 2.5rem;
+	}
+	.container table {
+		font-size: 0.5rem;
+	}
+	th, td {
+		padding: 1rem;
+		border: 1px solid black;
+		padding: .1rem;
+	}
+	th {
+		background-color: #037d54;
+		color: white;
+		padding: .1rem;
+	}
+}
+</style>
 </head>
 
 <body>
 	<div class="container">
-		<div class="title">
-			<h1>List of Users</h1>
-		</div>
+		<h1>List of Users</h1>
 
-		<div>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>UserNumber</th>
-						<th>Username</th>
-						<th>Email</th>
-						<th>Password</th>
-						<th>Role</th>
-						<th>Gender</th>
-						<th>DOB</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="user : ${users}">
-						<td th:text="${user.id}"></td>
-						<td th:text="${user.userNumber}"></td>
-						<td th:text="${user.username}"></td>
-						<td th:text="${user.email}"></td>
-						<td th:text="${user.password}"></td>
-						<td th:text="${user.role}"></td>
-						<td th:text="${user.gender}"></td>
-						<td th:text="${user.dob}"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<table>
+			<thead>
+				<tr>
+
+					<th>User Number</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>Role</th>
+					<th>Gender</th>
+					<th>DOB</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+
+					<td th:text="${user.userNumber}"></td>
+					<td th:text="${user.username}"></td>
+					<td th:text="${user.email}"></td>
+					<td th:text="${user.password}"></td>
+					<td th:text="${user.role}"></td>
+					<td th:text="${user.gender}"></td>
+					<td th:text="${user.dob}"></td>
+				</tr>
+			</tbody>
+		</table>
 
 		<div class="scott-button">
-			<a th:href="@{/admin/index}">Return Home</a>
+			<a th:href="@{/admin/index}">
+				<button>Return Home</button>
+			</a>
 		</div>
 	</div>
 </body>
