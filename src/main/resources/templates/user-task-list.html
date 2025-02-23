@@ -1,174 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Task List</title>
+		<style>
+			/* General styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Task List</title>
-	<style>
-		/* General styles */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+			html,
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				font-family: sans-serif;
+				background-color: #ffffff;
+				width: 100%;
+				padding: 20px;
+				color: black;
+			}
 
-		html,
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-height: 100vh;
-			font-family: sans-serif;
-			background-color: #ffffff;
-			width: 100%;
-			padding: 20px;
-			color: black;
-		}
+			.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				width: 90%;
+			}
 
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			width: 90%;
-		}
-
-		.container div h1 {
-			text-align: center;
+			.container div h1 {
+				text-align: center;
 			color: #037d54;
-			font-size: 3rem;
-		}
+				font-size: 3rem;
+			}
 
-		/* Table styles */
-		.container div table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 20px;
-		}
+			/* Table styles */
+			.container div table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 20px;
+			}
 
-		th,
-		td {
-			padding: 10px;
-			border: 2px solid #037d54;
-			text-align: center;
-		}
+			th,
+			td {
+				padding: 10px;
+				border: 2px solid #037d54;
+				text-align: center;
+			}
 
-		th {
-			background-color: #037d54;
-			color: white;
-		}
-
-		.completed-row {
-			background-color: rgb(98, 160, 234);
-		}
-
-		/* Button styles */
-		a>button {
-			background-color: #04aa6d;
-			color: white;
-			border: none;
-			border-radius: 1rem;
-			padding: 1rem;
-			font-size: 1.2rem;
-			cursor: pointer;
-			margin-top: 20px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		}
-
-		a>button:hover {
-			background-color: #037d54;
-		}
-
-		/* Responsive styles */
-		@media (max-width : 768px) {
 			th {
 				background-color: #037d54;
 				color: white;
 			}
 
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2.5rem;
+			.completed-row {
+				background-color: rgb(98, 160, 234);
 			}
 
-			table {
-				font-size: 0.9rem;
-			}
-
-			th,
-			td {
-				padding: 8px;
-			}
-
-			a>button {
-				font-size: 1rem;
-				padding: 0.8rem;
-			}
-		}
-
-		@media (max-width : 480px) {
-			th {
-				background-color: #037d54;
+			/* Button styles */
+			a > button {
+				background-color: #04aa6d;
 				color: white;
+				border: none;
+				border-radius: 1rem;
+				padding: 1rem;
+				font-size: 1.2rem;
+				cursor: pointer;
+				margin-top: 20px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 			}
 
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2rem;
+			a > button:hover {
+				background-color: #037d54;
 			}
 
-			table {
-				font-size: 0.8rem;
+			/* Responsive styles */
+			@media (max-width: 768px) {
+				th {
+					background-color: #037d54;
+					color: white;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2.5rem;
+				}
+				table {
+					font-size: 0.9rem;
+				}
+				th,
+				td {
+					padding: 8px;
+				}
+				a > button {
+					font-size: 1rem;
+					padding: 0.8rem;
+				}
 			}
 
-			th,
-			td {
-				padding: 6px;
+			@media (max-width: 480px) {
+				th {
+					background-color: #037d54;
+					color: white;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2rem;
+				}
+				table {
+					font-size: 0.8rem;
+				}
+				th,
+				td {
+					padding: 6px;
+					text-wrap: break-word;
+				}
+				.container div a button {
+					font-size: 0.9rem;
+					padding: 0.6rem;
+				}
 			}
+		</style>
+	</head>
 
-			.container div a button {
-				font-size: 0.9rem;
-				padding: 0.6rem;
-			}
-		}
-	</style>
-</head>
-
-<body>
-	<div class="container">
-		<div>
-			<h1>Task List</h1>
+	<body>
+		<div class="container">
+			<div>
+				<h1>Task List</h1>
+			</div>
+			<div>
+				<table border="1">
+					<thead>
+						<tr>
+							<th>Task Number</th>
+							<th>Username</th>
+							<th>Content</th>
+							<th>Complete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : false}">
+							<td th:text="${task.taskNumber}">taskNumber</td>
+							<td th:text="${task.username}">username</td>
+							<td th:text="${task.content}">content</td>
+							<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<a th:href="@{/user/index}">
+					<button>Return to Index</button>
+				</a>
+			</div>
 		</div>
-		<div>
-			<table border="1">
-				<thead>
-					<tr>
-						<th>Task Number</th>
-						<th>Username</th>
-						<th>Content</th>
-						<th>Complete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : false}">
-						<td th:text="${task.taskNumber}">taskNumber</td>
-						<td th:text="${task.username}">username</td>
-						<td th:text="${task.content}">content</td>
-						<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div>
-			<a th:href="@{/user/index}">
-				<button>Return to Index</button>
-			</a>
-		</div>
-	</div>
-</body>
-
+	</body>
 </html>
