@@ -1,216 +1,188 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Task List</title>
-<style>
-/* General styles */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Task List</title>
+	<style>
+		/* General styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-html, body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-	font-family: sans-serif;
-	background-color: #ffffff;
-	width: 100%;
-	padding: 20px;
-	color: black;
-}
+		html,
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			font-family: sans-serif;
+			background-color: #ffffff;
+			width: 100%;
+			padding: 20px;
+			color: black;
+		}
 
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	min-width: 100%;
-}
 
-div.container {
-	padding: 2rem;
-	border-radius: 2rem;
-	min-width: 90%;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-.container div h1 {
-	text-align: center;
-	color: #037d54;
-	font-size: 3rem;
-}
+		div.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-width:80%;
+			max-width:900px;
+			height:auto;
+		
+		}
 
-/* Table styles */
-.container div table {
-	border: 0.5rem solid rgb(57, 82, 60);
-	border-radius: 0.5rem;
-	width: 100%;
-	margin-top: 3rem;
-	border-collapse:collapse;
-}
+		.container div h1 {
+			text-align: center;
+			color: green;
+			font-size: 2.5rem;
+		}
+		
+		td.task-number{
+			font-size: 2rem;
+			color:red;
+			font-style: bold;
+		}
 
-td {
-	border: 1px solid black;
-	padding: 1rem;
-	background-color: white;
-}
+		div.task-item{
+			min-width:100%;
+					max-width:900px;
+					height:auto;
+			
+		}
+		div.task-item table {
+			border: solid 5px #037d54;
+			min-width:100%;
+					max-width:900px;
+					height:auto;
+		}
 
-th {
-	border: 1px solid black;
-	padding: 1rem;
-	background-color: #037d54;
-	color: white;
-}
 
-.completed-row {
-	background-color: rgb(98, 160, 234);
-}
+		th,
+		td {
+			padding: 10px;
+			border: 2px solid #037d54;
+			text-align: center;
+			word-wrap: wrap;
+		}
 
-/* Button styles */
-a>button {
-	background-color: #04aa6d;
-	color: white;
-	border: none;
-	border-radius: 1rem;
-	padding: 1rem;
-	font-size: 1.2rem;
-	cursor: pointer;
-	margin-top: 20px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+		th {
+			background-color: #037d54;
+			color: white;
+		}
 
-a>button:hover {
-	background-color: #037d54;
-}
+		.completed-row {
+			background-color: rgb(98, 160, 234);
+		}
 
-/* Responsive styles */
-@media ( max-width : 768px) {
-	.container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		min-width: 100%;
-	}
-	div.container {
-		padding: 2rem;
-		border-radius: 2rem;
-		min-width: 90%;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	.container div h1 {
-		text-align: center;
-		color: #037d54;
-		font-size: 3rem;
-	}
+		/* Button styles */
+		a>button {
+			background-color: #04aa6d;
+			color: white;
+			border: none;
+			border-radius: 1rem;
+			padding: 1rem;
+			font-size: 1.2rem;
+			cursor: pointer;
+			margin-top: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
 
-	/* Table styles */
-	.container div table {
-		border: 0.5rem solid rgb(57, 82, 60);
-		border-radius: 0.5rem;
-		width: 100%;
-		margin-top: 3rem;
-		border-collapse:collapse;
-	}
-	td {
-		border: 1px solid black;
-		padding: 1rem;
-		background-color: white;
-	}
-	th {
-		border: 1px solid black;
-		padding: 1rem;
-		background-color: #037d54;
-		color: white;
-	}
-	.completed-row {
-		background-color: rgb(98, 160, 234);
-	}
+		a>button:hover {
+			background-color: #037d54;
+		}
 
-	/* Button styles */
-	a>button {
-		background-color: #04aa6d;
-		color: white;
-		border: none;
-		border-radius: 1rem;
-		padding: 1rem;
-		font-size: 1.2rem;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	a>button:hover {
-		background-color: #037d54;
-	}
-}
+		/* Responsive styles */
+		@media (max-width: 768px) {
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
 
-@media ( max-width : 480px) {
-	.container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		min-width: 100%;
-	}
-	div.container {
-		padding: 2rem;
-		border-radius: 2rem;
-		min-width: 90%;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	.container div h1 {
-		text-align: center;
-		color: #037d54;
-		font-size: 1.5rem;
-	}
+			td.task-number{
+				font-size: 1.5rem;
+				color:red;
+				font-style: bold;
+			}
+			
+			th {
+				background-color: #037d54;
+				color: white;
+			}
 
-	/* Table styles */
-	.container div table {
-		border: 0.5rem solid rgb(57, 82, 60);
-		border-radius: 0.5rem;
-		width: 100%;
-		font-size: .5rem;
-		margin-top: 2rem;
-		border-collapse:collapse;
-	}
-	td {
-		border: 1px solid black;
-		padding: 1rem;
-		background-color: white;
-	}
-	th {
-		border: 1px solid black;
-		padding: 1rem;
-		background-color: #037d54;
-		color: white;
-	}
-	.completed-row {
-		background-color: rgb(98, 160, 234);
-	}
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
 
-	/* Button styles */
-	a>button {
-		background-color: #04aa6d;
-		color: white;
-		border: none;
-		border-radius: 1rem;
-		padding: 1rem;
-		font-size: 1.2rem;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	a>button:hover {
-		background-color: #037d54;
-	}
-}
-</style>
+			table {
+				font-size: 0.9rem;
+			}
+
+			th,
+			td {
+				padding: 8px;
+				text-align: center;
+				word-wrap: wrap;
+			}
+
+			a>button {
+				font-size: 1rem;
+				padding: 0.8rem;
+			}
+		}
+
+		@media (max-width: 480px) {
+			
+			form label {
+				color:green;
+				font-size:2rem;
+			}
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
+
+			td.task-number{
+				font-size: 1rem;
+				color:red;
+				font-style: bold;
+			}
+			th {
+				background-color: #037d54;
+				color: white;
+			}
+
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2rem;
+			}
+
+			td {
+				padding: 8px;
+				text-align: center;
+				word-wrap: wrap;
+			}
+
+
+			.container div a button {
+				font-size: 0.9rem;
+				padding: 0.6rem;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -218,33 +190,90 @@ a>button:hover {
 		<div>
 			<h1>Task List</h1>
 		</div>
-		
-		<div class="table-01">
-			<table border="1">
+
+
+
+
+		<div class="task-item" th:each="task : ${tasks}">
+			<table>
 				<thead>
-					<tr>
-						<th>Task Number</th>
-						<th>Username</th>
-						<th>Content</th>
-						<th>Complete</th>
-					</tr>
+					<th>
+						<strong>Task Number:</strong>
+
+
+					</th>
 				</thead>
+
 				<tbody>
-					<tr th:each="task : ${tasks}"
-						th:class="${task.complete ? 'completed-row' : false}">
-						<td th:text="${task.taskNumber}">taskNumber</td>
-						<td th:text="${task.username}">username</td>
-						<td th:text="${task.content}">content</td>
-						<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
-					</tr>
+
+					<td class="task-number" th:text="${task.taskNumber}">taskNumber</td>
+
 				</tbody>
+
+				<thead>
+					<th>
+						<strong>Username:</strong>
+
+
+					</th>
+				</thead>
+
+				<tbody>
+
+					<td th:text="${task.username}">username</td>
+
+				</tbody>
+
+
+
+
+
+
+
+				<thead>
+					<th>
+						<strong>Content:</strong>
+
+
+					</th>
+				</thead>
+
+				<tbody>
+
+					<td th:text="${task.content}">content</td>
+
+				</tbody>
+
+
+
+
+
+				<thead>
+					<th>
+						<strong>Complete:</strong>
+
+
+					</th>
+				</thead>
+
+				<tbody>
+
+					<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+
+				</tbody>
+
 			</table>
+			<br>
+			<br>
+
 		</div>
+
 		<div>
-			<a th:href="@{/user/index}">
+			<a th:href="@{/admin/index}">
 				<button>Return to Index</button>
 			</a>
 		</div>
 	</div>
 </body>
+
 </html>
