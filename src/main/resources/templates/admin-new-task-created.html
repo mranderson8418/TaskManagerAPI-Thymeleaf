@@ -1,175 +1,152 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8" />
-	<title>Index</title>
-	<style>
-		body {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			font-size: large;
-			color: #04aa6d;
-			margin: 0;
-			padding: 10px;
-		}
+		<title>Index</title>
 
-		h1 {
-			padding: 0;
-			margin: 0;
-			font-size: 2.5rem;
-			text-align: center;
-		}
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-size: 15px;
+				color: #04aa6d;
+				margin: 0;
+				padding: 10px;
+			}
 
-		h2 {
-			display: inline-block;
-			font-size: 1.8rem;
-		}
+			div h1 {
+				padding: 0;
+				margin: 0;
+				font-size: 3rem;
+				text-align: center;
+			}
 
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-			padding: 15px;
-			border-radius: 5px;
-			margin: 10px auto;
-			width: 90%;
-			max-width: 600px;
-		}
+			div.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 15px;
+				border-radius: 5px;
+				margin: 10rem auto;
 
-		.details {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 90%;
-			max-width: 500px;
-			margin-top: 5rem;
-			background-color: white;
-			border: solid 5px green;
-			border-radius: 15px;
-			padding: 15px;
-			box-sizing: border-box;
-		}
+				min-width: 90%;
+				max-width: 900px;
+			}
 
-		.details div.scott-button {
-			background-color: #04aa6d;
-			color: white;
-			text-decoration: none;
-			border-radius: 15px;
-			padding: 15px;
-			text-align: center;
-			font-size: 1.2rem;
-			margin: 15px 0;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-			min-width: 95%;
-			max-width: 350px;
-		}
-
-		div.scott-button a {
-			text-decoration: none;
-			color: white;
-			display: block;
-			width: 100%;
-		}
-
-		form div h2 span {
-			color: red;
-		}
-
-		/* Responsive Design */
-		@media (max-width: 768px) {
-			h1 {
+			div.details div h2 {
 				font-size: 2rem;
 			}
 
-			h2 {
-				font-size: 1.5rem;
+			div.details {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				min-width: 90%;
+				max-width: 600px;
+				margin: 5rem 5rem;
+				background-color: white;
+				border: solid 5px green;
+				border-radius: 15px;
+				padding: 15px;
+				box-sizing: border-box;
 			}
 
-			.details {
-				margin-top: 3rem;
-				padding: 2rem;
-				min-width: 95%;
+			div.scott-button {
+				background-color: #04aa6d;
+				color: white;
+				text-decoration: none;
+				border-radius: 15px;
+				padding: 15px;
+				text-align: center;
+				font-size: 1.2rem;
+				margin: 15px 0;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+				min-width: 80%;
 			}
 
-			.details div.scott-button {
-				font-size: 1rem;
-				padding: 2rem;
-				max-width: 280px;
-			}
-		}
-
-		@media (max-width: 480px) {
-			h1 {
-				font-size: 1.8rem;
+			div.scott-button a {
+				text-decoration: none;
+				color: white;
+				display: block;
+				font-size: 2rem;
 			}
 
-			h2 {
-				font-size: 1.3rem;
-			}
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				h1 {
+					font-size: 2rem;
+				}
 
-			.details {
-				margin-top: 2rem;
+				div.details div h2 {
+					font-size: 2rem;
+				}
+
+				div.details {
+					margin-top: 3rem;
+					padding: 2rem;
 					min-width: 95%;
-				padding: 1rem;
+				}
+
+				div.scott-button {
+					font-size: 1rem;
+					padding: 2rem;
+					max-width: 5rem;
+				}
 			}
 
-			.details div.scott-button {
-				font-size: 1rem;
-				padding: 1rem;
-				max-width: 250px;
+			@media (max-width: 480px) {
+				h1 {
+					font-size: 1.8rem;
+				}
+				div.details div h2 {
+					font-size: 2rem;
+				}
+
+				div.details {
+					margin-top: 2rem;
+					min-width: 95%;
+					padding: 1rem;
+				}
+
+				div.scott-button {
+					font-size: 1rem;
+					padding: 1rem;
+					max-width: 3rem;
+				}
 			}
-		}
-	</style>
+		</style>
+	</head>
 
-</head>
+	<body>
+		<div class="container">
+			<div>
+				<h1>New Task created and saved to our database</h1>
+			</div>
 
-<body>
-	<div class="container">
-		<div>
-			<h1>New Task created and saved to our database</h1>
-		</div>
-
-
-		<div class="details">
-			<form action="/admin/index" method="get">
-
+			<div class="details">
 				<div>
-					<h2>
-						Task Number: <span th:text="${taskNumber}">taskNumber</span>
-					</h2>
+					<h2>Task Number: <span th:text="${taskNumber}">taskNumber</span></h2>
 				</div>
 				<div>
-					<h2>
-						Username: <span th:text="${username}">username</span>
-					</h2>
+					<h2>Username: <span th:text="${username}">username</span></h2>
 				</div>
 				<div>
-					<h2>
-						Content: <span th:text="${content}">Content</span>
-					</h2>
+					<h2>Content: <span th:text="${content}">Content</span></h2>
 				</div>
 				<div>
-					<h2>
-						Complete: <span th:text="${complete} ? 'true' : 'false'">Complete</span>
-					</h2>
+					<h2>Complete: <span th:text="${complete} ? 'true' : 'false'">Complete</span></h2>
 				</div>
-
-			</form>
-
-
-
+			</div>
 			<div class="scott-button">
 				<a th:href="@{/admin/index}"> Go to Admin Index Page </a>
 			</div>
-
 		</div>
-
-	</div>
-</body>
-
+	</body>
 </html>

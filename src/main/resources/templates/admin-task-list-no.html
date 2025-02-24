@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Task List</title>
+	<style>
+		/* General styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			font-family: sans-serif;
+			background-color: #ffffff;
+			width: 100%;
+			padding: 20px;
+			color: black;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			min-width: 100%;
+			padding: 2rem;
+			border-radius: 2rem;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		.container h1 {
+			text-align: center;
+			color: #037d54;
+			font-size: 3rem;
+		}
+
+		/* Table styles */
+		.container table {
+			border: 0.5rem solid rgb(57, 82, 60);
+			border-radius: 0.5rem;
+			width: 100%;
+			margin-top: 3rem;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+			padding: 1rem;
+			word-wrap: wrap;
+		}
+
+		th {
+			background-color: #037d54;
+			color: white;
+		}
+
+		.completed-row {
+			background-color: rgb(98, 160, 234);
+		}
+
+		/* Button styles */
+		a button {
+			background-color: #04aa6d;
+			color: white;
+			border: none;
+			border-radius: 1rem;
+			padding: 1rem;
+			font-size: 1.2rem;
+			cursor: pointer;
+			margin-top: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		a button:hover {
+			background-color: #037d54;
+		}
+
+		/* Responsive styles */
+		@media (max-width: 768px) {
+			.container h1 {
+				font-size: 2rem;
+			}
+
+			.container table {
+				font-size: 0.9rem;
+			}
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+			padding: 1rem;
+			word-wrap: wrap;
+		}
+
+		@media (max-width: 480px) {
+			.container h1 {
+				font-size: 1.5rem;
+			}
+
+			.container table {
+				font-size: 0.7rem;
+			}
+
+			th,
+			td {
+				border: 1px solid black;
+				padding: 1rem;
+				word-wrap: wrap;
+			}
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<div>
+			<h1>Task List</h1>
+		</div>
+
+
+
+		<div>
+
+			<tbody>
+
+				<tr th:each="task : ${tasks}" th:classappend="${task.complete ? 'completed-row' : ''}">
+
+					<span>
+						<th>Task Number</th>
+						<td th:text="${task.taskNumber}">taskNumber</td>
+					</span>
+				</tr>
+				<br />
+
+				<tr th:each="task : ${tasks}" th:classappend="${task.complete ? 'completed-row' : ''}">
+
+
+					<th>User Name</th>
+					<td th:text="${task.username}">username</td>
+
+				</tr>
+				<tr th:each="task : ${tasks}" th:classappend="${task.complete ? 'completed-row' : ''}">
+
+
+					<th>Content</th>
+					<td th:text="${task.content}">content</td>
+
+				</tr>
+				<tr th:each="task : ${tasks}" th:classappend="${task.complete ? 'completed-row' : ''}">
+
+
+					<th>Complete</th>
+					<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+
+				</tr>
+			</tbody>
+
+		</div>
+	</div>
+
+	<a th:href="@{/admin/index}">
+		<button>Return to Index</button>
+	</a>
+	</div>
+</body>
+
+</html>
