@@ -73,28 +73,32 @@ th {
 	color: white;
 }
 
-.completed-row {
-	background-color: rgb(98, 160, 234);
+
+
+div.scott-button {
+	background-color: #04aa6d;
+	border: none;
+	border-radius: 1rem;
+	padding: 1rem;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
 }
 
-	div.scott-button {
-		background-color: #04aa6d;
-		border: none;
-		border-radius: 1rem;
-		padding: 1rem;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
-	}
-	div.scott-button a {
-			color: white;
-		font-size: 1.2rem;
-		text-decoration: none;
-	}
-	
-	div.scott-button:hover {
-		background-color: #037d54;
-	}
+div.scott-button a {
+	color: white;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+div.scott-button:hover {
+	background-color: #037d54;
+}
+.completed-row td {
+	background-color: rgb(98, 160, 234);
+
+	/* Or any color you prefer */
+}
 
 /* Responsive styles */
 @media ( max-width : 768px) {
@@ -125,7 +129,6 @@ th {
 		text-align: center;
 		word-wrap: wrap;
 	}
-
 }
 
 @media ( max-width : 480px) {
@@ -157,7 +160,6 @@ th {
 		text-align: center;
 		word-wrap: wrap;
 	}
-
 }
 </style>
 </head>
@@ -174,60 +176,55 @@ th {
 		<div class="task-item" th:each="task : ${tasks}">
 			<table>
 				<thead>
-					<th><strong>Task Number:</strong></th>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<th><strong>Task Number:</strong></th>
+					</tr>
 				</thead>
 
 				<tbody>
-
-					<td class="task-number" th:text="${task.taskNumber}">taskNumber</td>
-
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<td id="task-number" th:text="${task.taskNumber}">taskNumber</td>
+					</tr>
 				</tbody>
 
 				<thead>
-					<th><strong>Username:</strong></th>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<th><strong>Username:</strong></th>
+					</tr>
 				</thead>
 
 				<tbody>
-
-					<td th:text="${task.username}">username</td>
-
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<td th:text="${task.username}">username</td>
+					</tr>
 				</tbody>
-
-
-
-
-
-
 
 				<thead>
-					<th><strong>Content:</strong></th>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<th><strong>Content:</strong></th>
+					</tr>
 				</thead>
 
 				<tbody>
-
-					<td th:text="${task.content}">content</td>
-
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<td th:text="${task.content}">content</td>
+					</tr>
 				</tbody>
-
-
-
-
 
 				<thead>
-					<th><strong>Complete:</strong></th>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<th><strong>Complete:</strong></th>
+					</tr>
 				</thead>
 
 				<tbody>
-
-					<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
-
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+					</tr>
 				</tbody>
-
 			</table>
-			<br> <br>
-
+			<br /> <br />
 		</div>
-
 
 		<div class="scott-button">
 			<a th:href="@{/admin/taskList/viewTable}"> Task List Table View

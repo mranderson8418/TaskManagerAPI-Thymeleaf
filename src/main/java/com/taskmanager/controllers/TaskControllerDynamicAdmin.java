@@ -282,7 +282,7 @@ public class TaskControllerDynamicAdmin {
 	}
 
 	@GetMapping({ "/user/delete/task/viewTable", "/admin/delete/task/viewTable" })
-	public String getDeleteTask(@ModelAttribute MyTaskDto myTaskDto, Model model) {
+	public String getDeleteTaskViewTable(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
 		// Validate object data if necessary
 		// Save object to database

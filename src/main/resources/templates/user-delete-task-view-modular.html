@@ -53,7 +53,7 @@
 				font-size: 2.5rem;
 			}
 
-			td.task-number {
+			td#task-number {
 				font-size: 2rem;
 				color: red;
 				font-style: bold;
@@ -139,7 +139,7 @@
 					color: green;
 					font-size: 2.5rem;
 				}
-				td.task-number {
+				td#task-number {
 					font-size: 1.5rem;
 					color: red;
 					font-style: bold;
@@ -178,7 +178,7 @@
 					color: green;
 					font-size: 2.5rem;
 				}
-				td.task-number {
+				td#task-number {
 					font-size: 1rem;
 					color: red;
 					font-style: bold;
@@ -212,42 +212,58 @@
 			</div>
 
 			<div class="task-item" th:each="task : ${tasks}">
-				<table>
-					<thead>
+			<table>
+				<thead>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<th><strong>Task Number:</strong></th>
-					</thead>
+					</tr>
+				</thead>
 
-					<tbody>
-						<td class="task-number" th:text="${task.taskNumber}">taskNumber</td>
-					</tbody>
+				<tbody>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
+						<td id="task-number" th:text="${task.taskNumber}">taskNumber</td>
+					</tr>
+				</tbody>
 
-					<thead>
+				<thead>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<th><strong>Username:</strong></th>
-					</thead>
+					</tr>
+				</thead>
 
-					<tbody>
+				<tbody>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<td th:text="${task.username}">username</td>
-					</tbody>
+					</tr>
+				</tbody>
 
-					<thead>
+				<thead>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<th><strong>Content:</strong></th>
-					</thead>
+					</tr>
+				</thead>
 
-					<tbody>
+				<tbody>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<td th:text="${task.content}">content</td>
-					</tbody>
+					</tr>
+				</tbody>
 
-					<thead>
+				<thead>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<th><strong>Complete:</strong></th>
-					</thead>
+					</tr>
+				</thead>
 
-					<tbody>
+				<tbody>
+					<tr th:class="${task.complete ? 'completed-row' : false}">
 						<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
-					</tbody>
-				</table>
-				<br />
-				<br />
-			</div>
+					</tr>
+				</tbody>
+			</table>
+			<br /> <br />
+		</div>
+	
 
 			<div>
 				<form th:action="@{/user/delete/task/viewTable}" th:method="POST">

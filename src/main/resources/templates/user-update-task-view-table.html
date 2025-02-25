@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Admin Create Task Update</title>
+	<style>
+		/* General Reset */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		body {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-family: sans-serif;
+			background-color: #f9f9f9;
+			color: #333;
+			font-size: 15px;
+		}
+
+		body {
+			padding: 1rem;
+		}
+
+		div.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			min-width: 80%;
+			max-width: 900px;
+			height: auto;
+		}
+
+		div.form-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-width: 80%;
+			max-width: 900px;
+			height: auto;
+			margin: 1rem 1rem 2rem 1rem;
+		}
+
+		form h2,
+		form label,
+		form input#taskNumber {
+			color: green;
+			text-align: center;
+		}
+
+		.container div h1 {
+			text-align: center;
+			color: green;
+			font-size: 2.5rem;
+		}
+
+		.container div h2 {
+			text-align: center;
+			color: green;
+			font-size: 2rem;
+		}
+
+
+		td.task-number {
+			font-size: 2rem;
+			color: red;
+			font-style: bold;
+		}
+
+
+
+		th,
+		td {
+			padding: 10px;
+			border: 2px solid #037d54;
+			text-align: center;
+			word-wrap: wrap;
+		}
+
+		th {
+			background-color: #037d54;
+			color: white;
+		}
+
+	
+
+		/* Forms */
+		form {
+			display: grid;
+			gap: 1rem;
+		}
+
+		form label {
+			font-weight: bold;
+			font-size: 1.5rem;
+			text-align: center;
+		}
+
+		form input#taskNumber {
+			color: green;
+			font-size: 1rem;
+		}
+
+		input[type="text"],
+		textarea,
+		input[type="checkbox"] {
+			width: 100%;
+			padding: 0.5rem;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		textarea {
+			resize: vertical;
+		}
+
+		div.scott-button,
+		div button {
+			background-color: #04aa6d;
+			color: white;
+			border: none;
+			border-radius: 1rem;
+			padding: 1rem;
+			font-size: 1.2rem;
+			cursor: pointer;
+			margin-top: 2rem;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		div button {
+			background-color: #04aa6d;
+		}
+
+		div.scott-button a {
+			text-decoration: none;
+			color: white;
+		}
+
+		form div button:hover {
+			background-color: #037d54;
+		}
+
+		div.scott-button:hover {
+			background-color: #037d54;
+		}
+
+		.completed-row {
+			background-color: rgb(98, 160, 234);
+			/* Or any color you prefer */
+		}
+
+		/* Responsive Styles */
+		@media (max-width : 768px) {
+			div.form-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-width: 80%;
+				max-width: 900px;
+				height: auto;
+			}
+
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
+
+			td.task-number {
+				font-size: 1.5rem;
+				color: red;
+				font-style: bold;
+			}
+
+			th {
+				background-color: #037d54;
+				color: white;
+			}
+
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
+
+			table {
+				font-size: 0.9rem;
+			}
+
+			th,
+			td {
+				padding: 8px;
+				text-align: center;
+				word-wrap: wrap;
+			}
+
+			a>button {
+				font-size: 1rem;
+				padding: 0.8rem;
+			}
+
+			.scott-button button,
+			.scott-button a {
+				font-size: 0.95rem;
+				padding: 0.6rem 1.2rem;
+			}
+
+			div.form-container form label {
+				text-align: center;
+			}
+		}
+
+		@media (max-width : 480px) {
+			div.form-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-width: 80%;
+				max-width: 900px;
+				height: auto;
+			}
+
+			div.scott-button button {
+				display: block;
+				text-align: center;
+			}
+
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
+
+			td.task-number {
+				font-size: 1rem;
+				color: red;
+				font-style: bold;
+			}
+
+			th {
+				background-color: #037d54;
+				color: white;
+			}
+
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2rem;
+			}
+
+			div.form-container form label {
+				text-align: center;
+			}
+
+			td {
+				padding: 8px;
+				text-align: center;
+				word-wrap: wrap;
+			}
+
+			div.container div a button {
+				font-size: 0.9rem;
+				padding: 0.6rem;
+			}
+
+			.scott-button button,
+			.scott-button a {
+				font-size: 0.9rem;
+				padding: 0.5rem 1rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="title">
+			<h1>Task List</h1>
+		</div>
+
+		<div class="table-01">
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Task Number</th>
+						<th>Username</th>
+						<th>Content</th>
+						<th>Complete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : false}">
+						<td th:text="${task.taskNumber}">taskNumber</td>
+						<td th:text="${task.username}">username</td>
+						<td th:text="${task.content}">content</td>
+						<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
+		<div class="form-container">
+			<form th:action="@{/user/update/task/viewTable}" th:object="${myTaskDto}" method="post">
+				<h2>Update Task Details</h2>
+
+				<label for="taskNumber">Task ID:</label> <input type="text" th:field="*{taskNumber}" id="taskNumber" />
+				<label for="content">Updated
+					Message Content:</label>
+				<textarea th:field="*{content}" id="content" rows="4"></textarea>
+
+				<label for="complete">Task Complete Status:</label> <input type="checkbox" th:field="*{complete}"
+					id="complete" />
+
+				<div>
+					<button type="submit">Update Task</button>
+				</div>
+			</form>
+		</div>
+
+
+		<div class="scott-button">
+			<a th:href="@{/user/update/task/viewModular}"> View Modular Task
+				List Display Format </a>
+		</div>
+
+
+
+
+
+		<div class="scott-button">
+			<a th:href="@{/user/index}">Go to Admin Index Page</a>
+		</div>
+	</div>
+</body>
+
+</html>
