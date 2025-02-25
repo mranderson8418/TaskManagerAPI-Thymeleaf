@@ -3918,3 +3918,1033 @@ java.lang.InterruptedException: null
 2025-02-25T11:51:41.169-05:00  INFO 20218 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-02-25T11:51:41.174-05:00  INFO 20218 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-02-25T11:51:41.187-05:00  INFO 20218 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:28:45.996-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 57394 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:28:45.998-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:28:46.047-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:28:46.047-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:28:47.051-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:28:47.105-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:28:47.894-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:28:47.921-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:28:47.922-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:28:47.966-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:28:47.967-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1919 ms
+2025-02-25T12:28:48.357-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:28:48.415-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:28:48.462-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:28:48.868-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:28:48.903-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:28:49.337-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6af3d851
+2025-02-25T12:28:49.340-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:28:49.440-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:28:50.339-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:28:50.400-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:28:50.732-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:28:51.328-05:00  WARN 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:28:51.363-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:28:51.364-05:00  WARN 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:28:51.868-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:28:52.546-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:28:52.614-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:28:52.629-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 7.025 seconds (process running for 7.765)
+2025-02-25T12:28:52.851-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:28:52.851-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:28:52.854-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-02-25T12:32:06.206-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:32:06.212-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:32:06.216-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:32:06.225-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:32:06.229-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:32:06.235-05:00  INFO 57394 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:34:17.265-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 59264 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:34:17.267-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:34:17.309-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:34:17.309-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:34:18.291-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:34:18.345-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:34:19.050-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:34:19.066-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:34:19.066-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:34:19.105-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:34:19.106-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1797 ms
+2025-02-25T12:34:19.465-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:34:19.515-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:34:19.543-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:34:19.785-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:34:19.812-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:34:20.167-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b5bf7f5
+2025-02-25T12:34:20.169-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:34:20.260-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:34:21.053-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:34:21.101-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:34:21.422-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:34:21.990-05:00  WARN 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:34:22.025-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:34:22.025-05:00  WARN 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:34:22.514-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:34:23.162-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:34:23.244-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:34:23.261-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.359 seconds (process running for 6.95)
+2025-02-25T12:34:23.928-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:34:23.928-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:34:23.930-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:37:12.987-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:37:12.989-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:37:12.991-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:37:12.998-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:37:13.002-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:37:13.007-05:00  INFO 59264 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:37:14.750-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 59529 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:37:14.752-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:37:14.796-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:37:14.797-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:37:15.765-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:37:15.821-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:37:16.575-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:37:16.589-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:37:16.589-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:37:16.627-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:37:16.628-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1830 ms
+2025-02-25T12:37:16.972-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:37:17.016-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:37:17.044-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:37:17.250-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:37:17.276-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:37:17.598-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@791596f1
+2025-02-25T12:37:17.600-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:37:17.672-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:37:18.392-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:37:18.434-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:37:18.729-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:37:19.300-05:00  WARN 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:37:19.333-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:37:19.333-05:00  WARN 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:37:19.812-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:37:20.387-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:37:20.465-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:37:20.482-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.121 seconds (process running for 6.803)
+2025-02-25T12:37:21.109-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:37:21.110-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:37:21.112-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:37:25.627-05:00  WARN 59529 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-02-25T12:38:15.538-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:38:15.544-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:38:15.549-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:38:15.568-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:38:15.576-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:38:15.587-05:00  INFO 59529 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:38:17.331-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 59671 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:38:17.333-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:38:17.375-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:38:17.376-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:38:18.358-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:38:18.413-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:38:19.197-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:38:19.211-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:38:19.212-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:38:19.248-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:38:19.249-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1873 ms
+2025-02-25T12:38:19.600-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:38:19.646-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:38:19.674-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:38:19.900-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:38:19.928-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:38:20.273-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5132a95c
+2025-02-25T12:38:20.275-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:38:20.347-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:38:21.102-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:38:21.147-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:38:21.456-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:38:22.031-05:00  WARN 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:38:22.066-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:38:22.066-05:00  WARN 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:38:22.560-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:38:23.179-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:38:23.258-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:38:23.275-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.324 seconds (process running for 6.993)
+2025-02-25T12:38:23.922-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:38:23.923-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:38:23.925-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:38:35.272-05:00  WARN 59671 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-02-25T12:39:56.674-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:39:56.676-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:39:56.678-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:39:56.685-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:39:56.688-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:39:56.693-05:00  INFO 59671 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:39:58.394-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 59834 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:39:58.396-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:39:58.439-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:39:58.439-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:39:59.400-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:39:59.455-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:40:00.137-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:40:00.162-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:40:00.163-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:40:00.203-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:40:00.203-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1763 ms
+2025-02-25T12:40:00.544-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:40:00.591-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:40:00.619-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:40:00.824-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:40:00.851-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:40:01.186-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23c26691
+2025-02-25T12:40:01.188-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:40:01.260-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:40:01.976-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:40:02.021-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:40:02.322-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:40:02.927-05:00  WARN 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:40:02.957-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:40:02.958-05:00  WARN 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:40:03.454-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:40:04.062-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:40:04.139-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:40:04.155-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.151 seconds (process running for 6.815)
+2025-02-25T12:40:04.464-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:40:04.464-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:40:04.467-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-02-25T12:41:50.737-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:41:50.746-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:41:50.770-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:41:50.779-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:41:50.781-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:41:50.787-05:00  INFO 59834 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:41:52.438-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 60009 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:41:52.440-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:41:52.482-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:41:52.482-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:41:53.495-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:41:53.550-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:41:54.295-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:41:54.316-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:41:54.317-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:41:54.362-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:41:54.363-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1879 ms
+2025-02-25T12:41:54.705-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:41:54.751-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:41:54.779-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:41:55.000-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:41:55.029-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:41:55.349-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54b2506
+2025-02-25T12:41:55.351-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:41:55.426-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:41:56.144-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:41:56.188-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:41:56.491-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:41:57.092-05:00  WARN 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:41:57.127-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:41:57.128-05:00  WARN 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:41:57.609-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:41:58.196-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:41:58.273-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:41:58.288-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.228 seconds (process running for 6.881)
+2025-02-25T12:41:58.839-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:41:58.839-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:41:58.842-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-02-25T12:42:15.925-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:42:15.928-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:42:15.931-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:42:15.940-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:42:15.944-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:42:15.950-05:00  INFO 60009 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:42:17.736-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 60121 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:42:17.738-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:42:17.781-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:42:17.782-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:42:18.845-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:42:18.902-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:42:19.683-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:42:19.702-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:42:19.703-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:42:19.743-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:42:19.744-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1960 ms
+2025-02-25T12:42:20.087-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:42:20.134-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:42:20.161-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:42:20.381-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:42:20.410-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:42:20.756-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42c49c7d
+2025-02-25T12:42:20.759-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:42:20.836-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:42:21.588-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:42:21.631-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:42:21.936-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:42:22.555-05:00  WARN 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:42:22.589-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:42:22.589-05:00  WARN 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:42:23.127-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:42:23.722-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:42:23.802-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:42:23.819-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.457 seconds (process running for 7.204)
+2025-02-25T12:42:23.881-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:42:23.882-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:42:23.884-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:43:03.448-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:43:03.452-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:43:03.454-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:43:03.463-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:43:03.466-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:43:03.474-05:00  INFO 60121 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:43:05.249-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 60269 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:43:05.251-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:43:05.294-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:43:05.295-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:43:06.327-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:43:06.384-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:43:07.157-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:43:07.178-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:43:07.179-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:43:07.222-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:43:07.223-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1927 ms
+2025-02-25T12:43:07.580-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:43:07.627-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:43:07.657-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:43:07.874-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:43:07.903-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:43:08.225-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f35d850
+2025-02-25T12:43:08.227-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:43:08.302-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:43:09.062-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:43:09.105-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:43:09.403-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:43:09.973-05:00  WARN 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:43:10.006-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:43:10.007-05:00  WARN 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:43:10.494-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:43:11.210-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:43:11.291-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:43:11.307-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.437 seconds (process running for 7.178)
+2025-02-25T12:43:11.756-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:43:11.756-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:43:11.758-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:45:29.714-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:45:29.717-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:45:29.720-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:45:29.726-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:45:29.729-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:45:29.737-05:00  INFO 60269 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:45:31.605-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 60492 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:45:31.606-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:45:31.649-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:45:31.650-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:45:32.623-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:45:32.677-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:45:33.490-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:45:33.531-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:45:33.532-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:45:33.577-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:45:33.577-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1927 ms
+2025-02-25T12:45:33.965-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:45:34.029-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:45:34.058-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:45:34.303-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:45:34.331-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:45:34.692-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66e164d
+2025-02-25T12:45:34.695-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:45:34.773-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:45:35.523-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:45:35.571-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:45:35.887-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:45:36.474-05:00  WARN 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:45:36.504-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:45:36.505-05:00  WARN 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:45:36.999-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:45:37.575-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:45:37.650-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:45:37.668-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.447 seconds (process running for 7.089)
+2025-02-25T12:45:38.121-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:45:38.121-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:45:38.123-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:46:06.258-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:46:06.260-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:46:06.262-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:46:06.269-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:46:06.273-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:46:06.279-05:00  INFO 60492 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:46:08.255-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 60594 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:46:08.257-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:46:08.300-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:46:08.301-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:46:09.329-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:46:09.385-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:46:10.155-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:46:10.176-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:46:10.176-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:46:10.217-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:46:10.217-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1916 ms
+2025-02-25T12:46:10.558-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:46:10.607-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:46:10.636-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:46:10.856-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:46:10.884-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:46:11.220-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b3b1ef3
+2025-02-25T12:46:11.222-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:46:11.298-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:46:12.026-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:46:12.071-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:46:12.374-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:46:12.968-05:00  WARN 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:46:12.999-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:46:13.000-05:00  WARN 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:46:13.468-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:46:14.076-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:46:14.154-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:46:14.170-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.327 seconds (process running for 7.145)
+2025-02-25T12:46:14.717-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:46:14.717-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:46:14.719-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:46:34.427-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:46:34.431-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:46:34.433-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:46:34.444-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:46:34.449-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:46:34.455-05:00  INFO 60594 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:46:36.159-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 60704 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:46:36.161-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:46:36.207-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:46:36.207-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:46:37.233-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:46:37.299-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:46:38.138-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:46:38.162-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:46:38.163-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:46:38.208-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:46:38.208-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2001 ms
+2025-02-25T12:46:38.559-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:46:38.610-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:46:38.639-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:46:38.865-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:46:38.892-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:46:39.237-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58d94583
+2025-02-25T12:46:39.239-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:46:39.315-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:46:40.088-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:46:40.131-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:46:40.427-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:46:41.044-05:00  WARN 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:46:41.073-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:46:41.074-05:00  WARN 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:46:41.551-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:46:42.160-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:46:42.237-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:46:42.253-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.485 seconds (process running for 7.151)
+2025-02-25T12:46:42.792-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:46:42.792-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:46:42.794-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:49:29.863-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:49:29.869-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:49:29.874-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:49:29.888-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:49:29.893-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:49:29.902-05:00  INFO 60704 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:49:31.668-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 61066 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:49:31.670-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:49:31.715-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:49:31.715-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:49:32.691-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:49:32.744-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:49:33.469-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:49:33.490-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:49:33.491-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:49:33.530-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:49:33.530-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1814 ms
+2025-02-25T12:49:33.885-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:49:33.933-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:49:33.962-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:49:34.184-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:49:34.211-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:49:34.552-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6dc0dfab
+2025-02-25T12:49:34.554-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:49:34.627-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:49:35.338-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:49:35.382-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:49:35.696-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:49:36.297-05:00  WARN 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:49:36.332-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:49:36.333-05:00  WARN 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:49:36.858-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:49:37.508-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:49:37.582-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:49:37.597-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.3 seconds (process running for 6.98)
+2025-02-25T12:49:38.094-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:49:38.094-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:49:38.096-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T12:53:12.659-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:53:12.664-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:53:12.666-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:53:12.673-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:53:12.676-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:53:12.681-05:00  INFO 61066 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:53:14.406-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 61412 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:53:14.408-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:53:14.453-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:53:14.454-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:53:15.439-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:53:15.496-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:53:16.280-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:53:16.301-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:53:16.302-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:53:16.344-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:53:16.344-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1889 ms
+2025-02-25T12:53:16.715-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:53:16.768-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:53:16.797-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:53:17.031-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:53:17.060-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:53:17.399-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46a4e6d5
+2025-02-25T12:53:17.401-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:53:17.475-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:53:18.213-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:53:18.258-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:53:18.558-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:53:19.120-05:00  WARN 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:53:19.151-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:53:19.152-05:00  WARN 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:53:19.631-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:53:20.204-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:53:20.280-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:53:20.295-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.296 seconds (process running for 6.97)
+2025-02-25T12:53:20.781-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:53:20.782-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:53:20.783-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-25T12:54:16.273-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:54:16.280-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:54:16.285-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:54:16.305-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:54:16.310-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:54:16.318-05:00  INFO 61412 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:54:18.050-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 61517 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:54:18.052-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:54:18.097-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:54:18.097-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:54:19.079-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:54:19.134-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:54:19.905-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:54:19.926-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:54:19.927-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:54:19.972-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:54:19.973-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1874 ms
+2025-02-25T12:54:20.317-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:54:20.364-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:54:20.390-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:54:20.595-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:54:20.623-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:54:20.952-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31718528
+2025-02-25T12:54:20.954-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:54:21.023-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:54:21.775-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:54:21.818-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:54:22.154-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:54:22.742-05:00  WARN 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:54:22.773-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:54:22.774-05:00  WARN 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:54:23.246-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:54:23.810-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:54:23.891-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:54:23.911-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.247 seconds (process running for 6.938)
+2025-02-25T12:54:24.531-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:54:24.532-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:54:24.534-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-25T12:57:32.350-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T12:57:32.352-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T12:57:32.354-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T12:57:32.361-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:57:32.364-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T12:57:32.369-05:00  INFO 61517 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T12:57:34.163-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 61917 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T12:57:34.166-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T12:57:34.221-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T12:57:34.222-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T12:57:35.234-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T12:57:35.292-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2025-02-25T12:57:36.034-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T12:57:36.058-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T12:57:36.059-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T12:57:36.099-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T12:57:36.099-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1876 ms
+2025-02-25T12:57:36.436-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T12:57:36.483-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T12:57:36.509-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T12:57:36.716-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T12:57:36.742-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T12:57:37.063-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f024b67
+2025-02-25T12:57:37.065-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T12:57:37.138-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T12:57:37.871-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T12:57:37.917-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T12:57:38.215-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T12:57:38.784-05:00  WARN 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T12:57:38.818-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T12:57:38.819-05:00  WARN 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T12:57:39.293-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T12:57:39.862-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T12:57:39.936-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T12:57:39.951-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.203 seconds (process running for 6.956)
+2025-02-25T12:57:40.517-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T12:57:40.518-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T12:57:40.520-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:11:06.161-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(20)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:11:06.164-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(20)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:11:06.166-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:11:06.175-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(20)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:11:06.178-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(20)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:11:06.184-05:00  INFO 61917 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(20)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:11:07.877-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 62227 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:11:07.879-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:11:07.920-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:11:07.921-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:11:08.882-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:11:08.939-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:11:09.692-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:11:09.715-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:11:09.715-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:11:09.753-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:11:09.754-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1833 ms
+2025-02-25T13:11:10.107-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:11:10.158-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:11:10.187-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:11:10.420-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:11:10.450-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:11:10.763-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56bae751
+2025-02-25T13:11:10.765-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:11:10.838-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:11:11.552-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:11:11.597-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:11:11.906-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:11:12.507-05:00  WARN 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:11:12.538-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:11:12.539-05:00  WARN 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:11:13.015-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:11:13.603-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:11:13.702-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:11:13.722-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.218 seconds (process running for 6.894)
+2025-02-25T13:11:13.923-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:11:13.923-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:11:13.925-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:12:39.968-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:12:39.970-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:12:39.972-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:12:39.979-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:12:39.982-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:12:39.988-05:00  INFO 62227 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:12:41.581-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 62353 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:12:41.584-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:12:41.629-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:12:41.629-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:12:42.601-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:12:42.653-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:12:43.404-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:12:43.419-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:12:43.420-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:12:43.459-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:12:43.459-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1829 ms
+2025-02-25T13:12:43.812-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:12:43.857-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:12:43.884-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:12:44.088-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:12:44.113-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:12:44.430-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@714b9c6
+2025-02-25T13:12:44.432-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:12:44.504-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:12:45.211-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:12:45.257-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:12:45.571-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:12:46.226-05:00  WARN 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:12:46.260-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:12:46.261-05:00  WARN 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:12:46.769-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:12:47.396-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:12:47.474-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:12:47.490-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.293 seconds (process running for 6.916)
+2025-02-25T13:12:48.099-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:12:48.100-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:12:48.102-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:13:28.935-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:13:28.941-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:13:28.946-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:13:28.971-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:13:28.980-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:13:28.988-05:00  INFO 62353 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:13:30.661-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 62533 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:13:30.662-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:13:30.704-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:13:30.705-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:13:31.664-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:13:31.717-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:13:32.439-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:13:32.452-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:13:32.452-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:13:32.500-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:13:32.501-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1795 ms
+2025-02-25T13:13:32.859-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:13:32.908-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:13:32.935-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:13:33.143-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:13:33.169-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:13:33.491-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6110d6cd
+2025-02-25T13:13:33.493-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:13:33.569-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:13:34.293-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:13:34.337-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:13:34.627-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:13:35.176-05:00  WARN 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:13:35.206-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:13:35.207-05:00  WARN 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:13:35.707-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:13:36.292-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:13:36.364-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:13:36.379-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.088 seconds (process running for 6.747)
+2025-02-25T13:13:36.602-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:13:36.603-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:13:36.605-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-25T13:34:21.473-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(26)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:34:21.476-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(26)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:34:21.477-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:34:21.484-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(26)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:34:21.487-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(26)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:34:21.492-05:00  INFO 62533 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(26)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:34:23.156-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 63843 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:34:23.158-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:34:23.204-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:34:23.205-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:34:24.203-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:34:24.257-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:34:25.044-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:34:25.060-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:34:25.060-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:34:25.098-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:34:25.099-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1894 ms
+2025-02-25T13:34:25.453-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:34:25.502-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:34:25.531-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:34:25.741-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:34:25.765-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:34:26.076-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23c26691
+2025-02-25T13:34:26.078-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:34:26.149-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:34:26.868-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:34:26.911-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:34:27.230-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:34:27.833-05:00  WARN 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:34:27.868-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:34:27.868-05:00  WARN 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:34:28.391-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:34:28.975-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:34:29.051-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:34:29.067-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.297 seconds (process running for 6.948)
+2025-02-25T13:34:29.540-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:34:29.541-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:34:29.543-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:40:00.954-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:40:00.960-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:40:00.966-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:40:00.984-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:40:00.988-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:40:00.996-05:00  INFO 63843 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:40:02.609-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 64359 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:40:02.611-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:40:02.654-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:40:02.655-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:40:03.650-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:40:03.709-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:40:04.487-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:40:04.513-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:40:04.514-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:40:04.557-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:40:04.558-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1903 ms
+2025-02-25T13:40:05.019-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:40:05.102-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:40:05.159-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:40:05.432-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:40:05.463-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:40:05.832-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f35d850
+2025-02-25T13:40:05.834-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:40:05.914-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:40:06.675-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:40:06.719-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:40:07.043-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:40:07.622-05:00  WARN 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:40:07.653-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:40:07.654-05:00  WARN 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:40:08.154-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:40:08.774-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:40:08.852-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:40:08.869-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.642 seconds (process running for 7.305)
+2025-02-25T13:40:09.122-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:40:09.122-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:40:09.124-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:41:04.279-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:41:04.281-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:41:04.283-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:41:04.290-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:41:04.293-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:41:04.298-05:00  INFO 64359 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:41:05.968-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 64485 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:41:05.969-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:41:06.014-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:41:06.014-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:41:06.981-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:41:07.037-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:41:07.794-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:41:07.817-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:41:07.818-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:41:07.857-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:41:07.858-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1843 ms
+2025-02-25T13:41:08.201-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:41:08.248-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:41:08.278-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:41:08.495-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:41:08.527-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:41:08.864-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ff9edf4
+2025-02-25T13:41:08.866-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:41:08.961-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:41:09.784-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:41:09.828-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:41:10.144-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:41:10.737-05:00  WARN 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:41:10.768-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:41:10.768-05:00  WARN 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:41:11.263-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:41:11.843-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:41:11.917-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:41:11.932-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.336 seconds (process running for 6.993)
+2025-02-25T13:41:12.470-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:41:12.471-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:41:12.473-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:41:22.770-05:00  WARN 64485 --- [TaskManagerAPIThymeleaf] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Task does not exists]
+2025-02-25T13:42:10.423-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:42:10.426-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:42:10.428-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:42:10.437-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:42:10.440-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:42:10.445-05:00  INFO 64485 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:42:12.114-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 64622 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:42:12.116-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:42:12.158-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:42:12.158-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:42:13.233-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:42:13.290-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:42:14.055-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:42:14.080-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-25T13:42:14.080-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25T13:42:14.120-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-25T13:42:14.121-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1962 ms
+2025-02-25T13:42:14.483-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:42:14.531-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:42:14.560-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:42:14.781-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:42:14.811-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:42:15.131-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ff9edf4
+2025-02-25T13:42:15.133-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:42:15.206-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:42:15.922-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:42:15.967-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:42:16.269-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:42:16.864-05:00  WARN 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:42:16.894-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:42:16.895-05:00  WARN 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:42:17.428-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:42:18.009-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:42:18.076-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:42:18.091-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.355 seconds (process running for 7.02)
+2025-02-25T13:42:18.679-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25T13:42:18.679-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-25T13:42:18.682-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-25T13:43:03.108-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-25T13:43:03.114-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:43:03.119-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:43:03.135-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:43:03.141-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-25T13:43:03.148-05:00  INFO 64622 --- [TaskManagerAPIThymeleaf] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-25T13:43:04.838-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Starting TaskManagerApiApplication using Java 21.0.6 with PID 64717 (/home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf/target/classes started by mranderson8418 in /home/mranderson8418/Documents/GitHub/TaskManagerAPI-Thymeleaf)
+2025-02-25T13:43:04.840-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T13:43:04.884-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25T13:43:04.884-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25T13:43:05.859-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-25T13:43:05.913-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-02-25T13:43:06.658-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-25T13:43:06.717-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1832 ms
+2025-02-25T13:43:07.078-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-25T13:43:07.133-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-25T13:43:07.161-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-25T13:43:07.393-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-25T13:43:07.418-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-25T13:43:07.773-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a2af059
+2025-02-25T13:43:07.775-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-25T13:43:07.852-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-25T13:43:08.638-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-25T13:43:08.684-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:43:09.051-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-25T13:43:09.731-05:00  WARN 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-25T13:43:09.767-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-25T13:43:09.768-05:00  WARN 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-02-25T13:43:10.279-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-25T13:43:10.915-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-25T13:43:10.998-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-25T13:43:11.013-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [restartedMain] c.taskmanager.TaskManagerApiApplication  : Started TaskManagerApiApplication in 6.556 seconds (process running for 7.206)
+2025-02-25T13:43:11.016-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25T13:43:11.019-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-25T13:43:11.027-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25T13:43:11.030-05:00  INFO 64717 --- [TaskManagerAPIThymeleaf] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...

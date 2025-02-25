@@ -1,176 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Admin User List Delete</title>
-	<style>
-		/* General Styles */
-		body {
-			margin: 0;
-			font-family: Arial, sans-serif;
-			color: black;
-			background-color: #ffffff;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-height: 100vh;
-		}
-
-		.container {
-			text-align: center;
-			width: 90%;
-			max-width: 800px;
-			padding: 20px;
-			border: 1px solid #ddd;
-			border-radius: 10px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
-
-		td.user-number {
-			font-size: 4rem;
-			color: red;
-			font-style: bold;
-		}
-		div.form-container-input form label {
-						color:#037d54;	
-						font-size:2rem;
-					}
-
-		/* Table Styles */
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 20px;
-		}
-
-		.completed-row {
-			background-color: rgb(98, 160, 234);
-			/* Or any color you prefer */
-		}
-
-		th,
-		td {
-			padding: 10px;
-			border: 2px solid #037d54;	
-			text-align: center;
-		}
-
-		th {
-			background-color: #037d54;	
-			color: white;
-		}
-
-		td {
-			color: #333;
-		}
-
-		/* Form Styles */
-		form {
-			margin-top: 30px;
-			display: flex;
-			flex-direction: column;
-			gap: 15px;
-			align-items: center;
-		}
-
-		form label {
-			font-size: 1rem;
-			margin-bottom: 5px;
-		}
-
-		form input {
-			width: 100%;
-			max-width: 300px;
-			padding: 10px;
-			font-size: 1rem;
-			border: 2px solid #037d54;	
-			border-radius: 5px;
-			text-align: center;
-		}
-
-		button {
-			width: 100%;
-			max-width: 300px;
-			padding: 10px 20px;
-			font-size: 1.25rem;
-			color: white;
-			background-color: #037d54;	
-			border: none;
-			border-radius: 5px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-
-		button:hover {
-			background-color: #037d54;	
-		}
-
-		/* Headline */
-		h1 {
-			font-size: 2.5rem;
-			color: #333;
-			margin-bottom: 20px;
-		}
-
-		/* Responsive styles */
-		@media (max-width: 768px) {
-			.container div h1 {
-				text-align: center;
-				color: #037d54;	
-				font-size: 2.5rem;
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin User List Delete</title>
+		<style>
+			/* General Styles */
+			body {
+				margin: 0;
+				font-family: Arial, sans-serif;
+				color: black;
+				background-color: #ffffff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
 			}
-			div.form-container-input form label {
-							color:#037d54;	
-							font-size:2rem;
-						}
+
+			.container {
+				text-align: center;
+				width: 90%;
+				max-width: 800px;
+				padding: 20px;
+				border: 1px solid #ddd;
+				border-radius: 10px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
 			td.user-number {
-				font-size: 2.5rem;
+				font-size: 4rem;
 				color: red;
 				font-style: bold;
 			}
-
-			th {
-				background-color: #037d54;
-				color: white;
+			div.form-container-input form label {
+				color: #037d54;
+				font-size: 2rem;
 			}
 
-			.container div h1 {
-				text-align: center;
-				color: #037d54;	
-				font-size: 2.5rem;
-			}
-
+			/* Table Styles */
 			table {
-				font-size: 0.9rem;
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 20px;
+			}
+
+			.completed-row {
+				background-color: rgb(98, 160, 234);
+				/* Or any color you prefer */
 			}
 
 			th,
 			td {
-				padding: 8px;
+				padding: 10px;
+				border: 2px solid #037d54;
 				text-align: center;
-				word-wrap: wrap;
-			}
-
-			a>button {
-				font-size: 1rem;
-				padding: 0.8rem;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.container div h1 {
-				text-align: center;
-				color: #037d54;	
-				font-size: 2.5rem;
-			}
-
-			td.user-number {
-				font-size: 2rem;
-				color: red;
-				font-style: bold;
 			}
 
 			th {
@@ -178,168 +61,235 @@
 				color: white;
 			}
 
-			.container div h1 {
-				text-align: center;
-				color: #037d54;	
-				font-size: 2rem;
-			}
-
 			td {
-				padding: 8px;
+				color: #333;
+			}
+
+			/* Form Styles */
+			form {
+				margin-top: 30px;
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				align-items: center;
+			}
+
+			form label {
+				font-size: 1rem;
+				margin-bottom: 5px;
+			}
+
+			form input {
+				width: 100%;
+				max-width: 300px;
+				padding: 10px;
+				font-size: 1rem;
+				border: 2px solid #037d54;
+				border-radius: 5px;
 				text-align: center;
-				word-wrap: wrap;
 			}
 
-
-			.container div a button {
-				font-size: 0.9rem;
-				padding: 0.6rem;
+			button {
+				width: 100%;
+				max-width: 300px;
+				padding: 10px 20px;
+				font-size: 1.25rem;
+				color: white;
+				background-color: #037d54;
+				border: none;
+				border-radius: 5px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				cursor: pointer;
+				transition: background-color 0.3s ease;
 			}
-		}
-	</style>
-</head>
 
-<body>
-	<div class="container">
-		<div class="title">
-			<h1>Admin User List Delete</h1>
-		</div>
+			button:hover {
+				background-color: #037d54;
+			}
 
+			/* Headline */
+			h1 {
+				font-size: 2.5rem;
+				color: #333;
+				margin-bottom: 20px;
+			}
 
-		<div class="task-item" th:each="user : ${users}">
-			<table>
-				<thead>
-					<th>
-						<strong>User Number:</strong>
+			/* Responsive styles */
+			@media (max-width: 768px) {
+				.container div h1 {
+					text-align: center;
+					color: #037d54;
+					font-size: 2.5rem;
+				}
+				div.form-container-input form label {
+					color: #037d54;
+					font-size: 2rem;
+				}
+				td.user-number {
+					font-size: 2.5rem;
+					color: red;
+					font-style: bold;
+				}
 
+				th {
+					background-color: #037d54;
+					color: white;
+				}
 
-					</th>
-				</thead>
+				.container div h1 {
+					text-align: center;
+					color: #037d54;
+					font-size: 2.5rem;
+				}
 
-				<tbody>
+				table {
+					font-size: 0.9rem;
+				}
 
-					<td class="user-number" th:text="${user.userNumber}">userNumber</td>
+				th,
+				td {
+					padding: 8px;
+					text-align: center;
+					word-wrap: wrap;
+				}
 
-				</tbody>
+				a > button {
+					font-size: 1rem;
+					padding: 0.8rem;
+				}
+			}
 
-				<thead>
-					<th>
-						<strong>username:</strong>
+			@media (max-width: 480px) {
+				.container div h1 {
+					text-align: center;
+					color: #037d54;
+					font-size: 2.5rem;
+				}
 
+				td.user-number {
+					font-size: 2rem;
+					color: red;
+					font-style: bold;
+				}
 
-					</th>
-				</thead>
+				th {
+					background-color: #037d54;
+					color: white;
+				}
 
-				<tbody>
+				.container div h1 {
+					text-align: center;
+					color: #037d54;
+					font-size: 2rem;
+				}
 
-					<td th:text="${user.username}">username</td>
+				td {
+					padding: 8px;
+					text-align: center;
+					word-wrap: wrap;
+				}
 
-				</tbody>
+				.container div a button {
+					font-size: 0.9rem;
+					padding: 0.6rem;
+				}
+			}
+		</style>
+	</head>
 
+	<body>
+		<div class="container">
+			<div class="title">
+				<h1>Admin User List Delete</h1>
+			</div>
 
+			<div class="task-item" th:each="user : ${users}">
+				<table>
+					<thead>
+						<th>
+							<strong>User Number:</strong>
+						</th>
+					</thead>
 
+					<tbody>
+						<td class="user-number" th:text="${user.userNumber}">userNumber</td>
+					</tbody>
 
+					<thead>
+						<th>
+							<strong>username:</strong>
+						</th>
+					</thead>
 
+					<tbody>
+						<td th:text="${user.username}">username</td>
+					</tbody>
 
+					<thead>
+						<th>
+							<strong>Email:</strong>
+						</th>
+					</thead>
 
-				<thead>
-					<th>
-						<strong>Email:</strong>
+					<tbody>
+						<td th:text="${user.email}">email</td>
+					</tbody>
 
+					<thead>
+						<th>
+							<strong>Password:</strong>
+						</th>
+					</thead>
 
-					</th>
-				</thead>
+					<tbody>
+						<td th:text="${user.password}">password</td>
+					</tbody>
 
-				<tbody>
+					<thead>
+						<th>
+							<strong>Role:</strong>
+						</th>
+					</thead>
 
-					<td th:text="${user.email}">email</td>
+					<tbody>
+						<td th:text="${user.role}">role</td>
+					</tbody>
 
-				</tbody>
+					<thead>
+						<th>
+							<strong>Gender:</strong>
+						</th>
+					</thead>
 
-				<thead>
-					<th>
-						<strong>Password:</strong>
+					<tbody>
+						<td th:text="${user.gender}">gender</td>
+					</tbody>
+					<thead>
+						<th>
+							<strong>Date of Birth:</strong>
+						</th>
+					</thead>
 
-
-					</th>
-				</thead>
-
-				<tbody>
-
-					<td th:text="${user.password}">password</td>
-
-				</tbody>
-
-				<thead>
-					<th>
-						<strong>Role:</strong>
-
-
-					</th>
-				</thead>
-
-				<tbody>
-
-					<td th:text="${user.role}">role</td>
-
-				</tbody>
-
-				<thead>
-					<th>
-						<strong>Gender:</strong>
-
-
-					</th>
-				</thead>
-
-				<tbody>
-
-					<td th:text="${user.gender}">gender</td>
-
-				</tbody>
-				<thead>
-					<th>
-						<strong>Date of Birth:</strong>
-
-
-					</th>
-				</thead>
-
-				<tbody>
-
-					<td th:text="${user.dob}">dob</td>
-
-				</tbody>
-
-
-
-
-
-
-
-			</table>
-			<br>
-			<br>
-
-		</div>
-
-
-
-
-		<div class="form-container-input">
-			<form th:action="@{/admin/delete/user}" th:method="POST">
-				<label for="userNumber">Delete User Number:</label> <input type="number" id="userNumber"
-					name="userNumber" required /> <br />
+					<tbody>
+						<td th:text="${user.dob}">dob</td>
+					</tbody>
+				</table>
 				<br />
+				<br />
+			</div>
 
-				<button type="submit">Delete</button>
-			</form>
+			<div class="form-container-input">
+				<form th:action="@{/admin/delete/user}" th:method="POST">
+					<label for="userNumber">Delete User Number:</label> <input type="number" id="userNumber" name="userNumber" required /> <br />
+					<br />
 
-			<form th:action="@{/admin/index}" method="GET">
-				<button type="submit">Return to Index</button>
-			</form>
+					<button type="submit">Delete</button>
+				</form>
+
+				<form th:action="@{/admin/index}" method="GET">
+					<button type="submit">Return to Index</button>
+				</form>
+			</div>
 		</div>
-	</div>
-</body>
-
+	</body>
 </html>

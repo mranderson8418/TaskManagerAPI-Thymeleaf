@@ -202,10 +202,10 @@ public class TaskControllerDynamicAdmin {
 
 			if (myUserDto.getRole().contains("ADMIN")) {
 				System.out.println("EXITED..........................................updateTaskNew()");
-				return "redirect:/admin/taskList";
+				return "redirect:/admin/taskList/viewTable";
 			}
 			System.out.println("EXITED..........................................updateTaskNew()");
-			return "redirect:/user/taskList";
+			return "redirect:/user/taskList/viewTable";
 
 		} catch (TaskNotFoundException tnfe) {
 			throw new TaskNotFoundException("unable to find task with id");
@@ -270,10 +270,10 @@ public class TaskControllerDynamicAdmin {
 
 			if (myUserDto.getRole().contains("ADMIN")) {
 				System.out.println("EXITED..........................................updateTaskNew()");
-				return "redirect:/admin/taskList";
+				return "redirect:/admin/taskList/viewModular";
 			}
 			System.out.println("EXITED..........................................updateTaskNew()");
-			return "redirect:/user/taskList";
+			return "redirect:/user/taskList/viewModular";
 
 		} catch (TaskNotFoundException tnfe) {
 			throw new TaskNotFoundException("unable to find task with id");
