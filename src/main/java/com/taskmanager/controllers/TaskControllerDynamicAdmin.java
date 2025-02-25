@@ -146,7 +146,75 @@ public class TaskControllerDynamicAdmin {
 	}
 
 	// http://localhost:8080/admin/update/task
-	@GetMapping({ "/user/update/task", "/admin/update/task" })
+	@GetMapping({ "/user/update/task/viewTable", "/admin/update/task/viewTable" })
+	public String updateTaskTableView(@ModelAttribute MyTaskDto myTaskDto, Model model) {
+
+		System.out.println(nameClass());
+
+		System.out.println("ENTERED...................................		@GetMapping(\"/admin/updateTask\")");
+		logger.trace("ENTERED……………………………………			@GetMapping(\"/admin/updateTask\")------");
+
+		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
+
+		model.addAttribute("myUserDto", new MyUserDto());
+
+		model.addAttribute("myTaskDto", new MyTaskDto());
+
+		model.addAttribute("tasks", myTaskDtoList);
+
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		System.out.println("ROLE ===== " + myUserDto.getRole());
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+
+			return "admin-update-task-view-table";
+		}
+
+		return "user-update-task-view-table";
+
+	}
+
+	@PostMapping({ "/user/update/task/viewTable", "/admin/update/task/viewTable" })
+	// @ModelAttribute - this will bind the annotated object with the model class
+	public String updateTaskNewViewTable(@ModelAttribute MyTaskDto myTaskDto, Model model) {
+
+		System.out.println(nameClass());
+		System.out.println("ENTERED..........................................updateTaskNew()");
+
+		logger.trace("ENTERED……………………………………		@PostMapping(\"/admin/updateTask\")------");
+
+		try {
+			// task is inserted into the TaskRepository
+			MyTaskDto task_inserted = taskService.updateTask(myTaskDto, myTaskDto.getTaskNumber());
+
+			model.addAttribute("id", task_inserted.getId());
+			model.addAttribute("taskNumber", task_inserted.getTaskNumber());
+			model.addAttribute("username", task_inserted.getUsername());
+			model.addAttribute("content", task_inserted.getContent());
+			model.addAttribute("complete", task_inserted.isComplete());
+
+			System.out.println("Task # " + task_inserted.getTaskNumber() + " is updated in the database");
+
+			MyUserDto myUserDto = myUserService.currentUser();
+
+			System.out.println("ROLE ===== " + myUserDto.getRole());
+
+			if (myUserDto.getRole().contains("ADMIN")) {
+				System.out.println("EXITED..........................................updateTaskNew()");
+				return "redirect:/admin/taskList";
+			}
+			System.out.println("EXITED..........................................updateTaskNew()");
+			return "redirect:/user/taskList";
+
+		} catch (TaskNotFoundException tnfe) {
+			throw new TaskNotFoundException("unable to find task with id");
+		}
+
+	}
+
+	// http://localhost:8080/admin/update/task
+	@GetMapping({ "/user/update/task/viewModular", "/admin/update/task/viewModular" })
 	public String updateTask(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
 		System.out.println(nameClass());
@@ -168,14 +236,14 @@ public class TaskControllerDynamicAdmin {
 
 		if (myUserDto.getRole().contains("ADMIN")) {
 
-			return "admin-update-task";
+			return "admin-update-task-view-modular";
 		}
 
-		return "user-update-task";
+		return "user-update-task-view-modular";
 
 	}
 
-	@PostMapping({ "/user/update/task", "/admin/update/task" })
+	@PostMapping({ "/user/update/task/viewModular", "/admin/update/task/viewModular" })
 	// @ModelAttribute - this will bind the annotated object with the model class
 	public String updateTaskNew(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 

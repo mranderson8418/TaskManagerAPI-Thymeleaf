@@ -42,8 +42,8 @@ div.container {
 
 .container div h1 {
 	text-align: center;
-	color: #037d54;
-	font-size: 3rem;
+	color: green;
+	font-size: 2.5rem;
 }
 
 /* Table styles */
@@ -52,7 +52,7 @@ div.container {
 	border-radius: 0.5rem;
 	width: 100%;
 	margin-top: 3rem;
-	border-collapse:collapse;
+	border-collapse: collapse;
 }
 
 td {
@@ -72,23 +72,25 @@ th {
 	background-color: rgb(98, 160, 234);
 }
 
-/* Button styles */
-a>button {
+div.scott-button {
 	background-color: #04aa6d;
-	color: white;
 	border: none;
 	border-radius: 1rem;
 	padding: 1rem;
-	font-size: 1.2rem;
 	cursor: pointer;
 	margin-top: 20px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
 }
 
-a>button:hover {
+div.scott-button a {
+	color: white;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+div.scott-button:hover {
 	background-color: #037d54;
 }
-
 /* Responsive styles */
 @media ( max-width : 768px) {
 	.container {
@@ -106,8 +108,8 @@ a>button:hover {
 	}
 	.container div h1 {
 		text-align: center;
-		color: #037d54;
-		font-size: 3rem;
+		color: green;
+		font-size: 2rem;
 	}
 
 	/* Table styles */
@@ -116,7 +118,7 @@ a>button:hover {
 		border-radius: 0.5rem;
 		width: 100%;
 		margin-top: 3rem;
-		border-collapse:collapse;
+		border-collapse: collapse;
 	}
 	td {
 		border: 1px solid black;
@@ -131,22 +133,6 @@ a>button:hover {
 	}
 	.completed-row {
 		background-color: rgb(98, 160, 234);
-	}
-
-	/* Button styles */
-	a>button {
-		background-color: #04aa6d;
-		color: white;
-		border: none;
-		border-radius: 1rem;
-		padding: 1rem;
-		font-size: 1.2rem;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	a>button:hover {
-		background-color: #037d54;
 	}
 }
 
@@ -166,10 +152,9 @@ a>button:hover {
 	}
 	.container div h1 {
 		text-align: center;
-		color: #037d54;
-		font-size: 1.5rem;
+		color: green;
+		font-size: 2rem;
 	}
-
 	/* Table styles */
 	.container div table {
 		border: 0.5rem solid rgb(57, 82, 60);
@@ -177,7 +162,7 @@ a>button:hover {
 		width: 100%;
 		font-size: .5rem;
 		margin-top: 2rem;
-		border-collapse:collapse;
+		border-collapse: collapse;
 	}
 	td {
 		border: 1px solid black;
@@ -193,22 +178,6 @@ a>button:hover {
 	.completed-row {
 		background-color: rgb(98, 160, 234);
 	}
-
-	/* Button styles */
-	a>button {
-		background-color: #04aa6d;
-		color: white;
-		border: none;
-		border-radius: 1rem;
-		padding: 1rem;
-		font-size: 1.2rem;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	a>button:hover {
-		background-color: #037d54;
-	}
 }
 </style>
 </head>
@@ -218,7 +187,7 @@ a>button:hover {
 		<div>
 			<h1>Task List</h1>
 		</div>
-		
+
 		<div class="table-01">
 			<table border="1">
 				<thead>
@@ -240,17 +209,14 @@ a>button:hover {
 				</tbody>
 			</table>
 		</div>
-		
-		
-			<div>
-			<a th:href="@{/admin/taskList/viewModular}">
-				<button>View Modular Task List Display</button>
-			</a>
+
+
+		<div class="scott-button">
+			<a th:href="@{/admin/taskList/viewModular}"> View Modular Task
+				List Display </a>
 		</div>
-		<div>
-			<a th:href="@{/admin/index}">
-				<button>Return to Index</button>
-			</a>
+		<div class="scott-button">
+			<a th:href="@{/admin/index}"> Return to Index </a>
 		</div>
 	</div>
 </body>

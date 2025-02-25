@@ -2,187 +2,164 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Task List</title>
-	<style>
-		/* General styles */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task List</title>
+<style>
+/* General styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-		html,
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-height: 100vh;
-			font-family: sans-serif;
-			background-color: #ffffff;
-			width: 100%;
-			padding: 20px;
-			color: black;
-		}
+html, body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-family: sans-serif;
+	background-color: #ffffff;
+	width: 100%;
+	padding: 20px;
+	color: black;
+}
 
+div.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-width: 80%;
+	max-width: 900px;
+	height: auto;
+}
 
+.container div h1 {
+	text-align: center;
+	color: green;
+	font-size: 2.5rem;
+}
 
-		div.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-width:80%;
-			max-width:900px;
-			height:auto;
-		
-		}
+td.task-number {
+	font-size: 2rem;
+	color: red;
+	font-style: bold;
+}
 
-		.container div h1 {
-			text-align: center;
-			color: green;
-			font-size: 2.5rem;
-		}
-		
-		td.task-number{
-			font-size: 2rem;
-			color:red;
-			font-style: bold;
-		}
+div.task-item {
+	min-width: 100%;
+	max-width: 900px;
+	height: auto;
+}
 
-		div.task-item{
-			min-width:100%;
-					max-width:900px;
-					height:auto;
-			
-		}
-		div.task-item table {
-			border: solid 5px #037d54;
-			min-width:100%;
-					max-width:900px;
-					height:auto;
-		}
+div.task-item table {
+	border: solid 5px #037d54;
+	min-width: 100%;
+	max-width: 900px;
+	height: auto;
+}
 
+th, td {
+	padding: 10px;
+	border: 2px solid #037d54;
+	text-align: center;
+	word-wrap: wrap;
+}
 
-		th,
-		td {
-			padding: 10px;
-			border: 2px solid #037d54;
-			text-align: center;
-			word-wrap: wrap;
-		}
+th {
+	background-color: #037d54;
+	color: white;
+}
 
-		th {
-			background-color: #037d54;
+.completed-row {
+	background-color: rgb(98, 160, 234);
+}
+
+	div.scott-button {
+		background-color: #04aa6d;
+		border: none;
+		border-radius: 1rem;
+		padding: 1rem;
+		cursor: pointer;
+		margin-top: 20px;
+		box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
+	}
+	div.scott-button a {
 			color: white;
-		}
+		font-size: 1.2rem;
+		text-decoration: none;
+	}
+	
+	div.scott-button:hover {
+		background-color: #037d54;
+	}
 
-		.completed-row {
-			background-color: rgb(98, 160, 234);
-		}
+/* Responsive styles */
+@media ( max-width : 768px) {
+	.container div h1 {
+		text-align: center;
+		color: green;
+		font-size: 2.5rem;
+	}
+	td.task-number {
+		font-size: 1.5rem;
+		color: red;
+		font-style: bold;
+	}
+	th {
+		background-color: #037d54;
+		color: white;
+	}
+	.container div h1 {
+		text-align: center;
+		color: green;
+		font-size: 2.5rem;
+	}
+	table {
+		font-size: 0.9rem;
+	}
+	th, td {
+		padding: 8px;
+		text-align: center;
+		word-wrap: wrap;
+	}
 
-		/* Button styles */
-		a>button {
-			background-color: #04aa6d;
-			color: white;
-			border: none;
-			border-radius: 1rem;
-			padding: 1rem;
-			font-size: 1.2rem;
-			cursor: pointer;
-			margin-top: 20px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		}
+}
 
-		a>button:hover {
-			background-color: #037d54;
-		}
+@media ( max-width : 480px) {
+	form label {
+		color: green;
+		font-size: 2rem;
+	}
+	.container div h1 {
+		text-align: center;
+		color: green;
+		font-size: 2.5rem;
+	}
+	td.task-number {
+		font-size: 1rem;
+		color: red;
+		font-style: bold;
+	}
+	th {
+		background-color: #037d54;
+		color: white;
+	}
+	.container div h1 {
+		text-align: center;
+		color: green;
+		font-size: 2rem;
+	}
+	td {
+		padding: 8px;
+		text-align: center;
+		word-wrap: wrap;
+	}
 
-		/* Responsive styles */
-		@media (max-width: 768px) {
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2.5rem;
-			}
-
-			td.task-number{
-				font-size: 1.5rem;
-				color:red;
-				font-style: bold;
-			}
-			
-			th {
-				background-color: #037d54;
-				color: white;
-			}
-
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2.5rem;
-			}
-
-			table {
-				font-size: 0.9rem;
-			}
-
-			th,
-			td {
-				padding: 8px;
-				text-align: center;
-				word-wrap: wrap;
-			}
-
-			a>button {
-				font-size: 1rem;
-				padding: 0.8rem;
-			}
-		}
-
-		@media (max-width: 480px) {
-			
-			form label {
-				color:green;
-				font-size:2rem;
-			}
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2.5rem;
-			}
-
-			td.task-number{
-				font-size: 1rem;
-				color:red;
-				font-style: bold;
-			}
-			th {
-				background-color: #037d54;
-				color: white;
-			}
-
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2rem;
-			}
-
-			td {
-				padding: 8px;
-				text-align: center;
-				word-wrap: wrap;
-			}
-
-
-			.container div a button {
-				font-size: 0.9rem;
-				padding: 0.6rem;
-			}
-		}
-	</style>
+}
+</style>
 </head>
 
 <body>
@@ -197,11 +174,7 @@
 		<div class="task-item" th:each="task : ${tasks}">
 			<table>
 				<thead>
-					<th>
-						<strong>Task Number:</strong>
-
-
-					</th>
+					<th><strong>Task Number:</strong></th>
 				</thead>
 
 				<tbody>
@@ -211,11 +184,7 @@
 				</tbody>
 
 				<thead>
-					<th>
-						<strong>Username:</strong>
-
-
-					</th>
+					<th><strong>Username:</strong></th>
 				</thead>
 
 				<tbody>
@@ -231,11 +200,7 @@
 
 
 				<thead>
-					<th>
-						<strong>Content:</strong>
-
-
-					</th>
+					<th><strong>Content:</strong></th>
 				</thead>
 
 				<tbody>
@@ -249,11 +214,7 @@
 
 
 				<thead>
-					<th>
-						<strong>Complete:</strong>
-
-
-					</th>
+					<th><strong>Complete:</strong></th>
 				</thead>
 
 				<tbody>
@@ -263,21 +224,17 @@
 				</tbody>
 
 			</table>
-			<br>
-			<br>
+			<br> <br>
 
 		</div>
 
 
-	<div>
-			<a th:href="@{/admin/taskList/viewTable}">
-				<button>Task List Table View Display</button>
-			</a>
+		<div class="scott-button">
+			<a th:href="@{/admin/taskList/viewTable}"> Task List Table View
+				Display </a>
 		</div>
-		<div>
-			<a th:href="@{/admin/index}">
-				<button>Return to Index</button>
-			</a>
+		<div class="scott-button">
+			<a th:href="@{/admin/index}"> Return to Index </a>
 		</div>
 	</div>
 </body>

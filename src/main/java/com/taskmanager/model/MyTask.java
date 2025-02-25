@@ -19,7 +19,8 @@ public class MyTask {
 	private boolean complete;
 
 	@NotBlank
-	@Column(name = "content")
+
+	@Column(name = "content", length = 2000)
 	private String content;
 
 	@Id
@@ -78,8 +79,8 @@ public class MyTask {
 
 	@Override
 	public String toString() {
-		return "MyTask \n[complete=" + complete + "\n, content=" + content + "\n, id=" + id + "\n, taskNumber=" + taskNumber +
-				"\n, username=" + username + "]";
+		return "MyTask \n[complete=" + complete + "\n, content=" + content + "\n, id=" + id + "\n, taskNumber=" +
+				taskNumber + "\n, username=" + username + "]";
 	}
 
 }

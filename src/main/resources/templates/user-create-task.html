@@ -175,7 +175,7 @@
 			<form th:action="@{/user/create/task}" th:object="${myTaskDto}" th:method="post">
 				<div class="task-input">
 					<label for="content">Message Content:</label>
-					<textarea name="content" id="content" rows="4"></textarea>
+					<textarea maxlength="300" name="content" id="content" rows="4"></textarea>
 				</div>
 				<div class="task-input task-complete">
 					<label for="complete">

@@ -175,7 +175,7 @@
 			<form th:action="@{/admin/create/task}" th:object="${myTaskDto}" method="post">
 				<div class="task-input">
 					<label for="content">Message Content:</label>
-					<textarea name="content" id="content" rows="4" cols="50"></textarea>
+					<textarea  name="content" id="content" maxlength="10000"rows="4" cols="50"></textarea>
 				</div>
 				<div class="task-input task-complete">
 					<label for="complete"> <input type="checkbox" name="complete" id="complete" /> Task Complete Status
