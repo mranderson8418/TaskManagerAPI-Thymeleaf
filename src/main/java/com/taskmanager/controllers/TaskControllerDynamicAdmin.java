@@ -213,7 +213,7 @@ public class TaskControllerDynamicAdmin {
 
 	}
 
-	@GetMapping({ "/user/delete/task", "/admin/delete/task" })
+	@GetMapping({ "/user/delete/task/viewTable", "/admin/delete/task/viewTable" })
 	public String getDeleteTask(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 
 		// Validate object data if necessary
@@ -238,15 +238,48 @@ public class TaskControllerDynamicAdmin {
 
 			logger.trace("EXITED……………………………………	@GetMapping----> getDeleteTask()");
 
-			return "admin-delete-task";
+			return "admin-delete-task-view-table";
 		}
 		System.out.println("EXITED..........................................@GetMapping----> getDeleteTask()");
 		logger.trace("EXITED..........................................@GetMapping----> getDeleteTask()");
-		return "user-delete-task";
+		return "user-delete-task-view-table";
 
 	}
 
-	@PostMapping({ "/user/delete/task", "/admin/delete/task" })
+	@GetMapping({ "/user/delete/task/viewModular", "/admin/delete/task/viewModular" })
+	public String getDeleteTaskViewModular(@ModelAttribute MyTaskDto myTaskDto, Model model) {
+
+		// Validate object data if necessary
+		// Save object to database
+		System.out.println(nameClass());
+		System.out.println("ENTERED..........................................@GetMapping----> getDeleteTask()");
+
+		;
+		logger.trace("ENTERED..........................................@GetMapping----> getDeleteTask()");
+
+		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
+
+		model.addAttribute("myTaskDto", new MyTaskDto());
+
+		model.addAttribute("tasks", myTaskDtoList);
+
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		System.out.println("ROLE ===== " + myUserDto.getRole());
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+
+			logger.trace("EXITED……………………………………	@GetMapping----> getDeleteTask()");
+
+			return "admin-delete-task-view-modular";
+		}
+		System.out.println("EXITED..........................................@GetMapping----> getDeleteTask()");
+		logger.trace("EXITED..........................................@GetMapping----> getDeleteTask()");
+		return "user-delete-task-view-modular";
+
+	}
+
+	@PostMapping({ "/user/delete/task/viewTable", "/admin/delete/task/viewTable" })
 	public String deleteTaskId(@ModelAttribute MyTaskDto myTaskDto, Model model) throws TaskNotFoundException {
 
 		System.out.println(nameClass());
@@ -276,14 +309,14 @@ public class TaskControllerDynamicAdmin {
 
 		if (myUserDto.getRole().contains("ADMIN")) {
 			System.out.println("EXITED..........................................deleteTaskId()");
-			return "admin-delete-task";
+			return "admin-delete-task-view-table";
 		}
 		System.out.println("EXITED..........................................deleteTaskId()");
-		return "user-delete-task";
+		return "user-delete-task-view-table";
 
 	}
 
-	@GetMapping({ "/user/taskList", "/admin/taskList" })
+	@GetMapping({ "/user/taskList/viewModular", "/admin/taskList/viewModular" })
 	public String getTaskListObjects(@ModelAttribute MyTaskDto myTaskDto, Model model) {
 		// Validate object data if necessary
 		// Save object to database
@@ -306,9 +339,38 @@ public class TaskControllerDynamicAdmin {
 
 		if (myUserDto.getRole().contains("ADMIN")) {
 
-			return "admin-task-list";
+			return "admin-task-list-view-modular";
 		}
-		return "user-task-list";
+		return "user-task-list-view-modular";
+
+	}
+
+	@GetMapping({ "/user/taskList/viewTable", "/admin/taskList/viewTable" })
+	public String getTaskListObjectsTableView(@ModelAttribute MyTaskDto myTaskDto, Model model) {
+		// Validate object data if necessary
+		// Save object to database
+
+		logger.trace("EXITED……………………………………	@GetMapping(\"/admin/taskList\")");
+
+		List<MyTaskDto> myTaskDtoList = taskService.getAllTasksObjects();
+
+		for (int i = 0; i < myTaskDtoList.size(); i++) {
+
+			System.out.println(myTaskDtoList.get(i).toString());
+
+		}
+
+		model.addAttribute("tasks", myTaskDtoList);
+
+		MyUserDto myUserDto = myUserService.currentUser();
+
+		System.out.println("ROLE ===== " + myUserDto.getRole());
+
+		if (myUserDto.getRole().contains("ADMIN")) {
+
+			return "admin-task-list-view-table";
+		}
+		return "user-task-list-view-table";
 
 	}
 

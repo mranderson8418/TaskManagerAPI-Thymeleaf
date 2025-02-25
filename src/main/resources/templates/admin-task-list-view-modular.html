@@ -143,6 +143,11 @@
 		}
 
 		@media (max-width: 480px) {
+			
+			form label {
+				color:green;
+				font-size:2rem;
+			}
 			.container div h1 {
 				text-align: center;
 				color: green;
@@ -263,6 +268,12 @@
 
 		</div>
 
+
+	<div>
+			<a th:href="@{/admin/taskList/viewTable}">
+				<button>Task List Table View Display</button>
+			</a>
+		</div>
 		<div>
 			<a th:href="@{/admin/index}">
 				<button>Return to Index</button>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Task List Delete Admin</title>
+
+		<style>
+			/* General styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				font-family: sans-serif;
+				background-color: #ffffff;
+				width: 100%;
+				padding: 20px;
+				color: black;
+			}
+
+			div form input#taskNumber {
+				border: solid 2px #037d54;
+				min-height: 2rem;
+				min-width: 2rem;
+				color: #037d54;
+				text-align: center;
+				font-size: 1.5rem;
+			}
+
+			div.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				min-width: 80%;
+				max-width: 900px;
+				height: auto;
+			}
+
+			.container div h1 {
+				text-align: center;
+				color: green;
+				font-size: 2.5rem;
+			}
+
+			td.task-number {
+				font-size: 2rem;
+				color: red;
+				font-style: bold;
+			}
+
+			div.task-item {
+				min-width: 100%;
+				max-width: 900px;
+				height: auto;
+			}
+
+			div.task-item table {
+				border: solid 5px #037d54;
+				min-width: 100%;
+				max-width: 900px;
+				height: auto;
+			}
+
+			th,
+			td {
+				padding: 10px;
+				border: 2px solid #037d54;
+				text-align: center;
+				word-wrap: wrap;
+			}
+
+			th {
+				background-color: #037d54;
+				color: white;
+			}
+
+			.completed-row {
+				background-color: rgb(98, 160, 234);
+			}
+			.container div form label {
+				font-style: bold;
+				text-align: center;
+				color: #037d54;
+				font-size: 2rem;
+			}
+			/* Button styles */
+			div.form {
+				display: block;
+			}
+
+			/* Button styles */
+			div form button {
+				background-color: #037d54;
+				color: white;
+				border: none;
+				border-radius: 1rem;
+				padding: 1rem;
+				font-size: 1.2rem;
+				cursor: pointer;
+				margin-top: 20px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+				margin-top: 4rem;
+			}
+
+			div.scott-button a {
+				display: block;
+				background-color: #037d54;
+				color: white;
+				border: none;
+				border-radius: 1rem;
+				padding: 1rem;
+				font-size: 1.2rem;
+				cursor: pointer;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+				text-decoration: none;
+				margin-top: 4rem;
+			}
+
+			a > button:hover,
+			div form button:hover {
+				background-color: #037d54;
+			}
+
+			/* Responsive styles */
+			@media (max-width: 768px) {
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2.5rem;
+				}
+				td.task-number {
+					font-size: 1.5rem;
+					color: red;
+					font-style: bold;
+				}
+				th {
+					background-color: #037d54;
+					color: white;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2.5rem;
+				}
+				table {
+					font-size: 0.9rem;
+				}
+				th,
+				td {
+					padding: 8px;
+					text-align: center;
+					word-wrap: wrap;
+				}
+				a > button {
+					font-size: 1rem;
+					padding: 0.8rem;
+				}
+			}
+
+			@media (max-width: 480px) {
+				form label {
+					color: green;
+					font-size: 2rem;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2.5rem;
+				}
+				td.task-number {
+					font-size: 1rem;
+					color: red;
+					font-style: bold;
+				}
+				th {
+					background-color: #037d54;
+					color: white;
+				}
+				.container div h1 {
+					text-align: center;
+					color: green;
+					font-size: 2rem;
+				}
+				td {
+					padding: 8px;
+					text-align: center;
+					word-wrap: wrap;
+				}
+				.container div a button {
+					font-size: 0.9rem;
+					padding: 0.6rem;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div>
+				<h1>Task List</h1>
+			</div>
+
+			<div class="task-item" th:each="task : ${tasks}">
+				<table>
+					<thead>
+						<th><strong>Task Number:</strong></th>
+					</thead>
+
+					<tbody>
+						<td class="task-number" th:text="${task.taskNumber}">taskNumber</td>
+					</tbody>
+
+					<thead>
+						<th><strong>Username:</strong></th>
+					</thead>
+
+					<tbody>
+						<td th:text="${task.username}">username</td>
+					</tbody>
+
+					<thead>
+						<th><strong>Content:</strong></th>
+					</thead>
+
+					<tbody>
+						<td th:text="${task.content}">content</td>
+					</tbody>
+
+					<thead>
+						<th><strong>Complete:</strong></th>
+					</thead>
+
+					<tbody>
+						<td th:text="${task.complete ? 'true' : 'false'}">complete</td>
+					</tbody>
+				</table>
+				<br />
+				<br />
+			</div>
+
+			<div>
+				<form th:action="@{/user/delete/task/viewTable}" th:method="POST">
+					<label for="taskNumber">Task Number:</label> <input type="number" id="taskNumber" name="taskNumber" required /> <br />
+					<br />
+
+					<button type="submit">Delete</button>
+				</form>
+			</div>
+
+			<div class="scott-button">
+				<a th:href="@{/user/delete/task/viewTable}"> Task List Table View Display </a>
+			</div>
+
+			<div>
+				<form th:action="@{/user/index}" method="GET">
+					<button type="submit">Return to Index</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
