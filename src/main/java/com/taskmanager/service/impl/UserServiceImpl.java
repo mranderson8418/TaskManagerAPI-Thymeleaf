@@ -59,15 +59,18 @@ public class UserServiceImpl implements MyUserService {
 	@Override
 	public MyUserDto createUser(MyUserDto myUserDto) {
 
-		// Get list of all task the User has in the database
+		// Get list of all the users in the database
 		List<MyUser> currentUserList = myUserRepository.findAll();
-		myUserDto.setUsername(myUserDto.getUsername());
 
 		myUserDto.setUserNumber(currentUserList.size() + 1);
 
 		MyUser newUser = convertMyUserDtoToMyUser(myUserDto);
 
+		System.out.println("newUser.toString() = " + newUser.toString());
+
 		MyUser userSaved = myUserRepository.save(newUser);
+
+		System.out.println("userSaved.toString() = " + userSaved.toString());
 
 		MyUserDto newMyUserDto = mapToDto(userSaved);
 
@@ -254,7 +257,6 @@ public class UserServiceImpl implements MyUserService {
 
 		MyUserDto newMyUserDto = new MyUserDto();
 		newMyUserDto.setEmail(myUser.getUsername());
-
 		newMyUserDto.setId(myUser.getId());
 		newMyUserDto.setEmail(myUser.getEmail());
 		newMyUserDto.setPassword("(Encoded)");
@@ -282,7 +284,6 @@ public class UserServiceImpl implements MyUserService {
 		myUser.setUsername(myUserDto.getUsername());
 		myUser.setPassword(passwordEncoder.encode(myUserDto.getPassword()));
 		myUser.setUserNumber(myUserDto.getUserNumber());
-		myUser.setId(myUserDto.getId());
 		myUser.setRole(myUserDto.getRole());
 		myUser.setEmail(myUserDto.getEmail());
 		myUser.setDob(myUserDto.getDob());

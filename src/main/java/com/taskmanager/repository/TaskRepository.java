@@ -15,7 +15,7 @@ import com.taskmanager.model.MyTask;
 @Repository // Mark this Longerface as a Spring Data repository
 public interface TaskRepository extends JpaRepository<MyTask, Integer> {
 
-	void save(String string);
+	// void save(String string);
 
 	// public void saveById(int id);
 

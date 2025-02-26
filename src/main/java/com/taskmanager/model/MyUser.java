@@ -30,6 +30,7 @@ public class MyUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	@NotBlank
 	@Column(name = "password")
 	private String password;

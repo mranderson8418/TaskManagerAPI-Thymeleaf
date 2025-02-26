@@ -2,201 +2,209 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Task List</title>
-	<style>
-		/* General styles */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task List</title>
+<style>
+/* General styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-		html,
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-height: 100vh;
-			font-family: sans-serif;
-			background-color: #ffffff;
-			width: 100%;
-			padding: 20px;
-			color: black;
-		}
+html {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			min-width: 100%;
-		}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-family: sans-serif;
+	font-size:15px;
+	background-color: #ffffff;
+	min-width: 95%;
+	max-width:95%;
+	color: black;
+}
 
-		div.container {
-			padding: 2rem;
-			border-radius: 2rem;
-			min-width: 90%;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		}
+.container-view {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+}
 
-		.container div h1 {
-			text-align: center;
-			color: green;
-			font-size: 2.5rem;
-		}
+.container-view div {
+	background-color: #f1f1f1;
+	width: auto;
+	height: auto;
+	margin: 1.5rem;
+	text-align: center;
+	font-size: 1.2rem;
+}
 
-		/* Table styles */
-		.container div table {
-			border: 0.5rem solid rgb(57, 82, 60);
-			border-radius: 0.5rem;
-			width: 100%;
-			margin-top: 3rem;
-			border-collapse: collapse;
-		}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+}
 
-		td {
-			border: 1px solid black;
-			padding: 1rem;
-			background-color: white;
-		}
-
-		th {
-			border: 1px solid black;
-			padding: 1rem;
-			background-color: #037d54;
-			color: white;
-		}
-
-
-
-		div.scott-button {
-			background-color: #04aa6d;
-			border: none;
-			border-radius: 1rem;
-			padding: 1rem;
-			cursor: pointer;
-			margin-top: 20px;
-			box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
-		}
-
-		div.scott-button a {
-			color: white;
-			font-size: 1.2rem;
-			text-decoration: none;
-		}
-
-		div.scott-button:hover {
-			background-color: #037d54;
-		}
-
-		tr.completed-row td{
-		background-color: #6fb9e4;
-		
+div.container {
 	
-		}
+	border-radius: 2rem;
+	min-width: 90%;
 
-		/* Responsive styles */
-		@media (max-width : 768px) {
-			.container {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				min-width: 100%;
-			}
+}
 
-			div.container {
-				padding: 2rem;
-				border-radius: 2rem;
-				min-width: 90%;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			}
+.container div h1 {
+	text-align: center;
+	color: green;
+	font-size: 2.5rem;
+}
 
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2rem;
-			}
+/* Table styles */
+.container div table {
+	border: 0.5rem solid rgb(57, 82, 60);
+	border-radius: 0.5rem;
+	width: 100%;
+	margin-top: 3rem;
+	border-collapse: collapse;
+}
 
-			/* Table styles */
-			.container div table {
-				border: 0.5rem solid rgb(57, 82, 60);
-				border-radius: 0.5rem;
-				width: 100%;
-				margin-top: 3rem;
-				border-collapse: collapse;
-			}
+td {
+	border: 1px solid black;
+	padding: 1rem;
+	background-color: white;
+}
 
-			td {
-				border: 1px solid black;
-				padding: 1rem;
-				background-color: white;
-			}
+th {
+	border: 1px solid black;
+	padding: 1rem;
+	background-color: #037d54;
+	color: white;
+}
 
-			th {
-				border: 1px solid black;
-				padding: 1rem;
-				background-color: #037d54;
-				color: white;
-			}
+div.scott-button {
+	background-color: #037d54;
+	border: none;
+	border-radius: 1rem;
+	padding: 1rem;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
+}
+
+div.scott-button a {
+	color: white;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
 
 
-		}
 
-		@media (max-width : 480px) {
-			.container {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				min-width: 100%;
-			}
+tr.completed-row td {
+	background-color: #6fb9e4;
+}
 
-			div.container {
-				padding: 2rem;
-				border-radius: 2rem;
-				min-width: 90%;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			}
+/* Responsive styles */
+@media ( max-width : 768px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		min-width: 100%;
+	}
+	div.container {
+	
+		border-radius: 2rem;
+		min-width: 100%;
 
-			.container div h1 {
-				text-align: center;
-				color: green;
-				font-size: 2rem;
-			}
+	}
+	.container div h1 {
+		text-align: center;
+		color: green;
+		font-size: 2rem;
+	}
 
-			/* Table styles */
-			.container div table {
-				border: 0.5rem solid rgb(57, 82, 60);
-				border-radius: 0.5rem;
-				width: 100%;
-				font-size: 1rem;
-				margin-top: 2rem;
-				border-collapse: collapse;
-			}
+	/* Table styles */
+	.container div table {
+		border: 0.5rem solid rgb(57, 82, 60);
+		border-radius: 0.5rem;
+		width: 100%;
+		margin-top: 3rem;
+		border-collapse: collapse;
+	}
+	td {
+		border: 1px solid black;
+		padding: .25rem;
+		background-color: white;
+	}
+	th {
+		border: 1px solid black;
+		padding: .25rem;
+		background-color: #037d54;
+		color: white;
+	}
+}
 
-			td {
-				border: 1px solid black;
-				padding: .25rem;
-				background-color: white;
-			}
+@media ( max-width : 480px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		min-width: 100%;
+	}
+	div.container {
+	
+		border-radius: 2rem;
+		min-width: 90%;
 
-			th {
-				border: 1px solid black;
-				padding: .25rem;
-				background-color: #037d54;
-				color: white;
-			}
+	}
+	.container div h1 {
+		text-align: center;
+		color: green;
+		font-size: 2rem;
+	}
 
-		}
-	</style>
+	/* Table styles */
+	.container div table {
+		border: 0.5rem solid rgb(57, 82, 60);
+		border-radius: 0.5rem;
+		width: 100%;
+		font-size: 1rem;
+		margin-top: 2rem;
+		border-collapse: collapse;
+	}
+
+}
+</style>
 </head>
 
 <body>
 	<div class="container">
+
+
+		<div class="container-view">
+			<div class="scott-button">
+				<a th:href="@{/user/taskList/viewTable}"> Table View</a>
+			</div>
+			<div class="scott-button">
+				<a th:href="@{/user/taskList/viewModular}"> Modular View </a>
+			</div>
+		</div>
 		<div>
 			<h1>Task List</h1>
 		</div>
@@ -212,7 +220,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="task : ${tasks}" th:class="${task.complete ? 'completed-row' : false}">
+					<tr th:each="task : ${tasks}"
+						th:class="${task.complete ? 'completed-row' : false}">
 						<td th:text="${task.taskNumber}">taskNumber</td>
 						<td th:text="${task.username}">username</td>
 						<td th:text="${task.content}">content</td>
@@ -223,10 +232,7 @@
 		</div>
 
 
-		<div class="scott-button">
-			<a th:href="@{/user/taskList/viewModular}"> View Modular Task
-				List Display </a>
-		</div>
+	
 		<div class="scott-button">
 			<a th:href="@{/user/index}"> Return to Index </a>
 		</div>

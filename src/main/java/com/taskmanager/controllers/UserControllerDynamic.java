@@ -51,8 +51,8 @@ public class UserControllerDynamic {
 		this.userService = userService;
 	}
 
-	@GetMapping("/admin/userList")
-	public String createUserList(Model model) {
+	@GetMapping("/admin/userList/viewModular")
+	public String createUserListViewModular(Model model) {
 
 		logger.trace("ENTERED……………………createObject()………………/admin/userList");
 
@@ -71,7 +71,30 @@ public class UserControllerDynamic {
 
 		logger.trace("EXITED………………createObject()…………………/user/userList");
 
-		return "admin-user-list";
+		return "admin-user-list-view-modular";
+	}
+
+	@GetMapping("/admin/userList/viewTable")
+	public String createUserListViewTable(Model model) {
+
+		logger.trace("ENTERED……………………createObject()………………/admin/userList");
+
+		List<MyUserDto> myUserDtoList = myUserService.getAllMyUsersNow();
+
+		if (myUserDtoList == null) {
+			myUserDtoList = new ArrayList<>();
+		}
+		for (int i = 0; i < myUserDtoList.size(); i++) {
+
+			System.out.println(myUserDtoList.get(i).toString());
+
+		}
+
+		model.addAttribute("users", myUserDtoList);
+
+		logger.trace("EXITED………………createObject()…………………/user/userList");
+
+		return "admin-user-list-view-table";
 	}
 
 	@GetMapping("/admin/delete/user")

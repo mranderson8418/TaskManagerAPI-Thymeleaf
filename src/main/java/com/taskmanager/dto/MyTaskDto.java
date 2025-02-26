@@ -1,23 +1,15 @@
 package com.taskmanager.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
-
 public class MyTaskDto {
 
 	private boolean complete;
 
-	@NotBlank
 	private String content;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private int id;
 
 	private int taskNumber;
 
-	@NotBlank
 	private String username;
 
 	public MyTaskDto() {

@@ -35,6 +35,24 @@ body {
 	padding: 1rem;
 }
 
+.container-view {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+}
+
+.container-view div {
+	background-color: #f1f1f1;
+	width: auto;
+	height: auto;
+	margin: 1.5rem;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
 div.container {
 	display: flex;
 	flex-direction: column;
@@ -140,7 +158,7 @@ textarea {
 }
 
 div.scott-button, div button {
-	background-color: #04aa6d;
+	background-color: #037d54;
 	color: white;
 	border: none;
 	border-radius: 1rem;
@@ -157,13 +175,9 @@ div.scott-button a {
 	font-size: 1.2rem;
 }
 
-form div button:hover {
-	background-color: #037d54;
-}
 
-div.scott-button:hover {
-	background-color: #037d54;
-}
+
+
 
 .completed-row td {
 	background-color: rgb(98, 160, 234);
@@ -251,12 +265,26 @@ div.scott-button:hover {
 		text-align: center;
 		word-wrap: wrap;
 	}
+	div.scott-button, form div button {
+		background-color: #037d54;
+	}
 }
 </style>
 </head>
 
 <body>
 	<div class="container">
+
+
+
+		<div class="container-view">
+			<div class="scott-button">
+				<a th:href="@{/admin/update/task/viewTable}"> Table View</a>
+			</div>
+			<div class="scott-button">
+				<a th:href="@{/admin/update/task/viewModular}"> Modular View </a>
+			</div>
+		</div>
 		<div class="title">
 			<h1>Task List</h1>
 		</div>
@@ -333,10 +361,6 @@ div.scott-button:hover {
 			</form>
 		</div>
 
-		<div class="scott-button">
-			<a th:href="@{/admin/update/task/viewTable}"> View Table View
-				Display Format </a>
-		</div>
 
 		<div class="scott-button">
 			<a th:href="@{/admin/index}">Go to Admin Index Page</a>

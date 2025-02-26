@@ -43,6 +43,24 @@ div form input#taskNumber {
 	font-size: 1.5rem;
 }
 
+.container-view {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+}
+
+.container-view div {
+	background-color: #f1f1f1;
+	width: auto;
+	height: auto;
+	margin: 1.5rem;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -191,6 +209,17 @@ div form button:hover {
 
 <body>
 	<div class="container">
+
+		<div class="container-view">
+			<div class="scott-button">
+				<a th:href="@{/admin/taskList/viewTable}"> Table View</a>
+			</div>
+			<div class="scott-button">
+				<a th:href="@{/admin/taskList/viewModular}"> Modular View </a>
+			</div>
+		</div>
+
+
 		<div>
 			<h1>Task List</h1>
 		</div>
@@ -225,11 +254,7 @@ div form button:hover {
 				<button type="submit">Delete</button>
 			</form>
 		</div>
-		<div class="scott-button">
-			<a th:href="@{/user/delete/task/viewModular}"> Task List Modular
-				View Display </a>
-		</div>
-
+	
 		<div>
 			<form th:action="@{/user/index}" method="GET">
 				<button type="submit">Return to Index</button>

@@ -49,7 +49,9 @@ div form input#taskNumber {
 	align-items: center;
 	text-align: center;
 	justify-content: center;
-	width: 90%;
+	min-width: 95%;
+	max-width: 95%;
+		margin:1rem 0rem 2rem 0rem;
 }
 
 .container div h1 {
@@ -57,6 +59,24 @@ div form input#taskNumber {
 	color: #037d54;
 	font-size: 3rem;
 	font-style: bold;
+}
+
+.container-view {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+}
+
+.container-view div {
+	background-color: #f1f1f1;
+	width: auto;
+	height: auto;
+	margin: 1.5rem;
+	text-align: center;
+	font-size: 1.2rem;
 }
 
 .container div form label {
@@ -93,7 +113,7 @@ div.form {
 }
 
 /* Button styles */
-div form button, div.scott-button {
+div form button{
 	background-color: #037d54;
 	color: white;
 	border: none;
@@ -109,15 +129,28 @@ div form button {
 	margin-bottom: 2rem;
 }
 
-div.scott-button a {
-	text-decoration: none;
-	font-size: 1.2rem;
-	color: white;
-}
-
-div form button:hover {
+div form button {
 	background-color: #037d54;
 }
+
+div.scott-button {
+	background-color: #037d54;
+	border: none;
+	border-radius: 1rem;
+	padding: 1rem;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: 0 4px a8px rgba(0, 0, 0, 0.2);
+}
+
+div.scott-button a {
+	color: white;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+
+
 
 /* Responsive styles */
 @media ( max-width : 768px) {
@@ -168,9 +201,8 @@ div form button:hover {
 	}
 	.container div h1 {
 		text-align: center;
-		color: #037d54;
-		font-size: 3rem;
-		font-style: bold;
+		color: green;
+		font-size: 2.5rem;
 	}
 	.container div form label {
 		font-style: bold;
@@ -185,12 +217,27 @@ div form button:hover {
 		padding: .5rem;
 		word-wrap: wrap;
 	}
+			div.scott-button {
+	background-color: #037d54;
+
+}
 }
 </style>
 </head>
 
 <body>
 	<div class="container">
+
+
+	<div class="container-view">
+			<div class="scott-button">
+				<a th:href="@{/admin/delete/task/viewTable}"> Table View</a>
+			</div>
+			<div class="scott-button">
+				<a th:href="@{/admin/delete/task/viewModular}"> Modular View </a>
+			</div>
+		</div>
+
 		<div>
 			<h1>Task List</h1>
 		</div>
@@ -225,15 +272,10 @@ div form button:hover {
 				<button type="submit">Delete</button>
 			</form>
 		</div>
-		<div class="scott-button">
-			<a th:href="@{/admin/delete/task/viewModular}"> Task List Modular
-				View Display </a>
-		</div>
 
-		<div>
-			<form th:action="@{/admin/index}" method="GET">
-				<button type="submit">Return to Index</button>
-			</form>
+
+		<div class="scott-button">
+			<a th:href="@{/admin/index}"> Return to Index </a>
 		</div>
 	</div>
 </body>

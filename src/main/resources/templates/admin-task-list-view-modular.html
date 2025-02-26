@@ -13,7 +13,14 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -21,9 +28,10 @@ html, body {
 	min-height: 100vh;
 	font-family: sans-serif;
 	background-color: #ffffff;
-	width: 100%;
-	padding: 20px;
+	min-width: 95%;
+	max-width: 95%;
 	color: black;
+	font-size: 15px;
 }
 
 div.container {
@@ -31,9 +39,28 @@ div.container {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-width: 80%;
+	min-width: 95%;
 	max-width: 900px;
 	height: auto;
+		margin:1rem 0rem 2rem 0rem;
+}
+
+.container-view {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	min-width: 100%;
+}
+
+.container-view div {
+	background-color: #f1f1f1;
+	width: auto;
+	height: auto;
+	margin: 1.5rem;
+	text-align: center;
+	font-size: 1.2rem;
 }
 
 .container div h1 {
@@ -73,10 +100,8 @@ th {
 	color: white;
 }
 
-
-
 div.scott-button {
-	background-color: #04aa6d;
+	background-color: #037d54;
 	border: none;
 	border-radius: 1rem;
 	padding: 1rem;
@@ -91,9 +116,8 @@ div.scott-button a {
 	text-decoration: none;
 }
 
-div.scott-button:hover {
-	background-color: #037d54;
-}
+
+
 .completed-row td {
 	background-color: rgb(98, 160, 234);
 
@@ -160,12 +184,28 @@ div.scott-button:hover {
 		text-align: center;
 		word-wrap: wrap;
 	}
+	div.scott-button {
+		background-color: #037d54;
+	}
 }
 </style>
 </head>
 
 <body>
 	<div class="container">
+
+		<div class="container-view">
+			<div class="scott-button">
+				<a th:href="@{/admin/taskList/viewTable}"> Table View</a>
+			</div>
+			<div class="scott-button">
+				<a th:href="@{/admin/taskList/viewModular}"> Modular View </a>
+			</div>
+		</div>
+
+
+
+
 		<div>
 			<h1>Task List</h1>
 		</div>
@@ -226,10 +266,7 @@ div.scott-button:hover {
 			<br /> <br />
 		</div>
 
-		<div class="scott-button">
-			<a th:href="@{/admin/taskList/viewTable}"> Task List Table View
-				Display </a>
-		</div>
+
 		<div class="scott-button">
 			<a th:href="@{/admin/index}"> Return to Index </a>
 		</div>

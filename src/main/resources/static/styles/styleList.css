@@ -51,7 +51,7 @@ th, td, tbody {
 }
 
 th {
-	background-color: #04aa6d;
+	background-color: #037d54;
 	/* Set a light background color for table headers */
 	color: white;
 	/* Set header text color */
@@ -66,7 +66,7 @@ div.scott-button {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #04aa6d;
+	background-color: #037d54;
 	width: auto;
 	height: auto;
 	padding: 2rem;
