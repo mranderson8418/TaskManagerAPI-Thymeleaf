@@ -89,7 +89,7 @@ form h2, form label, form input#taskNumber {
 	font-size: 2rem;
 }
 
-td#task-number {
+td.task-number {
 	font-size: 2rem;
 	color: red;
 	font-style: bold;
@@ -151,13 +151,10 @@ div.scott-button, div button {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-div button {
-	background-color: #04aa6d;
-}
-
 div.scott-button a {
 	text-decoration: none;
 	color: white;
+	font-size: 1.2rem;
 }
 
 form div button:hover {
@@ -190,7 +187,7 @@ div.scott-button:hover {
 		color: green;
 		font-size: 2.5rem;
 	}
-	td#task-number {
+	td.task-number {
 		font-size: 1.5rem;
 		color: red;
 		font-style: bold;
@@ -212,14 +209,6 @@ div.scott-button:hover {
 		text-align: center;
 		word-wrap: wrap;
 	}
-	a>button {
-		font-size: 1rem;
-		padding: 0.8rem;
-	}
-	.scott-button button, .scott-button a {
-		font-size: 0.95rem;
-		padding: 0.6rem 1.2rem;
-	}
 	div.form-container form label {
 		text-align: center;
 	}
@@ -235,16 +224,12 @@ div.scott-button:hover {
 		max-width: 900px;
 		height: auto;
 	}
-	div.scott-button button {
-		display: block;
-		text-align: center;
-	}
 	.container div h1 {
 		text-align: center;
 		color: green;
 		font-size: 2.5rem;
 	}
-	td#task-number {
+	td.task-number {
 		font-size: 1rem;
 		color: red;
 		font-style: bold;
@@ -266,14 +251,6 @@ div.scott-button:hover {
 		text-align: center;
 		word-wrap: wrap;
 	}
-	div.container div a button {
-		font-size: 0.9rem;
-		padding: 0.6rem;
-	}
-	.scott-button button, .scott-button a {
-		font-size: 0.9rem;
-		padding: 0.5rem 1rem;
-	}
 }
 </style>
 </head>
@@ -294,7 +271,7 @@ div.scott-button:hover {
 
 				<tbody>
 					<tr th:class="${task.complete ? 'completed-row' : false}">
-						<td id="task-number" th:text="${task.taskNumber}">taskNumber</td>
+						<td class="task-number" th:text="${task.taskNumber}">taskNumber</td>
 					</tr>
 				</tbody>
 

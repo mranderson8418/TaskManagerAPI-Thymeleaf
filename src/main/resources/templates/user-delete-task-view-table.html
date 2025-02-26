@@ -13,7 +13,14 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -21,8 +28,8 @@ html, body {
 	min-height: 100vh;
 	font-family: sans-serif;
 	background-color: #ffffff;
-	width: 100%;
-	padding: 20px;
+	min-width: 95%;
+	max-width: 95%;
 	color: black;
 	font-size: 15px;
 }
@@ -49,10 +56,7 @@ div form input#taskNumber {
 	text-align: center;
 	color: #037d54;
 	font-size: 3rem;
-}
-
-.container div form {
-	margin-top: 4rem;
+	font-style: bold;
 }
 
 .container div form label {
@@ -66,7 +70,7 @@ div form input#taskNumber {
 .container div table {
 	width: 100%;
 	border-collapse: collapse;
-	margin-top: 20px;
+	margin: 2rem 0rem 2rem 0rem;
 }
 
 th, td {
@@ -89,7 +93,7 @@ div.form {
 }
 
 /* Button styles */
-div form button {
+div form button, div.scott-button {
 	background-color: #037d54;
 	color: white;
 	border: none;
@@ -97,29 +101,18 @@ div form button {
 	padding: 1rem;
 	font-size: 1.2rem;
 	cursor: pointer;
-	margin-top: 20px;
+	margin-top: .5rem;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	margin-top: 4rem;
 }
 
-div.scott-button {
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-	min-width: 80%;
-	margin: 15px 0;
-	padding: 15px;
-	background-color: #04aa6d;
-	border-radius: 15px;
-	font-size: 1.2rem;
-	color: white;
-	text-align: center;
-	text-decoration: none;
+div form button {
+	margin-bottom: 2rem;
 }
 
 div.scott-button a {
-	display: block;
-	font-size: 2rem;
-	color: white;
 	text-decoration: none;
+	font-size: 1.2rem;
+	color: white;
 }
 
 div form button:hover {
@@ -138,15 +131,13 @@ div form button:hover {
 		min-width: 2rem;
 		color: #037d54;
 		text-align: center;
-		font-size: 1.5rem;
+		font-size: 1rem;
 	}
 	.container div h1 {
 		text-align: center;
-		color: green;
-		font-size: 2.5rem;
-	}
-	.container div form {
-		margin-top: 4rem;
+		color: #037d54;
+		font-size: 3rem;
+		font-style: bold;
 	}
 	.container div form label {
 		font-style: bold;
@@ -155,14 +146,10 @@ div form button:hover {
 		font-size: 2rem;
 	}
 	table {
-		font-size: 0.9rem;
+		font-size: 2rem;
 	}
 	th, td {
-		padding: 8px;
-	}
-	div form button {
-		font-size: 1rem;
-		padding: 0.8rem;
+		padding: .5rem;
 	}
 }
 
@@ -182,10 +169,8 @@ div form button:hover {
 	.container div h1 {
 		text-align: center;
 		color: #037d54;
-		font-size: 2rem;
-	}
-	.container div form {
-		margin-top: 4rem;
+		font-size: 3rem;
+		font-style: bold;
 	}
 	.container div form label {
 		font-style: bold;
@@ -194,15 +179,11 @@ div form button:hover {
 		font-size: 1.5rem;
 	}
 	table {
-		font-size: 0.8rem;
+		font-size: .75rem;
 	}
 	th, td {
-		padding: 6px;
+		padding: .5rem;
 		word-wrap: wrap;
-	}
-	div form button {
-		font-size: 0.9rem;
-		padding: 0.6rem;
 	}
 }
 </style>
