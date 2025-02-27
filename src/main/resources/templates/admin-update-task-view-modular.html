@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Admin Create Task Update</title>
+<title>Admin update task view</title>
 
 <style>
 * {
@@ -31,9 +31,6 @@ body {
 	font-size: 15px;
 }
 
-body {
-	padding: 1rem;
-}
 
 .container-view {
 	display: flex;
@@ -81,13 +78,27 @@ div.container div.task-item table tbody tr td {
 	word-wrap: wrap;
 }
 
+
 div.form-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	min-width: 100%;
+	max-width: 900px;
 	height: auto;
+	margin: 1rem 1rem 2rem 1rem;
+}
+
+div.form-container form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-width: 80%;
+	max-width: 900px;
+	height: auto;
+	margin: 1rem 1rem 2rem 1rem;
 }
 
 form h2, form label, form input#taskNumber {
