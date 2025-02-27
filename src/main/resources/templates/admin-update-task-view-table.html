@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,10 +31,6 @@ body {
 	font-size: 15px;
 }
 
-body {
-	padding: 1rem;
-}
-
 .container-view {
 	display: flex;
 	flex-direction: row;
@@ -63,10 +58,21 @@ div.container {
 	min-width: 80%;
 	max-width: 900px;
 	height: auto;
-	margin:1rem 0rem 2rem 0rem;
+	margin: 1rem 0rem 2rem 0rem;
 }
 
 div.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-width: 100%;
+	max-width: 900px;
+	height: auto;
+	margin: 1rem 1rem 2rem 1rem;
+}
+
+div.form-container form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -118,10 +124,19 @@ form {
 	gap: 1rem;
 }
 
-form label {
+div.form-container form div input#complete {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	min-width: 1rem;
+	min-height: 1rem;
+}
+
+div.form-container form label {
 	font-weight: bold;
 	font-size: 1.5rem;
 	text-align: center;
+	margin: 1rem;
 }
 
 form input#taskNumber {
@@ -134,6 +149,7 @@ input[type="text"], textarea, input[type="checkbox"] {
 	padding: 0.5rem;
 	border: 1px solid #ccc;
 	border-radius: 4px;
+	margin: 1rem;
 }
 
 textarea {
@@ -141,8 +157,7 @@ textarea {
 }
 
 div.scott-button, div button {
-
-		background-color: #037d54;
+	background-color: #037d54;
 	color: white;
 	border: none;
 	border-radius: 1rem;
@@ -163,8 +178,6 @@ form div button:hover {
 	background-color: #037d54;
 }
 
-
-
 .completed-row {
 	background-color: rgb(98, 160, 234);
 	/* Or any color you prefer */
@@ -172,15 +185,6 @@ form div button:hover {
 
 /* Responsive Styles */
 @media ( max-width : 768px) {
-	div.form-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		min-width: 80%;
-		max-width: 900px;
-		height: auto;
-	}
 	.container div h1 {
 		text-align: center;
 		color: green;
@@ -208,9 +212,9 @@ form div button:hover {
 		text-align: center;
 		word-wrap: wrap;
 	}
-	div.form-container form label {
+	/* 	div.form-container form label {
 		text-align: center;
-	}
+	} */
 }
 
 @media ( max-width : 480px) {
@@ -259,7 +263,6 @@ form div button:hover {
 
 <body>
 	<div class="container">
-
 		<div class="container-view">
 			<div class="scott-button">
 				<a th:href="@{/admin/update/task/viewTable}"> Table View</a>
@@ -268,8 +271,6 @@ form div button:hover {
 				<a th:href="@{/admin/update/task/viewModular}"> Modular View </a>
 			</div>
 		</div>
-
-
 
 		<div class="title">
 			<h1>Task List</h1>
@@ -297,20 +298,25 @@ form div button:hover {
 			</table>
 		</div>
 
-
-
 		<div class="form-container">
 			<form th:action="@{/admin/update/task/viewTable}"
 				th:object="${myTaskDto}" method="post">
-				<h2>Update Task Details</h2>
+				<div>
+					<h2>Update Task Details</h2>
+				</div>
 
 				<label for="taskNumber">Task ID:</label> <input type="text"
 					th:field="*{taskNumber}" id="taskNumber" /> <label for="content">Updated
 					Message Content:</label>
+
 				<textarea th:field="*{content}" id="content" rows="4"></textarea>
 
-				<label for="complete">Task Complete Status:</label> <input
-					type="checkbox" th:field="*{complete}" id="complete" />
+				<div>
+					<label for="complete">Task Complete Status:</label>
+				</div>
+				<div>
+					<input type="checkbox" th:field="*{complete}" id="complete" />
+				</div>
 
 				<div>
 					<button type="submit">Update Task</button>
@@ -318,17 +324,9 @@ form div button:hover {
 			</form>
 		</div>
 
-
-
-
-
-
-
-
 		<div class="scott-button">
 			<a th:href="@{/admin/index}">Go to Admin Index Page</a>
 		</div>
 	</div>
 </body>
-
 </html>

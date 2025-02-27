@@ -30,8 +30,22 @@ body {
 	color: #333;
 	font-size: 15px;
 	min-width: 95%;
-	max-width: 95%;
+	min-width: 95%;
 }
+
+div.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-width: 75%;
+	max-width:900px;
+	min-height: 100%;
+	margin: .5rem 0rem 1rem 0rem;
+
+}
+
 
 .container-view {
 	display: flex;
@@ -51,17 +65,6 @@ body {
 	font-size: 1.2rem;
 }
 
-div.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	min-width: 95%;
-	max-width: 1000px;
-	min-height: 100%;
-	margin: .5rem 0rem 1rem 0rem;
-}
 
 div.task-item {
 	min-width: 100%;
@@ -134,11 +137,35 @@ form {
 	display: grid;
 	gap: 1rem;
 }
+div.form-container form div input#complete {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	min-width: 1rem;
+	min-height: 1rem;
+}
 
-form label {
+div.form-container form label {
 	font-weight: bold;
 	font-size: 1.5rem;
 	text-align: center;
+	margin: 1rem;
+}
+
+
+div.form-container form div input#complete {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	min-width: 1rem;
+	min-height: 1rem;
+}
+
+div.form-container form label {
+	font-weight: bold;
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 1rem;
 }
 
 form input#taskNumber {
@@ -178,8 +205,6 @@ div.scott-button a {
 form div button:hover {
 	background-color: #037d54;
 }
-
-
 
 .completed-row td {
 	background-color: rgb(98, 160, 234);
@@ -277,10 +302,10 @@ form div button:hover {
 
 		<div class="container-view">
 			<div class="scott-button">
-				<a th:href="@{/admin/taskList/viewTable}"> Table View</a>
+				<a th:href="@{/user/update/task/viewTable}"> Table View</a>
 			</div>
 			<div class="scott-button">
-				<a th:href="@{/admin/taskList/viewModular}"> Modular View </a>
+				<a th:href="@{/user/update/task/viewModular}"> Modular View </a>
 			</div>
 		</div>
 
@@ -342,17 +367,24 @@ form div button:hover {
 		</div>
 
 		<div class="form-container">
-			<form th:action="@{/user/update/task/viewModular}"
+			<form th:action="@{/user/update/task/viewTable}"
 				th:object="${myTaskDto}" method="post">
-				<h2>Update Task Details</h2>
+				<div>
+					<h2>Update Task Details</h2>
+				</div>
 
 				<label for="taskNumber">Task ID:</label> <input type="text"
 					th:field="*{taskNumber}" id="taskNumber" /> <label for="content">Updated
 					Message Content:</label>
+
 				<textarea th:field="*{content}" id="content" rows="4"></textarea>
 
-				<label for="complete">Task Complete Status:</label> <input
-					type="checkbox" th:field="*{complete}" id="complete" />
+				<div>
+					<label for="complete">Task Complete Status:</label>
+				</div>
+				<div>
+					<input type="checkbox" th:field="*{complete}" id="complete" />
+				</div>
 
 				<div>
 					<button type="submit">Update Task</button>
@@ -360,7 +392,6 @@ form div button:hover {
 			</form>
 		</div>
 
-	
 
 		<div class="scott-button">
 			<a th:href="@{/user/index}">Go to Admin Index Page</a>

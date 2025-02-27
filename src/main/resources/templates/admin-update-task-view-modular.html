@@ -135,10 +135,19 @@ form {
 	gap: 1rem;
 }
 
-form label {
+div.form-container form div input#complete {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	min-width: 1rem;
+	min-height: 1rem;
+}
+
+div.form-container form label {
 	font-weight: bold;
 	font-size: 1.5rem;
 	text-align: center;
+	margin: 1rem;
 }
 
 form input#taskNumber {
@@ -174,10 +183,6 @@ div.scott-button a {
 	color: white;
 	font-size: 1.2rem;
 }
-
-
-
-
 
 .completed-row td {
 	background-color: rgb(98, 160, 234);
@@ -343,23 +348,31 @@ div.scott-button a {
 		</div>
 
 		<div class="form-container">
-			<form th:action="@{/admin/update/task/viewModular}"
+			<form th:action="@{/admin/update/task/viewTable}"
 				th:object="${myTaskDto}" method="post">
-				<h2>Update Task Details</h2>
+				<div>
+					<h2>Update Task Details</h2>
+				</div>
 
 				<label for="taskNumber">Task ID:</label> <input type="text"
 					th:field="*{taskNumber}" id="taskNumber" /> <label for="content">Updated
 					Message Content:</label>
+
 				<textarea th:field="*{content}" id="content" rows="4"></textarea>
 
-				<label for="complete">Task Complete Status:</label> <input
-					type="checkbox" th:field="*{complete}" id="complete" />
+				<div>
+					<label for="complete">Task Complete Status:</label>
+				</div>
+				<div>
+					<input type="checkbox" th:field="*{complete}" id="complete" />
+				</div>
 
 				<div>
 					<button type="submit">Update Task</button>
 				</div>
 			</form>
 		</div>
+
 
 
 		<div class="scott-button">
