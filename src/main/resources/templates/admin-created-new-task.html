@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Welcome</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f9f9f9;
+			color: #04aa6d;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+			text-align: center;
+			padding: 1rem;
+		}
+
+		.form-container {
+			background-color: white;
+			border: 3px solid #04aa6d;
+			border-radius: 15px;
+			padding: 2rem;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			width: 100%;
+			max-width: 700px;
+		}
+
+		.form-container h1 {
+			font-size: 1.8rem;
+			color: red;
+			margin-bottom: 1.5rem;
+		}
+
+		.form-container div {
+			margin-bottom: 1.2rem;
+		}
+
+		.form-container h2 {
+			display: inline-block;
+			font-size: 1rem;
+			margin: 0;
+		}
+
+		.form-container .scott-label {
+			color: red;
+		}
+
+		.scott-button button {
+			background-color: #037d54;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 20px;
+			font-size: 1rem;
+			cursor: pointer;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			transition: background-color 0.3s ease, transform 0.3s ease;
+			width: 100%;
+			max-width: 300px;
+		}
+
+		.scott-button button:hover {
+			background-color: #037a50;
+			transform: translateY(-2px);
+		}
+
+		.scott-button button:active {
+			transform: translateY(0);
+		}
+
+		@media (max-width: 600px) {
+			.form-container {
+				padding: 1.5rem;
+			}
+
+			.form-container h1 {
+				font-size: 1.5rem;
+			}
+
+			.form-container h2 {
+				font-size: 0.9rem;
+			}
+
+			.scott-button button {
+				font-size: 0.9rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="form-container">
+		<h1>New Task is saved to the database</h1>
+		<form action="/admin/index" method="get">
+			<div>
+				<h2 class="scott-label">Task Number:&nbsp;</h2>
+				<h2 th:text="${taskNumber}">taskNumber</h2>
+			</div>
+			<div>
+				<h2 class="scott-label">Username:&nbsp;</h2>
+				<h2 th:text="${username}">username</h2>
+			</div>
+			<div>
+				<h2 class="scott-label">Content:&nbsp;</h2>
+				<h2 th:text="${content}">content</h2>
+			</div>
+			<div>
+				<h2 class="scott-label">Complete Status:&nbsp;</h2>
+				<h2  th:text="${complete} ? 'true' : 'false'">false</h2>
+			</div>
+			
+			<div class="scott-button">
+				<button type="submit">Return to Home Page</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+
+
+
+</html>

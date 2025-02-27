@@ -139,10 +139,10 @@ public class TaskControllerDynamicAdmin {
 		for (GrantedAuthority authority : role) {
 
 			if (authority.getAuthority().equals("ROLE_ADMIN")) {
-				return "admin-new-task-created";
+				return "admin-created-new-task";
 			}
 		}
-		return "user-new-task-created";
+		return "user-created-new-task";
 	}
 
 	// http://localhost:8080/admin/update/task
