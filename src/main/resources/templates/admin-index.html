@@ -19,6 +19,10 @@
 	        color: white;
 	        text-align: center;
 	    }
+	    h3 {
+	display: inline;
+	color:light-red;
+}
 
 	    .container {
 	        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -67,6 +71,9 @@
 		<div>
 			<h1>Task Manager API</h1>
 			<h2>ADMIN Index Menu</h2>
+			
+			<h3 class="scott-label">Username logged in:&nbsp;</h3>
+			<h3 th:text="${username}">username</h3>
 		</div>
 		<div class="buttons">
 			<a th:href="@{/admin/create/task}">Create New Task</a>

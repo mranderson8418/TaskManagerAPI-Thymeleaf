@@ -172,7 +172,10 @@ public class UserControllerDynamic {
 	}
 
 	@GetMapping("/user/index")
-	public String handleUserIndex() {
+	public String handleUserIndex(@ModelAttribute MyUserDto myUserDto, Model model) {
+		myUserDto = myUserService.currentUser();
+
+		model.addAttribute("username", myUserDto.getEmail());
 
 		logger.trace("ENTERED……………………………………		@GetMapping(\"/user/index\")------");
 
@@ -189,7 +192,10 @@ public class UserControllerDynamic {
 	}
 
 	@GetMapping("/admin/index")
-	public String handleUserWelcome() {
+	public String handleUserWelcome(@ModelAttribute MyUserDto myUserDto, Model model) {
+		myUserDto = myUserService.currentUser();
+
+		model.addAttribute("username", myUserDto.getEmail());
 
 		logger.trace("ENTERED……………………………………		@GetMapping(\"/admin/index\")------");
 

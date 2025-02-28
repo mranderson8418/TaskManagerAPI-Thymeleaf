@@ -7,76 +7,86 @@
 <title>User Index</title>
 
 <style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: rgb(100, 195, 238);
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
-    }
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	background-color: rgb(100, 195, 238);
+	font-family: Arial, sans-serif;
+	color: white;
+	text-align: center;
+}
 
-    .container {
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-        background-color: rgb(78, 176, 97);
-        border-radius: 15px;
-        padding: 2rem;
-        max-width: 90%;
-        width: 600px;
-    }
+h3 {
+	display: inline;
+	color: light-red;
+}
 
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-    }
+.container {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px
+		-2px 6px 0px inset;
+	background-color: rgb(78, 176, 97);
+	border-radius: 15px;
+	padding: 2rem;
+	max-width: 90%;
+	width: 600px;
+}
 
-    h2 {
-        font-size: 1.5rem;
-        margin: 0.5rem 0;
-    }
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
 
-    .buttons {
-        margin-top: 1.5rem;
-    }
+h2 {
+	font-size: 1.5rem;
+	margin: 0.5rem 0;
+}
 
-    .buttons a {
-        display: block;
-        margin: 10px 0;
-        padding: 15px;
-        background-color: rgb(103, 206, 103);
-        border: none;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        color: white;
-        text-decoration: none;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+.buttons {
+	margin-top: 1.5rem;
+}
 
-    .buttons a:hover {
-        background-color: rgb(85, 170, 85);
-        transform: scale(1.05);
-    }
+.buttons a {
+	display: block;
+	margin: 10px 0;
+	padding: 15px;
+	background-color: rgb(103, 206, 103);
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	color: white;
+	text-decoration: none;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px
+		15px 12px;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttons a:hover {
+	background-color: rgb(85, 170, 85);
+	transform: scale(1.05);
+}
 </style>
 </head>
 <body>
-    <div class="container">
-        <div>
-            <h1>Task Manager API</h1>
-            <h2> Index Menu</h2>
-        </div>
-        <div class="buttons">
-            <a th:href="@{/user/create/task}">Create New Task</a>
-            <a th:href="@{/user/taskList/viewTable}">View Task List</a>
-            <a th:href="@{/user/update/task/viewTable}">Update Task</a>
-            <a th:href="@{/user/delete/task/viewTable}">Delete Task</a>
-            <a th:href="@{/register}">Create New User</a>
-            <a th:href="@{/logout}">Logout</a>
-        </div>
-    </div>
+	<div class="container">
+		<div>
+			<h1>Task Manager API</h1>
+			<h2>Index Menu</h2>
+
+			<h3 class="scott-label">Username logged in:&nbsp;</h3>
+			<h3 th:text="${username}">username</h3>
+		</div>
+		<div class="buttons">
+			<a th:href="@{/user/create/task}">Create New Task</a> <a
+				th:href="@{/user/taskList/viewTable}">View Task List</a> <a
+				th:href="@{/user/update/task/viewTable}">Update Task</a> <a
+				th:href="@{/user/delete/task/viewTable}">Delete Task</a> <a
+				th:href="@{/register}">Create New User</a> <a th:href="@{/logout}">Logout</a>
+		</div>
+	</div>
 </body>
 </html>
