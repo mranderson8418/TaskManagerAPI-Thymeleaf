@@ -87,9 +87,9 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(UserAlreadyExistsException.class)
 	public String handleUserAlreadyExistsException(UserAlreadyExistsException ex, WebRequest request, Model model) {
 
-		String username = verifyLoggedInUser();
+		// String username = verifyLoggedInUser();
 
-		MyUserDto myUserDto = myUserService.findByUsername(username);
+		// MyUserDto myUserDto = myUserService.findByUsername(username);
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
@@ -100,11 +100,7 @@ public class GlobalExceptionHandler {
 		model.addAttribute("statusCode", errorObject.getStatusCode());
 		model.addAttribute("timeStamp", errorObject.getTimestamp());
 
-		if (myUserDto.getRole().contains("ADMIN")) {
-			return "admin-exception-user-exists";
-		} else {
-			return "user-exception-user-exists";
-		}
+		return "exception-user-already-exists";
 	}
 
 	@ExceptionHandler(NullPointerException.class)
@@ -155,8 +151,7 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(ActiveUserCannotBeDeletedException.class)
-	public String handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex, WebRequest request,
-			Model model) {
+	public String handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex, WebRequest request, Model model) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());
