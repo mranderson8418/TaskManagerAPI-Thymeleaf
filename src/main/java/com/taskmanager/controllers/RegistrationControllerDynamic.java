@@ -74,16 +74,20 @@ public class RegistrationControllerDynamic {
 
 		}
 
-		if (myUserDto.getGender() == null) {
-			myUserDto.setGender("male");
+		if (myUserDto.getGender() == "") {
+			myUserDto.setGender("NONE");
 
 		}
 
-		if (myUserDto.getRole() == null) {
+		if (myUserDto.getRole() == "") {
 			myUserDto.setRole("USER");
 
 		}
 
+		if (myUserDto.getDob() == "") {
+			myUserDto.setDob("00/00/0000");
+
+		}
 		if (myUserDto.getRole().equals("ADMIN")) {
 
 			myUserDto.setRole("ADMIN, USER");
