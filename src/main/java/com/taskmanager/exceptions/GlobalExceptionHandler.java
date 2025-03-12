@@ -84,8 +84,8 @@ public class GlobalExceptionHandler {
 		}
 	}
 
-	@ExceptionHandler(UserExistsException.class)
-	public String handleTaskNotFoundException(UserExistsException ex, WebRequest request, Model model) {
+	@ExceptionHandler(UserAlreadyExistsException.class)
+	public String handleUserAlreadyExistsException(UserAlreadyExistsException ex, WebRequest request, Model model) {
 
 		String username = verifyLoggedInUser();
 
@@ -155,7 +155,8 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(ActiveUserCannotBeDeletedException.class)
-	public String handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex, WebRequest request, Model model) {
+	public String handleActiveUserCannotBeDeleted(ActiveUserCannotBeDeletedException ex, WebRequest request,
+			Model model) {
 
 		ErrorObject errorObject = new ErrorObject();
 		errorObject.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED.value());

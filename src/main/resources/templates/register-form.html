@@ -129,7 +129,7 @@
 				<input
 					type="password"
 					id="passwordTest"
-					name="passwordTest"
+				
 					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 					required
@@ -165,35 +165,30 @@
 		</div>
 		<script defer>
 			function validateForm() {
-				let email = document.getElementById("email").value;
-				let password = document.getElementById("password").value;
-				let passwordTest = document.getElementById("password").value;
-				let role = document.getElementById("role").value;
-				let dob = document.getElementById("dob").value;
+				let emailField = document.getElementById("email").value;
+				let passwordField = document.getElementById("password").value;
+				let passwordTestField = document.getElementById("password").value;
+				let roleField = document.getElementById("role").value;
+				let dobField = document.getElementById("dob").value;
 
 				if (email === "" || password === "") {
 					alert("Please fill in all required fields.");
 
-					const email = document.getElementById("email");
-					const password = document.getElementById("password");
-					email.style.backgroundColor = "#f69291";
-					password.style.backgroundColor = "#f69291";
+					const emailField = document.getElementById("email");
+					const passwordField = document.getElementById("password");
+					emailField.style.backgroundColor = "#f69291";
+					passwordField.style.backgroundColor = "#f69291";
 
 					return false; // Prevent form submission
 				}
 
-				if (password != passworTest) {
+				if (password != passwordTest) {
 					alert("Passwords do not match");
 					password.style.backgroundColor = "#f69291";
 					passwordTest.style.backgroundColor = "#f69291";
 				}
 
-				if (field3 === "") {
-					document.getElementById("role").innerHTML = "N/A";
-				}
-				if (field4 === "") {
-					document.getElementById("dob").innerHTML = "N/A";
-				}
+			
 
 				return true; // Allow form submission
 			}
