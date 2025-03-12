@@ -107,7 +107,7 @@ public class RegistrationControllerDynamic {
 
 		// model.addAttribute("users", users);
 
-		return "admin-created-new-user";
+		return "created-new-user";
 
 	}
 }
