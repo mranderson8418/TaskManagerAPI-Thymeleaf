@@ -152,14 +152,14 @@ div.scott-button {
 			<form th:action="@{/admin/create/task}" th:object="${myTaskDto}"
 				method="post">
 
-				<div class="task-input">
+			<!--	<div class="task-input">
 					<label for="date-created">Date Created: </label> <input type="date"
 						id="date-created" name="date-created" required />
 				</div>
 					<div class="task-input">
 					<label for="due-date">Select a Date of Birth:</label> <input type="date"
 						id="due-date" name="due-date" required />
-				</div>
+				</div>-->
 				<div class="task-input">
 					<label for="content">Message Content:</label>
 					<textarea name="content" id="content" maxlength="10000" rows="4"
